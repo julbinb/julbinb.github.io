@@ -1,22 +1,9 @@
 <nav id="sidebar-icon-links">
-  {% if site.github.repo %}
     <a id="github-link"
-       class="icon" title="Github Project" aria-label="Github Project"
-       href="{{ site.github.repo }}">
+       class="icon" title="Github Account" aria-label="Github Account"
+       href="{{ site.github.account }}">
       {% include svg/github.svg %}
     </a>
-    <a id="github-download-link"
-       class="icon" title="Download" aria-label="Download"
-       href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">
-      {% include svg/download.svg %}
-    </a>
-  {% endif %}
-
-  <a id="subscribe-link"
-     class="icon" title="Subscribe" aria-label="Subscribe"
-     href="{{ site.baseurl }}/feed.xml">
-    {% include svg/feed.svg %}
-  </a>
 
   {% comment %}
     Check if we have tag or search pages page active before linking to it.
@@ -31,6 +18,7 @@
     {% endif %}
   {% endfor %}
 
+<!--
   {% if tags_page %}
     <a id="tags-link"
        class="icon{% if page.url == '/tags' %} active{% endif %}"
@@ -48,6 +36,7 @@
       {% include svg/search.svg %}
     </a>
   {% endif %}
+-->
 
   {% include custom-icon-links.html %}
 </nav>
