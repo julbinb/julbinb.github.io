@@ -13,6 +13,13 @@ $sidebar-sticky: false;
 
 @import "hydeout";
 
+#sidebar {
+  // Show secondary nav content + lead
+  header ~ nav#sidebar-nav-links {
+    display: block;
+  }
+}
+
 #sidebar a.active {
     background-color: #2F74A8;
     font-weight: normal;
