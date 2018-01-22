@@ -1,12 +1,13 @@
 <p style="font-size: 0.8rem">
   &copy; {{ site.time | date: '%D' }}
-  (<a href="{{ site.baseurl }}/LICENSE.md">MIT License</a>)
+  <a href="{{ site.baseurl }}/LICENSE.md">MIT License</a>
   {% if site.github.repo %}
     <br/>
+    Source code is available at
     <a id="github-proj-link"
-       class="icon" title="Github Project" aria-label="Github Project"
+       title="Github Project" aria-label="Github Project"
        href="{{ site.github.repo }}">
-      GitHub Project
+      GitHub
     </a>
   {% endif %}
 </p>
