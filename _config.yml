@@ -5,7 +5,7 @@ highlighter:      rouge
 # Setup
 title:            Julia Belyakova
 tagline:          'Tagline'
-description:      'Researcher at <a href="https://www.fit.cvut.cz/en">FIT</a>, <a href="https://www.cvut.cz/en">CVUT</a> (Prague)'
+description:      'PL Researcher at <a href="https://www.fit.cvut.cz/en">FIT</a>, <a href="https://www.cvut.cz/en">CVUT</a> (Prague)'
 url:              https://julbinb.github.io
 
 author:
