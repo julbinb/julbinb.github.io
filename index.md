@@ -48,6 +48,7 @@ In 2017–2018, I spent a year at the {{site.data.links.mdlinks.fitcvut}}
 with {{site.data.links.mdlinks.janvitek}}.  
 Since 2018, I have been doing my PhD in Boston.
 
+<<<<<<< HEAD
 **Education.** MS in "Computer Science and Information Technologies"
 from {{site.data.links.mdlinks.sfedu}}.
 
@@ -118,3 +119,22 @@ If you have any questions or comments about projects or papers,
 1. {% include publication.html paper-key="OOPSLA 2018" paper-data=site.data.papers %}
 1. {% include talk.html talk-key="NEUPRL 2017" talk-data=site.data.talks show-talk-marker="true" %}
 1. {% include publication.html paper-key="SBLP 2016" paper-data=site.data.papers %}
+=======
+My previous research was related to language support for generic programming
+in object-oriented languages.
+
+### Selected papers/talks
+
+1. **LNCS 2016** [[preprint PDF]]({{ site.baseurl }}{{ site.papers }}/2016-SBLP_OO-generics_preprint.pdf)  [[slides PDF]]({{ site.baseurl }}{{ site.slides }}/belyakova-SBLP-2016_slides.pdf)  
+   Julia Belyakova.
+   Language Support for Generic Programming in Object-Oriented Languages:
+   Peculiarities, Drawbacks, Ways of Improvement.
+   *Lecture Notes in Computer Science. Programming Languages: 20th Brazilian Symposium, SBLP 2016*.
+   SBN 978-3-319-45279-1 (Online),
+   DOI [10.1007/978-3-319-45279-1_1](http://link.springer.com/chapter/10.1007%2F978-3-319-45279-1_1), No 9889.
+   Springer International Publishing, 2016, p. 1–15.
+
+### Professional service
+
+TBD
+>>>>>>> add contact info; add refs to paper/slides
