@@ -10,6 +10,15 @@ sidebar_link: true
 
 I was born and grew up in Russia, [Rostov-on-Don](https://en.wikipedia.org/wiki/Rostov-on-Don).
 
+I received MS in Computer Science in 2014 from
+[Southern Federal University](http://sfedu.ru/international/), Russia.
+My master's thesis was about a model of concepts
+(like C++ concepts or Haskell type classes)
+for a simple object-oriented language.
+
+In 2014–2016 I was teaching at the
+[Faculty of Mathematics, Mechanics and Computer Science](http://mmcs.sfedu.ru/).
+
 [Lorem ipsum dolor](https://github.com/) sit amet, consectetur adipiscing elit. Fusce non rutrum tellus, quis vestibulum mauris. Donec facilisis libero sodales arcu dapibus facilisis. Sed eget magna quis turpis scelerisque vulputate ac vitae magna. Duis eleifend _lobortis augue non mattis_. In ultricies, sapien ac porttitor luctus, lacus risus volutpat augue, vel viverra felis lacus eget turpis. Vestibulum a sapien condimentum, vehicula massa quis, laoreet mi. Aliquam ut fermentum odio. Pellentesque sollicitudin, augue a commodo semper, massa **turpis pellentesque** justo, sit amet lacinia elit ex et nisl. Etiam aliquam maximus augue sed malesuada. Suspendisse potenti. Aenean ipsum odio, faucibus et ligula non, vulputate finibus nulla. `Donec ac nunc ac mauris finibus molestie`.
 
 Cras consequat, arcu at feugiat varius, massa est condimentum lacus, ut placerat velit dolor vitae elit. Proin quis condimentum augue, a euismod tellus. Maecenas rutrum convallis sapien, a dignissim lorem tincidunt non. Maecenas consectetur magna vitae felis luctus accumsan. Sed nisi nunc, vestibulum eu diam at, imperdiet aliquet odio. Aliquam consequat luctus lectus a efficitur. Curabitur ex tellus, tincidunt vehicula leo ut, maximus eleifend dolor. Vestibulum velit eros, dapibus non vehicula ac, consequat at nibh. Aliquam libero ligula, finibus a sem eu, iaculis mollis tortor. Curabitur pellentesque nunc sodales lorem dictum, a ultrices lorem maximus. Aliquam quis dignissim orci. Donec eu magna ut mi feugiat accumsan. Praesent vel tincidunt eros. Cras lorem lorem, pellentesque a erat vel, eleifend lacinia augue.
