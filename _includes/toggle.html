@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 	<div class="toggleDiv">
 		<button id="{{include.toggle-name}}Button" class="toggleButton {% if include.toggle-colored %}coloredToggle{% endif %}"
 		        onclick="toggle_visibility_name('{{include.toggle-name}}', '{{include.toggle-text}}')">
@@ -7,3 +8,8 @@
 			{{include.toggle-content}}
 		</div>
 	</div> 
+=======
+<div class="toggleDiv">
+    <a href="#" onclick="toggle_visibility('{{include.toggle-name}}')">[{{include.toggle-text}}]</a>
+    <div id="{{include.toggle-name}}" style="display:none">{{include.toggle-content}}</div></div> 
+>>>>>>> simple template for toggled-abstract
