@@ -21,17 +21,16 @@ For several years I had been happily teaching at the
 [Faculty of Mathematics, Mechanics and Computer Science](http://mmcs.sfedu.ru/),
 my alma mater.
 
-I like taking pictures but never have time to filter and publish them.
-
 ### Contacts
 
-Email: [julbinb@gmail.com](mailto:julbinb@gmail.com),
-skype: [juliet_belyakova](skype:juliet_belyakova).  
+**Email**: [julbinb@gmail.com](mailto:julbinb@gmail.com).  
+Skype: [juliet_belyakova](skype:juliet_belyakova).  
 Professional: [github](http://github.com/julbinb/),
-[researchgate](https://www.researchgate.net/profile/Julia_Belyakova).  
+[researchgate](https://www.researchgate.net/profile/Julia_Belyakova),
+[linkedin](https://www.linkedin.com/in/julbinb/).  
 Social: [twitter](https://twitter.com/julbinb),
-[facebook](https://www.facebook.com/julbinb),
-[linkedin](https://www.linkedin.com/in/julbinb/).
+[facebook](https://www.facebook.com/julbinb).  
+Web-page in Russian: [staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).
 
 ## Research
 
@@ -71,4 +70,17 @@ in object-oriented languages.
 
 ## Professional service
 
-TBD
+* Organizing Committee Co-Chair.  
+  [ECOOP/ISSTA DS 2018](https://conf.researchr.org/track/ecoop-issta-2018/ecoop-issta-2018-doctoral-symposium):
+  Doctoral Symposium at European Conference on Object-Oriented Programming 2018
+  (Amsterdam, Netherlands).
+
+* Program Committee Member.  
+  [ECOOP DS 2017](http://2017.ecoop.org/track/ecoop-2017-Doctoral-Symposium):
+  Doctoral Symposium at European Conference on Object-Oriented Programming 2017
+  (Barcelona, Spain).
+
+* Organizing Committee Member, web-site co-master.  
+  [PLC-2017](http://plc.sfedu.ru/index.html):
+  A.L. Fuksman Conference on Programming Languages and Compilers 2017
+  (Rostov-on-Don, Russia). 
