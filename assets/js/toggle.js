@@ -1,5 +1,17 @@
 function toggle_visibility(id) {
-   var e = document.getElementById(id);
-   e.style.display = (e.style.display == 'none') ? 'block' : 'none';
-   //e.style.visibility = (e.style.visibility == 'hidden') ? 'visible' : 'hidden';
+    var e = document.getElementById(id);
+    e.style.display = (e.style.display == 'none') ? 'block' : 'none';
+}
+
+function toggle_visibility_name(id, name) {
+    var e = document.getElementById(id);
+    var b = document.getElementById(id + "Button");
+    if (e.style.display == 'none') {
+		e.style.display = 'block';
+		b.innerHTML = name + ' (hide)';
+    }
+    else {
+	    e.style.display = 'none';
+	    b.innerHTML = name;
+	}
 }

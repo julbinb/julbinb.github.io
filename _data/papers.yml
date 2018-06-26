@@ -1,0 +1,34 @@
+- key: "SBLP 2016"
+  title: "Language Support for Generic Programming in Object-Oriented Languages: Peculiarities, Drawbacks, Ways of Improvement"
+  author: Julia Belyakova
+  doi: 
+    name: 10.1007/978-3-319-45279-1_1
+    link: http://link.springer.com/chapter/10.1007%2F978-3-319-45279-1_1
+  venue: "Lecture Notes in Computer Science. Programming Languages: 20th Brazilian Symposium, <a target='_blank' href='http://cbsoft.org/sblp2016/xx-brazilian-symposium-on-programming-languages'>SBLP 2016</a> (Brazilian Symposium on Programming Languages)."
+  links:
+    - name: BibTeX
+      link: /files/bibtex/SBLP-2016.txt
+    - name: preprint PDF
+      link: /files/papers/sblp2016_OO-generics.pdf
+    - name: slides PDF
+      link: /files/slides/belyakova-SBLP2016-slides.pdf
+  abstract: "Earlier comparative studies of language support for generic programming (GP) have shown that mainstream object-oriented (OO) languages such as C# and Java provide weaker support for GP as compared with functional languages such as Haskell or SML. But many new object-oriented languages have appeared in recent years. Have they improved the support for generic programming? And if not, is there a reason why OO languages yield to functional ones in this respect? In this paper we analyse language constructs for GP in seven modern object-oriented languages. We demonstrate that all of these languages follow the same approach to constraining type parameters, which has a number of inevitable problems. However, those problems are successfully lifted with the use of the another approach. Several language extensions that adopt this approach and allow to improve GP in OO languages are considered. We analyse the dependencies between different language features, discuss the features' support using both approaches, and propose which approach is more expressive."
+
+
+
+- key: "FTfJP 2017"
+  title: Generic Approach to Certified Static Checking of Module-like Constructs
+  kind: Extended Abstract
+  author: Julia Belyakova
+  doi: 
+    name: 10.1145/3103111.3104045
+    link: https://dl.acm.org/citation.cfm?doid=3103111.3104045
+  venue: "Proceedings of the 19th Workshop on Formal Techniques for Java-like Programs (<a target='_blank' href='https://2017.ecoop.org/track/FTfJP-2017-papers'>FTfJP 2017</a>)"
+  links:
+    - name: BibTeX
+      link: /files/bibtex/FTfJP-2017.txt
+    - name: preprint PDF
+      link: /files/papers/ftfjp2017_cert-modules.pdf
+    - name: slides PDF
+      link: /files/slides/belyakova-FTfJP2017-handout.pdf
+  abstract: "In this paper we consider the problem of certified static checking of module-like constructs of programming languages. We argue that there are algorithms and properties related to modules that can be defined and proven in abstract way. We advocate the design of a generic Coq library, which is aimed to provide three building blocks for each checking mechanism: propositional, computable, and correctness proofs. Implemented part of the library is justified by applying it to a certified static checker of an extension of STLC."

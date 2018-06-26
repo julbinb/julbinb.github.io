@@ -1,3 +1,9 @@
-<div class="toggleDiv">
-    <button onclick="toggle_visibility('{{include.toggle-name}}')">[{{include.toggle-text}}]</button>
-    <div id="{{include.toggle-name}}" style="display:none;">{{include.toggle-content}}</div></div> 
+	<div class="toggleDiv">
+		<button id="{{include.toggle-name}}Button" class="toggleButton"
+		        onclick="toggle_visibility_name('{{include.toggle-name}}', '{{include.toggle-text}}')">
+			{{include.toggle-text}}
+		</button>
+		<div class="toggleContent" id="{{include.toggle-name}}" style="display:none;">
+			{{include.toggle-content}}
+		</div>
+	</div> 

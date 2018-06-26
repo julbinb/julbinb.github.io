@@ -4,7 +4,8 @@
 ---
 
 
-$link-color: #4078A3;
+$link-color: #256eab;
+$orig-link-color: #4078A3;
 
 $sidebar-bg-color: #184A71;
 
@@ -28,4 +29,29 @@ $sidebar-sticky: false;
 
 .toggleDiv {
 	display: block;
+}
+.toggleContent {
+	padding-left: 1em;
+	border-left: solid 1px #4078A3;
+}
+.toggleButton {
+	color: #303030;
+}
+
+.paperDiv {
+	display: block;
+	
+}
+.paperDiv .paperInfoDiv {
+	font-size: smaller;
+}
+.paperDiv button {
+	font-size: 100%;
+	padding: 5px;
+	border-radius: 10px;
+	border-color: #d5d5d5
+}
+
+.paperDiv button.paperLinkButton {
+	font-size: smaller;
 }

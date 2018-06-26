@@ -1,0 +1,22 @@
+	{% assign papers = include.paper-data | where:'key',include.paper-key %}
+	{% assign paper = papers[0] %}
+	<div class="paperDiv">
+		<b>{{paper.key}}</b> 
+		{% for paper_link in paper.links %}
+		<a target="_blank" href="{{paper_link.link}}"><button class="paperLinkButton">{{paper_link.name}}</button></a>
+		{% endfor %}
+		<br/>
+		<i>{{paper.title}}</i>
+		<div class="paperInfoDiv">
+			{% if paper.kind %}
+			{{paper.kind}} <br/>
+			{% endif %}
+			<strong>Authors:</strong> {{paper.author}} <br/>
+			{% if paper.doi %}
+			<strong>DOI:</strong> <a target="_blank" href="{{paper.doi.link}}">{{paper.doi.name}}</a> <br/>
+			{% endif %}
+			<strong>Venue:</strong> {{paper.venue}} <br/>
+			{% include toggle.html toggle-text="Abstract" toggle-name=paper.key
+								   toggle-content=paper.abstract %}
+		</div>
+	</div>
