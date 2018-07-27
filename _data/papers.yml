@@ -69,3 +69,26 @@
     - name: slides PDF
       link: /files/slides/belyakova-SYRCoSE2015-slides.pdf
   abstract: "As was shown in earlier studies, in comparison with Haskell type classes and C++ concepts such mainstream object-oriented languages as C# and Java provide much limited mechanisms of generic programming based on F-bounded polymorphism. Main pitfalls of C# generics are carefully considered in this paper. A special attention is given to drawbacks of recursive constraints (F-constraints), ambiguous semantics of interfaces, lack of language support for multi-type constraints and retroactive interface implementation, and subtle problems of the Concept design pattern, which is widely used not only in C#, but in Java and Scala as well. To solve the problems of C# generics, extending C# language with concepts is proposed: as a new language construct, concepts are to be used as constraints on type parameters exclusively, with object-oriented interfaces being used as types. In contrast to basic C++ concepts, C# concepts may include subtype and supertype constraints, allow constraints aliasing and automatic generation of default models. The major differ-ence of the concepts design proposed is language support for multiple models. The latter feature is supported neither in C++ concepts, nor in Haskell type classes. In conclusion, a mechanism of implementation of concepts via translation to basic C# is outlined. The most important property of the translation is a possibility to recover a source code in extended language from a compiled module."
+
+
+
+- key: "Дистанционное обучение 2012"
+  title: "Использование веб-среды PascalABC.NET для дистанционного обучения программированию (Using a Web-Environment PascalABC.NET for Distance Teaching of Programming)"
+  author: "<a target='_blank' href='https://sfedu.ru/person/mabr'>М. Э. Абрямян</a>, Ю. В. Белякова, <a target='_blank' href='https://sfedu.ru/person/miks'>С. С. Михалкович</a>"
+  venue: "Журнал «Дистанционное и виртуальное обучение». № 57(3)"
+  links:
+    - name: BibTeX
+      link: /files/bibtex/DistVirtLearn-2012.txt
+    - name: e-print (in Russian) PDF
+      link: /files/papers/DistVirtLearn2012_pascalWDE.pdf
+  abstract: "В работе описывается интегрированная веб-среда программирования PascalABC.NET WDE. Основное внимание уделяется особенностям среды и связанным с ней сервисам, которые позволяют эффективно использовать ее при организации дистанционного обучения. (An integrated web-environment PascalABC.NET WDE is described in the article. Great attention is paid to its features and related services that enable to use it effectively in organizing distance education.)"
+
+- key: "Современные ИТ 2015"
+  title: "Концепт-параметры как механизм развития средств обобщённого программирования в языке C# (Concept Parameters as a Mechanism of Development of the Language Support for Generic Programming in C#)"
+  author: "Ю. В. Белякова, <a target='_blank' href='https://sfedu.ru/person/miks'>С. С. Михалкович</a>"
+  venue: "Научный журнал «Современные информационные технологии и ИТ-образование», том 2 (№ 11)"
+  links:
+    - name: BibTeX
+      link: /files/bibtex/SITandITO-2015.txt
+    - name: e-print (in Russian) PDF
+      link: /files/papers/SITandITO2015_concepts.pdf

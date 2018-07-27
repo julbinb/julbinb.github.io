@@ -16,7 +16,9 @@
 			<strong>DOI:</strong> <a target="_blank" href="{{paper.doi.link}}">{{paper.doi.name}}</a> <br/>
 			{% endif %}
 			<strong>Venue:</strong> {{paper.venue}} <br/>
+			{% if paper.abstract %}
 			{% include toggle.html toggle-text="Abstract" toggle-name=paper.key
 								   toggle-content=paper.abstract %}
+	        {% endif %}
 		</div>
 	</div>
