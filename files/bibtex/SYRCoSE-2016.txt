@@ -1,0 +1,15 @@
+@article{Beyakova:2016:SYRCoSE,
+  author="Belyakova, Julia",
+  editor="Ivannikov, V.P.",
+  title="Language Support for Generic Programming in Object-Oriented Languages: Design Challenges",
+  journal="Proceedings of the Institute for System Programming",
+  volume="28",
+  number="2",
+  doi = {10.15514/ISPRAS-2016-28(2)-1},
+  year="2016",
+  publisher="Institute for System Programming RAS",
+  address="Moscow, Russia",
+  pages="5--32",
+  abstract="It is generally considered that object-oriented (OO) languages provide weaker support for generic programming (GP) as compared with functional languages such as Haskell or SML. There were several comparative studies which showed this. But many new object-oriented languages have appeared in recent years. Have they improved the support for generic programming? And if not, is there a reason why OO languages yield to functional ones in this respect? In the earlier comparative studies object-oriented languages were usually not treated in any special way. However, the OO features affect language facilities for GP and a style people write generic programs in such languages. In this paper we compare ten modern object-oriented languages and language extensions with respect to their support for generic programming. It has been discovered that every of these languages strictly follows one of the two approaches to constraining type parameters. So the first design challenge we consider is “which approach is better”. It turns out that most of the explored OO languages use the less powerful one. The second thing that has a big impact on the expressive power of a programming language is language support for multiple models. We discuss pros and cons of this feature and its relation to other language facilities for generic programming.",
+  issn="2220-6426"
+}
