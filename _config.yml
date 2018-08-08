@@ -33,7 +33,7 @@ plugins:
   - jekyll-paginate
 
 # Custom vars
-version:            3.7.0
+version:            3.7.1
 sidebar_home_link:  true
 #sidebar_blog_link:  '/blog'
 
