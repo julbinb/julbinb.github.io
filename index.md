@@ -3,12 +3,19 @@ layout: page
 title: Home
 ---
 
+<<<<<<< HEAD
 <a href="http://prl.ccs.neu.edu" target="_blank">
   <img src="img/prl.png" alt="PRL"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
 </a>
 I am a **PhD Student** at the {{site.data.links.mdlinks.khoury}},
 {{site.data.links.mdlinks.neu}} (Boston, MA, USA) since September 2018.
+=======
+I am a PhD Student
+at the [College of Computer and Information Science](https://www.ccis.northeastern.edu/),
+[Northeastern University](https://www.northeastern.edu/) (CCIS NEU), Boston, MA, USA
+since September 2018.
+>>>>>>> upd affiliation, add OOPSLA paper
 
 I work with {{site.data.links.mdlinks.janvitek}}
 in the Programming Research Laboratory ({{site.data.links.mdlinks.prl}}).  
@@ -107,6 +114,7 @@ in object-oriented languages
 #### Questions, comments, feedback
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 If you have any questions or comments about projects or papers,
 {{site.contactmetext}}
 =======
@@ -126,9 +134,16 @@ If you have any questions or comments about projects or papers,
 =======
 My previous research was related to language support for generic programming
 in object-oriented languages.
+=======
+1. {% include publication.html paper-key="OOPSLA 2018" paper-data=site.data.papers %}
+2. {% include publication.html paper-key="FTfJP 2017" paper-data=site.data.papers %}
+3. {% include talk.html talk-key="NEUPRL 2017" talk-data=site.data.talks show-talk-marker="true" %}
+4. {% include publication.html paper-key="SBLP 2016" paper-data=site.data.papers %}
+>>>>>>> upd affiliation, add OOPSLA paper
 
 ### Selected papers/talks
 
+<<<<<<< HEAD
 1. **LNCS 2016** [[preprint PDF]]({{ site.baseurl }}{{ site.papers }}/2016-SBLP_OO-generics_preprint.pdf)  [[slides PDF]]({{ site.baseurl }}{{ site.slides }}/belyakova-SBLP-2016_slides.pdf)  
    Julia Belyakova.
    *Language Support for Generic Programming in Object-Oriented Languages:
@@ -155,6 +170,17 @@ in object-oriented languages.
    features’ support using both approaches, and propose which approach 
    is more expressive. {% endcapture %}
    {% include toggle.html toggle-text="Abstract" toggle-name="LNCS2016" toggle-content=text-capture %}
+=======
+* Organizing Committee Co-Chair.  
+  [ECOOP DS 2019](https://2019.ecoop.org/home):
+  Doctoral Symposium at European Conference on Object-Oriented Programming 2019
+  (London, United Kindom).
+
+* Organizing Committee Co-Chair.  
+  [ECOOP/ISSTA DS 2018](https://conf.researchr.org/track/ecoop-issta-2018/ecoop-issta-2018-doctoral-symposium):
+  Doctoral Symposium at European Conference on Object-Oriented Programming 2018
+  (Amsterdam, Netherlands).
+>>>>>>> upd affiliation, add OOPSLA paper
 
 ## Professional service
 
