@@ -10,6 +10,7 @@ TBD or at the [old web page](http://staff.mmcs.sfedu.ru/~juliet/en/papers.en.htm
 
 ### Peer-Reviewed Journals
 
+1. {% include publication.html paper-key="OOPSLA 2018" paper-data=site.data.papers %}
 1. {% include publication.html paper-key="SBLP 2016" paper-data=site.data.papers %}
 1. {% include publication.html paper-key="SYRCoSE 2016" paper-data=site.data.papers %}
 1. {% include publication.html paper-key="SYRCoSE 2015" paper-data=site.data.papers %}

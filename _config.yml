@@ -5,7 +5,7 @@ highlighter:      rouge
 # Setup
 title:            Julia Belyakova
 tagline:          'Tagline'
-description:      'PL Researcher at <a href="https://www.fit.cvut.cz/en">FIT</a>, <a href="https://www.cvut.cz/en">CTU</a> (Prague)'
+description:      'PhD Student at <a href="https://www.ccis.northeastern.edu/">CCIS</a>, <a href="https://www.northeastern.edu/">NEU</a> (Boston, MA)'
 url:              https://julbinb.github.io
 files:            files
 papers:           files/papers
