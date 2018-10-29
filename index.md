@@ -3,19 +3,12 @@ layout: page
 title: Home
 ---
 
-<<<<<<< HEAD
 <a href="http://prl.ccs.neu.edu" target="_blank">
   <img src="img/prl.png" alt="PRL"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
 </a>
 I am a **PhD Student** at the {{site.data.links.mdlinks.khoury}},
 {{site.data.links.mdlinks.neu}} (Boston, MA, USA) since September 2018.
-=======
-I am a PhD Student
-at the [College of Computer and Information Science](https://www.ccis.northeastern.edu/),
-[Northeastern University](https://www.northeastern.edu/) (CCIS NEU), Boston, MA, USA
-since September 2018.
->>>>>>> upd affiliation, add OOPSLA paper
 
 I work with {{site.data.links.mdlinks.janvitek}}
 in the Programming Research Laboratory ({{site.data.links.mdlinks.prl}}).  
@@ -32,6 +25,7 @@ engineering and the interaction between humans and programming languages.
 
 ### Contacts
 
+<<<<<<< HEAD
 **Email**: [julbinb@gmail.com](mailto:julbinb@gmail.com) (preferred)
 or [belyakova.y@northeastern.edu](mailto:belyakova.y@northeastern.edu)  
 Professional: [github]({{site.github.account}}),
@@ -40,6 +34,16 @@ Social: [twitter]({{site.twitter}}), [facebook]({{site.facebook}})
 <!--[skype](skype:juliet_belyakova)-->  
 <!--Web-page in Russian:
 [staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).-->
+=======
+Email: [julbinb@gmail.com](mailto:julbinb@gmail.com) or [belyakova.y@northeastern.edu](mailto:belyakova.y@northeastern.edu).  
+Professional: [github](http://github.com/julbinb/),
+[researchgate](https://www.researchgate.net/profile/Julia_Belyakova),
+[linkedin](https://www.linkedin.com/in/julbinb/).  
+Social: [twitter](https://twitter.com/julbinb),
+[facebook](https://www.facebook.com/julbinb).  
+Skype: [juliet_belyakova](skype:juliet_belyakova).  
+Web-page in Russian: [staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).
+>>>>>>> upd picture, add note on Julia lang
 
 ### Short bio
 
@@ -79,6 +83,7 @@ being an international student or a woman in CS, feel free to send me an email.
 
 > <small>All news starting from 2020 are [here](news).</small>
 
+<<<<<<< HEAD
 ## <span id="research">Research</span>
 
 {% include link-button.html name="DBLP" link="https://dblp.uni-trier.de/pers/hd/b/Belyakova:Julia" %}
@@ -106,6 +111,10 @@ programming language:
     (work-in-progress) [[FTfJP 2019](/papers#ftfjp2019)].
 
 > <small>_Disclaimer._ Good or bad, the language has nothing to do with me, and the name match is a coincidence!</small>
+=======
+Currently I work around subtyping relation in the [Julia](https://julialang.org/) programming language.
+_Disclaimer._ Good or bad, the language has nothing to do with me, and name match is a coincidence!
+>>>>>>> upd picture, add note on Julia lang
 
 My previous research was related to language support for generic programming
 in object-oriented languages
@@ -173,7 +182,12 @@ in object-oriented languages.
 =======
 * Organizing Committee Co-Chair.  
   [ECOOP DS 2019](https://2019.ecoop.org/home):
-  Doctoral Symposium at European Conference on Object-Oriented Programming 2019
+  Doctoral Symposium at the European Conference on Programming languages 2019
+  (London, United Kindom).
+
+* Artifact Evaluation Committee Member.  
+  [ECOOP Artifacts 2019](https://2019.ecoop.org/home):
+  Artifacts Track at the European Conference on Programming languages 2019
   (London, United Kindom).
 
 * Organizing Committee Co-Chair.  
