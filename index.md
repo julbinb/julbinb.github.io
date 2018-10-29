@@ -26,18 +26,19 @@ at the [Faculty of Information Technology](https://www.fit.cvut.cz/en),
 
 ### Contacts
 
-**Email**: [julbinb@gmail.com](mailto:julbinb@gmail.com).  
-Skype: [juliet_belyakova](skype:juliet_belyakova).  
+Email: [julbinb@gmail.com](mailto:julbinb@gmail.com) or [belyakova.y@northeastern.edu](mailto:belyakova.y@northeastern.edu).  
 Professional: [github](http://github.com/julbinb/),
 [researchgate](https://www.researchgate.net/profile/Julia_Belyakova),
 [linkedin](https://www.linkedin.com/in/julbinb/).  
 Social: [twitter](https://twitter.com/julbinb),
 [facebook](https://www.facebook.com/julbinb).  
+Skype: [juliet_belyakova](skype:juliet_belyakova).  
 Web-page in Russian: [staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).
 
 ## Research
 
-Currently I work around the [Julia](https://julialang.org/) programming language.
+Currently I work around subtyping relation in the [Julia](https://julialang.org/) programming language.
+_Disclaimer._ Good or bad, the language has nothing to do with me, and name match is a coincidence!
 
 My previous research was related to language support for generic programming
 in object-oriented languages.
@@ -53,7 +54,12 @@ in object-oriented languages.
 
 * Organizing Committee Co-Chair.  
   [ECOOP DS 2019](https://2019.ecoop.org/home):
-  Doctoral Symposium at European Conference on Object-Oriented Programming 2019
+  Doctoral Symposium at the European Conference on Programming languages 2019
+  (London, United Kindom).
+
+* Artifact Evaluation Committee Member.  
+  [ECOOP Artifacts 2019](https://2019.ecoop.org/home):
+  Artifacts Track at the European Conference on Programming languages 2019
   (London, United Kindom).
 
 * Organizing Committee Co-Chair.  

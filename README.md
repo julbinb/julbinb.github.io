@@ -6,4 +6,10 @@ theme for [Jekyll](http://jekyllrb.com) 3.x and adds new functionality.
 
 ## Local Build
 
-`bundle exec jekyll serve`
+Jekyll installation instructions are [here](https://jekyllrb.com/docs/installation/ubuntu/).
+
+After jekyll has been successfully installed, do:
+
+    bundle exec jekyll serve
+
+You might also need to run `bundle install` due to `jekyll-theme-hydeout` requirements (see [here](https://github.com/fongandrew/hydeout)).
