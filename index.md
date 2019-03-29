@@ -4,8 +4,8 @@ title: Home
 ---
 
 I am a PhD Student
-at the [College of Computer and Information Science](https://www.ccis.northeastern.edu/),
-[Northeastern University](https://www.northeastern.edu/) (CCIS NEU), Boston, MA, USA
+at the [Khoury College of Computer Sciences](https://www.khoury.northeastern.edu/),
+[Northeastern University](https://www.northeastern.edu/) (Khoury NEU), Boston, MA, USA
 since September 2018.
 
 My primary research interests are programming languages and type theory.
@@ -37,8 +37,8 @@ Web-page in Russian: [staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/in
 
 ## Research
 
-Currently I work around subtyping relation in the [Julia](https://julialang.org/) programming language.
-_Disclaimer._ Good or bad, the language has nothing to do with me, and name match is a coincidence!
+Currently, I work around subtyping relation in the [Julia](https://julialang.org/) programming language.
+_Disclaimer._ Good or bad, the language has nothing to do with me, and the name match is a coincidence!
 
 My previous research was related to language support for generic programming
 in object-oriented languages.
