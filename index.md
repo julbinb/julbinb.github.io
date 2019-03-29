@@ -3,7 +3,6 @@ layout: page
 title: Home
 ---
 
-<<<<<<< HEAD
 <a href="http://prl.ccs.neu.edu" target="_blank">
   <img src="img/prl.png" alt="PRL"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
@@ -18,15 +17,6 @@ in the Programming Research Laboratory ({{site.data.links.mdlinks.prl}}).
 My primary research interests are **programming languages** and **type theory**.
 I also like theorem proving (most of my experience has been with
 {{site.data.links.mdlinks.coq}}),
-=======
-I am a PhD Student
-at the [Khoury College of Computer Sciences](https://www.khoury.northeastern.edu/),
-[Northeastern University](https://www.northeastern.edu/) (Khoury NEU), Boston, MA, USA
-since September 2018.
-
-My primary research interests are programming languages and type theory.
-I am also fond of theorem proving (Coq),
->>>>>>> upd CCIS for Khoury
 generic programming (like Java generics or ML polymorphism),
 functional and object-oriented programming,
 software engineering, programming by contracts, and software testing.
