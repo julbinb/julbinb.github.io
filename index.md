@@ -43,6 +43,7 @@ Social: [twitter](https://twitter.com/julbinb),
 [facebook](https://www.facebook.com/julbinb).  
 Skype: [juliet_belyakova](skype:juliet_belyakova).  
 Web-page in Russian: [staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).
+<<<<<<< HEAD
 >>>>>>> upd picture, add note on Julia lang
 
 ### Short bio
@@ -115,6 +116,13 @@ programming language:
 Currently I work around subtyping relation in the [Julia](https://julialang.org/) programming language.
 _Disclaimer._ Good or bad, the language has nothing to do with me, and name match is a coincidence!
 >>>>>>> upd picture, add note on Julia lang
+=======
+
+## Research
+
+Currently, I work around subtyping relation in the [Julia](https://julialang.org/) programming language.
+_Disclaimer._ Good or bad, the language has nothing to do with me, and the name match is a coincidence!
+>>>>>>> upd CCIS for Khoury
 
 My previous research was related to language support for generic programming
 in object-oriented languages
