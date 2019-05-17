@@ -7,6 +7,7 @@ I am a PhD Student
 at the [Khoury College of Computer Sciences](https://www.khoury.northeastern.edu/),
 [Northeastern University](https://www.northeastern.edu/) (Khoury NEU), Boston, MA, USA
 since September 2018.
+I work with Professor [Jan Vitek](http://janvitek.org/).
 
 My primary research interests are programming languages and type theory.
 I am also fond of theorem proving (Coq),
