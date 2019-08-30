@@ -40,6 +40,11 @@ sidebar_link: true
 1. {% include publication.html paper-key="FTfJP 2017"
       refid=true paper-data=site.data.papers %}
 
+### Workshops
+
+1. {% include publication.html paper-key="FTfJP 2019" paper-data=site.data.papers %}
+1. {% include publication.html paper-key="FTfJP 2017" paper-data=site.data.papers %}
+
 ---
 
 ## <span id="pubsrus">Публикации</span> (Publications in Russian)
