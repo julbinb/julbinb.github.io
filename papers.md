@@ -37,9 +37,9 @@ sidebar_link: true
 
 ## <span id="pubsrus">Публикации</span> (Publications in Russian)
 
-TBD or [here](http://staff.mmcs.sfedu.ru/~juliet/ru/papers.ru.html).
+TBD or at the [old web page](http://staff.mmcs.sfedu.ru/~juliet/en/papers.en.html).
 
-### Журналы
+###  Журналы списка ВАК
 
 1. {% include publication.html paper-key="Дистанционное обучение 2012" paper-data=site.data.papers %}
 
