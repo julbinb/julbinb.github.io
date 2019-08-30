@@ -38,18 +38,22 @@ Web-page in Russian: [staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/in
 
 ## Research
 
-Currently, I work around subtyping relation in the [Julia](https://julialang.org/) programming language.
+Currently, I work around subtyping relation in the [Julia](https://julialang.org/) programming language. Namely, I have been developing a semantic subtyping model suitable for a dynamic language.  
 _Disclaimer._ Good or bad, the language has nothing to do with me, and the name match is a coincidence!
 
 My previous research was related to language support for generic programming
 in object-oriented languages.
 
+{% include link-button.html name="DBLP" link="https://dblp.uni-trier.de/pers/hd/b/Belyakova:Julia" %}
+{% include link-button.html name="Google Scholar" link="https://scholar.google.com/citations?user=8AYYcb8AAAAJ&hl=en&oi=ao" %}
+
 ### Selected Papers/Talks
 
+1. {% include publication.html paper-key="FTfJP 2019" paper-data=site.data.papers %}
+1. {% include talk.html talk-key="Семинар ЯПиК 2019" talk-data=site.data.talks show-talk-marker="true" %}
 1. {% include publication.html paper-key="OOPSLA 2018" paper-data=site.data.papers %}
-2. {% include publication.html paper-key="FTfJP 2017" paper-data=site.data.papers %}
-3. {% include talk.html talk-key="NEUPRL 2017" talk-data=site.data.talks show-talk-marker="true" %}
-4. {% include publication.html paper-key="SBLP 2016" paper-data=site.data.papers %}
+1. {% include talk.html talk-key="NEUPRL 2017" talk-data=site.data.talks show-talk-marker="true" %}
+1. {% include publication.html paper-key="SBLP 2016" paper-data=site.data.papers %}
 
 ## Professional Service (full list [here](service.html))
 

@@ -1,25 +1,51 @@
+- key: "FTfJP 2019"
+  link: https://2019.ecoop.org/home/FTfJP-2019
+  title: Decidable Tag-Based Semantic Subtyping for Nominal Types, Tuples, and Unions
+  author: Julia Belyakova
+  doi: 
+    name: 10.1145/3340672.3341115
+    link: https://dl.acm.org/citation.cfm?doid=3340672.3341115
+  venue: "Proc. 21st Workshop on Formal Techniques for Java-like Programs, Article 3 (11 pages)"
+  links:
+    - name: BibTeX
+      link: /files/bibtex/FTfJP-2019.txt
+    - name: preprint PDF
+      link: https://github.com/julbinb/ftfjp-2019/blob/master/paper/minijl-ftfjp2019.pdf
+    - name: slides GoogleDrive
+      link: https://docs.google.com/presentation/d/1zDxC4b0Z1I6_DCVT-7VmUFEuBnInsql6diYvAdrEx4E/edit?usp=sharing
+  abstract: "Semantic subtyping enables simple, set-theoretical reasoning about types by interpreting a type as the set of its values. Previously, semantic subtyping has been studied primarily in the context of statically typed languages with structural typing. In this paper, we explore the applicability of semantic subtyping in the context of a dynamic language with nominal types. Instead of static type checking, dynamic languages rely on run-time checking of type tags associated with values, so we propose using the tags for semantic subtyping. We base our work on a fragment of the Julia language and present tag-based semantic subtyping for nominal types, tuples, and unions, where types are interpreted set-theoretically as sets of type tags. The proposed subtyping relation is shown to be decidable, and a corresponding analytic definition is provided. The implications of using semantic subtyping for multiple dispatch are also discussed."
+
+
 - key: "OOPSLA 2018"
+  link: https://conf.researchr.org/track/splash-2018/splash-2018-OOPSLA
   title: "Julia Subtyping: A Rational Reconstruction"
   author: "<a target='_blank' href='https://www.di.ens.fr/~zappa'>Francesco Zappa Nardelli</a>, Julia Belyakova, <a target='_blank' href='http://staff.mmcs.sfedu.ru/~ulysses/'>Artem Pelenitsyn</a>, <a target='_blank' href='https://benchung.github.io/'>Benjamin Chung</a>, <a target='_blank' href='https://github.com/JeffBezanson'>Jeff Bezanson</a>, and <a target='_blank' href='http://janvitek.org/'>Jan Vitek</a>"
   doi: 
     name: 10.1145/3276483
     link: https://doi.org/10.1145/3276483
-  venue: "Proc. ACM Program. Lang. 2, OOPSLA, Article 113 (November 2018), 28 pages"
+  venue: "Proc. ACM on Programming Languages, Volume 2, OOPSLA, Article 113 (28 pages)"
   sbn: "???"
   links:
     - name: Web
       link: https://www.di.ens.fr/~zappa/projects/lambdajulia/
+    - name: BibTeX
+      link: /files/bibtex/OOPSLA-2018.txt
+    - name: preprint PDF
+      link: https://www.di.ens.fr/~zappa/projects/lambdajulia/paper.pdf
+    - name: Video
+      link: https://youtu.be/l8BWVXE7dwI
   abstract: "Programming languages that support multiple dispatch rely on an expressive notion of subtyping to specify method applicability. In these languages, type annotations on method declarations are used to select, out of a potentially large set of methods, the one that is most appropriate for a particular tuple of arguments. Julia is a language for scientific computing built around multiple dispatch and an expressive subtyping relation. This paper provides the first formal definition of Julia's subtype relation and motivates its design. We validate our specification empirically with an implementation of our definition that we compare against the existing Julia implementation on a collection of real-world programs. Our subtype implementation differs on 122 subtype tests out of 6014476. The first 120 differences are due to a bug in Julia that was fixed once reported; the remaining 2 are under discussion."
 
 
 - key: "FTfJP 2017"
+  link: https://2017.ecoop.org/track/FTfJP-2017-papers
   title: Generic Approach to Certified Static Checking of Module-like Constructs
   kind: Extended Abstract
   author: Julia Belyakova
   doi: 
     name: 10.1145/3103111.3104045
     link: https://dl.acm.org/citation.cfm?doid=3103111.3104045
-  venue: "Proceedings of the 19th Workshop on Formal Techniques for Java-like Programs (<a target='_blank' href='https://2017.ecoop.org/track/FTfJP-2017-papers'>FTfJP 2017</a>)"
+  venue: "Proc. 19th Workshop on Formal Techniques for Java-like Programs, Article 5 (2 pages)"
   links:
     - name: BibTeX
       link: /files/bibtex/FTfJP-2017.txt
@@ -31,12 +57,13 @@
 
 
 - key: "SBLP 2016"
+  link: http://cbsoft.org/sblp2016/xx-brazilian-symposium-on-programming-languages
   title: "Language Support for Generic Programming in Object-Oriented Languages: Peculiarities, Drawbacks, Ways of Improvement"
   author: Julia Belyakova
   doi: 
     name: 10.1007/978-3-319-45279-1_1
     link: http://link.springer.com/chapter/10.1007%2F978-3-319-45279-1_1
-  venue: "Lecture Notes in Computer Science. Programming Languages: 20th Brazilian Symposium, <a target='_blank' href='http://cbsoft.org/sblp2016/xx-brazilian-symposium-on-programming-languages'>SBLP 2016</a> (Brazilian Symposium on Programming Languages). No 9889"
+  venue: "LNCS Programming Languages: 20th Brazilian Symposium on Programming Languages, Volume 9889, Article 1 (15 pages)"
   sbn: "978-3-319-45279-1"
   links:
     - name: BibTeX

@@ -1,7 +1,11 @@
 	{% assign papers = include.paper-data | where:'key',include.paper-key %}
 	{% assign paper = papers[0] %}
 	<div class="paperDiv">
+		{% if paper.link %}
+		<b><a class="paperDivKey" target="_blank" href="{{paper.link}}">{{paper.key}}</a></b> 
+		{% else %}
 		<b>{{paper.key}}</b> 
+		{% endif %}
 		{% for paper_link in paper.links %}
 		<a target="_blank" href="{{paper_link.link}}"><button class="paperLinkButton">{{paper_link.name}}</button></a>
 		{% endfor %}

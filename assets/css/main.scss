@@ -49,9 +49,25 @@ $sidebar-sticky: false;
 	font-size: 100%;
 	padding: 5px;
 	border-radius: 10px;
-	border-color: #d5d5d5
+	border-color: #d5d5d5;
 }
 
 .paperDiv button.paperLinkButton {
 	font-size: smaller;
 }
+
+.paperDivKey {
+	color: #515151;
+}
+
+button.linkButton {
+	font-size: 100%;
+	padding: 5px;
+	border-radius: 10px;
+	border-color: #d5d5d5;
+}
+
+button.smallButton {
+	font-size: smaller;
+}
+

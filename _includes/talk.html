@@ -7,11 +7,13 @@
 		<a target="_blank" href="{{talk_link.link}}"><button class="paperLinkButton">{{talk_link.name}}</button></a>
 		{% endfor %}
 		<br/>
-		<i>{{paper.title}}</i>
+		<i>{{talk.title}}</i>
 		<div class="paperInfoDiv">
 			<strong>Venue:</strong> {{talk.venue}} <br/>
 			<strong>Date:</strong> {{talk.date}}
+			{% if talk.abstract %}
 			{% include toggle.html toggle-text="Abstract" toggle-name=talk.key
 								   toggle-content=talk.abstract %}
+			{% endif %}
 		</div>
 	</div>

@@ -1,8 +1,47 @@
+- key: "Семинар ЯПиК 2019"
+  title: "Семантическое подтипирование на основе типовых тегов (Tag-based Semantic Subtyping)"
+  venue: "Семинар «Языки программирования и компиляторы», Мехмат ЮФУ. Ростов-на-Дону, Россия (Seminar on Programming Languages and Compilers, Rostov-on-Don, Russia)"
+  date: "May 15, 2019"
+  links:
+    - name: slides GoogleDrive (in Russian)
+      link: https://docs.google.com/presentation/d/1xjzgjg7287Rv1KJe6e__nmRAu0Uok34s-_oj1Onv6os/edit?usp=sharing
+    - name: video (in Russian)
+      link: https://youtu.be/_4ElOK57ilA
+
 - key: "NEUPRL 2017"
   title: "Comparative Study of Generic Programming Features in Object-Oriented Languages"
-  venue: "<a target='_blank' href='http://prl.ccs.neu.edu/seminars.html'>Programming Language Seminar</a>, <a target='_blank' href='http://www.ccis.northeastern.edu/'>College</a> of Computer and Information Science, <a target='_blank' href='http://www.northeastern.edu/'>Northeastern University</a>. Boston, MA, USA"
+  venue: "<a target='_blank' href='http://prl.ccs.neu.edu/seminars.html'>Programming Language Seminar</a>, <a target='_blank' href='https://www.khoury.northeastern.edu/'>Khoury College</a> of Computer Sciences, <a target='_blank' href='http://www.northeastern.edu/'>Northeastern University</a>. Boston, MA, USA"
   date: "Feb 3, 2017"
   links:
     - name: slides PDF
       link: /files/slides/belyakova-NEUPLsem2017-slides.pdf
   abstract: "Earlier comparative studies of language support for generic programming (GP) have shown that mainstream object-oriented (OO) languages such as C# and Java provide weaker support for GP as compared with functional languages such as Haskell or SML.<br/> One reason is that generic mechanisms of C# and Java are based on F-bounded polymorphism, which has certain deficiencies. Some of these deficiencies are eliminated in more recent languages, such as Scala and Kotlin. However, there are peculiarities of object-oriented languages as a whole, which prevent them from being as expressible as Haskell in terms of generic programming.<br/>In this talk we will cover the main problems of language support for generic programming in C#/Java as well as other modern object-oriented languages, including Scala and Swift. It turns out that all of these languages follow the same approach to constraining type parameters, which leads to inevitable shortcomings. To overcome them, an alternative approach is suggested in several extensions for OO languages, in particular, JavaGenus. The advantages and drawbacks of both approaches will be discussed in the talk."
+
+- key: "Семинар JetBrains Research 2016"
+  title: "Средства обобщённого программирования в объектно-ориентированных языках: особенности, недостатки, возможные альтернативы (Generic Programming Approaches and Tools in Object-Oriented Languages: Peculiarities, Drawbacks, Alternatives)"
+  venue: "<a target='_blank' href='https://research.jetbrains.org/ru/groups/plt_lab/seminars?id=30'>Семинар лаборатории языковых инструментов</a> (<a href='https://research.jetbrains.org/groups/plt_lab/seminars?id=30'>Seminar of Programming Languages and Tools Lab</a>), <a href='https://research.jetbrains.org/'>JetBrains Research</a>. Санкт-Петербург, Россия (Saint Petersburg, Russia)"
+  date: "October 24, 2019"
+  links:
+    - name: slides PDF (in Russian)
+      link: /files/slides/belyakova-jetbrains2016-GP-in-OOP-slides.pdf
+  abstract: "Большинство современных языков программирования обеспечивают поддержку обобщённого программирования (ОП) на уровне языка. При этом различные языковые средства обладают разной выразительной силой. Так, например, классы типов Haskell предоставляют один из наиболее богатых механизмов ОП, в то время как механизм F-ограниченного полиморфизма на основе интерфейсов в языках C# и Java считается одним из беднейших. Часть недостатков, свойственных объектно-ориентированным (ОО) языкам C# и Java снимается в более современных ОО-языках, таких как Scala и Kotlyn. Однако, есть несколько существенных особенностей объектно-ориентированных языков в целом, из-за которых они по-прежнему уступают языку Haskell в контексте обобщённого программирования. Основные проблемы средств поддержки ОП в языках C#/Java, а также современных ОО-языках, представлены в докладе. Мы также рассмотрим альтернативный подход к реализации средств обобщённого программирования, предложенный в некоторых расширениях ОО-языков, в частности, JavaGenus. В докладе обсуждаются преимущества и недостатки обоих подходов, а также открытые проблемы дизайна и реализации (расширений) ОО-языков для обобщённого программирования. <br/> (The majority of modern programming languages provide language support for generic programming. Different language features possess different expressive power. For example, Haskell type classes provide one of the richest mechanism for generic programming, while F-bounded polymorphism in form of interfaces in C# and Java is considered as one of the weakest. Some of defficiencies of object-oriented languages C# and Java are eliminated in more recent languages, such as Scala and Kotlin. However, there are some pecularities of object-oriented languages as a whole, which prevent them to be as expressible as Haskell in terms of generic programming. The talk will present the main problems with generic programming support in C#/Java as well as modern object-oriented languages. We also consider an alternative approach for generic programming features implementation, suggested in some extensions for object-oriented languages, in particular, JavaGenus. In the talk the advantages and drawbacks of both approaches as well as open problems in the area of design and implementation of generic programming extensions for object-oriented languages will be considered, too.)"
+
+- key: "ECOOP DS 2016"
+  title: "Concept Parameters as a New Mechanism of Generic Programming for C# Language"
+  venue: "<a target='_blank' href='https://2016.ecoop.org/track/ecoop-2016-doctoral-symposium'>ECOOP 2016 Doctoral Symposium</a>. Rome, Italy"
+  date: "July 17, 2016"
+  links:
+    - name: proposal PDF
+      link: /files/papers/ecoopDS2016_CSharp-concepts.pdf
+    - name: slides PDF
+      link: /files/slides/belyakova-ECOOP-DS-2016-slides.pdf
+  abstract: "As was shown in earlier studies, mainstream object-oriented (OO) languages C# and Java provide weaker support for generic programming (GP) as compared with functional languages such as Haskell or SML. Having explored the instruments for GP in modern OO languages Scala, Ceylon, Kotlin, Rust, and Swift, we have found out that all of them, as well as C# and Java, stick to the same approach to constraining type parameters, which we called the “Constraints-are-Types” approach. It turns out that the approach has several inevitable limitations, and because of that Haskell type classes still provide better support for GP than modern object-oriented languages do. This research is aimed to discover a mechanism that would allow to radically improve the support for generic programming in OO languages. We identify the requirements that such mechanism should satisfy, present a design of the appropriate mechanism (concept parameters), and propose a sketch of its implementation for the C# language."
+
+- key: "META 2016"
+  title: "Language Support for Generic Programming in Object-Oriented Languages: Design Challenges"
+  venue: "<a target='_blank' href='http://meta2016.pereslavl.ru/'>META 2016</a>: Fifth International Valentin Turchin Workshop on Metacomputation. Pereslavl-Zalessky, Russia"
+  date: "June 28, 2016"
+  links:
+    - name: slides PDF
+      link: /files/slides/belyakova-META-2016-slides.pdf
+  abstract: "It is generally considered that object-oriented (OO) languages provide weaker support for generic programming (GP) as compared with functional languages such as Haskell or SML. There were several comparative studies which showed this. But many new object-oriented languages have appeared in recent years. Have they improved the support for generic programming? And if not, is there a reason why OO languages yield to functional ones in this respect? In the earlier comparative studies object-oriented languages were usually not treated in any special way. However, the OO features affect language facilities for GP and a style people write generic programs in such languages. In this paper we compare ten modern object-oriented languages and language extensions with respect to their support for generic programming. It has been discovered that every of these languages strictly follows one of the two approaches to constraining type parameters. So the first design challenge we consider is “which approach is better”. It turns out that most of the explored OO languages use the less powerful one. The second thing that has a big impact on the expressive power of a programming language is language support for multiple models. We discuss pros and cons of this feature and its relation to other language facilities for generic programming."
