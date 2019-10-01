@@ -4,6 +4,13 @@ title: Professional Service
 sidebar_link: false
 ---
 
+### 2020
+
+* Diversity Chair in Organizing Committee.  
+  [ECOOP 2020](https://2020.ecoop.org/):
+  European Conference on Programming Languages 2020
+  (Potsdam, Germany).
+
 ### 2019
 
 * Program Committee Member.  

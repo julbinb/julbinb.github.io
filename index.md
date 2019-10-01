@@ -3,11 +3,17 @@ layout: page
 title: Home
 ---
 
+
+<a href="http://prl.ccs.neu.edu" target="_blank">
+  <img src="img/prl.png" alt="PRL"
+    style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
+</a>
 I am a PhD Student
 at the [Khoury College of Computer Sciences](https://www.khoury.northeastern.edu/),
 [Northeastern University](https://www.northeastern.edu/) (Khoury NEU), Boston, MA, USA
 since September 2018.
-I work with Professor [Jan Vitek](http://janvitek.org/).
+I work with Professor [Jan Vitek](http://janvitek.org/)
+in the Programming Research Laboratory ([PRL](http://prl.ccs.neu.edu)).
 
 My primary research interests are programming languages and type theory.
 I am also fond of theorem proving (Coq),
@@ -59,8 +65,11 @@ in object-oriented languages.
 
 ### Organization 
 
+* Diversity Chair of [ECOOP 2020](https://2020.ecoop.org/),
+  European Conference on Programming Languages.
+
 * Co-chair of [ECOOP DS 2019](https://2019.ecoop.org/home),
-  Doctoral Symposium at European Conference on Programming languages.
+  Doctoral Symposium at European Conference on Programming Languages.
 
 * Co-chair of [ECOOP/ISSTA DS 2018](https://conf.researchr.org/track/ecoop-issta-2018/ecoop-issta-2018-doctoral-symposium),
   joint Doctoral Symposium of 
