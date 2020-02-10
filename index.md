@@ -81,6 +81,10 @@ in object-oriented languages.
 
 ### Program Committees
 
+* [PLDI Research Artifacts 2020](https://pldi20.sigplan.org/track/pldi-2020-PLDI-Research-Artifacts),
+  Artifact Evaluation Track at 
+  ACM SIGPLAN Conference on Programming Language Design and Implementation.
+
 * [TyDe 2019](https://icfp19.sigplan.org/home/tyde-2019),
   workshop on Type-Driven Development.
 

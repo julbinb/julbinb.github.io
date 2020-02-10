@@ -6,6 +6,12 @@ sidebar_link: false
 
 ### 2020
 
+* Artifact Evaluation Committee Member.  
+  [PLDI Research Artifacts 2020](https://pldi20.sigplan.org/track/pldi-2020-PLDI-Research-Artifacts):
+  Research Artifacts Track at the ACM SIGPLAN Conference 
+  on Programming Language Design and Implementation 2020
+  (London, United Kingdom).
+
 * Diversity Chair in Organizing Committee.  
   [ECOOP 2020](https://2020.ecoop.org/):
   European Conference on Programming Languages 2020
@@ -20,12 +26,12 @@ sidebar_link: false
   (Berlin, Germany).
 
 * Organizing Committee Co-Chair.  
-  [ECOOP DS 2019](https://2019.ecoop.org/home):
+  [ECOOP DS 2019](https://2019.ecoop.org/track/ecoop-2019-docsymp):
   Doctoral Symposium at the European Conference on Programming languages 2019
   (London, United Kingdom).
 
 * Artifact Evaluation Committee Member.  
-  [ECOOP Artifacts 2019](https://2019.ecoop.org/home):
+  [ECOOP Artifacts 2019](https://2019.ecoop.org/track/ecoop-2019-artifacts):
   Artifacts Track at the European Conference on Programming languages 2019
   (London, United Kingdom).
 
