@@ -13,3 +13,9 @@ After jekyll has been successfully installed, do:
     bundle exec jekyll serve
 
 You might also need to run `bundle install` due to `jekyll-theme-hydeout` requirements (see [here](https://github.com/fongandrew/hydeout)).
+
+In 2020, might need to do the following:
+
+* remove `Gemfile.lock`;
+* add `gem "kramdown-parser-gfm"` to `Gemfile`;
+* run `bunle install`.

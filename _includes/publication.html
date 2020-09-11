@@ -4,7 +4,7 @@
 		{% if paper.link %}
 		<b><a class="paperDivKey" target="_blank" href="{{paper.link}}">{{paper.key}}</a></b> 
 		{% else %}
-		<b>{{paper.key}}</b> 
+		<b><span class="paperDivKey">{{paper.key}}</span></b> 
 		{% endif %}
 		{% for paper_link in paper.links %}
 		<a target="_blank" href="{{paper_link.link}}"><button class="paperLinkButton">{{paper_link.name}}</button></a>

@@ -2,7 +2,7 @@
 	{% assign talk = talks[0] %}
 	<div class="paperDiv">
 		{% if include.show-talk-marker %} [ Talk ] {% endif %}
-		<b>{{talk.key}}</b> 
+		<b><span class="paperDivKey">{{talk.key}}</span></b> 
 		{% for talk_link in talk.links %}
 		<a target="_blank" href="{{talk_link.link}}"><button class="paperLinkButton">{{talk_link.name}}</button></a>
 		{% endfor %}

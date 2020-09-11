@@ -3,7 +3,6 @@ layout: page
 title: Home
 ---
 
-
 <a href="http://prl.ccs.neu.edu" target="_blank">
   <img src="img/prl.png" alt="PRL"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
@@ -15,21 +14,28 @@ since September 2018.
 I work with Professor [Jan Vitek](http://janvitek.org/)
 in the Programming Research Laboratory ([PRL](http://prl.ccs.neu.edu)).
 
-My primary research interests are programming languages and type theory.
+My primary research interests are **programming languages and type theory**.
 I am also fond of theorem proving (Coq),
 generic programming (like Java generics or ML polymorphism),
 object-oriented and functional programming,
 software engineering, programming by contracts, software testing.
 
 I was born and grew up in Russia, Rostov-on-Don.
-In 2014 I received MS in "Computer Science and Information Technologies"
+In 2014, I received MS in "Computer Science and Information Technologies"
 from [Southern Federal University](http://sfedu.ru/international/).
 For several years I had been happily teaching at the
 [Faculty of Mathematics, Mechanics and Computer Science](http://mmcs.sfedu.ru/),
 my alma mater.
-In 2017–2018 I worked as a researcher
+In 2017–2018, I worked as a researcher
 at the [Faculty of Information Technology](https://www.fit.cvut.cz/en),
 [Czech Technical University in Prague](https://www.cvut.cz/en) (FIT CVUT).
+
+### Software Development 2020
+
+In Fall 2020, I am TAing for
+[Software Development](https://felleisen.org/matthias/4500-f20/).  
+{% include link-button.html name="book office hours" link="https://calendly.com/julbinb" small="true" %}
+{% include link-button.html name="send feedback" link="https://forms.gle/bSTfbeVxnx5JnmJW9" small="true" %}
 
 ### Contacts
 
@@ -40,18 +46,30 @@ Professional: [github](http://github.com/julbinb/),
 Social: [twitter](https://twitter.com/julbinb),
 [facebook](https://www.facebook.com/julbinb).  
 Skype: [juliet_belyakova](skype:juliet_belyakova).  
-Web-page in Russian: [staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).
+Web-page in Russian: [staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).  
+{% include link-button.html name="ORCID" link="https://orcid.org/0000-0002-7490-8500" %}
 
 ## Research
 
-Currently, I work around subtyping relation in the [Julia](https://julialang.org/) programming language. Namely, I have been developing a semantic subtyping model suitable for a dynamic language.  
+{% include link-button.html name="DBLP" link="https://dblp.uni-trier.de/pers/hd/b/Belyakova:Julia" %}
+{% include link-button.html name="Google Scholar" link="https://scholar.google.com/citations?user=8AYYcb8AAAAJ&hl=en&oi=ao" %}
+{% include link-button.html name="ACM DL" link="https://dl.acm.org/profile/99659183110" %}
+
+<a href="https://julialang.org/" target="_blank">
+  <img src="img/julia-logo.svg" alt="Julia Lang"
+    style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
+</a>
+Currently, I work on formalizing various aspects of the
+[Julia programming language](https://julialang.org/):
+
+* Semantics of `eval` and [world age](https://docs.julialang.org/en/v1/manual/methods/#Redefining-Methods).
+* Subtyping relation: I have been developing a semantic subtyping model
+  suitable for a dynamic language.
+
 _Disclaimer._ Good or bad, the language has nothing to do with me, and the name match is a coincidence!
 
 My previous research was related to language support for generic programming
 in object-oriented languages.
-
-{% include link-button.html name="DBLP" link="https://dblp.uni-trier.de/pers/hd/b/Belyakova:Julia" %}
-{% include link-button.html name="Google Scholar" link="https://scholar.google.com/citations?user=8AYYcb8AAAAJ&hl=en&oi=ao" %}
 
 ### Selected Papers/Talks
 
