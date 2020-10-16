@@ -14,6 +14,13 @@ sidebar_link: false
   (primarily static analysis).  
   Implemented in Julia.
 
+### Papers
+
+* **OOPSLA 2020**  
+  World Age in Julia: Optimizing Method Dispatch in the Presence of Eval  
+  ([preprint](/files/papers/oopsla2020_juliette-world-age.pdf))
+  ([extended version](/files/papers/oopsla2020_juliette-world-age_extended.pdf))
+
 ### Links
 
 * [GitHub](https://github.com/julbinb/juliette-wa)
