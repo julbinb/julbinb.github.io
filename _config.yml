@@ -12,6 +12,7 @@ url:              https://julbinb.github.io
 files:            files
 papers:           files/papers
 slides:           files/slides
+projects:         projects
 
 author:
   name:           'Julia Belyakova'

@@ -6,7 +6,7 @@ sidebar_link: true
 
 ## Current Projects
 
-* [Juliette]():
+* [Juliette](projects/juliette):
   formalizing `eval` and [world age](https://docs.julialang.org/en/v1/manual/methods/#Redefining-Methods)
   of the [Julia](https://julialang.org/) language.
 
