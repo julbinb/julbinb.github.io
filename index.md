@@ -9,8 +9,9 @@ title: Home
 </a>
 I am a PhD Student
 at the [Khoury College of Computer Sciences](https://www.khoury.northeastern.edu/),
-[Northeastern University](https://www.northeastern.edu/) (Khoury NEU), Boston, MA, USA
+[Northeastern University](https://www.northeastern.edu/) (Boston, MA, USA)
 since September 2018.
+
 I work with Professor [Jan Vitek](http://janvitek.org/)
 in the Programming Research Laboratory ([PRL](http://prl.ccs.neu.edu)).
 
@@ -29,13 +30,6 @@ my alma mater.
 In 2017–2018, I worked as a researcher
 at the [Faculty of Information Technology](https://www.fit.cvut.cz/en),
 [Czech Technical University in Prague](https://www.cvut.cz/en) (FIT CVUT).
-
-### Software Development 2020
-
-In Fall 2020, I am TAing for
-[Software Development](https://felleisen.org/matthias/4500-f20/).  
-{% include link-button.html name="book office hours" link="https://calendly.com/julbinb" small="true" %}
-{% include link-button.html name="send feedback" link="https://forms.gle/bSTfbeVxnx5JnmJW9" small="true" %}
 
 ### Contacts
 

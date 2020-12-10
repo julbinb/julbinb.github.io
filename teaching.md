@@ -11,8 +11,6 @@ In 2020, I worked as a teaching assistant (TA) at the
 
 * TA for [Software Development](https://felleisen.org/matthias/4500-f20/)
   (Fall 2020)  
-  {% include link-button.html name="book office hours" link="https://calendly.com/julbinb" small="true" %}
-  {% include link-button.html name="send feedback" link="https://forms.gle/bSTfbeVxnx5JnmJW9" small="true" %}
 
 * TA for [Principles of Programming Languages](https://felleisen.org/matthias/4400-s20/)
   (Spring 2020)
