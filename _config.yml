@@ -16,7 +16,7 @@ projects:         projects
 
 author:
   name:           'Julia Belyakova'
-  url:            https://twitter.com/julbinb
+  url:            julbinb.github.io/
 
 #paginate:         5
 #paginate_path:    '/blog/page:num'
@@ -37,3 +37,11 @@ twitter:            https://twitter.com/julbinb
 facebook:           https://www.facebook.com/julbinb
 researchgate:       https://www.researchgate.net/profile/Julia_Belyakova
 linkedin:           https://www.linkedin.com/in/julbinb/
+
+# Links to webpages
+people:
+  artem:            https://a-pelenitsyn.github.io/
+  vitaly:           https://bravit.guru/
+  ssm:              https://sfedu.ru/person/miks
+  jan:              http://janvitek.org/
+  bengreenman:      http://ccs.neu.edu/home/types/
