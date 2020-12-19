@@ -53,6 +53,13 @@ $button-blue: #d4eafa !default;
 	background-color: $gray-4;
 }
 
+.coloredButton {
+	background-color: $button-blue;
+}
+.coloredButton:hover {
+	background-color:#2F74A8;
+}
+
 .paperDiv {
 	display: block;
 	
