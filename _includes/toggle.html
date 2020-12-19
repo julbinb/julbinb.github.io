@@ -1,5 +1,5 @@
 	<div class="toggleDiv">
-		<button id="{{include.toggle-name}}Button" class="toggleButton"
+		<button id="{{include.toggle-name}}Button" class="toggleButton {% if include.toggle-colored %}coloredButton{% endif %}"
 		        onclick="toggle_visibility_name('{{include.toggle-name}}', '{{include.toggle-text}}')">
 			{{include.toggle-text}}
 		</button>

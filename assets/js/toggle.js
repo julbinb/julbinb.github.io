@@ -5,6 +5,9 @@ function toggle_visibility(id) {
 
 function toggle_visibility_name(id, name) {
     var e = document.getElementById(id);
+    if (e === null) {
+      console.log("couldn't fine element " + id);
+    }
     var b = document.getElementById(id + "Button");
     if (e.style.display == 'none') {
 		e.style.display = 'block';

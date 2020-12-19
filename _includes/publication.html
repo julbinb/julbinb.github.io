@@ -7,7 +7,9 @@
 		<b><span class="paperDivKey">{{paper.key}}</span></b> 
 		{% endif %}
 		{% for paper_link in paper.links %}
-		<a target="_blank" href="{{paper_link.link}}"><button class="paperLinkButton">{{paper_link.name}}</button></a>
+		<a target="_blank" href="{{paper_link.link}}">
+			<button class="paperLinkButton {% if paper_link.colored %} coloredButton {% endif %}">
+				{{paper_link.name}}</button></a>
 		{% endfor %}
 		<br/>
 		<i>{{paper.title}}</i>
@@ -23,6 +25,14 @@
 			{% if paper.abstract %}
 			{% include toggle.html toggle-text="Abstract" toggle-name=paper.key
 								   toggle-content=paper.abstract %}
+			{% endif %}
+			{% if paper.preview %}
+			{% include toggle.html toggle-text="Video Preview" toggle-name=paper.preview.key
+								   toggle-content=paper.preview.html %}
+	        {% endif %}
+			{% if paper.video %}
+			{% include toggle.html toggle-text="Video" toggle-name=paper.video.key
+								   toggle-content=paper.video.html toggle-colored="true" %}
 	        {% endif %}
 		</div>
 	</div>

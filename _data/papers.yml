@@ -1,3 +1,54 @@
+- key: "OOPSLA 2020"
+  link: https://conf.researchr.org/track/splash-2018/splash-2018-OOPSLA
+  title: "Julia Subtyping: A Rational Reconstruction"
+  author: "<a target='_blank' href='https://www.di.ens.fr/~zappa'>Francesco Zappa Nardelli</a>, Julia Belyakova, <a target='_blank' href='http://staff.mmcs.sfedu.ru/~ulysses/'>Artem Pelenitsyn</a>, <a target='_blank' href='https://benchung.github.io/'>Benjamin Chung</a>, <a target='_blank' href='https://github.com/JeffBezanson'>Jeff Bezanson</a>, <a target='_blank' href='http://janvitek.org/'>Jan Vitek</a>"
+  doi: 
+    name: 10.1145/3276483
+    link: https://doi.org/10.1145/3276483
+  venue: "Proc. ACM on Programming Languages, Volume 2, OOPSLA, Article 113 (28 pages)"
+  sbn: "???"
+  links:
+    - name: BibTeX
+      link: /files/bibtex/OOPSLA-2018.txt
+    - name: preprint PDF
+      link: https://www.di.ens.fr/~zappa/projects/lambdajulia/paper.pdf
+    - name: video
+      link: https://youtu.be/l8BWVXE7dwI
+    - name: web
+      link: https://www.di.ens.fr/~zappa/projects/lambdajulia/
+      colored: true
+  abstract: "Programming languages that support multiple dispatch rely on an expressive notion of subtyping to specify method applicability. In these languages, type annotations on method declarations are used to select, out of a potentially large set of methods, the one that is most appropriate for a particular tuple of arguments. Julia is a language for scientific computing built around multiple dispatch and an expressive subtyping relation. This paper provides the first formal definition of Julia's subtype relation and motivates its design. We validate our specification empirically with an implementation of our definition that we compare against the existing Julia implementation on a collection of real-world programs. Our subtype implementation differs on 122 subtype tests out of 6014476. The first 120 differences are due to a bug in Julia that was fixed once reported; the remaining 2 are under discussion."
+
+
+- key: "VIS 2020 (short paper)"
+  link: http://ieeevis.org/year/2020/welcome
+  title: "Just TYPEical: Visualizing Common Function Type Signatures in R"
+  author: "<a target='_blank' href='http://camoy.name/'>Cameron Moy</a>, Julia Belyakova, Alexi Turcotte, Sara Di Bartolomeo, Cody Dunne"
+  doi: 
+    name: 10.31219/osf.io/pyqac
+    link: https://doi.org/10.31219/osf.io/pyqac
+  venue: "2020 IEEE Visualization Conference Short Papers, OSF Preprints (5 pages)"
+  links:
+    - name: BibTeX
+      link: /files/bibtex/VIS-2020-short.txt
+    - name: preprint PDF
+      link: /files/papers/vis2020-short_typeical-for-R.pdf
+    - name: code
+      link: https://github.com/camoy/typeical
+    - name: video
+      link: https://osf.io/u7mzd/
+    - name: web
+      link: https://typeical.github.io/
+      colored: true
+  abstract: "Data-driven approaches to programming language design are uncommon. Despite the availability of large code repositories, distilling semantically-rich information from programs remains difficult. Important dimensions, like run-time type data, are inscrutable without the appropriate tools. We contribute a task abstraction and interactive visualization, TYPEical, for programming language designers who are exploring and analyzing type information from execution traces. Our approach aids user understanding of function type signatures across many executions. Insights derived from our visualization are aimed at informing language design decisions — specifically of a new gradual type system being developed for the R programming language. A copy of this paper, along with all the supplemental material, is available at osf.io/mc6zt"
+  video:
+    key: "VIS-2020-video"
+    html: '<iframe src="https://mfr.osf.io/render?url=https://osf.io/u7mzd/?direct%26mode=render%26action=download" width="560" height="315" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>'
+  preview:
+    key: "VIS-2020-preview"
+    html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/9RVGvFIeRgY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+
+
 - key: "FTfJP 2019"
   link: https://2019.ecoop.org/home/FTfJP-2019
   title: Decidable Tag-Based Semantic Subtyping for Nominal Types, Tuples, and Unions
@@ -19,22 +70,26 @@
 - key: "OOPSLA 2018"
   link: https://conf.researchr.org/track/splash-2018/splash-2018-OOPSLA
   title: "Julia Subtyping: A Rational Reconstruction"
-  author: "<a target='_blank' href='https://www.di.ens.fr/~zappa'>Francesco Zappa Nardelli</a>, Julia Belyakova, <a target='_blank' href='http://staff.mmcs.sfedu.ru/~ulysses/'>Artem Pelenitsyn</a>, <a target='_blank' href='https://benchung.github.io/'>Benjamin Chung</a>, <a target='_blank' href='https://github.com/JeffBezanson'>Jeff Bezanson</a>, and <a target='_blank' href='http://janvitek.org/'>Jan Vitek</a>"
+  author: "<a target='_blank' href='https://www.di.ens.fr/~zappa'>Francesco Zappa Nardelli</a>, Julia Belyakova, <a target='_blank' href='http://staff.mmcs.sfedu.ru/~ulysses/'>Artem Pelenitsyn</a>, <a target='_blank' href='https://benchung.github.io/'>Benjamin Chung</a>, <a target='_blank' href='https://github.com/JeffBezanson'>Jeff Bezanson</a>, <a target='_blank' href='http://janvitek.org/'>Jan Vitek</a>"
   doi: 
     name: 10.1145/3276483
     link: https://doi.org/10.1145/3276483
   venue: "Proc. ACM on Programming Languages, Volume 2, OOPSLA, Article 113 (28 pages)"
   sbn: "???"
   links:
-    - name: Web
-      link: https://www.di.ens.fr/~zappa/projects/lambdajulia/
     - name: BibTeX
       link: /files/bibtex/OOPSLA-2018.txt
     - name: preprint PDF
       link: https://www.di.ens.fr/~zappa/projects/lambdajulia/paper.pdf
-    - name: Video
+    - name: video
       link: https://youtu.be/l8BWVXE7dwI
+    - name: web
+      link: https://www.di.ens.fr/~zappa/projects/lambdajulia/
+      colored: true
   abstract: "Programming languages that support multiple dispatch rely on an expressive notion of subtyping to specify method applicability. In these languages, type annotations on method declarations are used to select, out of a potentially large set of methods, the one that is most appropriate for a particular tuple of arguments. Julia is a language for scientific computing built around multiple dispatch and an expressive subtyping relation. This paper provides the first formal definition of Julia's subtype relation and motivates its design. We validate our specification empirically with an implementation of our definition that we compare against the existing Julia implementation on a collection of real-world programs. Our subtype implementation differs on 122 subtype tests out of 6014476. The first 120 differences are due to a bug in Julia that was fixed once reported; the remaining 2 are under discussion."
+  video:
+    key: "OOPSLA-2018-video"
+    html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/l8BWVXE7dwI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
 
 
 - key: "FTfJP 2017"

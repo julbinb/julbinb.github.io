@@ -1,0 +1,9 @@
+@misc{moy_belyakova_turcotte_di bartolomeo_dunne_2020,
+ title={Just TYPEical: Visualizing Common Function Type Signatures in R},
+ url={osf.io/pyqac},
+ DOI={10.31219/osf.io/pyqac},
+ publisher={OSF Preprints},
+ author={Moy, Cameron and Belyakova, Julia and Turcotte, Alexi and Di Bartolomeo, Sara and Dunne, Cody},
+ year={2020},
+ month={Aug}
+}

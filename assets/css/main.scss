@@ -13,6 +13,8 @@ $sidebar-width: 20rem;
 $layout-reverse: false;
 $sidebar-sticky: false;
 
+$button-blue: #d4eafa !default;
+
 @import "hydeout";
 
 #sidebar {
@@ -28,7 +30,8 @@ $sidebar-sticky: false;
 }
 
 .toggleDiv {
-	display: block;
+	display: inline-block;
+	vertical-align: top;
 }
 .toggleContent {
 	padding-left: 1em;
@@ -36,6 +39,13 @@ $sidebar-sticky: false;
 }
 .toggleButton {
 	color: #303030;
+}
+
+.coloredButton {
+	background-color: $button-blue;
+}
+.coloredButton:hover {
+	background-color:#2F74A8;
 }
 
 .paperDiv {
