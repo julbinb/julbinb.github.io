@@ -1,0 +1,5 @@
+	{% assign papers = include.paper-data | where:'key',include.paper-key %}
+	{% assign paper = papers[0] %}
+	{{ include.venue }}
+	({% if include.info %}{{include.info}}{% else %}a version{% endif %}
+	of <a href="{{paper.doi.link}}">{{paper.key}}</a>)

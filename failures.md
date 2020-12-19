@@ -25,20 +25,20 @@ transitively inspired by
 
 ### Paper rejections
 
-* PLDI 2018 (a version of
-  [OOPSLA 2018](https://doi.org/10.1145/3276483))
+* {% include rejected-paper.html venue="PLDI 2018" info="version 2"
+    paper-key="OOPSLA 2018" paper-data=site.data.papers %}
 
-* POPL 2018 (a version of
-  [OOPSLA 2018](https://doi.org/10.1145/3276483))
+* {% include rejected-paper.html venue="POPL 2018" info="version 1"
+    paper-key="OOPSLA 2018" paper-data=site.data.papers %}
 
-* SNAPL 2015 (a version of
-  [SBLP 2016](http://link.springer.com/chapter/10.1007%2F978-3-319-45279-1_1))
+* {% include rejected-paper.html venue="SNAPL 2015"
+    paper-key="SBLP 2016" paper-data=site.data.papers %}
 
-* PLDI 2015 (a version of
-  [SYRCoSE 2015](http://www.ispras.ru/en/proceedings/isp_27_2015_3/isp_27_2015_3_29/))
+* {% include rejected-paper.html venue="PLDI 2015"
+    paper-key="SYRCoSE 2015" paper-data=site.data.papers %}
 
-* WGP 2014 (a version of
-  [SYRCoSE 2015](http://www.ispras.ru/en/proceedings/isp_27_2015_3/isp_27_2015_3_29/))
+* {% include rejected-paper.html venue="WGP 2014"
+    paper-key="SYRCoSE 2015" paper-data=site.data.papers %}
 
 ### Internships I did not get
 
