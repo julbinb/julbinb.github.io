@@ -35,10 +35,10 @@ transitively inspired by
   [SBLP 2016](http://link.springer.com/chapter/10.1007%2F978-3-319-45279-1_1))
 
 * PLDI 2015 (a version of
-  [SBLP 2016](http://link.springer.com/chapter/10.1007%2F978-3-319-45279-1_1))
+  [SYRCoSE 2015](http://www.ispras.ru/en/proceedings/isp_27_2015_3/isp_27_2015_3_29/))
 
 * WGP 2014 (a version of
-  [SBLP 2016](http://link.springer.com/chapter/10.1007%2F978-3-319-45279-1_1))
+  [SYRCoSE 2015](http://www.ispras.ru/en/proceedings/isp_27_2015_3/isp_27_2015_3_29/))
 
 ### Internships I did not get
 
@@ -47,9 +47,3 @@ transitively inspired by
 ### Awards and scholarships I did not get
 
 * Facebook Fellowship (2019)
-
-<!-- ### Research directions where I got stuck or failed
-
-* Concepts?
-
--->
