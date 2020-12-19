@@ -12,19 +12,18 @@ at the [Khoury College of Computer Sciences](https://www.khoury.northeastern.edu
 [Northeastern University](https://www.northeastern.edu/) (Boston, MA, USA)
 since September 2018.
 
-I work with [Jan Vitek](http://janvitek.org/)
-in the Programming Research Laboratory ([PRL](http://prl.ccs.neu.edu)).
+I work with [Jan Vitek]({{site.people.jan}})
+in the Programming Research Laboratory ([PRL](http://prl.ccs.neu.edu)).  
+For current projects, see <a href="#research">Research</a> below.
 
 My primary research interests are **programming languages** and **type theory**.
-I am also fond of theorem proving (most of my experience has been with
+I also like theorem proving (most of my experience has been with
 [The Coq Proof Assistant](https://coq.inria.fr/)),
 generic programming (like Java generics or ML polymorphism),
 functional and object-oriented programming,
 software engineering, programming by contracts, and software testing.
 Lately, I have been getting interested in human aspects of software
-engineering and PL-human interaction. 
-
-For current projects, see <a href="#research">Research</a> section.
+engineering and the interaction between humans and programming languages.
 
 ### Contacts
 
@@ -32,29 +31,45 @@ Email: [julbinb@gmail.com](mailto:julbinb@gmail.com) or [belyakova.y@northeaster
 Professional: [github](http://github.com/julbinb/),
 [researchgate](https://www.researchgate.net/profile/Julia_Belyakova),
 [linkedin](https://www.linkedin.com/in/julbinb/).  
-Social: [twitter](https://twitter.com/julbinb),
+Social: [twitter]({{ site.twitter }}),
 [facebook](https://www.facebook.com/julbinb), [skype](skype:juliet_belyakova).  
 Web-page in Russian: [staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).  
 
 ### Short bio
 
-I was born in 1991 in Russia, Rostov-on-Don.
-There, I grew up and got my BS and MS.
-For several years I was teaching undergraduate Computer Science courses
-at my alma mater,
+I was born in 1991 in Russia, Rostov-on-Don, where I also grew up
+and received education.
+In 2012–2016, I was teaching undergraduate CS courses at my alma mater,
 [Faculty of Mathematics, Mechanics and Computer Science](http://mmcs.sfedu.ru/)
-([Southern Federal University](http://sfedu.ru/international/)).
+([Southern Federal University](http://sfedu.ru/international/)).  
 While teaching half-time, I had entered a PhD program as well; however,
-I later moved to [Northeastern](https://www.northeastern.edu/),
-where my PhD journey has started over.  
-In 2017–2018, I spent some time in Prague doing research.  
-Since 2018, I have been living in Boston.
+I later moved to [Northeastern](https://www.northeastern.edu/)
+where my PhD journey started over.  
+In 2017–2018, I spent a year at the
+[Faculty of Information Technology](https://www.fit.cvut.cz/en)
+([Czech Technical University in Prague](https://www.cvut.cz/en)) doing research
+with [Jan Vitek](http://janvitek.org/).  
+Since 2018, I have been doing my PhD in Boston.
 
 **Education.** MS in "Computer Science and Information Technologies"
 from [Southern Federal University](http://sfedu.ru/international/).
 
 *Note.* If you have questions about doing a PhD in the US,
 being an international student or a woman in CS, feel free to send me an email.
+
+### Recent good news (without [failures](failures))
+
+* December 2020: joined Artifact Evaluation Committee of
+  [CAV 2021](http://i-cav.org/2021)
+
+* October 2020: accepted paper at
+  [OOPSLA 2020](https://2020.splashcon.org/track/splash-2020-oopsla)  
+  [World Age in Julia: Optimizing Method Dispatch in the Presence of Eval](http://127.0.0.1:4000/files/papers/oopsla2020_juliette-world-age.pdf)
+  (with [video](https://www.youtube.com/watch?v=d6lTCnhdbqE))
+
+* June 2020: joined Program Committee of [ICCQ 2021](https://www.iccq.ru/)
+
+All news starting from 2020 are [here](news).
 
 ## <span id="#research">Research</span>
 
@@ -79,43 +94,10 @@ _Disclaimer._ Good or bad, the language has nothing to do with me, and the name 
 My previous research was related to language support for generic programming
 in object-oriented languages.
 
-### Selected Papers/Talks
+### Selected papers and talks
 
 1. {% include publication.html paper-key="FTfJP 2019" paper-data=site.data.papers %}
 1. {% include talk.html talk-key="Семинар ЯПиК 2019" talk-data=site.data.talks show-talk-marker="true" %}
 1. {% include publication.html paper-key="OOPSLA 2018" paper-data=site.data.papers %}
 1. {% include talk.html talk-key="NEUPRL 2017" talk-data=site.data.talks show-talk-marker="true" %}
 1. {% include publication.html paper-key="SBLP 2016" paper-data=site.data.papers %}
-
-## Professional Service (full list [here](service.html))
-
-### Organization 
-
-* Diversity Chair of [ECOOP 2020](https://2020.ecoop.org/),
-  European Conference on Programming Languages.
-
-* Co-chair of [ECOOP DS 2019](https://2019.ecoop.org/home),
-  Doctoral Symposium at European Conference on Programming Languages.
-
-* Co-chair of [ECOOP/ISSTA DS 2018](https://conf.researchr.org/track/ecoop-issta-2018/ecoop-issta-2018-doctoral-symposium),
-  joint Doctoral Symposium of 
-  European Conference on Object-Oriented Programming and
-  International Symposium on Software Testing and Analysis.
-
-* Co-organizer of [PLC-2017](http://plc.sfedu.ru/index.html):
-  A.L. Fuksman Conference on Programming Languages and Compilers.
-
-### Program Committees
-
-* [PLDI Research Artifacts 2020](https://pldi20.sigplan.org/track/pldi-2020-PLDI-Research-Artifacts),
-  Artifact Evaluation Track at 
-  ACM SIGPLAN Conference on Programming Language Design and Implementation.
-
-* [TyDe 2019](https://icfp19.sigplan.org/home/tyde-2019),
-  workshop on Type-Driven Development.
-
-* [ECOOP Artifacts 2019](https://2019.ecoop.org/track/ecoop-2019-artifacts),
-  Artifact Evaluation Track at European Conference on Programming languages.
-
-* [ECOOP DS 2017](http://2017.ecoop.org/track/ecoop-2017-Doctoral-Symposium),
-  Doctoral Symposium at European Conference on Object-Oriented Programming.

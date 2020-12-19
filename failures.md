@@ -9,16 +9,11 @@ I will try to be honest and update this page with
 research- and career-related failures as they happen.
 The first version was written in 2020 from memory.
 
-**Why is this?** To increase transparency, in the hope that this will
-make failures more normal and less painful.  
-<!--It is easy to get frustrated when your paper is rejected
-or you don't get a job, especially when there is so much information
-about other people's success out there. Failures are usually not as visible,
-but they do happen, and they probably happen more often than not.
-Joining the crowd of folks in academia who openly-->
+**Why is this?** To increase transparency in academia,
+in the hope that this will make failures more normal and less painful.  
 
 **Note 1.** This page is inspired by Twitter conversations
-about failures in academia
+about paper rejections and research failures
 and [Ben Greenman]({{site.people.bengreenman}})'s CV of failures;
 transitively inspired by
 [Johannes Haushofer](https://haushofer.ne.su.se/)'s
@@ -52,3 +47,9 @@ transitively inspired by
 ### Awards and scholarships I did not get
 
 * Facebook Fellowship (2019)
+
+<!-- ### Research directions where I got stuck or failed
+
+* Concepts?
+
+-->

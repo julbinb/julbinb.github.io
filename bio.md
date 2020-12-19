@@ -4,28 +4,22 @@ title: Bio
 sidebar_link: true
 ---
 
-I was born in 1991 in the city of [Rostov-on-Don](https://en.wikipedia.org/wiki/Rostov-on-Don), Russia. There, I grew up and spent most of my life.
-
-In September 2018, I started PhD in Computer Science at [Northeastern University](http://www.northeastern.edu/), and I have been living in Boston since then.
-
-My actual name is Юлия, transliterated as Yulia. I have been using Julia as my professional name because it seems easier to pronounce, but I equally like both.
-
 ## Education
 
 I received both BS and MS from the [Southern Federal University](http://sfedu.ru/international/) (former Rostov State University), Rostov-on-Don, Russia.
 My department, [Faculty of Mathematics, Mechanics and Computer Science (MMCS)](http://mmcs.sfedu.ru/), is now called [I. I. Vorovich Institute for Mathematics, Mechanics and Computer Science](http://mmcs.sfedu.ru/).
 
-#### MS in Computer Science (2012–2014)
+* **MS in Computer Science (2012–2014)**
+  
+  Thesis: Модель концептов в императивном языке программирования (A model of concepts for an imperative programming language).  
+  {% include link-button.html name="thesis PDF (in Russian)" link="files/thesis/belyakova-MS-2014_net-concepts.pdf" small="true" %}
+  {% include link-button.html name="slides PDF (in Russian)" link="files/thesis/belyakova-MS-2014_net-concepts-slides.pdf" small="true" %}
 
-Thesis: Модель концептов в императивном языке программирования (A model of concepts for an imperative programming language).  
-{% include link-button.html name="thesis PDF (in Russian)" link="files/thesis/belyakova-MS-2014_net-concepts.pdf" small="true" %}
-{% include link-button.html name="slides PDF (in Russian)" link="files/thesis/belyakova-MS-2014_net-concepts-slides.pdf" small="true" %}
-
-#### BS in Computer Science (2008–2012)
-
-Thesis: Автоматическое построение ограничений в модельном языке программирования с шаблонами функций и автовыводом типов (Automatic Collection of Constraints in the Modeling Programming Language with Generic Functions and Type Inference).  
-{% include link-button.html name="thesis PDF (in Russian)" link="files/thesis/belyakova-BS-2012_PollyTL.pdf" small="true" %}
-{% include link-button.html name="slides PDF (in Russian)" link="files/thesis/belyakova-BS-2012_PollyTL-slides.pdf" small="true" %}
+* **BS in Computer Science (2008–2012)**
+  
+  Thesis: Автоматическое построение ограничений в модельном языке программирования с шаблонами функций и автовыводом типов (Automatic constraints collection in a modeling programming language with generic functions and type inference).  
+  {% include link-button.html name="thesis PDF (in Russian)" link="files/thesis/belyakova-BS-2012_PollyTL.pdf" small="true" %}
+  {% include link-button.html name="slides PDF (in Russian)" link="files/thesis/belyakova-BS-2012_PollyTL-slides.pdf" small="true" %}
 
 ## Appointments
 
@@ -42,6 +36,51 @@ Thesis: Автоматическое построение ограничений
   I. I. Vorovich Institute for Mathematics, Mechanics and Computer Science ([MMCS](http://mmcs.sfedu.ru/)),
   Southern Federal University ([SFedU](http://sfedu.ru/international/)).  
   2014−2016.
-* *Senior Programmer.* Angstrem-SFedU Laboratory.  
+* *Programmer.* Angstrem-SFedU Laboratory.  
   2012−2013.
 
+## Bio
+
+My actual name in Russian is _Юлия_, transliterated as _Yulia_.
+I have been using _Julia_ as my professional name because
+it seems easier to pronounce, but I equally like both.
+
+---
+
+I was born in 1991 in the city of [Rostov-on-Don](https://en.wikipedia.org/wiki/Rostov-on-Don), Russia, where I grew up and spent most of my life so far.
+
+In 2008, I finished high school and started a CS undergraduate program at the
+[Faculty of Mathematics, Mechanics and Computer Science](http://mmcs.sfedu.ru/)
+([Southern Federal University](http://sfedu.ru/international/)).
+During my undergrad, I got involved in programming languages research
+and teaching, thanks to my advisor
+[Stanislav Mikhalkovich]({{site.people.ssm}}).
+(Stanislav is also the main person behind the teaching programming language
+and IDE [PascalABC.NET](http://pascalabc.net/en/),
+which is not to be confused with the old Pascal.)
+I was lucky to have studied and then worked with several great faculty
+who were interested in PL. Special thanks to
+[Vitaly Bragilevsky]({{site.people.vitaly}}),
+[Artem Pelenitsyn]({{site.people.artem}}),
+and [Stanislav Mikhalkovich]({{site.people.ssm}}).
+
+In 2012–2016, I was happily teaching undergraduate CS courses at my alma mater,
+[Faculty of Mathematics, Mechanics and Computer Science](http://mmcs.sfedu.ru/).  
+While teaching half-time, I had entered a PhD program as well, although
+later started anew at [Northeastern](https://www.northeastern.edu/).
+(Feel free to ask me about this.)
+
+At the [ECOOP conference in 2016](https://2016.ecoop.org/), I had met
+[Jan Vitek]({{site.people.jan}}) who later became my PhD advisor.
+I did a research internship with him in Boston in 2017 and then spent a year in
+[Prague](https://en.wikipedia.org/wiki/Prague) as a researcher at the
+[Czech Technical University](https://www.cvut.cz/en)..
+
+In September 2018, I started a PhD in Computer Science
+at [Northeastern University](http://www.northeastern.edu/),
+and I have been living in Boston since then.
+
+---
+
+* [CV of failures](failures)
+* [Personal](personal)
