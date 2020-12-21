@@ -23,8 +23,13 @@
 			{% endif %}
 			<strong>Venue:</strong> {{paper.venue}} <br/>
 			{% if paper.abstract %}
-			{% include toggle.html toggle-text="Abstract" toggle-name=paper.key
-								   toggle-content=paper.abstract %}
+			  {% if include.abstract-open %}
+			  	{% include toggle.html toggle-text="Abstract" toggle-name=paper.key
+			    		   toggle-content=paper.abstract toggle-open="true" %}
+			  {% else %}
+				{% include toggle.html toggle-text="Abstract" toggle-name=paper.key
+						   toggle-content=paper.abstract %}
+			  {% endif %}
 			{% endif %}
 			{% if paper.preview %}
 			{% include toggle.html toggle-text="Video Preview" toggle-name=paper.preview.key

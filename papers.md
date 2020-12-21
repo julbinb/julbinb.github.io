@@ -24,10 +24,47 @@ sidebar_link: true
 
 ---
 
-## Публикации (Publications in Russian)
+## <span id="pubsrus">Публикации</span> (Publications in Russian)
 
-For the complete list of publications in Russian, refer to [CV](files/cv.pdf).
+TBD or [here](http://staff.mmcs.sfedu.ru/~juliet/ru/papers.ru.html)
+
+### Журналы
 
 1. {% include publication.html paper-key="Дистанционное обучение 2012" paper-data=site.data.papers %}
 
 1. {% include publication.html paper-key="Современные ИТ 2015" paper-data=site.data.papers %}
+
+### Сборники конференций
+
+* Ю. В. Белякова.
+  Реализация сертифицированного интерпретатора для расширения
+  простого типизированного лямбда-исчисления с концепт-параметрами //
+  Труды конференции памяти А.Л. Фуксмана
+  «Языки программирования и компиляторы 2017».
+  Ростов-на-Дону, 3–5 апреля 2017 — С. 53−58 (TODO: links)
+* ...
+
+### Образование
+
+* Магистерская диссертация
+  «Модель концептов в императивном языке программирования» (2014 г.)
+  {% include link-button.html name="текст PDF" link="files/thesis/belyakova-MS-2014_net-concepts.pdf" small="true" %}
+  {% include link-button.html name="слайды PDF" link="files/thesis/belyakova-MS-2014_net-concepts-slides.pdf" small="true" %}
+
+* Реферат «Алан Тьюринг» (2013 г.) (TODO: link)
+
+* Сообщение «Никлаус Вирт и его языки программирования»  
+  (2013 г.) (TODO: link)
+
+* Выпускная квалификационная работа бакалавра
+  «Автоматическое построение ограничений в модельном языке программирования
+  с шаблонами функций и автовыводом типов» (2012 г.)
+  {% include link-button.html name="текст PDF"
+    link="/files/thesis/belyakova-BS-2012_PollyTL.pdf" small="true" %}
+  {% include link-button.html name="слайды PDF"
+    link="/files/thesis/belyakova-BS-2012_PollyTL-slides.pdf" small="true" %}
+
+* Курсовая работа
+  «Модельный язык программирования с λ-функциями» (2011 г.)
+  {% include link-button.html name="текст PDF"
+    link="/files/thesis/belyakova-CW-2011_PollytTL.pdf" small="true" %}

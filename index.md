@@ -14,7 +14,7 @@ since September 2018.
 
 I work with [Jan Vitek]({{site.people.jan}})
 in the Programming Research Laboratory ([PRL](http://prl.ccs.neu.edu)).  
-For current projects, see <a href="#research">Research</a> below.
+[ <a href="#research" style="color:gray">jump to Research section</a> ]
 
 My primary research interests are **programming languages** and **type theory**.
 I also like theorem proving (most of my experience has been with
@@ -27,13 +27,16 @@ engineering and the interaction between humans and programming languages.
 
 ### Contacts
 
-Email: [julbinb@gmail.com](mailto:julbinb@gmail.com) or [belyakova.y@northeastern.edu](mailto:belyakova.y@northeastern.edu).  
+**Email**: [julbinb@gmail.com](mailto:julbinb@gmail.com) (preferred)
+or [belyakova.y@northeastern.edu](mailto:belyakova.y@northeastern.edu)  
 Professional: [github](http://github.com/julbinb/),
 [researchgate](https://www.researchgate.net/profile/Julia_Belyakova),
-[linkedin](https://www.linkedin.com/in/julbinb/).  
+[linkedin](https://www.linkedin.com/in/julbinb/)  
 Social: [twitter]({{ site.twitter }}),
-[facebook](https://www.facebook.com/julbinb), [skype](skype:juliet_belyakova).  
-Web-page in Russian: [staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).  
+[facebook](https://www.facebook.com/julbinb)
+<!--[skype](skype:juliet_belyakova)-->  
+<!--Web-page in Russian:
+[staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).-->
 
 ### Short bio
 
@@ -42,8 +45,8 @@ and received education.
 In 2012–2016, I was teaching undergraduate CS courses at my alma mater,
 [Faculty of Mathematics, Mechanics and Computer Science](http://mmcs.sfedu.ru/)
 ([Southern Federal University](http://sfedu.ru/international/)).  
-While teaching half-time, I had entered a PhD program as well; however,
-I later moved to [Northeastern](https://www.northeastern.edu/)
+While teaching half-time, I had entered a PhD program as well
+but later moved to [Northeastern](https://www.northeastern.edu/)
 where my PhD journey started over.  
 In 2017–2018, I spent a year at the
 [Faculty of Information Technology](https://www.fit.cvut.cz/en)
@@ -76,7 +79,7 @@ being an international student or a woman in CS, feel free to send me an email.
 
 All news starting from 2020 are [here](news).
 
-## <span id="#research">Research</span>
+## <span id="research">Research</span>
 
 {% include link-button.html name="DBLP" link="https://dblp.uni-trier.de/pers/hd/b/Belyakova:Julia" %}
 {% include link-button.html name="Google Scholar" link="https://scholar.google.com/citations?user=8AYYcb8AAAAJ&hl=en&oi=ao" %}

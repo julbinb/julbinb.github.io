@@ -64,6 +64,9 @@
       link: https://github.com/julbinb/ftfjp-2019/blob/master/paper/minijl-ftfjp2019.pdf
     - name: slides GoogleDrive
       link: https://docs.google.com/presentation/d/1zDxC4b0Z1I6_DCVT-7VmUFEuBnInsql6diYvAdrEx4E/edit?usp=sharing
+    - name: GitHub
+      link: https://github.com/julbinb/ftfjp-2019
+      colored: true
   abstract: "Semantic subtyping enables simple, set-theoretical reasoning about types by interpreting a type as the set of its values. Previously, semantic subtyping has been studied primarily in the context of statically typed languages with structural typing. In this paper, we explore the applicability of semantic subtyping in the context of a dynamic language with nominal types. Instead of static type checking, dynamic languages rely on run-time checking of type tags associated with values, so we propose using the tags for semantic subtyping. We base our work on a fragment of the Julia language and present tag-based semantic subtyping for nominal types, tuples, and unions, where types are interpreted set-theoretically as sets of type tags. The proposed subtyping relation is shown to be decidable, and a corresponding analytic definition is provided. The implications of using semantic subtyping for multiple dispatch are also discussed."
 
 

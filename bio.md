@@ -17,7 +17,8 @@ My department, [Faculty of Mathematics, Mechanics and Computer Science (MMCS)](h
 
 * **BS in Computer Science (2008–2012)**
   
-  Thesis: Автоматическое построение ограничений в модельном языке программирования с шаблонами функций и автовыводом типов (Automatic constraints collection in a modeling programming language with generic functions and type inference).  
+  Thesis: Автоматическое построение ограничений в модельном языке программирования с шаблонами функций и автовыводом типов (Automatic constraints collection in
+  a programming language with generic functions and type inference).  
   {% include link-button.html name="thesis PDF (in Russian)" link="files/thesis/belyakova-BS-2012_PollyTL.pdf" small="true" %}
   {% include link-button.html name="slides PDF (in Russian)" link="files/thesis/belyakova-BS-2012_PollyTL-slides.pdf" small="true" %}
 
