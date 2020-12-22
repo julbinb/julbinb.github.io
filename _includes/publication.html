@@ -1,6 +1,9 @@
-	{% assign papers = include.paper-data | where:'key',include.paper-key %}
-	{% assign paper = papers[0] %}
+	{% comment %}
+	The code below dynamically generates a publication entry.
+	{% endcomment %}
 	<div class="paperDiv">
+		{% assign papers = include.paper-data | where:'key',include.paper-key d%}
+		{% assign paper = papers[0] %}
 		{% if paper.link %}
 		<b><a class="paperDivKey" target="_blank" href="{{paper.link}}">{{paper.key}}</a></b> 
 		{% else %}
@@ -17,27 +20,38 @@
 			{% if paper.kind %}
 			{{paper.kind}} <br/>
 			{% endif %}
-			<strong>Authors:</strong> {{paper.author}} <br/>
+			<strong>Authors:</strong>
+				{% for author in paper.authors %}
+				{% if author.key %}
+					{% assign author_info = site.data.links.people[author.key] %}
+					{% include link-in-new-page.html data=author_info name=author.name %}{%
+				else %}
+					{% if author.name %}{{-author.name-}}
+					{% else %}???Name???{% endif %}{% 
+				endif
+				%}{% if forloop.last == false %},{% endif %}
+				{% endfor %}
+				<br/>
 			{% if paper.doi %}
 			<strong>DOI:</strong> <a target="_blank" href="{{paper.doi.link}}">{{paper.doi.name}}</a> <br/>
 			{% endif %}
 			<strong>Venue:</strong> {{paper.venue}} <br/>
 			{% if paper.abstract %}
-			  {% if include.abstract-open %}
-			  	{% include toggle.html toggle-text="Abstract" toggle-name=paper.key
-			    		   toggle-content=paper.abstract toggle-open="true" %}
-			  {% else %}
+				{% if include.abstract-open %}
 				{% include toggle.html toggle-text="Abstract" toggle-name=paper.key
-						   toggle-content=paper.abstract %}
-			  {% endif %}
+							toggle-content=paper.abstract toggle-open="true" %}
+				{% else %}
+				{% include toggle.html toggle-text="Abstract" toggle-name=paper.key
+							toggle-content=paper.abstract %}
+				{% endif %}
 			{% endif %}
 			{% if paper.preview %}
 			{% include toggle.html toggle-text="Video Preview" toggle-name=paper.preview.key
-								   toggle-content=paper.preview.html %}
-	        {% endif %}
+									toggle-content=paper.preview.html %}
+			{% endif %}
 			{% if paper.video %}
 			{% include toggle.html toggle-text="Video" toggle-name=paper.video.key
-								   toggle-content=paper.video.html toggle-colored="true" %}
-	        {% endif %}
+									toggle-content=paper.video.html toggle-colored="true" %}
+			{% endif %}
 		</div>
 	</div>

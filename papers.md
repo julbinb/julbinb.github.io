@@ -11,6 +11,7 @@ sidebar_link: true
 
 ## Conferences & Journals
 
+1. {% include publication.html paper-key="OOPSLA 2020" paper-data=site.data.papers %}
 1. {% include publication.html paper-key="VIS 2020 (short paper)" paper-data=site.data.papers %}
 1. {% include publication.html paper-key="OOPSLA 2018" paper-data=site.data.papers %}
 1. {% include publication.html paper-key="SBLP 2016" paper-data=site.data.papers %}
@@ -26,7 +27,7 @@ sidebar_link: true
 
 ## <span id="pubsrus">Публикации</span> (Publications in Russian)
 
-TBD or [here](http://staff.mmcs.sfedu.ru/~juliet/ru/papers.ru.html)
+TBD or [here](http://staff.mmcs.sfedu.ru/~juliet/ru/papers.ru.html).
 
 ### Журналы
 

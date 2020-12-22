@@ -1,29 +1,66 @@
 - key: "OOPSLA 2020"
-  link: https://conf.researchr.org/track/splash-2018/splash-2018-OOPSLA
-  title: "Julia Subtyping: A Rational Reconstruction"
-  author: "<a target='_blank' href='https://www.di.ens.fr/~zappa'>Francesco Zappa Nardelli</a>, Julia Belyakova, <a target='_blank' href='http://staff.mmcs.sfedu.ru/~ulysses/'>Artem Pelenitsyn</a>, <a target='_blank' href='https://benchung.github.io/'>Benjamin Chung</a>, <a target='_blank' href='https://github.com/JeffBezanson'>Jeff Bezanson</a>, <a target='_blank' href='http://janvitek.org/'>Jan Vitek</a>"
+  link: https://2020.splashcon.org/track/splash-2020-oopsla
+  title: "World Age in Julia: Optimizing Method Dispatch in the Presence of Eval"
+  authors:
+    - key: julia
+    - key: benchung
+    - key: jackgelinas
+    - key: jamesonnash
+    - key: rosstate
+    - key: janvitek
   doi: 
-    name: 10.1145/3276483
-    link: https://doi.org/10.1145/3276483
-  venue: "Proc. ACM on Programming Languages, Volume 2, OOPSLA, Article 113 (28 pages)"
-  sbn: "???"
+    name: 10.1145/3428275
+    link: https://doi.org/10.1145/3428275
+  venue: "Proc. ACM Program. Lang., Volume 4, OOPSLA, Article 207 (26 pages)"
   links:
     - name: BibTeX
-      link: /files/bibtex/OOPSLA-2018.txt
+      link: /files/bibtex/OOPSLA-2020.txt
     - name: preprint PDF
-      link: https://www.di.ens.fr/~zappa/projects/lambdajulia/paper.pdf
+      link: /files/papers/oopsla2020_juliette-world-age.pdf
+    - name: extended PDF
+      link: /files/papers/oopsla2020_juliette-world-age_extended.pdf
     - name: video
-      link: https://youtu.be/l8BWVXE7dwI
-    - name: web
-      link: https://www.di.ens.fr/~zappa/projects/lambdajulia/
+      link: https://youtu.be/d6lTCnhdbqE
+    - name: GitHub
+      link: https://github.com/julbinb/juliette-wa
       colored: true
-  abstract: "Programming languages that support multiple dispatch rely on an expressive notion of subtyping to specify method applicability. In these languages, type annotations on method declarations are used to select, out of a potentially large set of methods, the one that is most appropriate for a particular tuple of arguments. Julia is a language for scientific computing built around multiple dispatch and an expressive subtyping relation. This paper provides the first formal definition of Julia's subtype relation and motivates its design. We validate our specification empirically with an implementation of our definition that we compare against the existing Julia implementation on a collection of real-world programs. Our subtype implementation differs on 122 subtype tests out of 6014476. The first 120 differences are due to a bug in Julia that was fixed once reported; the remaining 2 are under discussion."
+    - name: web
+      link: /projects/juliette
+      colored: true
+  abstract: "Dynamic programming languages face semantic and performance challenges in the presence of features, such as eval, that can inject new code into a running program. The Julia programming language introduces the novel concept of world age to insulate optimized code from one of the most disruptive side-effects of eval: changes to the definition of an existing function. This paper provides the first formal semantics of world age in a core calculus named juliette, and shows how world age enables compiler optimizations, such as inlining, in the presence of eval. While Julia also provides programmers with the means to bypass world age, we found that this mechanism is not used extensively: a static analysis of over 4,000 registered Julia packages shows that only 4-9% of packages bypass world age. This suggests that Julia's semantics aligns with programmer expectations."
+  video:
+    key: "OOPSLA-2020-video"
+    html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/d6lTCnhdbqE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
 
-
+- key: "OOPSLA 2020 Extended (arXiv)"
+  link: https://arxiv.org/abs/2010.07516
+  title: "World Age in Julia: Optimizing Method Dispatch in the Presence of Eval (Extended Version)"
+  authors:
+    - key: julia
+    - key: benchung
+    - key: jackgelinas
+    - key: jamesonnash
+    - key: rosstate
+    - key: janvitek
+  venue: "arXiv on Programming Languages (43 pages)"
+  links:
+    - name: BibTeX
+      link: /files/bibtex/OOPSLA-2020-ext.txt
+    - name: PDF
+      link: /files/papers/oopsla2020_juliette-world-age_extended.pdf
+    - name: arXiv
+      link: https://arxiv.org/abs/2010.07516
+      colored: true
+  
 - key: "VIS 2020 (short paper)"
   link: http://ieeevis.org/year/2020/welcome
   title: "Just TYPEical: Visualizing Common Function Type Signatures in R"
-  author: "<a target='_blank' href='http://camoy.name/'>Cameron Moy</a>, Julia Belyakova, Alexi Turcotte, Sara Di Bartolomeo, Cody Dunne"
+  authors:
+    - key: cameronmoy
+    - key: julia
+    - key: alexiturcotte
+    - key: saradibartolomeo
+    - key: codydunne
   doi: 
     name: 10.31219/osf.io/pyqac
     link: https://doi.org/10.31219/osf.io/pyqac
@@ -33,10 +70,11 @@
       link: /files/bibtex/VIS-2020-short.txt
     - name: preprint PDF
       link: /files/papers/vis2020-short_typeical-for-R.pdf
-    - name: code
-      link: https://github.com/camoy/typeical
     - name: video
       link: https://osf.io/u7mzd/
+    - name: GitHub
+      link: https://github.com/camoy/typeical
+      colored: true
     - name: web
       link: https://typeical.github.io/
       colored: true
@@ -52,7 +90,8 @@
 - key: "FTfJP 2019"
   link: https://2019.ecoop.org/home/FTfJP-2019
   title: Decidable Tag-Based Semantic Subtyping for Nominal Types, Tuples, and Unions
-  author: Julia Belyakova
+  authors:
+    - key: julia
   doi: 
     name: 10.1145/3340672.3341115
     link: https://dl.acm.org/citation.cfm?doid=3340672.3341115
@@ -73,12 +112,17 @@
 - key: "OOPSLA 2018"
   link: https://conf.researchr.org/track/splash-2018/splash-2018-OOPSLA
   title: "Julia Subtyping: A Rational Reconstruction"
-  author: "<a target='_blank' href='https://www.di.ens.fr/~zappa'>Francesco Zappa Nardelli</a>, Julia Belyakova, <a target='_blank' href='http://staff.mmcs.sfedu.ru/~ulysses/'>Artem Pelenitsyn</a>, <a target='_blank' href='https://benchung.github.io/'>Benjamin Chung</a>, <a target='_blank' href='https://github.com/JeffBezanson'>Jeff Bezanson</a>, <a target='_blank' href='http://janvitek.org/'>Jan Vitek</a>"
+  authors:
+    - key: francesco
+    - key: julia
+    - key: artem
+    - key: benchung
+    - key: jeffbezanson
+    - key: janvitek
   doi: 
     name: 10.1145/3276483
     link: https://doi.org/10.1145/3276483
-  venue: "Proc. ACM on Programming Languages, Volume 2, OOPSLA, Article 113 (28 pages)"
-  sbn: "???"
+  venue: "Proc. ACM Program. Lang., Volume 2, OOPSLA, Article 113 (28 pages)"
   links:
     - name: BibTeX
       link: /files/bibtex/OOPSLA-2018.txt
@@ -99,7 +143,8 @@
   link: https://2017.ecoop.org/track/FTfJP-2017-papers
   title: Generic Approach to Certified Static Checking of Module-like Constructs
   kind: Extended Abstract
-  author: Julia Belyakova
+  authors:
+    - key: julia
   doi: 
     name: 10.1145/3103111.3104045
     link: https://dl.acm.org/citation.cfm?doid=3103111.3104045
@@ -111,13 +156,17 @@
       link: /files/papers/ftfjp2017_cert-modules.pdf
     - name: slides PDF
       link: /files/slides/belyakova-FTfJP2017-handout.pdf
+    - name: GitHub
+      link: https://github.com/julbinb/concept-params
+      colored: true
   abstract: "In this paper we consider the problem of certified static checking of module-like constructs of programming languages. We argue that there are algorithms and properties related to modules that can be defined and proven in abstract way. We advocate the design of a generic Coq library, which is aimed to provide three building blocks for each checking mechanism: propositional, computable, and correctness proofs. Implemented part of the library is justified by applying it to a certified static checker of an extension of STLC."
 
 
 - key: "SBLP 2016"
   link: http://cbsoft.org/sblp2016/xx-brazilian-symposium-on-programming-languages
   title: "Language Support for Generic Programming in Object-Oriented Languages: Peculiarities, Drawbacks, Ways of Improvement"
-  author: Julia Belyakova
+  authors:
+    - key: julia
   doi: 
     name: 10.1007/978-3-319-45279-1_1
     link: http://link.springer.com/chapter/10.1007%2F978-3-319-45279-1_1
@@ -135,7 +184,8 @@
 
 - key: "SYRCoSE 2016"
   title: "Language Support for Generic Programming in Object-Oriented Languages: Design Challenges"
-  author: Julia Belyakova
+  authors:
+    - key: julia
   doi: 
     name: 10.15514/ISPRAS-2016-28(2)-1
     link: http://www.ispras.ru/en/proceedings/isp_28_2016_2/isp_28_2016_2_5/
@@ -153,7 +203,9 @@
 
 - key: "SYRCoSE 2015"
   title: "Pitfalls of C# Generics and Their Solution Using Concepts"
-  author: "Julia Belyakova, <a target='_blank' href='https://sfedu.ru/person/miks'>Stanislav Mikhalkovich</a>"
+  authors:
+    - key: julia
+    - key: ssm
   doi: 
     name: 10.15514/ISPRAS-2015-27(3)-2
     link: http://www.ispras.ru/en/proceedings/isp_27_2015_3/isp_27_2015_3_29/
@@ -173,7 +225,13 @@
 
 - key: "Дистанционное обучение 2012"
   title: "Использование веб-среды PascalABC.NET для дистанционного обучения программированию (Using a Web-Environment PascalABC.NET for Distance Teaching of Programming)"
-  author: "<a target='_blank' href='https://sfedu.ru/person/mabr'>М. Э. Абрямян</a>, Ю. В. Белякова, <a target='_blank' href='https://sfedu.ru/person/miks'>С. С. Михалкович</a>"
+  authors:
+    - key:  mabr
+      name: М. Э. Абрямян
+    - key: julia
+      name: Ю. В. Белякова
+    - key: ssm
+      name: С. С. Михалкович
   venue: "Журнал «Дистанционное и виртуальное обучение». № 57(3)"
   links:
     - name: BibTeX
@@ -184,7 +242,11 @@
 
 - key: "Современные ИТ 2015"
   title: "Концепт-параметры как механизм развития средств обобщённого программирования в языке C# (Concept Parameters as a Mechanism of Development of the Language Support for Generic Programming in C#)"
-  author: "Ю. В. Белякова, <a target='_blank' href='https://sfedu.ru/person/miks'>С. С. Михалкович</a>"
+  authors:
+    - key: julia
+      name: Ю. В. Белякова
+    - key: ssm
+      name: С. С. Михалкович
   venue: "Научный журнал «Современные информационные технологии и ИТ-образование», том 2 (№ 11)"
   links:
     - name: BibTeX

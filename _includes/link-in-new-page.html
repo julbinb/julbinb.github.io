@@ -1,0 +1,15 @@
+	{% comment %}
+	The code below dynamically generates an author link or name.
+	If author name is passed in include, it overrides the name in the data.
+	{% endcomment %}
+	{% assign author_name = "???" %}
+	{% if include.data.name %}
+	{% assign author_name = include.data.name %}
+	{% endif %}
+	{% if include.name %}
+	{% assign author_name = include.name %}
+	{% endif %}
+	{% if include.data.link %}<a target='_blank' href='{{include.data.link}}'>{{author_name}}</a>{%
+	else %}
+	{{-author_name-}}
+	{% endif %}

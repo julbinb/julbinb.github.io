@@ -16,10 +16,8 @@ sidebar_link: false
 
 ### Papers
 
-* **OOPSLA 2020**  
-  World Age in Julia: Optimizing Method Dispatch in the Presence of Eval  
-  ([preprint](/files/papers/oopsla2020_juliette-world-age.pdf))
-  ([extended version](/files/papers/oopsla2020_juliette-world-age_extended.pdf))
+* {% include publication.html paper-key="OOPSLA 2020" paper-data=site.data.papers %}
+* {% include publication.html paper-key="OOPSLA 2020 Extended (arXiv)" paper-data=site.data.papers %}
 
 ### Links
 

@@ -104,6 +104,8 @@ in object-oriented languages.
 
 ### Selected papers and talks
 
+1. {% include publication.html paper-key="OOPSLA 2020" paper-data=site.data.papers %}
+1. {% include publication.html paper-key="VIS 2020 (short paper)" paper-data=site.data.papers %}
 1. {% include publication.html paper-key="FTfJP 2019" paper-data=site.data.papers %}
 1. {% include talk.html talk-key="Семинар ЯПиК 2019" talk-data=site.data.talks show-talk-marker="true" %}
 1. {% include publication.html paper-key="OOPSLA 2018" paper-data=site.data.papers %}

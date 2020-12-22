@@ -1,0 +1,57 @@
+people:
+  # myself
+  julia:
+    name: Julia Belyakova
+    link: https://julbinb.github.io/
+  # friends
+  artem:
+    name: Artem Pelenitsyn
+    link: https://a-pelenitsyn.github.io/
+  vitaly:           https://bravit.guru/
+  # PRL
+  janvitek:
+    name: Jan Vitek
+    link: http://janvitek.org/
+  bengreenman:      http://ccs.neu.edu/home/types/
+  benchung:
+    name: Benjamin Chung
+    link: https://benchung.github.io/
+  jackgelinas:
+    name: Jack Gelinas
+  cameronmoy:
+    name: Cameron Moy
+    link: http://camoy.name/
+  alexiturcotte:
+    name: Alexi Turcotte
+    link: https://reallytg.github.io/
+  # collaborators
+  rosstate:
+    name: Ross Tate
+    link: http://www.cs.cornell.edu/~ross/
+  francesco:
+    name: Francesco Zappa Nardelli
+    link: https://www.di.ens.fr/~zappa
+  # Julia Language
+  jamesonnash:
+    name: Jameson Nash
+    link: https://github.com/vtjnash
+  jeffbezanson:
+    name: Jeff Bezanson
+    link: https://github.com/JeffBezanson
+  # NEU
+  saradibartolomeo:
+    name: Sara Di Bartolomeo
+    link: https://picorana.github.io/
+  codydunne:
+    name: Cody Dunne
+    link: https://www.khoury.northeastern.edu/people/cody-dunne/
+  # MMCS
+  ssm:
+    name: Stanislav Mikhalkovich
+    link: https://sfedu.ru/person/miks
+  mabr:
+    name: М. Э. Абрямян
+    link: https://sfedu.ru/person/mabr
+
+websites:
+  julialang:        https://julialang.org/
