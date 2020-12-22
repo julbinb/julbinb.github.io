@@ -36,6 +36,9 @@
 			<strong>DOI:</strong> <a target="_blank" href="{{paper.doi.link}}">{{paper.doi.name}}</a> <br/>
 			{% endif %}
 			<strong>Venue:</strong> {{paper.venue}} <br/>
+			{% if paper.reviews %}
+			<a target="_blank" href="{{paper.reviews}}"><strong>Reviews</strong></a> <br/>
+			{% endif %}
 			{% if paper.abstract %}
 				{% if include.abstract-open %}
 				{% include toggle.html toggle-text="Abstract" toggle-name=paper.key

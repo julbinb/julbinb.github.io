@@ -4,30 +4,61 @@ title: "Juliette: a formalization of world age and eval in Julia (2020–…)"
 sidebar_link: false
 ---
 
-## World Age in Julia
+A formalization of **world age**
+in the [Julia]({{site.data.links.websites.julialang}}) language.
+[World age](https://docs.julialang.org/en/v1/manual/methods/#Redefining-Methods)
+is a mechanism that enables efficient and relatively simple implementation
+of multiple dispatch in the presence of `eval`.
+Namely, the world-age semantics allows Julia to optimize methods and method calls
+at certain points of the program execution,
+without ever needing to de-optimize them on the fly.
+{% include link-button.html name="GitHub"
+  link="https://github.com/julbinb/juliette-wa" %}  
+{% include jump-button.html link="#worldage" name="the description of world age" %}
+{% include jump-button.html link="#papers" name="papers" %}
 
-* Formalization of **world age**, a [Julia language](https://julialang.org/)
-  mechanism for efficient implementation of `eval`.  
-  Implemented in Redex (Racket-based DSL).
+{% include contactme-bubble.html %}
 
-* Analysis of `eval` usage in registered Julia packages
-  (primarily static analysis).  
-  Implemented in Julia.
+<iframe width="700" height="400" src="https://www.youtube.com/embed/d6lTCnhdbqE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Papers
+## What's in here?
 
-* {% include publication.html paper-key="OOPSLA 2020" paper-data=site.data.papers %}
-* {% include publication.html paper-key="OOPSLA 2020 Extended (arXiv)" paper-data=site.data.papers %}
+* The formalization of the world-age semantics in a core calculus
+  called **Juliette**. The calculus operates with explicit method tables
+  and models `eval` with a simpler global-evaluation construct.
 
-### Links
+* An [implementation](https://github.com/julbinb/juliette-wa/tree/master/src/redex)
+  of the calculus as a Redex model
+  ([Redex](https://redex.racket-lang.org/) is a Racket-based DSL)
+  with a [transpiler](https://github.com/julbinb/juliette-wa/tree/master/src/jl-transpiler)
+  from Julia to Juliette
+  (the calculus is instantiated with a small number of standard types
+   and functions for arithmetic and equality).
 
-* [GitHub](https://github.com/julbinb/juliette-wa)
-  Redex model and analysis of `eval` usage.
+* [Static](https://github.com/julbinb/juliette-wa/tree/master/src/analysis/static-analysis)
+  and [dynamic](https://github.com/julbinb/juliette-wa/tree/master/src/analysis/dynamic-analysis)
+  analysis of `eval` usage in registered Julia package (implemented in Julia).
 
-## What is World Age?
+## <span id="papers">Papers</span>
+
+* {% include publication.html paper-key="OOPSLA 2020"
+    paper-data=site.data.papers abstract-open=true %}
+* {% include publication.html paper-key="OOPSLA 2020 Extended (arXiv)"
+    paper-data=site.data.papers %}
+
+### Common questions
+
+* 
+
+### Informal
+
+* [Twitter-thread about OOPSLA 2020 paper](https://twitter.com/julbinb/status/1317195401846554624?s=20)
+
+## <span id="worldage">What is world age?</span>
 
 World age is a language mechanism that prevents
-new methods defined in `eval` to be called from an already running function.
+new methods (functions) defined in `eval` to be called
+from an already running function.
 For example, consider the following program:
 
 ```julia
@@ -45,8 +76,8 @@ end
 # f(x) = 1 and g(x) = ...
 g(5)     # 1
 
-# at this point, methods are:
-# g(x) = ... and f(x) = 0
+# at this point, method f is redefined:
+# f(x) = 0
 g(666)   # 0
 ```
 

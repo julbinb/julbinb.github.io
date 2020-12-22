@@ -1,0 +1,851 @@
+OOPSLA 2020 Paper #384 Reviews and Comments
+===========================================================================
+Paper #384 World Age in Julia: Optimizing Method Dispatch in the Presence
+of Eval
+
+
+Review #384A
+===========================================================================
+
+Overall merit
+-------------
+A. Accept
+
+Reviewer expertise
+------------------
+Y. Knowledgeable
+
+Paper summary
+-------------
+Julia is a dynamically typed language that features an eval construct,
+allowing the execution of code at runtime.  eval is a powerful
+feature, but it can also stand in the way of optimisations since,
+without some care and/or restrictions, it can have very wide ranging
+effects, which affect how to reason about code that is executed after
+eval. In particular, eval can shadow existing definitions from the
+global environment, which (without a special treatment) would affect
+the meaning of such calls after the execution of eval, preventing
+simple optimisations such as inlining.
+
+To enable such optimisations in the presence of eval, Julia employs a
+"world age" semantics, where each definition has an associated
+age. Definitions introduced via eval will have a more recent age, but
+code executed in a local context, even after eval has introduced new 
+definitions, will still use older definitions.
+
+Assessment
+----------
+Pros:
+
++ Formalisation of an interesting solution to cohabit eval with
+the ability to perform some optimisations;
+
++ Very well written paper! Clearly explained problem and solution;
+
++ Redex model that has been used to test the semantics against the
+Julia implementation;
+
+Cons:
+
+- Perhaps a little narrow, as I'm not sure whether the solution
+is interesting or expressive enough to apply to other settings.
+
+- There are a few lines of proof sketches, but no detailed proofs
+for the correctness of the optimisation.
+
+Overall I enjoyed reading this paper. It is very well-written and clearly
+explains the problem and the solution. The approach employed by Julia
+seems to be pragmatic, but it has its virtues. I think formalizing the
+idea behind Julia's approach is indeed worthwhile, and deserves some
+exposure. Not being an expert on eval, what I wondered was whether
+the solution was general enough. World age addresses the problems
+with eval creating new definitions (possibly shadowing existing ones)
+in a local context, but I presume that there are many other side-effects
+of eval that affect and invalidate optimisations. I guess an expert
+could evaluate the significance of world age better from this perspective.
+
+Comments for author
+-------------------
+"the addition of new methods to an existing function" <- This sentence
+seems very strange. Perhaps it makes sense within the lingo used in Julia,
+but the idea of adding a method to a function sounds odd in general.
+Wouldn't it be better to say: "the addition of new methods to the current environment"?
+
+line 77: This semantic*s*
+(many similar issues with the word "semantic" vs "semantics" later,
+for instance in line 80)
+
+line 135: type h*ie*rarchy
+
+Fig 8: Sequencing does not make a lot of sense in a language without
+side-effects. You always throw away the value from the left expression,
+right?
+
+
+
+Review #384B
+===========================================================================
+
+Overall merit
+-------------
+C. Weak Reject
+
+Reviewer expertise
+------------------
+Y. Knowledgeable
+
+Paper summary
+-------------
+The paper describes a very specific language design choice for Julia where the order of resolution and evaluation of "eval" expressions that include redefinitions of functions is prescribed by the language specification as opposed to leaving it undefined or not specified precisely enough as in some of the other existing languages. In particular, the concept of "world age" (as in the title) is examined where each new definition of a method (including those inside "eval" statements") is assigned a timestamp (or "age") which means that the dispatch mechanism can be well defined to only use the relevant updated method definitions that are defined "before its own age".
+
+The nice and obvious implication of such imposed order is that usually non-trivial or impossible compiler optimisations to the method calls such as inlining etc become really easy to do in the presence of such order. The paper presents a quick introduction to the "eval" and to the very basics of "Julia" and then describes the mechanism with a brief allusion to its limitations in section 3.1 where programmers are given a "workaround" if they do want the methods to be redefined when they use "eval" in the order that does not match the prescribed one as defined by Julian spec.
+
+The rest of the paper then presents a simple formal language definition called Juliette that contains mostly the kinds of method calls and definitions allowed and the eval-like mechanism so that an execution semantics can be given to the order of evaluations of replacement method definitions as precisely as possible. Within such formal semantics, a number of optimisations are defined and the main "theorem 4.2" is stated that effectively states that all the defined optimisations are not going to change the semantics of the programs that use the method definitions and calls and evaluation semantics as provided.
+
+Finally, the validation is performed by encoding the rules defined above in Redex and a small number of "litmus" tests are run within the Redex-defined semantics with tests listed in the appendix to sanity check that the rules defined in the Juliette calculus capture the main corner cases.
+
+Assessment
+----------
+The main idea is that a precise language specification of eval and its effect on method re-definitions and their order of evaluation is important and should not be left to the language implementation as an afterthought causing a lot of issues for the compiler optimisation writers.
+
+The paper proposes a set of rules that imposes a reasonable order - especially important in a language like Julia where the language's core design decision is having a precise semantics for the order of method application in the presence of symmetrical (?) multiple dispatch and dynamic typing. If there was a language that would then require a precise semantics for method redefinitions in eval - it would indeed be Julia.
+
+While the rules are then captured using formal syntax and semantics definitions in Juliette, the most I can see in terms of proof of correctness is the encoding of these rules in Redex and a small number of tests (there are a total of 9 shown in the appendix) to give some confidence that the rules enforce the kind of language behaviour that the language designers expect. The paper is shorter than the page limit, so either the authors didn't do the full soundness proof and a full type system together with complete proof of their theorem or decided not to describe them in detail in the current paper.
+
+Question for the author(s): What are the limitations of imposing the "age-based" order of method (re-)definition evaluations? You provide a workaround when the users may want to utilise such new definitions directly but do you have any indication from the actual programs written in Julia or perhaps in other languages such as Racket or Clojure that would show what the programmers are most likely to expect? This may provide some further justifications to the language design choices made in Julia.
+
+
+
+Review #384C
+===========================================================================
+
+Overall merit
+-------------
+A. Accept
+
+Reviewer expertise
+------------------
+X. Expert
+
+Paper summary
+-------------
+This is a paper in the tradition of formalizing (aspects of) the semantics of real languages. In this case it concerns the notion of 'world age' in the Julia scientific programming language. Julia supports updating the set of methods available in a program using `eval`. A method added by means of eval is only available in the next top-level computation. This enables just-in-time optimization of code without the effort of a sophisticated compiler; the set of methods used in the next top-level computation is fixed. A program can escape this restriction, but then the method added using eval is generically executed.
+
+Julia uses a counter that keeps track of world age, which reflects the number of top-level computations.
+
+This paper first explains how world age in Julia works and then defines a world age calculus (Julliette) in which world age is modeled by an imutable sequence of methods, which is expanded as new methods are added. The calculus uses a reduction semantics (with an implementation in Redex). As an extension, a definition is given of inlining method calls with constant valued arguments. The correspondence of the semantics to the actual Julia language is validated using a small (9) set of litmus tests.
+
+Assessment
+----------
+This is a beautiful paper. It is well written and typeset with taste. (I found 4 typos.) The idea of world age is fairly straightforward (that may be a merit of the exposition in this paper), with a clean semantics, and may be advantagous to implement in other languages.
+
+PROS
+
+- Useful explanation of a real world language feature
+- A formal semantics of the (previously existing) notion of world age in Julia
+- A formalization of the model with reduction semantics
+- An implementation in Redex and comparison
+- An evaluation with 9 litmus tests
+- The formalization is straightforward
+
+CONS
+
+- The formalization is straightforward
+- The evaluation is fairly light
+- Missing discussion of programming patterns enforced/enabled by the world age design
+
+
+The paper presents world age as a feature with a clean semantics allowing a tradeoff between flexibility through meta-programming and effort spent on implementing an optimizing compiler. However, the feature comes with a cost. A quick search shows that Julia users run into the limitations of world age and do not understand why their program does not work. It would be useful if the authors could use some of the extra space in the paper (there are 7 pages available in a final version) to comment on the limitations of world age as a language design feature. In particular, it would be useful to understand the programming patterns that world age requires. I imagine it requires careful staging of meta-programming/generating code and using that code. The authors could argue that this paper is just about the semantics of world age. But the paper also advocates for the feature as one that other language should think about adopting. Then it would be useful to understand better what the consequences of the feature are.
+
+324: "omitting various irrelevant Julia features such as for-loops and mutable variables" Please elaborate in the author response on the irrelevance of mutable variables. Do mutable variables not interfere with closures, inlining, and method redefinition in Julia?
+
+Comments for author
+-------------------
+243: "for which invocations older than cannot see the definition" something wrong here
+
+560: it took me a while to find Fig 12; it is hiding inside Fig 13
+
+655: "two generic call[s] optimizations"
+
+742: OE-Refl: the right-hand side should have an M, not an M', right?
+
+
+
+Review #384D
+===========================================================================
+
+Overall merit
+-------------
+D. Reject
+
+Reviewer expertise
+------------------
+X. Expert
+
+Paper summary
+-------------
+Julia is a descendant of Lisp via Dylan, inheriting features like
+multiple-dispatch and `eval`. The designers of Julia, however, focused
+on making the language performant even as it is expressive. This has
+proven an astute move, as Julia is becoming a new darling of the
+scientific computation community. Therefore, the PL community has a
+vested interest in understanding and improving Julia -- a task that is
+hopefully easier becuase Julia is "one of its own".
+
+This paper formalizes the notion of `eval` in Julia. Julia's `eval` is
+a little unusual in being designed for performance. Essentially,
+method invocation happens within a particular temporal frame (called
+the "world age"), and the run-time enforces a form of "temporal
+closure": method invocations cannot see definitions from before or
+after their temporal range. As a result, any modifications -- whether
+additions, replacements, or deletions -- take place only after the
+top-level method completes and the computation moves on to a new
+epoch. (One is also loosely reminded of the idea of
+call-by-copy-result from decades ago, which was also created for the
+purpose of providing a certain "stability" of global bindings inside a
+function, effecting changes only on exit.)
+
+This paper presents a summary of Julia's behavior. It then describes
+Juliette, an evaluation context semantics for the core of
+Julia. Juliette provides an alternative, table-based, view of Julia's
+temporal frames. This semantics is validated against (some of?) the
+litmus tests of Julia, to show its conformance to reality. The paper
+then considers two (related) optimizations, essentially inlining;
+formalizes them with respect to Juliette; and shows that they are
+semantics-preserving.
+
+Assessment
+----------
+Overall I enjoyed reading this paper. It picks an important topic. It
+is clearly written: I had not heard of world age before and I feel
+significantly better informed now. It also contributes to validating
+optimizations for Julia, which is a worthy goal.
+
+Unfortunately, several parts of the paper left me somewhat
+disappointed.
+
+First, it was unclear why world age cannot or should not be formalized
+directly. To me, at least -- and here the paper may be a victim of its
+own clarity -- it seemed like a pretty straightforward concept. While
+*implementing* it is undoubtedly tricky (as the paper says) -- you
+don't want to maintain a linear list and search for methods each time,
+etc. -- as a *conceptual model*, it is actually very spare and
+simple. It's just not clear to me that tables stored in evaluation
+contexts are necessarily an improvement; if anything, they seem to
+carry much more "weight". The paper never justified its decision or
+convinced me this was a wise one.
+
+Second, by leaving out state, the model is rather limited. However, a
+lot of optimizations go wrong especially when state is involved --
+this is where some of the complexity in JavaScript implementations
+(which the authors rightly decry) come from. Perhaps that isn't an
+issue for Julia anyway (due to world age), but then that should have
+been demonstrated using the semantics. As it is, the development felt
+a little thin.
+
+Third, the validation section was frustratingly vague. How many litmus
+tests are there? How many did you run? I understand there may be many
+features in Julia that are not part of Juliette and irrelevant to this
+paper, but did you at least run all the `eval` tests and, if not, why
+not? (The paper uses the phrase "all of the litmus tests", but surely
+that "all" is scoped very narrowly. What's left out?)
+
+-----
+
+After a first round of reviewing and discussion with other PC members,
+I realized that there was very little insight in the paper, so I went
+digging. I wanted to understand how much of a problem world age is for
+programmers in general, and why. (Vitek and Co. wrote an "eval that
+men do" paper that provided this kind of insight for JavaScript.)
+
+Note that I'm not a Julia programmer; I've only admired the language
+from afar. What's below is my superficial understanding from a little
+over an hour of reading.
+
+I agree that the Julia docs on this topic (under Redefining Methods)
+are pretty minimal (and weirdly hard to find). The paper's early
+exposition is very helpful there.
+
+However, I don't really find that many issues related to world age
+across StackOverflow and the Julia Discourse forums. Of those I did
+find, it would appear:
+
+* Several cases all seem tied to one thing: a few years ago the PyPlot
+  lib was calling another library which in turn was using eval
+  inside. Something changed in Julia 0.6 and again in 1.0 (I think,
+  actually, the introduction/refinement/… of the world age concept)
+  that made this go away.
+
+* Several instances are people trying to silly things with `eval` and
+  others saying "you know, you shouldn't use `eval` like this, there are
+  much simpler solutions". If `eval` behaved "conventionally" they would
+  never have noticed and would have obliviously gone their way; in
+  some ways, the world age turns out (entirely inadvertently) to be a
+  canary to ask people, "Are you _sure_ you **really** want to be
+  using `eval`?" Some of this is just the Julia community
+  rediscovering things known to old Lispers and perhaps known to the
+  _developers_ of Julia, but not to its users.
+
+* One thing that shows up repeatedly is trying to do dynamic
+  loading. Suppose you want to simulate it by running "include"
+  _inside_ a function. Well, include puts things at the top-level, so
+  those new things will have a newer world age. So if you include a
+  library and call something from it right away, it will…not be
+  present. This definitely trips people up. They get all confused
+  about scoping, etc.
+
+* Finally, one other source of confusion is that the REPL seems to
+  have (or had) a slightly different semantics, where it always did
+  `invokelatest`. That means code that "works" in the REPL may not
+  work inside some other context. This is not wholly surprising to
+  people who understand REPLs in general, but conventional programmers
+  may indeed find this odd, and anyway, it makes debugging harder.
+
+So I do see _some_ confusion about world age. My analysis is:
+
+- The documentation on the Julia site is really too weak to be
+  helpful.
+
+- Several incidents all tie to one particular library (plotting, which
+  is of course going to be popular) whose issue seems to have been
+  addressed anyway.
+
+- Some issues have to do with abuses of `eval`, which means the real
+  issue is elsewhere, not in the world age semantics.
+
+- Some issues have to do with trying to simulate dynamic loading of
+  libraries, which could perhaps be handled directly (or maybe even
+  already is, I didn't do a deep dive).
+
+- Some issues are really about frustration caused by the REPL having a
+  different semantics, which is also a different matter.
+
+Based on all this, I see the main issues as
+
+1. poor documentation
+2. better  insight into what is going on
+3. finding and working on the important special cases (e.g., dynamic loading)
+
+The paper obviously helps with (1), but that's not a scientific
+contribution. It offers no analysis for (2) (I daresay this _review_
+provides far more utility). And (3) (as people have provided
+prescriptions for patterns of `eval` in other languages) is totally
+missing in this paper.
+
+Overall, then, I'm now much more negative about this paper (indeed, I
+lowered my score from C to D). It failed to offer any useful domain
+analysis. It didn't solve any problem. It didn't indicate why this
+semantics would help developers more than the traditional Julia
+presentation (perhaps it will, but the authors need to show why). It's
+not clear that the things developers run into are where this paper
+helps.
+
+-----
+
+Based on all this, I don't have a "question" per se. The authors are
+welcome to persuade me that any parts of my assessment are wrong, and
+I'll gladly reconsider it (and my overall score).
+
+Comments for author
+-------------------
+I found the paper very instructive writing. With very pithy examples
+the authors were able to make their case very clearly, and really
+helped me understand something about Julia. Thanks.
+
+That said, here are some writing remarks noted down while reading:
+
+I have no idea what the title means. I think they're defining the
+term, but because it's a new term, the title gives no indication as to
+what the paper is _about_. Only later do I find it's actually a
+defined term in the Julia community. Saying this up front would have
+been a big help.
+
+Wouldn't it be more honest to attribute `eval` to its
+great-grandparent, Lisp?
+
+The switch to Clojure was initially very unhelpful. I couldn't figure
+out why Clojure showed up out of the blue. This needs better
+signposting: "we're going to see how `eval` often works, using Clojure
+as a working example, then come back to seeing what Julia does for the
+same kind of example".
+
+"Every value in Julia is either tagged with its full type description
+(if boxed) or can have its type be statically inferred (if unboxed).":
+isn't this last part backwards? Don't you mean IF it can be statically
+inferred THEN it can be unboxed?
+
+"Julia’s parser can then be directly invoked": the word "then" makes
+no sense here.
+
+Section 3: I feel the first four paragraphs of this section are
+completely repetitive, and are written as if we had not read any of
+the preceding part of the paper. (A less charitable interpretation is
+that it was written by a different author _who_ did not read the
+preceding part.)
+
+It is rather odd that Fig 7 is presented as if it were somehow broken,
+with phrases like "fix" it. It seems to do exactly what the semantics
+and the paper's introduction led me to believe, and without some sort
+of spec of desired behavior, it can't even be judged wrong.
+
+I was really hoping for a compelling example that would demonstrate
+the *need* to "break the age barrier".
+
+Perhaps the paper is a victim of the clarity of its explanation, but I
+had difficulty seeing what is so complex about the "world age" concept
+that a semantics was essential. I can fully believe that the "internal
+representation is complex and ill-suited to semantic exploration", but
+that's often the case. The fact that Juliette drops mutable state
+makes it not a very useful language to reason about Julia's behavior.
+
+The writing in general is quite rough: odd word choices, poor
+punctuation, inconsistent formatting of code, etc.
+
+
+
+Response by Julia Belyakova <julbinb@gmail.com>
+---------------------------------------------------------------------------
+Thank you for your comments and insights! Your reviews were very helpful and we appreciate them.
+
+Our response starts with high-level comments that apply broadly and then answers reviewers point by point. Read only what you need.
+
+Should the paper be accepted, we would of course address all comments in a revision.
+
+## High-level bits
+
+Here, we touch on concerns shared by our reviewers.
+
+### Simplicity as Vice
+
+Reviewers found the model simple, dare we say, obvious. It did not start that way. Our original goal was to work on a static type system for Julia, but quickly we realized that world age was in the way of anything practical. The only published description of world age is this rather terse and confusing paragraph in Bezanson’s e.a. OOPSLA18 paper:
+
+```The Julia implementation keeps a world age (or epoch) counter. The epoch is a monotonically increasing value that can be associated to each method definition. When a method is compiled, it is assigned a minimum world age, set to the current epoch, and a maximum world age, set to typemax(Int). By default, a method is visible only if the current epoch is superior to its minimum world age. This  prevents method redefinitions (through eval for instance) from affecting the scope of currently invoked methods. However, when a method is redefined, the maximum world age of all its callers gets capped at the current epoch. This in turn triggers a lazy recompilation of the callers at their next invocation. As a consequence, a method always invokes its callee with its latest version defined at the compile time of the caller. When the absolute latest (independent of compile epoch) version of a function is needed, programmers can use Base.invokelatest(fun,args) to bypass this mechanism; however, these calls cannot be statically optimized by the compiler.```
+
+After some investigations, we realized that the text did not accurately reflect the implementation. Other bits and bobs of the Julia documentation were equally unhelpful. 
+
+Our first attempt at formalizing World Age was done in a direct style that tried to follow the implementation with explicit counters and a single method table that would be searched appropriately. The resulting semantics was more complex than what is there now, and made some implementation details concrete that did not need to. For instance, two programs with different counter values could appear different (i.e. by observing the counters), yet would be identical in terms of their behaviors.
+
+Eventually, we came up with the model that we report here; the appeal of that model was its simplicity and it was also amenable to formal reasoning. Thus, it is providing a building block for further language design work (e.g. our original goal to design a type system for Julia) as well as a crisp explanation of world age for programmers.
+
+### Mutable State, Quo Vadis?
+
+The absence of mutable state was remarked on by several of you. Our model only captures the contents of the Julia method table and says nothing about heap allocated variables and the environments on the program’s call stack. Is this a limitation?
+
+**No. It isn’t.** 
+
+Julia decouples code from state by design. This is done _exactly_ to enable World Age to ignore state and to prevent the implementation from having to worry about it. World Age applies solely to the method table.
+
+The compiler optimizations that are essential for Julia programs include devirtualization and inlining. These crucially depend on the compiler knowing the _exact_ contents of the method table at any optimization point. Data related optimizations, such as unboxing, are performed only when the compiler knows that values are non-escaping. 
+
+There is one wrinkle that may cause you to worry:
+```
+function f() 
+   42
+end
+g = 666
+g = f
+```
+This code snippet defines the function `f` in the method table, and introduces constant `f` and variable `g` in the  global environment. Then when `f` is assigned to variable `g`, `g` is bound to the value of `f`. Thus a call to `g()` results in invoking `f()`. Here variable `g` is not world aged, but `f` in the method table is. Our model does not capture the assignment to `g` (mutable state is required) but correctly models the invocation semantics. Adding mutable state would be trivial but would not shed more light on world age.
+
+The separation between code and data is done at name resolution, with functions and variables kept distinct; the compiler prevents confusion. Consider this example interaction in a fresh Julia REPL:
+```
+> g() = 42     # define function g() in the method table
+> g = 5        # attempt to redefine g() as a  variable
+ERROR: invalid redefinition of constant g
+> x = g        # assign function g to variable x
+> x()          # call g() through x (returns 42)
+> x() = 0      # attempt to redefine variable x as a function
+ERROR: cannot define function x; it already has a value
+> f() = 0      # define function f
+> x = f        # re-assign x
+> x()          # call f through g (returns 0)
+```
+Names `g` and `f` are constants pointing to function values, and they can’t be assigned anything else. Name `x` represents a variable: it can be mutated, but it will not introduce methods to the method table.
+
+### 100 Proof
+
+
+The reviewers remarked on the absence of detailed proofs. We have not mechanized our work in Coq (we considered it, but did not go that way). Our proofs are done by hand and were not LaTeXified in time for submission. Our revision plan includes the addition of details on the proof of correctness and two other key lemmas:
+A program does not get stuck (progress, but not related to the typing judgment): any program either steps normally (to a value or to a program), or steps to an error.
+Type preservation: if a program is well-typed and steps normally, the type of the result is a subtype of the original type (the typing judgment does not include the subsumption rule).
+The proofs are interesting but do not shed additional light on the working of world age.
+
+### Apply Externally
+
+Controlling the visibility of code created as a side effect of `eval` (or dynamically loaded with any other mechanism) can be a worthwhile addition to any programming language with the feature.
+
+World age is particularly useful when a language allows for redefining (Julia lets us overwrite a method) or refining the definition of a function (Julia lets us add new methods to a generic function). And it is almost indispensable if the language supports _concurrency_ and wants to _optimize_ the code, which is again the case for Julia.
+
+Java, for instance, has its own mechanism with class loaders, but it is more limited in that it does not allow redefinition of methods once they are loaded. In the case of Java this is less of an issue as the programming experience is not built around a REPL.
+
+World age can be added into existing languages post facto via an explicit “freeze function definitions” construct whereby programmers opt-in to the system. A compiler can then rely on the constant-method-visibility guarantee provided by world age while optimizing. 
+
+The current definition of World Age needs not be the last word on the topic. Even in Julia, it might be beneficial to do something different from just freezing world age on a top-level function call. If there is a top-level for-loop, for example, the entire loop might need to be frozen, not just individual calls inside the loop.
+
+### Ageist Patterns
+
+You have asked whether we could talk about design patterns for ageist programming. In many cases, the world age mechanism provides the right semantics and the Julia code looks like “normal” `eval`-based meta-programming code.
+
+When world age is not a good fit for the task at hand, we have observed various design patterns in the code we inspected for this paper.
+
+The first pattern is the _bottleneck_. The program is split into two: pre- and post-generation. The pre-phase creates and `eval`s code, while the post-phase uses that code. The pre-phase invokes the post-phase with an `invokelatest`, thereby allowing it to run in a new world age. The pattern allows a program to immediately use generated code without having to return to the top level.
+
+The second pattern is the _cache_; Like the bottleneck, the cache generates and executes code in separate steps. However, instead of calling `invokelatest` to cross the age boundary, a handle to the generated code is returned to the user. The user is then responsible for calling the code in the right world age. In effect, a cache implementation can simply assume that it is running in the right age. The pattern is useful when the user is aware that runtime code generation is occurring.
+
+The third pattern is _defensive_; it is used when the programmer is unsure of the incoming world age, for example if a library receives a callback. This assumes that the callback might be too new to execute directly, and we simply use invokelatest for every invocation. The pattern is used when performance is not a concern but when substantial amounts of generated code are in play around function-name-values (e.g. as part of a debugging facility).
+
+We can provide examples.
+
+### Validation, reloaded
+
+
+The Redex model is not an empirical validation of Juliette. We apologize for the confusion. What the Redex model gives us is a modicum of testing that was very useful as we developed Juliette and the optimizations that we implemented on top of the calculus. The litmus tests are _tests_ and there are only 9 of them, all listed in the appendix. The reason we can not run all of the Julia `eval` tests is that these would require much more features from the language than we support.
+
+Our (personal) confidence in Juliette comes from extensive discussions with the Julia language developers who agree that our calculus accurately captures their intent, and that any departure in the implementation should be considered a bug.
+
+There is one more thing. Our original validation plan was to perform a dynamic analysis of a large corpus of Julia programs and thus be able to observe when world age actually affects computational results and how often and where `invokelatest` is used.  We understand that a rebuttal is not allowed to introduce new material -- so we can only say that at time of submission we had spent three months implementing the analyzer but were stumped by a Julia bug. The bug is that the Julia subtype test non-deterministically fails inside library code (while instrumented) causing Julia to crash. 
+
+Presently, then, our validation approach for a revised version would be based on the abovementioned dynamic analyses as well as the pre-existing discussion with the Julia development team and manual inspection of the Julia code base. We do have data on usage of eval and invokelatest for the 1000 most popular packages.
+
+## Details, details, details
+
+### Review #384A
+
+
+> Cons: Perhaps a little narrow, as I'm not sure whether the solution is interesting or expressive enough to apply to other settings.
+
+See the discussion above for some ideas (“Apply Externally” section).
+
+> There are a few lines of proof sketches, but no detailed proofs for the correctness of the optimisation.
+
+Details will be added -- some of the proofs are interesting but are not key to understanding world age.
+
+> Overall I enjoyed reading this paper. [...] Not being an expert on eval, what I wondered was whether the solution was general enough. World age addresses the problems with eval creating new definitions (possibly shadowing existing ones) in a local context, but I presume that there are many other side-effects of eval that affect and invalidate optimisations. [...]
+
+Julia’s `eval` and world age were designed carefully to enable compiler optimizations. This is the reason why Julia’s `eval` executes in the top-level and why method tables are separate data structures from environments. 
+ 
+Julia’s semantics for `eval` is akin to Lisp, Racket, and Clojure. Other languages such as R or JavaScript, allow  `eval` to run in the local context. This makes it difficult to optimize methods as all statements following the `eval` cannot make any assumptions about the state of the world. In contrast, evaled code ran at the top level cannot affect the caller’s internal state, so the compiled function body can be optimized as normal. 
+
+Technically, World Age would still provide its guarantees in a language that did execute evaled code in the local scope. One challenge, however, is that in Julia all method definitions live in a global method table, while “local” definitions receive generated fresh names; other languages may allow truly local method definitions which would have to have their world ages tracked independently of the global state.
+
+> "the addition of new methods to an existing function" <- This sentence seems very strange. Perhaps it makes sense within the lingo used in Julia, but the idea of adding a method to a function sounds odd in general. Wouldn't it be better to say: "the addition of new methods to the current environment"?
+
+“A generic function has methods” is the lingo coming from the multimethods literature, which is shared by Julia community. We use it to avoid confusing Julia users.
+
+> line 77: This semantic*s*
+> (many similar issues with the word "semantic" vs "semantics" later, for instance in line 80)
+
+Thanks.
+
+> line 135: type h*ie*rarchy
+
+Thanks.
+
+> Fig 8: Sequencing does not make a lot of sense in a language without side-effects. You always throw away the value from the left expression, right?
+
+Evaluating a method definition updates the global Method Table, so the table is being side-effected by method definition.
+
+### Review #384B
+
+> The nice and obvious implication of such imposed order is that usually non-trivial or impossible compiler optimisations to the method calls such as inlining etc become really easy to do in the presence of such order. The paper presents a quick introduction to the "eval" and to the very basics of "Julia" and then describes the mechanism with a brief allusion to its limitations in section 3.1 where programmers are given a "workaround" [...]
+
+We should emphasize that the workaround is part of the language specification and has well defined semantics. In our experience, it is rarely used but when it is needed, there is often no other easy way to achieve the same outcome.
+
+> The rest of the paper then presents a simple formal language definition called Juliette that contains mostly the kinds of method calls and definitions allowed and the eval-like mechanism so that an execution semantics can be given to the order of evaluations of replacement method definitions as precisely as possible. Within such formal semantics, a number of optimisations are defined and the main "theorem 4.2" is stated that effectively states that all the defined optimisations are not going to change the semantics of the programs that use the method definitions and calls and evaluation semantics as provided.
+
+The semantics are also useful to the developers who have been confused by the behavior of `eval` in newer releases of the language. 
+
+> Finally, the validation is performed by encoding the rules defined above in Redex and a small number of "litmus" tests are run within the Redex-defined semantics with tests listed in the appendix to sanity check that the rules defined in the Juliette calculus capture the main corner cases.
+
+The term validation is a bit strong -- we feel that we may have oversold the Redex model. It was a useful tool to experiment with the semantics and to get the nitty gritty details of the optimizations correct.
+
+We were working on another validation effort that we could not conclude in time.
+
+Most of our confidence in our model comes from long discussions with the Julia language developers, who are convinced that Juliette captures their intent.
+
+In case our paper were accepted, we would include the results of a dynamic analysis of a corpus of Julia programs that shows the impact of world age on real-world code, and the use of invokelatest.
+
+> The main idea is that a precise language specification of eval and its effect on method re-definitions and their order of evaluation is important and should not be left to the language implementation as an afterthought causing a lot of issues for the compiler optimisation writers.
+
+Exactly, we may steal the above for our conclusion. Thanks!
+
+> While the rules are then captured using formal syntax and semantics definitions in Juliette, the most I can see in terms of proof of correctness is the encoding of these rules in Redex and a small number of tests [...] to give some confidence that the rules enforce the kind of language behaviour that the language designers expect. The paper is shorter than the page limit, so either the authors didn't do the full soundness proof and a full type system together with complete proof of their theorem or decided not to describe them in detail in the current paper.
+
+More detailed proofs will indeed be added to a revision. To be clear: Julia does not have a static type system that would prevent things like method dispatch errors. The typing judgment we provide in the paper serves as a tool for type-based optimizations but does not have standard static typing guarantees. It is sound in a sense that evaluation of well-typed code preserves types.
+
+(If the reviewer is curious: Yes, we did run out of time/steam/energy/cycles/coffee preparing this draft. LaTeXing those proofs was a bridge too far, but now that we are all Covid-ing, there is nothing but time)
+
+> Question for the author(s): What are the limitations of imposing the "age-based" order of method (re-)definition evaluations? 
+
+The main limitation is this: if one wants to add a new method and then call it before returning to the top-level, this cannot be done in a usual way. The new method can be called via `eval` or `invokelatest` (and sometimes this is really the only way to go), but the downside is that such a call cannot be optimized. If it is important to optimize the call, the code has to be restructured to “hit the top-level” before the call is made.
+
+One of us has first hand experience with this limitation. In a library that we maintain, there is a straightforward mathematical routine which is symbolically evaluated by passing through special values with custom evaluation semantics. The symbolic version of the method is then differentiated, optimized, and reified into code, which is then turned into a method using eval. 
+
+In the Julia release before the addition of world age, the generated method could be called directly. After release 0.6 of Julia, the code stopped working. The library had to be reachitected introducing an explicit cache construct (containing the symbolic derivative function) that was passed back to the user so that the actual use would be done in the latest world age.
+
+> You provide a workaround when the users may want to utilise such new definitions directly but do you have any indication from the actual programs written in Julia or perhaps in other languages such as Racket or Clojure that would show what the programmers are most likely to expect? [...]
+
+When we showed a simple example with world-age semantics of `eval` to about 20 researchers from our department (who are not Julia programmers), almost all of them were surprised by the semantics. They agreed that it has benefits, but they definitely did not expect this semantics. Given that at the moment, the world-age semantics is unique to Julia, and the number of Julia programmers is not that huge, we assume that most programmers will likely expect the traditional `eval` semantics. 
+
+There is also a question “how often does the world-age semantics manifest itself as a problem?”. In the revised version, we will add dynamic analysis results about the use of the `invokelatest` in a large corpus of Julia libraries. Without spoiling the surprise: the workaround is not often used.
+
+### Review #384C
+
+> This is a paper in the tradition of formalizing (aspects of) the semantics of real languages. In this case it concerns the notion of 'world age' in the Julia scientific programming language. Julia supports updating the set of methods available in a program using `eval`. A method added by means of eval is only available in the next top-level computation. This enables just-in-time optimization of code without the effort of a sophisticated compiler; the set of methods used in the next top-level computation is fixed. A program can escape this restriction, but then the method added using eval is generically executed.
+
+We emphasize the reviewers comment about the desire of the Julia designers to avoid relying on too much compiler magic. This has been a driving force in the design of the language. 
+
+> Julia uses a counter that keeps track of world age, which reflects the number of top-level computations.
+
+Yes, and this counter is only a concrete implementation — whereas we intend to give an abstract semantics that is easier to reason about.
+
+> This paper first explains how world age in Julia works and then defines a world age calculus (Julliette) in which world age is modeled by an imutable sequence of methods, which is expanded as new methods are added. The calculus uses a reduction semantics (with an implementation in Redex). As an extension, a definition is given of inlining method calls with constant valued arguments. The correspondence of the semantics to the actual Julia language is validated using a small (9) set of litmus tests.
+
+As we mention in our other replies, we oversold the role of Redex. Validation is too strong a term, sanity checking and help during development are quite accurate.
+
+> This is a beautiful paper. It is well written and typeset with taste. (I found 4 typos.) The idea of world age is fairly straightforward (that may be a merit of the exposition in this paper), with a clean semantics, and may be advantagous to implement in other languages.
+
+Thank you for the kind words.
+
+> CONS: The evaluation is fairly light;
+
+Yes, a longer discussion of this has appeared in other answers (“Validation, reloaded” section). While we are confident that we have captured the semantics of world age, we could have omitted the evaluation.
+
+> CONS: Missing discussion of programming patterns enforced/enabled by the world age design
+
+We agree wholly. Mostly world-age based code looks like run-of-the-mill meta-programming code. But there are some design patterns that are specific to world age that we have observed in the code we have inspected. In particular, building clear “barriers” between generator and newly generated code surmounted by invokelatest in very carefully selected places - we will include examples in the revised version.
+
+> The paper presents world age as a feature with a clean semantics allowing a tradeoff between flexibility through meta-programming and effort spent on implementing an optimizing compiler. However, the feature comes with a cost. A quick search shows that Julia users run into the limitations of world age and do not understand why their program does not work. It would be useful if the authors could [...] comment on the limitations of world age [...] it would be useful to understand the programming patterns that world age requires. [...] The authors could argue that this paper is just about the semantics of world age. But the paper also advocates for the feature as one that other languages should think about adopting. [...]
+
+Absolutely; beyond what is discussed earlier, the review brings up the question of the restrictions that world age adds: it is absolutely impossible to call newly generated code from older code without either returning to the top level or making an unoptimized `invokelatest` or `eval` call. This means that some program architectures which rely on locally generated cached code may be practically impossible, as they must use one of these slow operations. Additionally, if the program design has sites where it is ambiguous what the world age of the receiver method may be, then achieving good performance may be impossible. There may be a middle ground solution whereby a fast invokelatest, which is monkeypatched or reoptimized when code is loaded, is used. 
+
+> 324: "omitting various irrelevant Julia features such as for-loops and mutable variables" Please elaborate in the author response on the irrelevance of mutable variables. Do mutable variables not interfere with closures, inlining, and method redefinition in Julia?
+
+As discussed in the broader response, mutable variables (and state in general) do not impact world age or the guarantees that world age provides to optimizations (though specific details within the optimizations may be affected). World age itself is a means to control the visibility of method definitions. The data state (heap and environments) is not relevant to the set of methods that is visible or is not yet visible to the currently executing code. 
+
+> 243: "for which invocations older than cannot see the definition" something wrong here
+
+Ack.
+
+> 560: it took me a while to find Fig 12; it is hiding inside Fig 13
+
+Thanks, we’ll try to LaTeX it better.
+
+> 655: "two generic call[s] optimizations"
+
+Thanks.
+
+> OE-Refl: the right-hand side should have an M, not an M', right?
+
+Oh, it should be defined for values `v` instead of expressions `e`. Thanks for the catch!
+
+### Review #384D
+
+> Julia is a descendant of Lisp via Dylan, inheriting features like multiple-dispatch and `eval`. […]
+
+Ah, someone remembers Dylan… It has been too long, too long.
+
+> This paper formalizes the notion of `eval` in Julia. Julia's `eval` is a little unusual in being designed for performance. […] (One is also loosely reminded of the idea of  call-by-copy-result from decades ago, which was also created for the purpose of providing a certain "stability" of global bindings inside a function, effecting changes only on exit.)
+
+We don’t recall where call-by-copy-result was used. But yes, that sounds right.
+
+> This paper presents a summary of Julia's behavior. It then describes Juliette, an evaluation context semantics for the core of Julia. Juliette provides an alternative, table-based, view of Julia's temporal frames.  This semantics is validated against (some of?) the litmus tests of Julia, to show its conformance to reality. 
+
+As we say in our comment at the top, we have oversold the Redex model. We should have been more modest in our writings. The litmus tests are nine small programs that use `eval` and `invokelatest` which we can translate to our Redex model and use sanity check our semantics. The litmus tests appear in the appendix.
+
+The real validation we intended to provide was in the form of a dynamic analysis of actual Julia programs. We were not able to complete it in time for the paper’s submission due to a bug in Julia’s subtyping relation (long sad story about non-deterministically failing subtype tests cut for space).
+
+Our confidence in the model comes from discussions with the Julia language developers and their assurance that we have captured their intent.  
+
+> The paper then considers two (related) optimizations, essentially inlining; formalizes them with respect to Juliette; and shows that they are semantics-preserving.  Overall I enjoyed reading this paper. It picks an important topic. It is clearly written: I had not heard of world age before and I feel significantly better informed now. It also contributes to validating  optimizations for Julia, which is a worthy goal.
+
+Thanks for the kind words, we agree. Could we hold you to them?
+
+> First, it was unclear why world age cannot or should not be formalized directly. To me, at least -- and here the paper may be a victim of its own clarity -- it seemed like a pretty straightforward concept. While *implementing* it is undoubtedly tricky (as the paper says) -- you don't want to maintain a linear list and search for methods each time, etc. -- as a *conceptual model*, it is actually very spare and  simple. It's just not clear to me that tables stored in evaluation contexts are necessarily an improvement; if anything, they seem to carry much more "weight". The paper never justified its decision or convinced me this was a wise one.
+
+If “world age formalized directly” means a semantics with explicit age labels and world age increments, the answer is as follows. We perceive of world-age counter as a low-level implementation device, one of the multiple ways to implement our abstract semantics, and one that is semantically identical to the system of tables we describe. What matters for method dispatch is the set of available methods, and explicit tables make this completely transparent. Also, program equivalences are more straightforward with abstract table-based states. 
+
+We did start with a more Julia-like semantics originally, to understand how exactly world age works and interacts with other features. The final version of the semantics is the result of multiple refinements, where we removed irrelevant features and abstracted over counters. Just to give a taste of the early semantics, it is environment-based big-step with explicit world-age counters and mutable state. Its program state consists of
+
+MT, ρs, ρ_g, w_g, C, e
+
+where MT is global method table with every definition having an associated age, ρs — stack of environments with constants and mutable variables, ρ_g — pointer to the global environment in ρs, w_g — global world age counter, C — either currently running world age or * if it’s the top level, e — expression. 
+
+This semantics was too low-level and did not communicate the idea of world age well. Environments turned out to be irrelevant for method call resolution and world age, so we took the state out completely and switched to substitutions. Instead of using world age counters to extract the correct subset of methods from the table, we switched to explicitly carrying the tables; this removed the need for age labels in method definitions and counter increment.
+
+We agree that world age does seem straightforward now. But this was far from obvious and took us quite a while to distill the final semantics.
+
+> Second, by leaving out state, the model is rather limited. However, a lot of optimizations go wrong especially when state is involved -- this is where some of the complexity in JavaScript implementations (which the authors rightly decry) come from. Perhaps that isn't an issue for Julia anyway (due to world age), but then that should have been demonstrated using the semantics. As it is, the development felt a little thin.
+
+We address this issue above. We should have discussed the separation between code (stored in method table) and data (stored in environment) in the paper, and we will do so in the revision. The data state has no influence on the world age semantics, so we did not include it to the final model.
+
+The following example might be interesting for highlighting the differences between `eval`’s effect on code (method definition g) and data (assignment to x):
+
+```
+f() = 42
+g() = 666
+x = f
+usex() = (eval(:(g() = 77; x = g)); println(g()); x())
+x()    # 42
+usex() # 666 666
+usex() # 77 77
+```
+
+Initially, variable `x` contains function value `f`. When `usex()` is called, the compiler can optimize `g()` in `usex` (because `g` is a constant holding function value `g`) but it can’t do anything about `x()` (because `x` is a global variable). After `eval` executes, `x` contains function value `g`. Note that because of world age, the first call `usex()` uses the original definition of `g`. Thus, the code (definition of function `g`) abides by world age semantics, but the effect of `eval` on data (variable `x`) is immediate, like in other languages with `eval`.
+
+> Third, the validation section was frustratingly vague. How many litmus tests are there? How many did you run? I understand there may be many features in Julia that are not part of Juliette and irrelevant to this paper, but did you at least run all the `eval` tests and, if not, why  not? (The paper uses the phrase "all of the litmus tests", but surely that "all" is scoped very narrowly. What's left out?)
+
+There are 9 litmus tests that we wrote, listed in the appendix. The problem with running all of the eval tests from Julia is that they use much more of the language then is supported by the model. The litmus tests are a red herring and we apologize for that. Profusely.
+
+> After a first round of reviewing and discussion with other PC members, I realized that there was very little insight in the paper, so I went digging. I wanted to understand how much of a problem world age is for programmers in general, and why. (Vitek and Co. wrote an "eval that men do" paper that provided this kind of insight for JavaScript.) 
+
+Yes, we are aware of that work. 
+
+> Note that I'm not a Julia programmer; I've only admired the language from afar. What's below is my superficial understanding from a little over an hour of reading.
+
+We are impressed, this is a thorough analysis. Thanks for taking the time.
+
+> [...] I don't really find that many issues related to world age across StackOverflow and the Julia Discourse forums. Of those I did find, it would appear: [...]  So I do see _some_ confusion about world age. My analysis is: - The documentation on the Julia site is really too weak to be  helpful.  - Several incidents all tie to one particular library (plotting, which  is of course going to be popular) whose issue seems to have been  addressed anyway.  - Some issues have to do with abuses of `eval`, which means the real  issue is elsewhere, not in the world age semantics.  - Some issues have to do with trying to simulate dynamic loading of  libraries, which could perhaps be handled directly (or maybe even  already is, I didn't do a deep dive).  - Some issues are really about frustration caused by the REPL having a  different semantics, which is also a different matter.
+
+Interesting, we will mention some of this in revisions.
+
+> Based on all this, I see the main issues as:  1. poor documentation; 2. better  insight into what is going on; 3. finding and working on the important special cases (e.g., dynamic loading). The paper obviously helps with (1), but that's not a scientific contribution. It offers no analysis for (2) (I daresay this _review_ provides far more utility). And (3) (as people have provided prescriptions for patterns of `eval` in other languages) is totally missing in this paper.
+
+Providing an abstract model that allows programmers and tool developers to reason about their code is not an unreasonable scientific contribution. 
+
+When Igarashi, Wadler and Pierce introduced Featherweight Java in their TOPLAS 2001 paper, there was very little new in that treatment of generics. The calculus was criticized as too simple, yet that work was useful as it provided a model that others built on.
+
+We are not claiming our contribution is at that level, but merely making the point that simple and clear models of language features can find their place in the scientific edifice.
+
+> Overall, then, I'm now much more negative about this paper (indeed, I lowered my score from C to D). It failed to offer any useful domain analysis. It didn't solve any problem. It didn't indicate why this semantics would help developers more than the traditional Julia presentation (perhaps it will, but the authors need to show why). It's not clear that the things developers run into are where this paper helps.
+
+I would caution against making conclusive claims about developers from their shadow on StackOverflow -- it is data, but it is biased and partial.
+
+> Based on all this, I don't have a "question" per se. The authors are welcome to persuade me that any parts of my assessment are wrong, and I'll gladly reconsider it (and my overall score).
+
+See our comments at top, and thanks for all the work that you obviously put in the review. No matter what happens, our paper will come out stronger. Thank you.
+
+> I have no idea what the title means. I think they're defining the term, but because it's a new term, the title gives no indication as to what the paper is _about_. Only later do I find it's actually a defined term in the Julia community. Saying this up front would have been a big help.
+
+Hmm. Thinking.
+
+> Wouldn't it be more honest to attribute `eval` to its great-grandparent, Lisp?
+
+Ok.
+
+> The switch to Clojure was initially very unhelpful. I couldn't figure out why Clojure showed up out of the blue. This needs better signposting: "we're going to see how `eval` often works, using Clojure as a working example, then come back to seeing what Julia does for the same kind of example".
+
+Makes sense. Thanks.
+
+> "Every value in Julia is either tagged with its full type description (if boxed) or can have its type be statically inferred (if unboxed).": isn't this last part backwards? Don't you mean IF it can be statically inferred THEN it can be unboxed?
+
+Good catch, thanks!
+
+> "Julia’s parser can then be directly invoked": the word "then" makes no sense here.
+
+Ack.
+
+> Section 3: I feel the first four paragraphs of this section are completely repetitive, and are written as if we had not read any of the preceding part of the paper. (A less charitable interpretation is that it was written by a different author _who_ did not read the preceding part.)
+
+You may be right, deadlines can have that effect. Thanks for pointing it out.
+
+> It is rather odd that Fig 7 is presented as if it were somehow broken, with phrases like "fix" it. It seems to do exactly what the semantics and the paper's introduction led me to believe, and without some sort of spec of desired behavior, it can't even be judged wrong.
+
+You are right, we will change the wording.
+
+> I was really hoping for a compelling example that would demonstrate the *need* to "break the age barrier".
+
+We will add an example that breaks the age barrier taken from a library that one of us has written. It’s a math library that does symbolic evaluation and generates functions with `eval`.
+
+> Perhaps the paper is a victim of the clarity of its explanation, but I had difficulty seeing what is so complex about the "world age" concept that a semantics was essential. I can fully believe that the "internal  representation is complex and ill-suited to semantic exploration", but that's often the case. 
+
+We had a surprisingly hard time getting to that simple semantics starting from the partial description in the documentation and the really convoluted implementation. 
+
+It is clear that this is easy for us to claim, but the “Aha” moment came after months of discussion off-and-on. In fact we had not started out with the goal to formalize world age, it was a thing we hit on our way into trying to devise a static type system for Julia.
+
+When we settled on the definition we have presented here, we managed to convince ourselves that this would be useful to others.
+
+>The fact that Juliette drops mutable state makes it not a very useful language to reason about Julia's behavior.
+
+As we explain above, mutable state is not relevant to the design of world age. Julia does have mutable state, but it does not impact method dispatch because mutable state (captured by environment) is separate from code (captured by method table). 
+
+> The writing in general is quite rough: odd word choices, poor punctuation, inconsistent formatting of code, etc.
+
+We will work on the text and formatting.
+
+
+
+Comment @A1 by Shepherd
+---------------------------------------------------------------------------
+Dear authors,
+
+We thank you for your comprehensive response, which we found very informative. You persuaded your strongest critic!
+
+However, all the reviewers (even the most positive ones) agree that the current paper falls (fairly) short of where it needs to be. This not only does an injustice to the work (which makes us sad, but is primarily your problem), it puts the paper below the standard we'd like to see for the conference (which *is* our problem). We therefore intend to "strong shepherd" your paper (i.e., please take this seriously). You have ample space to grow the paper, so the usual concerns of "what important content needs to be cut" don't seem to apply here.
+
+Naturally, we expect you will pay attention to comments from the individual reviewers, and also discharge any obligations you created in your reviewer-specific remarks. The following constitute your cross-reviewer shepherding requirements:
+
+- You provide an interesting account of the development of your semantics, and in particular *insight* into why a "direct style" semantics [*] would not be better. The concrete example of counter values is particularly elegant. Include it!
+
+[*] Please don't use that term. It has a specific, technical meaning in this context: e.g., as a contrast to CPS. The potential for confusion is especially huge here, because your semantics *is* "direct style" in *that* sense.
+
+- We shouldn't have had to figure out to what extent the absence of state was or was not an issue. Since this is likely to be referenced as one of the standard citations for Julia semantics (not just for World Age), write this up. In particular, people need to understand what they can and can't soundly use this semantics for (reasoning about World Age, yes; reasoning about some other operations, no!).
+
+- Proofs: (1) Please do not equate "proof" with "Coq": that is neither necessary nor always sufficient. None of the reviewers mentioned Coq! Even a scan of a neat, hand-written proof is perfectly fine. (2) Your author response does not give enough credit to the purpose of writing down proofs. Even if they are not "interesting", the person who follows-up on this work can study them and check their reasoning; in particular, if they come to a different conclusion, they need to understand how you arrived at yours. Worse, if they feel they have found a discrepancy in your theorems, they need to figure out where things went wrong. That's why the proofs matter. Of course, they don't have to take up critical space in the core of the paper, but they should be accessible from the paper. Otherwise you can't claim to have your results.
+
+- Adding World Age to other languages: again, an interesting discussion that you left out, but not critical, because ultimately your paper is about Julia. If space becomes a problem, this is the least important; but if you can squeeze it in, it would be interesting to read.
+
+- Ageist patterns: This is particularly interesting and relevant. Include it!
+
+- Validation: You've flagellated yourself enough that we don't need to belabor this point. You seem to know what to do.
+
+As a logistical matter, as your shepherd, it would be extremely ideal for me if I could get most of the revisions by Sep 1, rather than Sep 14. I think you can anticipate what a mess our fall semesters are going to look like, so doing some checking before my classes begin would be a huge help (to me, but also to you, in case we need more rounds). It's fine if you can't get them *all* done by then, provided you indicate which ones you haven't done. (TL;DR: get me *something*, preferably substantial, by Sep 1.)
+
+
+
+Round-2-Submission Response by Julia Belyakova <julbinb@gmail.com>
+---------------------------------------------------------------------------
+Thank you for the comments! We're grateful for the excellent suggestions of the reviewers, and think that the paper is much better for it. We have modified almost the entire paper as a result (gray vertical bars indicate changes, green bars indicate additions); specific changes to address the issues you pointed out are as follows:
+
+1) You provide an interesting account of the development of your semantics, and in particular insight into why a "direct style" semantics would not be better.
+
+We have included a discussion at the beginning of section 4, pages 10-11.
+
+2) We shouldn't have had to figure out to what extent the absence of state was or was not an issue. Since this is likely to be referenced as one of the standard citations for Julia semantics (not just for World Age), write this up. 
+
+We describe why the program state is not relevant for our mechanism in the last two sentences in page 2, as part of the introduction, and the last sentences of the third paragraph of section 4, in page 10.
+
+3) Proofs
+
+We have extended the proof sketches in section 4.4 and 4.5.
+
+4) Adding World Age to other languages.
+
+A discussion has been added in the third and fourth paragraphs of the conclusion.
+
+5) Ageist patterns: This is particularly interesting and relevant. Include it!
+
+The new section 3.4 describes the patterns we described in the original reply as well as a number of others, and section 3.3 reports on a static analysis of Julia packages.
+
+6) Validation: You've flagellated yourself enough that we don't need to belabor this point. You seem to know what to do.
+
+We address this by a combination of section 3.3 and 4.6.
+
+
+
+Comment @A2 by Shepherd
+---------------------------------------------------------------------------
+Thank you for your updated paper. I think this version is a *substantial* improvement over what you had before.
+
+I've checked for the items in the shepherding policy and I am satisfied that you have met the conditions (though you continue to be coy about how many litmus tests). I have *not* had time to check the proofs (and won't, with class prep in full swing).
+
+One weirdness that I happened to catch: in sec. 4 you have the translation into Redex of a litmus test, and say, "(the grammar is written in S-expressions style)". What follows is not a grammar, it's a term; furthermore, a grammar and a term can be written in very different styles. I really couldn't quite tell what you were getting at with this comment. (Also, "S-expression", not "S-expressions".)
+
+Anyway, if the other reviewers are satisfied with the edits you made on their comments, then I'm happy to approve the paper.
+
+PS: I think you might have provided a slightly more useful marked-up document, like the one you sent me by email. This one, instead, basically has change-bars on just about *everything*: only about 3/4 of a page is excepted. This is not helpful (or considerate).
+
+
+Comment @A3
+---------------------------------------------------------------------------
+I have changed the sub-title of the paper and updated the author order as requested by the lead author.

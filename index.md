@@ -14,7 +14,7 @@ since September 2018.
 
 I work with [Jan Vitek]({{site.people.jan}})
 in the Programming Research Laboratory ([PRL](http://prl.ccs.neu.edu)).  
-[ <a href="#research" style="color:gray">jump to Research section</a> ]
+{% include jump-button.html link="#research" name="the Research section" %}
 
 My primary research interests are **programming languages** and **type theory**.
 I also like theorem proving (most of my experience has been with
