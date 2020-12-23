@@ -1,3 +1,20 @@
+- key: "OOPSLA 2020"
+  title: "World Age in Julia: Optimizing Method Dispatch in the Presence of Eval"
+  author: Julia Belyakova
+  date: "Jul 15, 2019"
+  venue: "<a target='_blank' href='https://2020.splashcon.org/track/splash-2020-oopsla'>OOPSLA 2020</a>. London, United Kingdom"
+  links:
+    - name: slides GoogleDrive
+      link: https://docs.google.com/presentation/d/13fKNtbcSsfgPLnbVwukAITDUfgJEbz8NzgpPY7ei0ZA/edit?usp=sharing
+    - name: preprint PDF
+      link: /files/papers/oopsla2020_juliette-world-age.pdf
+    - name: paper
+      link: /papers#oopsla2020
+    - name: video
+      link: https://youtu.be/d6lTCnhdbqE
+      colored: true
+  abstract: "Dynamic programming languages face semantic and performance challenges in the presence of features, such as eval, that can inject new code into a running program. The Julia programming language introduces the novel concept of world age to insulate optimized code from one of the most disruptive side-effects of eval: changes to the definition of an existing function. This paper provides the first formal semantics of world age in a core calculus named Juliette, and shows how world age enables compiler optimizations, such as inlining, in the presence of eval. While Julia also provides programmers with the means to bypass world age, we found that this mechanism is not used extensively: a static analysis of over 4,000 registered Julia packages shows that only 4-9% of packages bypass world age. This suggests that Julia's semantics aligns with programmer expectations."
+
 - key: "FTfJP 2019"
   title: Decidable Tag-Based Semantic Subtyping for Nominal Types, Tuples, and Unions
   author: Julia Belyakova
@@ -8,8 +25,8 @@
       link: https://docs.google.com/presentation/d/1zDxC4b0Z1I6_DCVT-7VmUFEuBnInsql6diYvAdrEx4E/edit?usp=sharing
     - name: preprint PDF
       link: https://github.com/julbinb/ftfjp-2019/blob/master/paper/minijl-ftfjp2019.pdf
-    - name: DOI
-      link: https://dl.acm.org/citation.cfm?doid=3340672.3341115
+    - name: paper
+      link: /papers#ftfjp2019
   abstract: "Semantic subtyping enables simple, set-theoretical reasoning about types by interpreting a type as the set of its values. Previously, semantic subtyping has been studied primarily in the context of statically typed languages with structural typing. In this paper, we explore the applicability of semantic subtyping in the context of a dynamic language with nominal types. Instead of static type checking, dynamic languages rely on run-time checking of type tags associated with values, so we propose using the tags for semantic subtyping. We base our work on a fragment of the Julia language and present tag-based semantic subtyping for nominal types, tuples, and unions, where types are interpreted set-theoretically as sets of type tags. The proposed subtyping relation is shown to be decidable, and a corresponding analytic definition is provided. The implications of using semantic subtyping for multiple dispatch are also discussed."
 
 - key: "Семинар ЯПиК 2019"

@@ -19,8 +19,10 @@
       link: /files/bibtex/OOPSLA-2020.txt
     - name: preprint PDF
       link: /files/papers/oopsla2020_juliette-world-age.pdf
-    - name: extended PDF
-      link: /files/papers/oopsla2020_juliette-world-age_extended.pdf
+    - name: extended version
+      link: /papers#oopsla2020ext
+    - name: slides GoogleDrive
+      link: https://docs.google.com/presentation/d/13fKNtbcSsfgPLnbVwukAITDUfgJEbz8NzgpPY7ei0ZA/edit?usp=sharing
     - name: video
       link: https://youtu.be/d6lTCnhdbqE
     - name: GitHub

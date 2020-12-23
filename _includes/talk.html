@@ -1,16 +1,18 @@
 	{% assign talks = include.talk-data | where:'key',include.talk-key %}
 	{% assign talk = talks[0] %}
 	<div class="paperDiv">
-		{% if include.show-talk-marker %} [ Talk ] {% endif %}
+		{% if include.show-talk-marker %} <small style="font-variant: small-caps">[ Talk ]</small> {% endif %}
 		<b><span class="paperDivKey">{{talk.key}}</span></b> 
 		{% for talk_link in talk.links %}
-		<a target="_blank" href="{{talk_link.link}}"><button class="paperLinkButton">{{talk_link.name}}</button></a>
+		<a target="_blank" href="{{talk_link.link}}">
+			<button class="paperLinkButton {% if talk_link.colored %} coloredButton {% endif %}">{{talk_link.name}}</button>
+		</a>
 		{% endfor %}
 		<br/>
 		<i>{{talk.title}}</i>
 		<div class="paperInfoDiv">
 			<strong>Venue:</strong> {{talk.venue}} <br/>
-			<strong>Date:</strong> {{talk.date}}
+			<strong>Date:</strong> {{talk.date}} <br/>
 			{% if talk.abstract %}
 			{% include toggle.html toggle-text="Abstract" toggle-name=talk.key
 								   toggle-content=talk.abstract %}

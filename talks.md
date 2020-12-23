@@ -6,6 +6,7 @@ sidebar_link: true
 
 ## Talks in English
 
+1. {% include talk.html talk-key="OOPSLA 2020" talk-data=site.data.talks %}
 1. {% include talk.html talk-key="FTfJP 2019" talk-data=site.data.talks %}
 1. {% include talk.html talk-key="NEUPRL 2017" talk-data=site.data.talks %}
 1. {% include talk.html talk-key="ECOOP DS 2016" talk-data=site.data.talks %}
