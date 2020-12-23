@@ -74,11 +74,6 @@ being an international student or a woman in CS, feel free to send me an email.
   [VIS 2020](http://ieeevis.org/year/2020/welcome)  
   [Just TYPEical: Visualizing Common Function Type Signatures in R](/papers#vis2020)
 
-* September 2020: accepted short paper at
-  [VIS 2020](http://ieeevis.org/year/2020/welcome)  
-  [Just TYPEical: Visualizing Common Function Type Signatures in R](http://127.0.0.1:4000/files/papers/vis2020-short_typeical-for-R.pdf)  
-  (with [video](https://osf.io/u7mzd/))
-
 * June 2020: joined Program Committee of [ICCQ 2021](https://www.iccq.ru/)
 
 > <small>All news starting from 2020 are [here](news).</small>
