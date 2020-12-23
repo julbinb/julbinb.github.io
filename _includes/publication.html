@@ -4,10 +4,16 @@
 	<div class="paperDiv">
 		{% assign papers = include.paper-data | where:'key',include.paper-key d%}
 		{% assign paper = papers[0] %}
+		{% assign addrefid = include.refid and paper.refid %}
+		<span id="{% if addrefid %}{{paper.refid}}{% endif %}">
 		{% if paper.link %}
-		<b><a class="paperDivKey" target="_blank" href="{{paper.link}}">{{paper.key}}</a></b> 
-		{% else %}
-		<b><span class="paperDivKey">{{paper.key}}</span></b> 
+			<b><a class="paperDivKey" target="_blank" href="{{paper.link}}">{{paper.key}}</a></b> 
+			{% else %}
+			<b><span class="paperDivKey">{{paper.key}}</span></b> 
+			{% endif %}
+		</span>
+		{% if addrefid %}
+		<sup><small><a href="#{{paper.refid}}">&#128279;</a></small></sup>
 		{% endif %}
 		{% for paper_link in paper.links %}
 		<a target="_blank" href="{{paper_link.link}}">

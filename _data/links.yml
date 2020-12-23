@@ -55,3 +55,8 @@ people:
 
 websites:
   julialang:        https://julialang.org/
+
+mdlinks:
+  artem:            "[Artem Pelenitsyn](https://a-pelenitsyn.github.io/)"
+  julialang:        "[Julia](https://julialang.org/)"
+  janvitek:         "[Jan Vitek](http://janvitek.org/)"

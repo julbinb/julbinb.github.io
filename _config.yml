@@ -45,3 +45,10 @@ people:
   ssm:              https://sfedu.ru/person/miks
   jan:              http://janvitek.org/
   bengreenman:      http://ccs.neu.edu/home/types/
+
+# Contact-me text
+contactmetext: 'please, feel free to <a href="mailto:julbinb@gmail.com">email me</a>
+  or submit your feedback
+  <a target="_blank" href="https://forms.gle/aS9Y9pHSiMGhRPm67">using this Google form</a>.
+  I would be happy to answer questions that you might have,
+  learn about what is unclear or confusing, or receive any other feedback.'

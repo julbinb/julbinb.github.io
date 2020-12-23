@@ -1,6 +1,7 @@
 - key: "OOPSLA 2020"
   link: https://2020.splashcon.org/track/splash-2020-oopsla
   title: "World Age in Julia: Optimizing Method Dispatch in the Presence of Eval"
+  refid: oopsla2020
   authors:
     - key: julia
     - key: benchung
@@ -36,6 +37,7 @@
 - key: "OOPSLA 2020 Extended (arXiv)"
   link: https://arxiv.org/abs/2010.07516
   title: "World Age in Julia: Optimizing Method Dispatch in the Presence of Eval (Extended Version)"
+  refid: oopsla2020ext
   authors:
     - key: julia
     - key: benchung
@@ -56,6 +58,7 @@
 - key: "VIS 2020 (short paper)"
   link: http://ieeevis.org/year/2020/welcome
   title: "Just TYPEical: Visualizing Common Function Type Signatures in R"
+  refid: vis2020
   authors:
     - key: cameronmoy
     - key: julia
@@ -91,6 +94,7 @@
 - key: "FTfJP 2019"
   link: https://2019.ecoop.org/home/FTfJP-2019
   title: Decidable Tag-Based Semantic Subtyping for Nominal Types, Tuples, and Unions
+  refid: ftfjp2019
   authors:
     - key: julia
   doi: 
@@ -107,12 +111,16 @@
     - name: GitHub
       link: https://github.com/julbinb/ftfjp-2019
       colored: true
+    - name: web
+      link: /projects/minijl
+      colored: true
   abstract: "Semantic subtyping enables simple, set-theoretical reasoning about types by interpreting a type as the set of its values. Previously, semantic subtyping has been studied primarily in the context of statically typed languages with structural typing. In this paper, we explore the applicability of semantic subtyping in the context of a dynamic language with nominal types. Instead of static type checking, dynamic languages rely on run-time checking of type tags associated with values, so we propose using the tags for semantic subtyping. We base our work on a fragment of the Julia language and present tag-based semantic subtyping for nominal types, tuples, and unions, where types are interpreted set-theoretically as sets of type tags. The proposed subtyping relation is shown to be decidable, and a corresponding analytic definition is provided. The implications of using semantic subtyping for multiple dispatch are also discussed."
 
 
 - key: "OOPSLA 2018"
   link: https://conf.researchr.org/track/splash-2018/splash-2018-OOPSLA
   title: "Julia Subtyping: A Rational Reconstruction"
+  refid: oopsla2018
   authors:
     - key: francesco
     - key: julia
@@ -144,6 +152,7 @@
   link: https://2017.ecoop.org/track/FTfJP-2017-papers
   title: Generic Approach to Certified Static Checking of Module-like Constructs
   kind: Extended Abstract
+  refid: ftfjp2017
   authors:
     - key: julia
   doi: 
@@ -166,6 +175,7 @@
 - key: "SBLP 2016"
   link: http://cbsoft.org/sblp2016/xx-brazilian-symposium-on-programming-languages
   title: "Language Support for Generic Programming in Object-Oriented Languages: Peculiarities, Drawbacks, Ways of Improvement"
+  refid: sblp2016
   authors:
     - key: julia
   doi: 
@@ -185,6 +195,7 @@
 
 - key: "SYRCoSE 2016"
   title: "Language Support for Generic Programming in Object-Oriented Languages: Design Challenges"
+  refid: syrcose2016
   authors:
     - key: julia
   doi: 
@@ -204,6 +215,7 @@
 
 - key: "SYRCoSE 2015"
   title: "Pitfalls of C# Generics and Their Solution Using Concepts"
+  refid: syrcose2015
   authors:
     - key: julia
     - key: ssm

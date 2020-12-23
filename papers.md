@@ -11,17 +11,25 @@ sidebar_link: true
 
 ## Conferences & Journals
 
-1. {% include publication.html paper-key="OOPSLA 2020" paper-data=site.data.papers %}
-1. {% include publication.html paper-key="VIS 2020 (short paper)" paper-data=site.data.papers %}
-1. {% include publication.html paper-key="OOPSLA 2018" paper-data=site.data.papers %}
-1. {% include publication.html paper-key="SBLP 2016" paper-data=site.data.papers %}
-1. {% include publication.html paper-key="SYRCoSE 2016" paper-data=site.data.papers %}
-1. {% include publication.html paper-key="SYRCoSE 2015" paper-data=site.data.papers %}
+1. {% include publication.html paper-key="OOPSLA 2020"
+      refid=true paper-data=site.data.papers %}
+1. {% include publication.html paper-key="VIS 2020 (short paper)"
+      refid=true paper-data=site.data.papers %}
+1. {% include publication.html paper-key="OOPSLA 2018"
+      refid=true paper-data=site.data.papers %}
+1. {% include publication.html paper-key="SBLP 2016"
+      refid=true paper-data=site.data.papers %}
+1. {% include publication.html paper-key="SYRCoSE 2016"
+      refid=true paper-data=site.data.papers %}
+1. {% include publication.html paper-key="SYRCoSE 2015"
+      refid=true paper-data=site.data.papers %}
 
 ## Workshops
 
-1. {% include publication.html paper-key="FTfJP 2019" paper-data=site.data.papers %}
-1. {% include publication.html paper-key="FTfJP 2017" paper-data=site.data.papers %}
+1. {% include publication.html paper-key="FTfJP 2019"
+      refid=true paper-data=site.data.papers %}
+1. {% include publication.html paper-key="FTfJP 2017"
+      refid=true paper-data=site.data.papers %}
 
 ---
 

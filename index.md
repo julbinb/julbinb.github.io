@@ -67,17 +67,15 @@ being an international student or a woman in CS, feel free to send me an email.
 
 * October 2020: accepted paper at
   [OOPSLA 2020](https://2020.splashcon.org/track/splash-2020-oopsla)  
-  [World Age in Julia: Optimizing Method Dispatch in the Presence of Eval](http://127.0.0.1:4000/files/papers/oopsla2020_juliette-world-age.pdf)
-  (with [video](https://www.youtube.com/watch?v=d6lTCnhdbqE))
+  [World Age in Julia: Optimizing Method Dispatch in the Presence of Eval](/papers#oopsla2020)
 
 * September 2020: accepted short paper at
   [VIS 2020](http://ieeevis.org/year/2020/welcome)  
-  [Just TYPEical: Visualizing Common Function Type Signatures in R](http://127.0.0.1:4000/files/papers/vis2020-short_typeical-for-R.pdf)  
-  (with [video](https://osf.io/u7mzd/))
+  [Just TYPEical: Visualizing Common Function Type Signatures in R](/papers#vis2020)
 
 * June 2020: joined Program Committee of [ICCQ 2021](https://www.iccq.ru/)
 
-All news starting from 2020 are [here](news).
+> <small>All news starting from 2020 are [here](news).</small>
 
 ## <span id="research">Research</span>
 
@@ -90,21 +88,36 @@ All news starting from 2020 are [here](news).
   <img src="img/julia-logo.svg" alt="Julia Lang"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
 </a>
-Currently, I work on formalizing various aspects of the
-[Julia programming language](https://julialang.org/):
+For the last several years I have been working on formalizing
+various aspects of the {{site.data.links.mdlinks.julialang}}
+programming language:
 
-* Semantics of `eval` and [world age](https://docs.julialang.org/en/v1/manual/methods/#Redefining-Methods).
-* Subtyping relation: I have been developing a semantic subtyping model
-  suitable for a dynamic language.
+* The semantics of
+  [world age](https://docs.julialang.org/en/v1/manual/methods/#Redefining-Methods)
+  and its interaction with `eval`
+  in a core calculus [Juliette](/projects/juliette)
+  [[OOPSLA 2020](/papers#oopsla2020)].
+* The subtyping relation.
+  - A reconstruction of subtyping in
+    [LambdaJulia](/projects/lambda-julia) [[OOPSLA 2018](/papers#oopsla2018)].
+  - A semantic subtyping model suitable for a dynamic programming language
+    (work-in-progress) [[FTfJP 2019](/papers#ftfjp2019)].
 
-_Disclaimer._ Good or bad, the language has nothing to do with me, and the name match is a coincidence!
+> <small>_Disclaimer._ Good or bad, the language has nothing to do with me, and the name match is a coincidence!</small>
 
 My previous research was related to language support for generic programming
-in object-oriented languages.
+in object-oriented languages
+[[SBLP 2016](/papers#sblp2016), [SYRCoSE 2015](/papers#syrcose2015)].
+
+#### Questions, comments, feedback
+
+If you have any questions or comments about projects or papers,
+{{site.contactmetext}}
 
 ### Selected papers and talks
 
-1. {% include publication.html paper-key="OOPSLA 2020" paper-data=site.data.papers %}
+1. {% include publication.html paper-key="OOPSLA 2020"
+      paper-data=site.data.papers %}
 1. {% include publication.html paper-key="VIS 2020 (short paper)" paper-data=site.data.papers %}
 1. {% include publication.html paper-key="FTfJP 2019" paper-data=site.data.papers %}
 1. {% include talk.html talk-key="Семинар ЯПиК 2019" talk-data=site.data.talks show-talk-marker="true" %}
