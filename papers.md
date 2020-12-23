@@ -35,8 +35,10 @@ sidebar_link: true
 
 ## Workshops
 
-1. {% include publication.html paper-key="FTfJP 2019" paper-data=site.data.papers %}
-1. {% include publication.html paper-key="FTfJP 2017" paper-data=site.data.papers %}
+1. {% include publication.html paper-key="FTfJP 2019"
+      refid=true paper-data=site.data.papers %}
+1. {% include publication.html paper-key="FTfJP 2017"
+      refid=true paper-data=site.data.papers %}
 
 ---
 
