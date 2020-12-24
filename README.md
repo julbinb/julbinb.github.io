@@ -18,7 +18,7 @@ In 2020, might need to do the following:
 
 * remove `Gemfile.lock`;
 * add `gem "kramdown-parser-gfm"` to `Gemfile`;
-* run `bunle install`.
+* run `bundle install`.
 
 ## Notes
 

@@ -1,9 +1,9 @@
-<div class="toggleDiv">
-	<button id="{{include.toggle-name}}Button" class="toggleButton {% if include.toggle-colored %}coloredToggle{% endif %}"
-			onclick="toggle_visibility_name('{{include.toggle-name}}', '{{include.toggle-text}}')">
-		{{include.toggle-text}}
-	</button>
-	<div class="toggleContent" id="{{include.toggle-name}}" style="display:{% if include.toggle-open %}block{% else %}none{% endif %};">
-		{{include.toggle-content}}
-	</div>
-</div> 
+	<div class="toggleDiv">
+		<button id="{{include.toggle-name}}Button" class="toggleButton {% if include.toggle-colored %}coloredToggle{% endif %}"
+				onclick="toggle_visibility_name('{{include.toggle-name}}', '{{include.toggle-text}}')">
+			{{include.toggle-text}}
+		</button>
+		<div class="toggleContent" id="{{include.toggle-name}}" style="display:{% if include.toggle-open %}block{% else %}none{% endif %};">
+			{{include.toggle-content}}
+		</div>
+	</div> 
