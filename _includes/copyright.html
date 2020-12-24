@@ -1,6 +1,6 @@
 <p style="font-size: 0.8rem">
   &copy; {{ site.time | date: '%D' }}
-  <a href="{{ site.baseurl }}/LICENSE.md">MIT License</a>
+  <a href="{{ "/LICENSE.md" | relative_url }}">MIT License</a>
   {% if site.github.repo %}
     <br/>
     Source code is available at
@@ -11,9 +11,3 @@
     </a>
   {% endif %}
 </p>
-<!--
-<p>
-  &copy; {{ site.time | date: '%Y' }}.
-  <a href="{{ "/LICENSE.md" | relative_url }}">MIT License.</a>
-</p>
--->
