@@ -94,11 +94,7 @@ various aspects of the {{site.data.links.mdlinks.julialang}}
 programming language:
 
 * The semantics of
-<<<<<<< HEAD
   [world age]({{site.data.links.websites.worldage}})
-=======
-  [world age](https://docs.julialang.org/en/v1/manual/methods/#Redefining-Methods)
->>>>>>> links to papers
   and its interaction with `eval`
   in a core calculus [Juliette](/projects/juliette)
   [[OOPSLA 2020](/papers#oopsla2020)].
