@@ -8,14 +8,13 @@ $blue-dark: #2F74A8;
 
 $link-color: #256eab;
 $orig-link-color: #4078A3;
+$button-blue: #d4eafa !default;
 
 $sidebar-bg-color: #184A71;
 
 $sidebar-width: 20rem;
 $layout-reverse: false;
 $sidebar-sticky: false;
-
-$button-blue: #d4eafa !default;
 
 @import "hydeout";
 
@@ -31,14 +30,18 @@ $button-blue: #d4eafa !default;
     font-weight: normal;
 }
 
+/* foldable div with a button for "Abstract" and such */
+
 .toggleDiv {
 	display: inline-block;
 	vertical-align: top;
 }
+
 .toggleContent {
 	padding-left: 1em;
 	border-left: solid 1px #4078A3;
 }
+
 .toggleButton {
 	color: #303030;
 }
@@ -53,48 +56,7 @@ $button-blue: #d4eafa !default;
 	background-color: $gray-4;
 }
 
-.coloredButton {
-	background-color: $button-blue;
-}
-.coloredButton:hover {
-	background-color:#2F74A8;
-}
-
-.coloredButton {
-	background-color: $button-blue;
-}
-.coloredButton:hover {
-	background-color:#2F74A8;
-}
-
-.coloredButton {
-	background-color: $button-blue;
-}
-.coloredButton:hover {
-	background-color:#2F74A8;
-}
-
-.paperDiv {
-	display: block;
-	
-}
-.paperDiv .paperInfoDiv {
-	font-size: smaller;
-}
-.paperDiv button {
-	font-size: 100%;
-	padding: 5px;
-	border-radius: 10px;
-	border-color: $gray-light;
-}
-
-.paperDiv button.paperLinkButton {
-	font-size: smaller;
-}
-
-.paperDivKey {
-	color: #303030; /*#515151;*/
-}
+/* buttons with links used for papers */
 
 button.linkButton {
 	font-size: 100%;
@@ -114,6 +76,32 @@ button.smallButton {
 	background-color:#2F74A8;
 }
 
+/* for information about a paper/talk */
+
+.paperDiv {
+	display: block;
+	
+}
+.paperDiv .paperInfoDiv {
+	font-size: smaller;
+}
+
+.paperDiv button {
+	font-size: 100%;
+	padding: 5px;
+	border-radius: 10px;
+	border-color: $gray-light;
+}
+.paperDiv button.paperLinkButton {
+	font-size: smaller;
+}
+
+.paperDivKey {
+	color: #303030; /*#515151;*/
+}
+
+/* jump-to-a-place-on-the-page button */
+
 button.jumpButton {
 	font-size: smaller;
 	color: $gray-5;
@@ -125,6 +113,8 @@ button.jumpButton:hover {
 	background-color: $gray-4;
 	color: white;
 }
+
+/* floating bubble for contacting me */
 
 .contactmeBubble {
 	float: right;
