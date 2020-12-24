@@ -7,12 +7,16 @@ people:
   artem:
     name: Artem Pelenitsyn
     link: https://a-pelenitsyn.github.io/
-  vitaly:           https://bravit.guru/
+  vitaly: 
+    name: Vitaly Bragilevsky
+    link: https://bravit.guru/
   # PRL
   janvitek:
     name: Jan Vitek
     link: http://janvitek.org/
-  bengreenman:      http://ccs.neu.edu/home/types/
+  bengreenman:
+    name: Ben Greenman
+    link: http://ccs.neu.edu/home/types/
   benchung:
     name: Benjamin Chung
     link: https://benchung.github.io/
@@ -53,10 +57,49 @@ people:
     name: М. Э. Абрямян
     link: https://sfedu.ru/person/mabr
 
+places:
+  # universities
+  prl:
+    name: PRL
+    link: http://prl.ccs.neu.edu
+  khoury:
+    name: Khoury College of Computer Sciences
+    link: https://www.khoury.northeastern.edu/
+  neu:
+    name: Northeastern University
+    link: https://www.northeastern.edu/
+  mmcs:
+    name: Faculty of Mathematics, Mechanics and Computer Science
+    link: http://mmcs.sfedu.ru/
+  sfedu:
+    name: Southern Federal University
+    link: https://sfedu.ru/index_eng.php
+  fitcvut:
+    name: Faculty of Information Technology
+    link: https://www.fit.cvut.cz/en
+  cvut:
+    name: Czech Technical University in Prague
+    link: https://www.cvut.cz/en
+  
+
 websites:
   julialang:        https://julialang.org/
+  worldage:         https://docs.julialang.org/en/v1/manual/methods/#Redefining-Methods
+  lambdajulia:      https://fzn.fr/projects/lambdajulia/
+  pascalabc:        http://pascalabc.net/en/
 
 mdlinks:
+  # people
   artem:            "[Artem Pelenitsyn](https://a-pelenitsyn.github.io/)"
-  julialang:        "[Julia](https://julialang.org/)"
   janvitek:         "[Jan Vitek](http://janvitek.org/)"
+  # places
+  khoury:           "[Khoury College of Computer Sciences](https://www.khoury.northeastern.edu/)"
+  neu:              "[Northeastern University](https://www.northeastern.edu/)"
+  prl:              "[PRL](http://prl.ccs.neu.edu)"
+  mmcs:             "[Faculty of Mathematics, Mechanics and Computer Science](http://mmcs.sfedu.ru/)"
+  sfedu:            "[Southern Federal University](https://sfedu.ru/index_eng.php)"
+  fitcvut:          "[Faculty of Information Technology](https://www.fit.cvut.cz/en)"
+  cvut:             "[Czech Technical University in Prague](https://www.cvut.cz/en)"
+  # websites
+  julialang:        "[Julia](https://julialang.org/)"
+  coq:              "[The Coq Proof Assistant](https://coq.inria.fr/)"

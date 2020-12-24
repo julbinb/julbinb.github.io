@@ -5,7 +5,7 @@ sidebar_link: false
 ---
 
 A formal definition of **subtyping**
-in the [Julia](https://julialang.org/) language,
+in the {{site.data.links.mdlinks.julialang}} language,
 a dynamic language for scientific computing with multiple symmetric dispatch,
 user-defined parametric types, union types, and existential types.
 In Julia, subtyping is used at run time, for multiple-dispatch resolution.  

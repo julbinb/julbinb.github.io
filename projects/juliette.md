@@ -5,8 +5,8 @@ sidebar_link: false
 ---
 
 A formalization of **world age**
-in the [Julia]({{site.data.links.websites.julialang}}) language.
-[World age](https://docs.julialang.org/en/v1/manual/methods/#Redefining-Methods)
+in the {{site.data.links.mdlinks.julialang}} language.
+[World age]({{site.data.links.websites.worldage}})
 is a mechanism that enables efficient and relatively simple implementation
 of multiple dispatch in the presence of `eval`.
 Namely, the world-age semantics allows Julia to optimize methods and method calls

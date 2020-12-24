@@ -24,3 +24,6 @@ In 2020, might need to do the following:
 
 The list of research profiles is unfortunately copied in 2 places:
 homepage and papers.
+
+Some links are also copied twice in `_data/link.yml`
+because `mdlinks` is like a cache for often-used links.

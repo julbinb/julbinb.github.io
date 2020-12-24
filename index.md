@@ -7,18 +7,16 @@ title: Home
   <img src="img/prl.png" alt="PRL"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
 </a>
-I am a **PhD Student**
-at the [Khoury College of Computer Sciences](https://www.khoury.northeastern.edu/),
-[Northeastern University](https://www.northeastern.edu/) (Boston, MA, USA)
-since September 2018.
+I am a **PhD Student** at the {{site.data.links.mdlinks.khoury}},
+{{site.data.links.mdlinks.neu}} (Boston, MA, USA) since September 2018.
 
-I work with [Jan Vitek]({{site.people.jan}})
-in the Programming Research Laboratory ([PRL](http://prl.ccs.neu.edu)).  
+I work with {{site.data.links.mdlinks.janvitek}}
+in the Programming Research Laboratory ({{site.data.links.mdlinks.prl}}).  
 {% include jump-button.html link="#research" name="the Research section" %}
 
 My primary research interests are **programming languages** and **type theory**.
 I also like theorem proving (most of my experience has been with
-[The Coq Proof Assistant](https://coq.inria.fr/)),
+{{site.data.links.mdlinks.coq}}),
 generic programming (like Java generics or ML polymorphism),
 functional and object-oriented programming,
 software engineering, programming by contracts, and software testing.
@@ -29,11 +27,9 @@ engineering and the interaction between humans and programming languages.
 
 **Email**: [julbinb@gmail.com](mailto:julbinb@gmail.com) (preferred)
 or [belyakova.y@northeastern.edu](mailto:belyakova.y@northeastern.edu)  
-Professional: [github](http://github.com/julbinb/),
-[researchgate](https://www.researchgate.net/profile/Julia_Belyakova),
-[linkedin](https://www.linkedin.com/in/julbinb/)  
-Social: [twitter]({{ site.twitter }}),
-[facebook](https://www.facebook.com/julbinb)
+Professional: [github]({{site.github.account}}),
+[researchgate]({{site.researchgate}}), [linkedin]({{site.linkedin}})  
+Social: [twitter]({{site.twitter}}), [facebook]({{site.facebook}})
 <!--[skype](skype:juliet_belyakova)-->  
 <!--Web-page in Russian:
 [staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).-->
@@ -43,19 +39,17 @@ Social: [twitter]({{ site.twitter }}),
 I was born in 1991 in Russia, Rostov-on-Don, where I also grew up
 and received education.
 In 2012–2016, I was teaching undergraduate CS courses at my alma mater,
-[Faculty of Mathematics, Mechanics and Computer Science](http://mmcs.sfedu.ru/)
-([Southern Federal University](http://sfedu.ru/international/)).  
+{{site.data.links.mdlinks.mmcs}} ({{site.data.links.mdlinks.sfedu}}).  
 While teaching half-time, I had entered a PhD program as well
-but later moved to [Northeastern](https://www.northeastern.edu/)
+but later moved to [Northeastern]({{site.data.links.places.neu.link}})
 where my PhD journey started over.  
-In 2017–2018, I spent a year at the
-[Faculty of Information Technology](https://www.fit.cvut.cz/en)
-([Czech Technical University in Prague](https://www.cvut.cz/en)) doing research
-with [Jan Vitek](http://janvitek.org/).  
+In 2017–2018, I spent a year at the {{site.data.links.mdlinks.fitcvut}}
+({{site.data.links.mdlinks.cvut}}) doing research
+with {{site.data.links.mdlinks.janvitek}}.  
 Since 2018, I have been doing my PhD in Boston.
 
 **Education.** MS in "Computer Science and Information Technologies"
-from [Southern Federal University](http://sfedu.ru/international/).
+from {{site.data.links.mdlinks.sfedu}}.
 
 *Note.* If you have questions about doing a PhD in the US,
 being an international student or a woman in CS, feel free to send me an email.
@@ -93,7 +87,7 @@ various aspects of the {{site.data.links.mdlinks.julialang}}
 programming language:
 
 * The semantics of
-  [world age](https://docs.julialang.org/en/v1/manual/methods/#Redefining-Methods)
+  [world age]({{site.data.links.websites.worldage}})
   and its interaction with `eval`
   in a core calculus [Juliette](/projects/juliette)
   [[OOPSLA 2020](/papers#oopsla2020)].

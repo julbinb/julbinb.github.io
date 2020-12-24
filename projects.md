@@ -8,8 +8,8 @@ sidebar_link: true
 
 * [Juliette](projects/juliette) (2020–…)  
   A formalization of `eval` and
-  [world age](https://docs.julialang.org/en/v1/manual/methods/#Redefining-Methods)
-  of the [Julia](https://julialang.org/) language.
+  [world age]({{site.data.links.websites.worldage}})
+  of the {{site.data.links.mdlinks.julialang}} language.
   <a href="https://julialang.org/" target="_blank">
   <img src="img/julia-logo.svg" alt="Julia Lang"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
@@ -21,7 +21,7 @@ sidebar_link: true
 * [LambdaJulia](/projects/lambda-julia) (2017–2018)
   {% include link-button.html name="main project page"
     link="https://fzn.fr/projects/lambdajulia/" small="true" %}  
-  A formalization of subtyping for the [Julia](https://julialang.org/) programming language.
+  A formalization of subtyping for the {{site.data.links.mdlinks.julialang}} programming language.
 
 ## Past Projects
 

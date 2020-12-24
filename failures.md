@@ -14,7 +14,7 @@ in the hope that this will make failures more normal and less painful.
 
 **Note 1.** This page is inspired by Twitter conversations
 about paper rejections and research failures
-and [Ben Greenman]({{site.people.bengreenman}})'s CV of failures;
+and [Ben Greenman]({{site.data.links.people.bengreenman.link}})'s CV of failures;
 transitively inspired by
 [Johannes Haushofer](https://haushofer.ne.su.se/)'s
 [CV of failures](https://haushofer.ne.su.se/Johannes_Haushofer_CV_of_Failures.pdf).
