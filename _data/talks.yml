@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 - key: "OOPSLA 2020"
   title: "World Age in Julia: Optimizing Method Dispatch in the Presence of Eval"
   author: Julia Belyakova
@@ -30,8 +29,6 @@
       link: /papers#ftfjp2019
   abstract: "Semantic subtyping enables simple, set-theoretical reasoning about types by interpreting a type as the set of its values. Previously, semantic subtyping has been studied primarily in the context of statically typed languages with structural typing. In this paper, we explore the applicability of semantic subtyping in the context of a dynamic language with nominal types. Instead of static type checking, dynamic languages rely on run-time checking of type tags associated with values, so we propose using the tags for semantic subtyping. We base our work on a fragment of the Julia language and present tag-based semantic subtyping for nominal types, tuples, and unions, where types are interpreted set-theoretically as sets of type tags. The proposed subtyping relation is shown to be decidable, and a corresponding analytic definition is provided. The implications of using semantic subtyping for multiple dispatch are also discussed."
 
-=======
->>>>>>> add FTfJP-2019, upd Bio
 - key: "Семинар ЯПиК 2019"
   title: "Семантическое подтипирование на основе типовых тегов (Tag-based Semantic Subtyping)"
   venue: "Семинар «Языки программирования и компиляторы», Мехмат ЮФУ. Ростов-на-Дону, Россия (Seminar on Programming Languages and Compilers, Rostov-on-Don, Russia)"
@@ -65,17 +62,10 @@
   venue: "<a target='_blank' href='https://2016.ecoop.org/track/ecoop-2016-doctoral-symposium'>ECOOP 2016 Doctoral Symposium</a>. Rome, Italy"
   date: "July 17, 2016"
   links:
-<<<<<<< HEAD
     - name: slides PDF
       link: /files/slides/belyakova-ECOOP-DS-2016-slides.pdf
     - name: proposal PDF
       link: /files/papers/ecoopDS2016_CSharp-concepts.pdf
-=======
-    - name: proposal PDF
-      link: /files/papers/ecoopDS2016_CSharp-concepts.pdf
-    - name: slides PDF
-      link: /files/slides/belyakova-ECOOP-DS-2016-slides.pdf
->>>>>>> add FTfJP-2019, upd Bio
   abstract: "As was shown in earlier studies, mainstream object-oriented (OO) languages C# and Java provide weaker support for generic programming (GP) as compared with functional languages such as Haskell or SML. Having explored the instruments for GP in modern OO languages Scala, Ceylon, Kotlin, Rust, and Swift, we have found out that all of them, as well as C# and Java, stick to the same approach to constraining type parameters, which we called the “Constraints-are-Types” approach. It turns out that the approach has several inevitable limitations, and because of that Haskell type classes still provide better support for GP than modern object-oriented languages do. This research is aimed to discover a mechanism that would allow to radically improve the support for generic programming in OO languages. We identify the requirements that such mechanism should satisfy, present a design of the appropriate mechanism (concept parameters), and propose a sketch of its implementation for the C# language."
 
 - key: "META 2016"
