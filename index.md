@@ -23,13 +23,6 @@ software engineering, programming by contracts, and software testing.
 Lately, I have been getting interested in human aspects of software
 engineering and the interaction between humans and programming languages.
 
-### Software Development 2020
-
-In Fall 2020, I am TAing for
-[Software Development](https://felleisen.org/matthias/4500-f20/).  
-{% include link-button.html name="book office hours" link="https://calendly.com/julbinb" small="true" %}
-{% include link-button.html name="send feedback" link="https://forms.gle/bSTfbeVxnx5JnmJW9" small="true" %}
-
 ### Contacts
 
 **Email**: [julbinb@gmail.com](mailto:julbinb@gmail.com) (preferred)
