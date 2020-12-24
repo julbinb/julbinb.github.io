@@ -27,3 +27,5 @@ homepage and papers.
 
 Some links are also copied twice in `_data/link.yml`
 because `mdlinks` is like a cache for often-used links.
+
+**Merging with Hydeout.** Turn off rebase before pulling from the main fork.
