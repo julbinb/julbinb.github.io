@@ -105,7 +105,7 @@ in object-oriented languages
 
 #### Questions, comments, feedback
 
-If you have any questions or comments about projects or papers,
+If you have any questions or comments about projects, papers, or website,
 {{site.contactmetext}}
 
 ### Selected papers and talks

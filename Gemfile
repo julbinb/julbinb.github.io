@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 #gemspec
-gem "jekyll-theme-hydeout", "~> 3.4"
+gem "jekyll-theme-hydeout", "~> 4.1"
 gem "kramdown-parser-gfm"
