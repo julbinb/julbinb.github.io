@@ -34,6 +34,26 @@
       style="height: 32px; vertical-align: middle; margin: 0; display: inline-block; margin-left: 0.2em" />
     </a>
     
+<!--
+  {% if site.hydeout.repo %}
+    <a id="github-link"
+       class="icon" title="Github Project" aria-label="Github Project"
+       href="{{ site.hydeout.repo }}">
+      {% include svg/github.svg %}
+    </a>
+    <a id="github-download-link"
+       class="icon" title="Download" aria-label="Download"
+       href="{{ site.hydeout.repo }}/archive/v{{ site.hydeout.version }}.zip">
+      {% include svg/download.svg %}
+    </a>
+  {% endif %}
+
+  <a id="subscribe-link"
+     class="icon" title="Subscribe" aria-label="Subscribe"
+     href="{{ site.feed.path | default: 'feed.xml' | relative_url }}">
+    {% include svg/feed.svg %}
+  </a>
+-->
 
   {% comment %}
     Check if we have tag or search pages page active before linking to it.
@@ -49,23 +69,6 @@
   {% endfor %}
 
 <!--
-  {% if site.hydeout.repo %}
-    <a id="github-link"
-       class="icon" title="Github Project" aria-label="Github Project"
-       href="{{ site.hydeout.repo }}">
-      {% include svg/github.svg %}
-    </a>
-    <a id="github-download-link"
-       class="icon" title="Download" aria-label="Download"
-       href="{{ site.hydeout.repo }}/archive/v{{ site.hydeout.version }}.zip">
-      {% include svg/download.svg %}
-  {% endif %}
-  <a id="subscribe-link"
-     class="icon" title="Subscribe" aria-label="Subscribe"
-     href="{{ site.baseurl }}/{{ site.feed.path | default: 'feed.xml' }}">
-    {% include svg/feed.svg %}
-  </a>
-
   {% if tags_page %}
     <a id="tags-link"
        class="icon{% if page.url == '/tags' %} active{% endif %}"
