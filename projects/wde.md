@@ -1,7 +1,6 @@
 ---
 layout: project
 title: Многоязыковая web-среда разработки ProgrammingABC.NET (2009–2013)
-sidebar_link: false
 ---
 
 Многоязыковая web-среда разработки ProgrammingABC.NET

@@ -1,7 +1,6 @@
 ---
-layout: page
+layout: category
 title: Papers
-sidebar_link: true
 ---
 
 {% include link-button.html name="DBLP" link="https://dblp.uni-trier.de/pers/hd/b/Belyakova:Julia" %}

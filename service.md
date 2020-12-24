@@ -1,7 +1,6 @@
 ---
-layout: page
+layout: category
 title: Service
-sidebar_link: true
 ---
 
 ## Conference organization 

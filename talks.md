@@ -1,7 +1,6 @@
 ---
-layout: page
+layout: category
 title: Talks
-sidebar_link: true
 ---
 
 ## Talks in English

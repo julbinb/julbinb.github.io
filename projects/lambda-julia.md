@@ -1,7 +1,6 @@
 ---
 layout: project
 title: "LambdaJulia: A formalization of subtyping in the Julia language (2017–2018)"
-sidebar_link: false
 ---
 
 A formal definition of **subtyping**

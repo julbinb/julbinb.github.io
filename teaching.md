@@ -1,7 +1,6 @@
 ---
-layout: page
+layout: category
 title: Teaching
-sidebar_link: true
 ---
 
 ## Khoury NEU

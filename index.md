@@ -3,15 +3,21 @@ layout: page
 title: Home
 ---
 
+<a href="https://julialang.org/" target="_blank">
+  <img src="img/julia-logo.svg" alt="Julia Lang"
+    style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
+</a>
+I am a **PhD Student** at the {{site.data.links.mdlinks.khoury}},
+{{site.data.links.mdlinks.neu}} (Boston, MA, USA) since September 2018,
+currently working on formalizing aspects of
+the {{site.data.links.mdlinks.julialang}} language.
+
 <a href="http://prl.ccs.neu.edu" target="_blank">
   <img src="img/prl.png" alt="PRL"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
 </a>
-I am a **PhD Student** at the {{site.data.links.mdlinks.khoury}},
-{{site.data.links.mdlinks.neu}} (Boston, MA, USA) since September 2018.
-
 I work with {{site.data.links.mdlinks.janvitek}}
-in the Programming Research Laboratory ({{site.data.links.mdlinks.prl}}).  
+in {{site.data.links.mdlinks.prl}}, the Programming Research Laboratory.  
 {% include jump-button.html link="#research" name="the Research section" %}
 
 My primary research interests are **programming languages** and **type theory**.

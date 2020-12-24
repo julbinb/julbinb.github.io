@@ -1,7 +1,6 @@
 ---
 layout: project
 title: "Juliette: a formalization of world age and eval in Julia (2020–…)"
-sidebar_link: false
 ---
 
 A formalization of **world age**

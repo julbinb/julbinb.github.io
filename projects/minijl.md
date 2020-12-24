@@ -1,7 +1,6 @@
 ---
 layout: project
 title: Tag-based semantics subtyping (2018–2019)
-sidebar_link: false
 ---
 
 Decidable tag-based semantic subtyping for a subset of types

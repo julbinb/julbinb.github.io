@@ -2,7 +2,6 @@
 layout: project
 title: "Concept Parameters: Language Support for Generic Programming
 in Object-Oriented Languages (2014–2017)"
-sidebar_link: false
 ---
 
 Concepts (like C++0x concepts, Haskell type classes, or Java Genus constraints)

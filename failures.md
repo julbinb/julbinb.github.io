@@ -1,7 +1,6 @@
 ---
 layout: page
 title: CV of failures
-sidebar_link: false
 ---
 
 **What is this?** A list of things that didn't work out for me.  

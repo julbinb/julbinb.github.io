@@ -1,7 +1,6 @@
 ---
 layout: page
 title: News
-sidebar_link: false
 ---
 
 This page tracks news starting from 2020.

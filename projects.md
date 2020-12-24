@@ -1,7 +1,6 @@
 ---
-layout: page
+layout: category
 title: Projects
-sidebar_link: true
 ---
 
 ## Active Projects

@@ -1,7 +1,6 @@
 ---
-layout: page
+layout: category
 title: Bio
-sidebar_link: true
 ---
 
 ## Education
