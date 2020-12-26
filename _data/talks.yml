@@ -1,8 +1,8 @@
 - key: "OOPSLA 2020"
   title: "World Age in Julia: Optimizing Method Dispatch in the Presence of Eval"
-  author: Julia Belyakova
-  date: "Jul 15, 2019"
-  venue: "<a target='_blank' href='https://2020.splashcon.org/track/splash-2020-oopsla'>OOPSLA 2020</a>. London, United Kingdom"
+  author: Julia Belyakova, Ben Chung
+  date: "Nov 17, 2020"
+  venue: "<a target='_blank' href='https://2020.splashcon.org/track/splash-2020-oopsla'>OOPSLA 2020</a>. Online"
   links:
     - name: slides GoogleDrive
       link: https://docs.google.com/presentation/d/13fKNtbcSsfgPLnbVwukAITDUfgJEbz8NzgpPY7ei0ZA/edit?usp=sharing
@@ -14,6 +14,23 @@
       link: https://youtu.be/d6lTCnhdbqE
       colored: true
   abstract: "Dynamic programming languages face semantic and performance challenges in the presence of features, such as eval, that can inject new code into a running program. The Julia programming language introduces the novel concept of world age to insulate optimized code from one of the most disruptive side-effects of eval: changes to the definition of an existing function. This paper provides the first formal semantics of world age in a core calculus named Juliette, and shows how world age enables compiler optimizations, such as inlining, in the presence of eval. While Julia also provides programmers with the means to bypass world age, we found that this mechanism is not used extensively: a static analysis of over 4,000 registered Julia packages shows that only 4-9% of packages bypass world age. This suggests that Julia's semantics aligns with programmer expectations."
+
+
+- key: "VIS 2020 (short paper)"
+  title: "Just TYPEical: Visualizing Common Function Type Signatures in R"
+  author: Julia Belyakova, Cameron Moy
+  date: "Oct 28, 2020"
+  venue: "<a target='_blank' href='http://ieeevis.org/year/2020/welcome'>VIS 2020</a>. Online"
+  links:
+    - name: preprint PDF
+      link: /files/papers/vis2020-short_typeical-for-R.pdf
+    - name: paper
+      link: /papers#vis2020
+    - name: video
+      link: https://osf.io/u7mzd/
+      colored: true
+  abstract: "Data-driven approaches to programming language design are uncommon. Despite the availability of large code repositories, distilling semantically-rich information from programs remains difficult. Important dimensions, like run-time type data, are inscrutable without the appropriate tools. We contribute a task abstraction and interactive visualization, TYPEical, for programming language designers who are exploring and analyzing type information from execution traces. Our approach aids user understanding of function type signatures across many executions. Insights derived from our visualization are aimed at informing language design decisions — specifically of a new gradual type system being developed for the R programming language. A copy of this paper, along with all the supplemental material, is available at osf.io/mc6zt"
+
 
 - key: "FTfJP 2019"
   title: Decidable Tag-Based Semantic Subtyping for Nominal Types, Tuples, and Unions
@@ -29,15 +46,56 @@
       link: /papers#ftfjp2019
   abstract: "Semantic subtyping enables simple, set-theoretical reasoning about types by interpreting a type as the set of its values. Previously, semantic subtyping has been studied primarily in the context of statically typed languages with structural typing. In this paper, we explore the applicability of semantic subtyping in the context of a dynamic language with nominal types. Instead of static type checking, dynamic languages rely on run-time checking of type tags associated with values, so we propose using the tags for semantic subtyping. We base our work on a fragment of the Julia language and present tag-based semantic subtyping for nominal types, tuples, and unions, where types are interpreted set-theoretically as sets of type tags. The proposed subtyping relation is shown to be decidable, and a corresponding analytic definition is provided. The implications of using semantic subtyping for multiple dispatch are also discussed."
 
+
 - key: "Семинар ЯПиК 2019"
   title: "Семантическое подтипирование на основе типовых тегов (Tag-based Semantic Subtyping)"
   venue: "Семинар «Языки программирования и компиляторы», Мехмат ЮФУ. Ростов-на-Дону, Россия (Seminar on Programming Languages and Compilers, Rostov-on-Don, Russia)"
-  date: "May 15, 2019"
+  date: "15 мая 2019 (May 15)"
   links:
-    - name: slides GoogleDrive (in Russian)
+    - name: слайды GoogleDrive (slides)
       link: https://docs.google.com/presentation/d/1xjzgjg7287Rv1KJe6e__nmRAu0Uok34s-_oj1Onv6os/edit?usp=sharing
-    - name: video (in Russian)
+    - name: видео (video)
       link: https://youtu.be/_4ElOK57ilA
+
+
+- key: "FTfJP 2017"
+  title: Generic Approach to Certified Static Checking of Module-like Constructs
+  author: Julia Belyakova
+  date: "Jun 20, 2017"
+  venue: "<a target='_blank' href='https://2017.ecoop.org/track/FTfJP-2017-papers'>FTfJP 2017</a>. Barcelona, Spain"
+  links:
+    - name: slides PDF
+      link: https://julbinb.github.io/files/slides/belyakova-FTfJP2017-handout.pdf
+    - name: preprint PDF
+      link: https://julbinb.github.io/files/papers/ftfjp2017_cert-modules.pdf
+    - name: paper
+      link: /papers#ftfjp2017
+  abstract: "In this paper we consider the problem of certified static checking of module-like constructs of programming languages. We argue that there are algorithms and properties related to modules that can be defined and proven in abstract way. We advocate the design of a generic Coq library, which is aimed to provide three building blocks for each checking mechanism: propositional, computable, and correctness proofs. Implemented part of the library is justified by applying it to a certified static checker of an extension of STLC."
+
+
+- key: "PLC 2017"
+  title: Реализация сертифицированного интерпретатора для расширения простого типизированного лямбда-исчисления с концепт-параметрами (Implementation of Certified Interpreter for an Extension of Simply Typed Lambda Calculus with Concept Parameters)
+  author: Ю. В. Белякова
+  date: "20 апреля 2017 (Apr 20)"
+  venue: "<a target='_blank' href='http://plc.sfedu.ru'>Конференция памяти А.Л. Фуксмана «Языки программирования и компиляторы 2017»</a> (A.L. Fuksman Conference on Programming Languages and Compilers). Ростов-на-Дону, Россия (Rostov-on-Don, Russia)"
+  links:
+    - name: слайды PDF (slides)
+      link: http://staff.mmcs.sfedu.ru/~juliet/files/materials/conference-talks/belyakova-PLC-2017-slides.pdf
+    - name: препринт PDF (preprint)
+      link: http://staff.mmcs.sfedu.ru/~juliet/files/documents/publications/18_belyakova-PLC-2017.pdf
+
+
+- key: "NEPLS 2017"
+  title: "Generic Coq Library for Certified Static Checking of Module-like Language Constructs"
+  venue: "<a target='_blank' href='http://nepls.org/Events/31/'>New England Programming Languages and Systems Symposium Series</a> (Olsen Hall, UMass Lowell). Lowell, MA, USA"
+  date: "Jun 2, 2017"
+  links:
+    - name: slides PDF
+      link: http://staff.mmcs.sfedu.ru/~juliet/files/materials/seminar-talks/belyakova-NEPLS-2017-handout.pdf
+    - name: seminar page
+      link: https://nepls.org/Events/31/abstracts.html#julbinb
+  abstract: 'As a means of abstraction, many programming languages provide some sort of module-like constructs. Examples are interfaces in object-oriented languages, signatures in ML, type classes in Haskell. All of these constructs share some common properties: they define pairs of "interface" and "implementation" components (e.g. interfaces and classes, signatures and modules), introduce namespaces, and obey some high-level notions of well-definedness. For instance, we can consider an "implementation" as well-defined if all of its members are well-defined, and all members required by a corresponding "interface" are defined. At the same time, there are various ways to check that the members are well-defined. For example, it may be enough to take into account only previously defined members when checking the current one (as in ML-module without mutual recursion); or it may be the case that all members are considered at every point (as in Java-class). Also, checking well-definedness of a self-contained class may be different from checking of a class, which extends another one. In this talk we present an ongoing work on the generic Coq library for certified static checking of module-like constructs of different flavours. It is intended to be used in certified compilers/interpreters, which seek for both efficient representation of language constructs and easiness-to-reason-about them. The library defines three building blocks for several concrete notions of modules. The first one, propositional, provides definitions of well-definedness; the second one, computational, implements efficient algorithms for checking modules; and the third one provides proofs of correctness of algorithms (from the second block) with respect to the propositional definitions (the first block).'
+
 
 - key: "NEUPRL 2017"
   title: "Comparative Study of Generic Programming Features in Object-Oriented Languages"
@@ -46,16 +104,34 @@
   links:
     - name: slides PDF
       link: /files/slides/belyakova-NEUPLsem2017-slides.pdf
+    - name: seminar page
+      link: http://prl.ccs.neu.edu/seminars.html#belyakova-oo
   abstract: "Earlier comparative studies of language support for generic programming (GP) have shown that mainstream object-oriented (OO) languages such as C# and Java provide weaker support for GP as compared with functional languages such as Haskell or SML.<br/> One reason is that generic mechanisms of C# and Java are based on F-bounded polymorphism, which has certain deficiencies. Some of these deficiencies are eliminated in more recent languages, such as Scala and Kotlin. However, there are peculiarities of object-oriented languages as a whole, which prevent them from being as expressible as Haskell in terms of generic programming.<br/>In this talk we will cover the main problems of language support for generic programming in C#/Java as well as other modern object-oriented languages, including Scala and Swift. It turns out that all of these languages follow the same approach to constraining type parameters, which leads to inevitable shortcomings. To overcome them, an alternative approach is suggested in several extensions for OO languages, in particular, JavaGenus. The advantages and drawbacks of both approaches will be discussed in the talk."
+
 
 - key: "Семинар JetBrains Research 2016"
   title: "Средства обобщённого программирования в объектно-ориентированных языках: особенности, недостатки, возможные альтернативы (Generic Programming Approaches and Tools in Object-Oriented Languages: Peculiarities, Drawbacks, Alternatives)"
   venue: "<a target='_blank' href='https://research.jetbrains.org/ru/groups/plt_lab/seminars?id=30'>Семинар лаборатории языковых инструментов</a> (<a href='https://research.jetbrains.org/groups/plt_lab/seminars?id=30'>Seminar of Programming Languages and Tools Lab</a>), <a href='https://research.jetbrains.org/'>JetBrains Research</a>. Санкт-Петербург, Россия (Saint Petersburg, Russia)"
-  date: "October 24, 2019"
+  date: "24 октября 2016 (October 24)"
   links:
-    - name: slides PDF (in Russian)
+    - name: слайды PDF (slides)
       link: /files/slides/belyakova-jetbrains2016-GP-in-OOP-slides.pdf
+    - name: страница семинара
+      link: https://research.jetbrains.org/ru-ru/groups/plt_lab/seminars/28/
   abstract: "Большинство современных языков программирования обеспечивают поддержку обобщённого программирования (ОП) на уровне языка. При этом различные языковые средства обладают разной выразительной силой. Так, например, классы типов Haskell предоставляют один из наиболее богатых механизмов ОП, в то время как механизм F-ограниченного полиморфизма на основе интерфейсов в языках C# и Java считается одним из беднейших. Часть недостатков, свойственных объектно-ориентированным (ОО) языкам C# и Java снимается в более современных ОО-языках, таких как Scala и Kotlyn. Однако, есть несколько существенных особенностей объектно-ориентированных языков в целом, из-за которых они по-прежнему уступают языку Haskell в контексте обобщённого программирования. Основные проблемы средств поддержки ОП в языках C#/Java, а также современных ОО-языках, представлены в докладе. Мы также рассмотрим альтернативный подход к реализации средств обобщённого программирования, предложенный в некоторых расширениях ОО-языков, в частности, JavaGenus. В докладе обсуждаются преимущества и недостатки обоих подходов, а также открытые проблемы дизайна и реализации (расширений) ОО-языков для обобщённого программирования. <br/> (The majority of modern programming languages provide language support for generic programming. Different language features possess different expressive power. For example, Haskell type classes provide one of the richest mechanism for generic programming, while F-bounded polymorphism in form of interfaces in C# and Java is considered as one of the weakest. Some of defficiencies of object-oriented languages C# and Java are eliminated in more recent languages, such as Scala and Kotlin. However, there are some pecularities of object-oriented languages as a whole, which prevent them to be as expressible as Haskell in terms of generic programming. The talk will present the main problems with generic programming support in C#/Java as well as modern object-oriented languages. We also consider an alternative approach for generic programming features implementation, suggested in some extensions for object-oriented languages, in particular, JavaGenus. In the talk the advantages and drawbacks of both approaches as well as open problems in the area of design and implementation of generic programming extensions for object-oriented languages will be considered, too.)"
+
+
+- key: "SBLP 2016"
+  title: "Language Support for Generic Programming in Object-Oriented Languages: Peculiarities, Drawbacks, Ways of Improvement"
+  venue: "<a target='_blank' href='http://cbsoft.org/sblp2016/xx-brazilian-symposium-on-programming-languages'>Brazilian Symposium on Programming Languages 2016</a>. Maringa, Brazil"
+  date: Sep 23, 2016
+  links:
+    - name: slides PDF
+      link: /files/slides/belyakova-SBLP2016-slides.pdf
+    - name: preprint PDF
+      link: /files/papers/sblp2016_OO-generics.pdf
+  abstract: "Earlier comparative studies of language support for generic programming (GP) have shown that mainstream object-oriented (OO) languages such as C# and Java provide weaker support for GP as compared with functional languages such as Haskell or SML. But many new object-oriented languages have appeared in recent years. Have they improved the support for generic programming? And if not, is there a reason why OO languages yield to functional ones in this respect? In this paper we analyse language constructs for GP in seven modern object-oriented languages. We demonstrate that all of these languages follow the same approach to constraining type parameters, which has a number of inevitable problems. However, those problems are successfully lifted with the use of the another approach. Several language extensions that adopt this approach and allow to improve GP in OO languages are considered. We analyse the dependencies between different language features, discuss the features' support using both approaches, and propose which approach is more expressive."
+
 
 - key: "ECOOP DS 2016"
   title: "Concept Parameters as a New Mechanism of Generic Programming for C# Language"
@@ -67,6 +143,7 @@
     - name: proposal PDF
       link: /files/papers/ecoopDS2016_CSharp-concepts.pdf
   abstract: "As was shown in earlier studies, mainstream object-oriented (OO) languages C# and Java provide weaker support for generic programming (GP) as compared with functional languages such as Haskell or SML. Having explored the instruments for GP in modern OO languages Scala, Ceylon, Kotlin, Rust, and Swift, we have found out that all of them, as well as C# and Java, stick to the same approach to constraining type parameters, which we called the “Constraints-are-Types” approach. It turns out that the approach has several inevitable limitations, and because of that Haskell type classes still provide better support for GP than modern object-oriented languages do. This research is aimed to discover a mechanism that would allow to radically improve the support for generic programming in OO languages. We identify the requirements that such mechanism should satisfy, present a design of the appropriate mechanism (concept parameters), and propose a sketch of its implementation for the C# language."
+
 
 - key: "META 2016"
   title: "Language Support for Generic Programming in Object-Oriented Languages: Design Challenges"

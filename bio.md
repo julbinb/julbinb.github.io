@@ -23,7 +23,7 @@ is now called [I. I. Vorovich Institute for Mathematics, Mechanics and Computer 
   {% include link-button.html name="thesis PDF (in Russian)" link="files/thesis/belyakova-BS-2012_PollyTL.pdf" small="true" %}
   {% include link-button.html name="slides PDF (in Russian)" link="files/thesis/belyakova-BS-2012_PollyTL-slides.pdf" small="true" %}
 
-## Appointments
+## Employment
 
 * *Research Assistant.*
   Faculty of Information Technology ([FIT]({{site.data.links.places.fitcvut.link}})), 
@@ -38,7 +38,7 @@ is now called [I. I. Vorovich Institute for Mathematics, Mechanics and Computer 
   I. I. Vorovich Institute for Mathematics, Mechanics and Computer Science ([MMCS]({{site.data.links.places.mmcs.link}})),
   Southern Federal University ([SFedU]({{site.data.links.places.sfedu.link}})).  
   2014−2016.
-* *Programmer.* Angstrem-SFedU Laboratory.  
+* *Part Time Programmer.* Angstrem-SFedU Laboratory.  
   2012−2013.
 
 ## Bio

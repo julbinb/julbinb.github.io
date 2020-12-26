@@ -70,7 +70,7 @@
   doi: 
     name: 10.31219/osf.io/pyqac
     link: https://doi.org/10.31219/osf.io/pyqac
-  venue: "2020 IEEE Visualization Conference Short Papers, OSF Preprints (5 pages)"
+  venue: "IEEE Visualization Conference 2020, Short Papers, OSF Preprints (5 pages)"
   links:
     - name: BibTeX
       link: /files/bibtex/VIS-2020-short.txt
