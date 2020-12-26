@@ -26,7 +26,7 @@ title: Projects
 
 * [Concept parameters](/projects/concepts) (2014–2017)  
   Language support for generic programming in object-oriented languages
-  via explicit, named sets of constraints
+  via explicit, named sets of constraints.
 
 * [WDE ProgrammingABC.NET](/projects/wde) (only in Russian) (2009–2013)  
   Web development environment for programming languages

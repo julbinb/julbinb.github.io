@@ -71,3 +71,38 @@ title: Service
   <!--Artifact Evaluation Committee Member.  -->
   Artifacts Track at the European Conference on Programming languages 2019
   (London, United Kingdom).
+
+## Misc
+
+* Reading group co-organizer (Summer--Fall 2020).  
+  [PRL](http://prl.ccs.neu.edu/) (Programming Research Laboratory).
+
+* [PL-junior](https://github.com/nuprl/prl-seminar-junior)
+  seminar co-organizer (Spring--Summer 2020).  
+  [PRL](http://prl.ccs.neu.edu/) (Programming Research Laboratory).
+
+* [ECOOP 2019](https://2019.ecoop.org/) Student Volunteer.  
+  European COnference On Programming languages (London, United Kingdom).
+
+* [SPLASH 2018](https://2018.splashcon.org/) Student Volunteer.  
+  ACM SIGPLAN conference on Systems, Programming, Languages and
+  Applications: Software for Humanity (Boston, MA, USA).
+
+* [ICFP 2019](https://icfp18.sigplan.org/) Student Volunteer.  
+  ACM SIGPLAN International Conference on Functional Programming
+  (St. Louis, Missouri, USA).
+   
+* [People page](http://prl.ccs.neu.edu/people.html)
+  and mailing list maintainer (Fall 2018--Fall 2020).  
+  [PRL](http://prl.ccs.neu.edu/) (Programming Research Laboratory).
+
+* [ECOOP/ISSTA 2018](https://conf.researchr.org/home/ecoop-issta-2018) Student Volunteer.  
+  European Conference on Object-Oriented Programming/International
+  Symposium on Software Testing and Analysis
+  (Amsterdam, Netherlands).
+  
+* [ECOOP 2017](https://2017.ecoop.org/) Student Volunteer.  
+  European Conference on Object-Oriented Programming (Barcelona, Spain).
+  
+* [ECOOP 2016](https://2016.ecoop.org/) Student Volunteer.  
+  European Conference on Object-Oriented Programming (Rome, Italy).
