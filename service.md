@@ -72,7 +72,7 @@ title: Service
   Artifacts Track at the European Conference on Programming languages 2019
   (London, United Kingdom).
 
-## Misc
+## Miscellaneous
 
 * Reading group co-organizer (Summer--Fall 2020).  
   [PRL](http://prl.ccs.neu.edu/) (Programming Research Laboratory).
