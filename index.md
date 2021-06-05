@@ -58,9 +58,13 @@ Since 2018, I have been doing my PhD in Boston.
 from {{site.data.links.mdlinks.sfedu}}.
 
 *Note.* If you have questions about doing a PhD in the US,
-being an international student or a woman in CS, feel free to send me an email.
+being an international student, woman in CS, etc.,
+feel free to send me an email.
 
 ### Recent good news (without [failures](failures))
+
+* April 2021: joined External Review Committee of
+  [OOPSLA 2021](https://2021.splashcon.org/track/splash-2021-oopsla)  
 
 * December 2020: joined Artifact Evaluation Committee of
   [CAV 2021](http://i-cav.org/2021)

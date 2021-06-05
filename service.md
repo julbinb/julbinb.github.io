@@ -31,6 +31,12 @@ title: Service
 
 ### Latest
 
+* External Review Committee of
+  [OOPSLA 2021](https://2021.splashcon.org/track/splash-2021-oopsla)  
+  <!--Program Committee Member.  -->
+  Conference on Object-Oriented Programming Systems, Languages, and Applications
+  (Chicago, Illinois, USA).
+
 * [ICCQ 2021](https://www.iccq.ru/)  
   <!--Program Committee Member.  -->
   International Conference on Code Quality 2021
@@ -74,7 +80,7 @@ title: Service
 
 ## Miscellaneous
 
-* Reading group co-organizer (Summer--Fall 2020).  
+* Reading group co-organizer (Summer 2020--Summer 2021).  
   [PRL](http://prl.ccs.neu.edu/) (Programming Research Laboratory).
 
 * [PL-junior](https://github.com/nuprl/prl-seminar-junior)
@@ -93,7 +99,7 @@ title: Service
   (St. Louis, Missouri, USA).
    
 * [People page](http://prl.ccs.neu.edu/people.html)
-  and mailing list maintainer (Fall 2018--Fall 2020).  
+  and mailing list maintainer (Fall 2018--Summer 2021).  
   [PRL](http://prl.ccs.neu.edu/) (Programming Research Laboratory).
 
 * [ECOOP/ISSTA 2018](https://conf.researchr.org/home/ecoop-issta-2018) Student Volunteer.  
