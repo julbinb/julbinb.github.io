@@ -7,6 +7,9 @@ This page tracks news starting from 2020.
 
 ### Recent
 
+* April 2021: joined External Review Committee of
+  [OOPSLA 2021](https://2021.splashcon.org/track/splash-2021-oopsla)  
+  
 * December 2020: joined Artifact Evaluation Committee of
   [CAV 2021](http://i-cav.org/2021)
 
