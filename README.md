@@ -13,6 +13,9 @@ After jekyll has been successfully installed, do:
     bundle exec jekyll serve
 
 You might also need to run `bundle install` due to `jekyll-theme-hydeout` requirements (see [here](https://github.com/fongandrew/hydeout)).
+Hydeout is available as the `jekyll-theme-hydeout` Ruby Gem.
+Add `gem "jekyll-theme-hydeout", "~> 4.1"` to your Gemfile and run
+`bundle install`.
 
 In 2020, might need to do the following:
 
