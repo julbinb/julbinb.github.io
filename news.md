@@ -7,6 +7,10 @@ This page tracks news starting from 2020.
 
 ### Recent
 
+* September 2021: accepted paper at
+  [OOPSLA 2021](https://2021.splashcon.org/track/splash-2021-oopsla)  
+  [Type Stability in Julia: Avoiding Performance Pathologies in JIT Compilation](/papers#oopsla2021)
+
 * August 2021: talked about the Julia language on
   [Podlodka Podacst](https://podlodka.io/)  
   [Episode #230: Julia](https://podlodka.io/230) (in Russian)

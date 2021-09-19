@@ -1,3 +1,49 @@
+- key: "OOPSLA 2021"
+  link: https://2021.splashcon.org/track/splash-2021-oopsla
+  title: "Type Stability in Julia: Avoiding Performance Pathologies in JIT Compilation"
+  refid: oopsla2021
+  authors:
+    - key: artem
+    - key: julia
+    - key: benchung
+    - key: rosstate
+    - key: janvitek
+  doi: 
+    name: 10.1145/3485527
+    link: https://doi.org/10.1145/3485527
+  venue: "Proc. ACM Program. Lang., Volume 5, OOPSLA, Article 150 (26 pages)"
+  links:
+    - name: preprint PDF
+      link: https://a-pelenitsyn.github.io/Papers/2021-julia-type-stability.pdf
+    - name: extended version
+      link: /papers#oopsla2021ext
+    - name: artifact (Zenodo)
+      link: https://zenodo.org/record/5500548
+    - name: GitHub
+      link: https://github.com/prl-julia/julia-type-stability
+      colored: true
+    - name: web
+      link: https://a-pelenitsyn.github.io/Projects/stability/
+      colored: true
+  abstract: "As a scientific programming language, Julia strives for performance but also provides high-level productivity features. To avoid performance pathologies, Julia users are expected to adhere to a coding discipline that enables so-called type stability. Informally, a function is type stable if the type of the output depends only on the types of the inputs, not their values. This paper provides a formal definition of type stability as well as a stronger property of type groundedness, shows that groundedness enables compiler optimizations, and proves the compiler correct. We also perform a corpus analysis to uncover how these type-related properties manifest in practice."
+
+- key: "OOPSLA 2021 Extended (arXiv)"
+  link: https://arxiv.org/abs/2109.01950
+  title: "Type Stability in Julia: Avoiding Performance Pathologies in JIT Compilation (Extended Version)"
+  refid: oopsla2021ext
+  authors:
+    - key: artem
+    - key: julia
+    - key: benchung
+    - key: rosstate
+    - key: janvitek
+  venue: "arXiv on Programming Languages (33 pages)"
+  links:
+    - name: arXiv
+      link: https://arxiv.org/abs/2109.01950
+      colored: true  
+
+
 - key: "OOPSLA 2020"
   link: https://2020.splashcon.org/track/splash-2020-oopsla
   title: "World Age in Julia: Optimizing Method Dispatch in the Presence of Eval"

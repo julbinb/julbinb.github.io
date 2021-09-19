@@ -63,6 +63,10 @@ feel free to send me an email.
 
 ### Recent good news (without [failures](failures))
 
+* September 2021: accepted paper at
+  [OOPSLA 2021](https://2021.splashcon.org/track/splash-2021-oopsla)  
+  [Type Stability in Julia: Avoiding Performance Pathologies in JIT Compilation](/papers#oopsla2021)
+
 * August 2021: talked about the Julia language on
   [Podlodka Podacst](https://podlodka.io/)  
   [Episode #230: Julia](https://podlodka.io/230) (in Russian)
@@ -115,11 +119,12 @@ If you have any questions or comments about projects, papers, or website,
 
 ### Selected papers and talks
 
+1. {% include publication.html paper-key="OOPSLA 2021"
+      paper-data=site.data.papers %}
 1. {% include publication.html paper-key="OOPSLA 2020"
       paper-data=site.data.papers %}
 1. {% include publication.html paper-key="VIS 2020 (short paper)" paper-data=site.data.papers %}
 1. {% include publication.html paper-key="FTfJP 2019" paper-data=site.data.papers %}
 1. {% include talk.html talk-key="Семинар ЯПиК 2019" talk-data=site.data.talks show-talk-marker="true" %}
 1. {% include publication.html paper-key="OOPSLA 2018" paper-data=site.data.papers %}
-1. {% include talk.html talk-key="NEUPRL 2017" talk-data=site.data.talks show-talk-marker="true" %}
 1. {% include publication.html paper-key="SBLP 2016" paper-data=site.data.papers %}
