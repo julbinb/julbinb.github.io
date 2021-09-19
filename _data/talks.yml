@@ -1,3 +1,13 @@
+- key: "Podlodka Podcast #230"
+  title: "Язык Julia"
+  date: "24 августа 2021 (Aug 24)"
+  venue: "<a target='_blank' href='https://podlodka.io/'>Podlodka Podcast</a>"
+  links:
+    - name: podcast episode
+      link: https://podlodka.io/230
+      colored: true
+  
+
 - key: "OOPSLA 2020"
   title: "World Age in Julia: Optimizing Method Dispatch in the Presence of Eval"
   author: Julia Belyakova, Ben Chung

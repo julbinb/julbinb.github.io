@@ -7,6 +7,10 @@ This page tracks news starting from 2020.
 
 ### Recent
 
+* August 2021: talked about the Julia language on
+  [Podlodka Podacst](https://podlodka.io/)  
+  [Episode #230: Julia](https://podlodka.io/230) (in Russian)
+
 * April 2021: joined External Review Committee of
   [OOPSLA 2021](https://2021.splashcon.org/track/splash-2021-oopsla)  
   
