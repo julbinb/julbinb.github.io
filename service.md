@@ -29,8 +29,6 @@ title: Service
 
 ## Program committees
 
-### Latest
-
 * External Review Committee of
   [OOPSLA 2021](https://2021.splashcon.org/track/splash-2021-oopsla)  
   <!--Program Committee Member.  -->
@@ -41,8 +39,6 @@ title: Service
   <!--Program Committee Member.  -->
   International Conference on Code Quality 2021
   (Moscow, Russia).
-
-### 2020 and earlier
 
 * [TyDe 2019](https://icfp19.sigplan.org/home/tyde-2019)  
   <!--Program Committee Member.  -->
@@ -57,15 +53,11 @@ title: Service
 
 ## Artifact-evaluation committees
 
-### Latest
-
 * [CAV 2021](http://i-cav.org/2021/artifact-evaluation/)  
   <!--Artifact Evaluation Committee Member.  -->
   Artifact Evaluation track at
   International Conference on Computer-Aided Verification 2021
   (Los Angeles, California, USA).
-
-### 2020 and earlier
 
 * [PLDI 2020](https://pldi20.sigplan.org/track/pldi-2020-PLDI-Research-Artifacts)  
   <!--Artifact Evaluation Committee Member.  -->
@@ -78,14 +70,31 @@ title: Service
   Artifacts Track at the European Conference on Programming languages 2019
   (London, United Kingdom).
 
+## University service
+
+* Co-organizer of [Khoury Graduate Student Association](https://khoury-gsa.github.io/) (2019--2023).  
+  [Khoury College of Computer Sciences](https://www.khoury.northeastern.edu/),
+  Northeastern University.
+
 ## Miscellaneous
 
+* ZED talks co-organizer (Fall 2021--Spring 2022).  
+  [PRL](http://prl.ccs.neu.edu/) (Programming Research Laboratory),
+  Khoury NEU.
+
 * Reading group co-organizer (Summer 2020--Summer 2021).  
-  [PRL](http://prl.ccs.neu.edu/) (Programming Research Laboratory).
+  [PRL](http://prl.ccs.neu.edu/) (Programming Research Laboratory),
+  Khoury NEU.
+
+* [People page](http://prl.ccs.neu.edu/people.html)
+  and mailing list maintainer (Fall 2018--Summer 2021).  
+  [PRL](http://prl.ccs.neu.edu/) (Programming Research Laboratory),
+  Khoury NEU.
 
 * [PL-junior](https://github.com/nuprl/prl-seminar-junior)
   seminar co-organizer (Spring--Summer 2020).  
-  [PRL](http://prl.ccs.neu.edu/) (Programming Research Laboratory).
+  [PRL](http://prl.ccs.neu.edu/) (Programming Research Laboratory),
+  Khoury NEU.
 
 * [ECOOP 2019](https://2019.ecoop.org/) Student Volunteer.  
   European COnference On Programming languages (London, United Kingdom).
@@ -94,13 +103,9 @@ title: Service
   ACM SIGPLAN conference on Systems, Programming, Languages and
   Applications: Software for Humanity (Boston, MA, USA).
 
-* [ICFP 2019](https://icfp18.sigplan.org/) Student Volunteer.  
+* [ICFP 2018](https://icfp18.sigplan.org/) Student Volunteer.  
   ACM SIGPLAN International Conference on Functional Programming
   (St. Louis, Missouri, USA).
-   
-* [People page](http://prl.ccs.neu.edu/people.html)
-  and mailing list maintainer (Fall 2018--Summer 2021).  
-  [PRL](http://prl.ccs.neu.edu/) (Programming Research Laboratory).
 
 * [ECOOP/ISSTA 2018](https://conf.researchr.org/home/ecoop-issta-2018) Student Volunteer.  
   European Conference on Object-Oriented Programming/International

@@ -7,7 +7,7 @@ title: Home
   <img src="img/julia-logo.svg" alt="Julia Lang"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
 </a>
-I am a **PhD Student** at the {{site.data.links.mdlinks.khoury}},
+I am a **PhD Candidate** at the {{site.data.links.mdlinks.khoury}},
 {{site.data.links.mdlinks.neu}} (Boston, MA, USA) since September 2018,
 currently working on formalizing aspects of
 the {{site.data.links.mdlinks.julialang}} language.
@@ -61,7 +61,7 @@ from {{site.data.links.mdlinks.sfedu}}.
 being an international student, woman in CS, etc.,
 feel free to send me an email.
 
-### Recent good news (without [failures](failures))
+### Recent news (without [failures](failures))
 
 * September 2021: accepted paper at
   [OOPSLA 2021](https://2021.splashcon.org/track/splash-2021-oopsla)  

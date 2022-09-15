@@ -17,11 +17,13 @@ Hydeout is available as the `jekyll-theme-hydeout` Ruby Gem.
 Add `gem "jekyll-theme-hydeout", "~> 4.1"` to your Gemfile and run
 `bundle install`.
 
-In 2020, might need to do the following:
+2020: might need to do the following:
 
 * remove `Gemfile.lock`;
 * add `gem "kramdown-parser-gfm"` to `Gemfile`;
 * run `bundle install`.
+
+2022: might need to run `bundle add webrick` after `bundle install`
 
 ## Notes
 

@@ -18,9 +18,13 @@ transitively inspired by
 [Johannes Haushofer](https://haushofer.ne.su.se/)'s
 [CV of failures](https://haushofer.ne.su.se/Johannes_Haushofer_CV_of_Failures.pdf).
 
-**Note 2.** Many things that work out well involve a great deal of luck.
+**Note 2.** Many things that work out involve a great deal of luck.
 
 ---
+
+### Papers I did not submit
+
+* POPL 2023 (issues with a formalization)
 
 ### Paper rejections
 
