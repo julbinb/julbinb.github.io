@@ -5,40 +5,53 @@ title: Bio
 
 ## Education
 
-I received both BS and MS from the {{site.data.links.mdlinks.sfedu}}
-(former Rostov State University), Rostov-on-Don, Russia.
-My department, Faculty of Mathematics, Mechanics and Computer Science (MMCS),
-is now called [I. I. Vorovich Institute for Mathematics, Mechanics and Computer Science]({{site.data.links.places.mmcs.link}}).
+* **PhD in Computer Science (2018–present)**  
+  *{{site.data.links.mdlinks.neu}}*  
 
-* **MS in Computer Science (2012–2014)**
+  Advisor: {{site.data.links.mdlinks.janvitek}}
+
+* **MS in Computer Science (2012–2014)**  
+  *{{site.data.links.mdlinks.sfedu}}*  
   
+  Advisor: {{site.data.links.mdlinks.ssm}}  
   Thesis: Модель концептов в императивном языке программирования (A model of concepts for an imperative programming language).  
   {% include link-button.html name="thesis PDF (in Russian)" link="files/thesis/belyakova-MS-2014_net-concepts.pdf" small="true" %}
   {% include link-button.html name="slides PDF (in Russian)" link="files/thesis/belyakova-MS-2014_net-concepts-slides.pdf" small="true" %}
 
-* **BS in Computer Science (2008–2012)**
+* **BS in Computer Science (2008–2012)**  
+  *{{site.data.links.mdlinks.sfedu}}*  
   
+  Advisor: {{site.data.links.mdlinks.ssm}}  
   Thesis: Автоматическое построение ограничений в модельном языке программирования с шаблонами функций и автовыводом типов (Automatic constraints collection in
   a programming language with generic functions and type inference).  
   {% include link-button.html name="thesis PDF (in Russian)" link="files/thesis/belyakova-BS-2012_PollyTL.pdf" small="true" %}
   {% include link-button.html name="slides PDF (in Russian)" link="files/thesis/belyakova-BS-2012_PollyTL-slides.pdf" small="true" %}
 
+I received both BS and MS from the {{site.data.links.mdlinks.sfedu}}
+(former Rostov State University), Rostov-on-Don, Russia.
+My department, Faculty of Mathematics, Mechanics and Computer Science (MMCS),
+is now called [I. I. Vorovich Institute for Mathematics, Mechanics and Computer Science]({{site.data.links.places.mmcs.link}}).
+
 ## Employment
 
-* *Research Assistant.*
+* **Research Assistant.**  
   Faculty of Information Technology ([FIT]({{site.data.links.places.fitcvut.link}})), 
   Czech Technical University in Prague ([CVUT]({{site.data.links.places.cvut.link}})).  
   September 2017−July 2018.
-* *Research Assistant.*
+
+* **Research Assistant.**  
   Khoury College of Computer Sciences ([Khoury]({{site.data.links.places.khoury.link}})), 
   Northeastern University ([NEU]({{site.data.links.places.neu.link}})).  
   January−July 2017.
-* *Teaching Assistant, Lecturer.* 
+
+* **Teaching Assistant, Lecturer.**  
   [Department of Computer Science and Computational Experiment](http://sfedu.ru/www/rsu$elements$.info?p_es_id=2001100000000), 
   I. I. Vorovich Institute for Mathematics, Mechanics and Computer Science ([MMCS]({{site.data.links.places.mmcs.link}})),
   Southern Federal University ([SFedU]({{site.data.links.places.sfedu.link}})).  
   2014−2016.
-* *Part Time Programmer.* Angstrem-SFedU Laboratory.  
+
+* **Part Time Programmer.**  
+  Angstrem-SFedU Laboratory.  
   2012−2013.
 
 ## Bio
@@ -71,7 +84,7 @@ While teaching half-time, I had entered a PhD program as well, although
 later started anew at [Northeastern]({{site.data.links.places.neu.link}}).
 (Feel free to ask me about this.)
 
-At the [ECOOP conference in 2016](https://2016.ecoop.org/), I had met
+At the [ECOOP conference in 2016](https://2016.ecoop.org/), I met
 {{site.data.links.mdlinks.janvitek}} who later became my PhD advisor.
 I did a research internship with him in Boston in 2017 and then spent a year in
 [Prague](https://en.wikipedia.org/wiki/Prague) as a researcher at the

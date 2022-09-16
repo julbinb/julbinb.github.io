@@ -24,7 +24,7 @@ transitively inspired by
 
 ### Papers I did not submit
 
-* POPL 2023 (issues with a formalization)
+* POPL 2023 (technical problems with a formalization)
 
 ### Paper rejections
 

@@ -3,4 +3,7 @@ layout: page
 title: Personal
 ---
 
-TBD
+* Pronoun: she/her, they/them
+* Citizenship: Russia
+* Born: 1991, Rostov-on-Don, Russia
+* Married {{site.data.links.mdlinks.artem}} in 2022
