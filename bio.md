@@ -84,12 +84,20 @@ While teaching half-time, I had entered a PhD program as well, although
 later started anew at [Northeastern]({{site.data.links.places.neu.link}}).
 (Feel free to ask me about this.)
 
+<a href="{{site.data.links.places.cvut.link}}" target="_blank">
+  <img src="img/prl-prg.png" alt="PRL PRG"
+    style="height: 50px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
+</a>
 At the [ECOOP conference in 2016](https://2016.ecoop.org/), I met
 {{site.data.links.mdlinks.janvitek}} who later became my PhD advisor.
 I did a research internship with him in Boston in 2017 and then spent a year in
 [Prague](https://en.wikipedia.org/wiki/Prague) as a researcher at the
 [Czech Technical University]({{site.data.links.places.cvut.link}}).
 
+<a href="{{site.data.links.places.prl.link}}" target="_blank">
+  <img src="img/prl.png" alt="PRL"
+    style="height: 50px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
+</a>
 In September 2018, I started a PhD in Computer Science
 at {{site.data.links.mdlinks.neu}},
 and I have been living in Boston since then.
