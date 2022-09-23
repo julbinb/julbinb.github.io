@@ -3,31 +3,27 @@ layout: page
 title: Home
 ---
 
-<a href="https://julialang.org/" target="_blank">
-  <img src="img/julia-logo.svg" alt="Julia Lang"
-    style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
-</a>
-I am a **PhD Candidate** at the {{site.data.links.mdlinks.khoury}},
-{{site.data.links.mdlinks.neu}} (Boston, MA, USA) since September 2018,
-currently working on formalizing aspects of
-the {{site.data.links.mdlinks.julialang}} language.
 
-<a href="http://prl.ccs.neu.edu" target="_blank">
+<a href="{{site.data.links.places.prl.link}}" target="_blank">
   <img src="img/prl.png" alt="PRL"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
 </a>
-I work with {{site.data.links.mdlinks.janvitek}}
-in {{site.data.links.mdlinks.prl}}, the Programming Research Laboratory.  
-{% include jump-button.html link="#research" name="the Research section" %}
+I am a **PhD Candidate** at the {{site.data.links.mdlinks.khoury}},
+{{site.data.links.mdlinks.neu}} (Boston, MA, USA).
+I started my PhD in September 2018
+and have been working with {{site.data.links.mdlinks.janvitek}}
+at {{site.data.links.mdlinks.prl}}, the Programming Research Laboratory.  
 
-My primary research interests are **programming languages** and **type theory**.
-I also like theorem proving (most of my experience has been with
-{{site.data.links.mdlinks.coq}}),
-generic programming (like Java generics or ML polymorphism),
-functional and object-oriented programming,
-software engineering, programming by contracts, and software testing.
-Lately, I have been getting interested in human aspects of software
-engineering and the interaction between humans and programming languages.
+<a href="{{site.data.links.websites.julialang.link}}" target="_blank">
+  <img src="img/julia-logo.svg" alt="Julia Lang"
+    style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
+</a>
+My research focuses on **programming languages**, in particular,
+their design, semantics, and correctness.
+I am currently working on formalizing aspects of
+the {{site.data.links.mdlinks.julialang}} language.  
+{% include jump-button.html link="#research" name="Research" %}
+{% include link-button.html name="CV [pdf]" link="/files/cv.pdf" small="true" %}
 
 ### Contacts
 
@@ -87,6 +83,19 @@ feel free to send me an email.
 {% include link-button.html name="ACM DL" link="https://dl.acm.org/profile/99659183110" %}
 {% include link-button.html name="ORCID" link="https://orcid.org/0000-0002-7490-8500" %}
 
+My research largely focuses on the design, semantics, and correctness
+of programming languages.
+In particular, I am interested in making it easier for language users
+to understand the semantics of their programming language
+and write robust and correct software.
+My research interests also include type systems, compilers,
+software correctness, theorem proving (most of my experience has been with
+{{site.data.links.mdlinks.coq}}),
+generic programming (like Java generics or ML polymorphism),
+programming by contracts, software testing,
+human aspects of programming languages and software engineering,
+and CS education.
+
 <a href="https://julialang.org/" target="_blank">
   <img src="img/julia-logo.svg" alt="Julia Lang"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
@@ -95,6 +104,9 @@ For the last several years I have been working on formalizing
 various aspects of the {{site.data.links.mdlinks.julialang}}
 programming language:
 
+* The notion of [type stability]({{site.data.links.websites.typestability}})
+  and its impact on JIT compilation in [Jules](/projects/jules)
+  [[OOPSLA 2021](/papers#oopsla2021)].
 * The semantics of
   [world age]({{site.data.links.websites.worldage}})
   and its interaction with `eval`
@@ -106,7 +118,7 @@ programming language:
   - A semantic subtyping model suitable for a dynamic programming language
     (work-in-progress) [[FTfJP 2019](/papers#ftfjp2019)].
 
-> <small>_Disclaimer._ Good or bad, the language has nothing to do with me, and the name match is a coincidence!</small>
+> <small>_Disclaimer._ Good or bad, the language has nothing to do with me, and our shared name is a coincidence!</small>
 
 My previous research was related to language support for generic programming
 in object-oriented languages

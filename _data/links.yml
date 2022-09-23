@@ -84,10 +84,12 @@ places:
 
 websites:
   julialang:        https://julialang.org/
-  worldage:         https://docs.julialang.org/en/v1/manual/methods/#Redefining-Methods
+  jules:            https://a-pelenitsyn.github.io/Projects/stability/
   lambdajulia:      https://fzn.fr/projects/lambdajulia/
   pascalabc:        http://pascalabc.net/en/
-
+  worldage:         https://docs.julialang.org/en/v1/manual/methods/#Redefining-Methods
+  typestability:    https://docs.julialang.org/en/v1/manual/faq/#man-type-stability
+  
 mdlinks:
   # people
   artem:            "[Artem Pelenitsyn](https://a-pelenitsyn.github.io/)"

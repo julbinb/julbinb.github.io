@@ -3,24 +3,34 @@ layout: category
 title: Projects
 ---
 
-## Active Projects
+## Active/Recent Projects
 
-* [Juliette](projects/juliette) (2020–…)  
+* Subtyping in the {{site.data.links.mdlinks.julialang}}
+  programming language (2017–…)
+  
+  - Decidable subtyping for {{site.data.links.mdlinks.julialang}} (2021–…)  
+
+  - [MiniJl](/projects/minijl) (2018–2019)  
+    Tag-based semantic subtyping for nominal types, covariant tuples, and unions
+
+  - [LambdaJulia](/projects/lambda-julia) (2017–2018)
+    {% include link-button.html name="main project page"
+      link="https://fzn.fr/projects/lambdajulia/" small="true" %}  
+    A formalization of subtyping for {{site.data.links.mdlinks.julialang}}
+
+* [Jules](/projects/jules) (2020–2021)
+  {% include link-button.html name="main project page"
+    link="https://a-pelenitsyn.github.io/Projects/stability/" small="true" %}  
+  A formalization and analysis of [type stability]({{site.data.links.websites.typestability}}) in the {{site.data.links.mdlinks.julialang}} language
+
+* [Juliette](projects/juliette) (2019–2020)  
   A formalization of `eval` and
   [world age]({{site.data.links.websites.worldage}})
-  of the {{site.data.links.mdlinks.julialang}} language.
+  in the {{site.data.links.mdlinks.julialang}} language
   <a href="https://julialang.org/" target="_blank">
   <img src="img/julia-logo.svg" alt="Julia Lang"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
   </a>
-
-* [MiniJl](/projects/minijl) (2018–2019)  
-  Tag-based semantic subtyping.
-
-* [LambdaJulia](/projects/lambda-julia) (2017–2018)
-  {% include link-button.html name="main project page"
-    link="https://fzn.fr/projects/lambdajulia/" small="true" %}  
-  A formalization of subtyping for the {{site.data.links.mdlinks.julialang}} programming language.
 
 ## Past Projects
 
