@@ -5,7 +5,7 @@ title: Home
 
 
 <a href="{{site.data.links.places.prl.link}}" target="_blank">
-  <img src="img/prl.png" alt="PRL"
+  <img src="img/prl.png" alt="PRL logo"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
 </a>
 I am a **PhD Candidate** at the {{site.data.links.mdlinks.khoury}},
@@ -15,7 +15,7 @@ and have been working with {{site.data.links.mdlinks.janvitek}}
 at {{site.data.links.mdlinks.prl}}, the Programming Research Laboratory.  
 
 <a href="{{site.data.links.websites.julialang.link}}" target="_blank">
-  <img src="img/julia-logo.svg" alt="Julia Lang"
+  <img src="img/julia-logo.svg" alt="Julia Lang logo"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
 </a>
 My research focuses on **programming languages**, in particular,
@@ -31,10 +31,38 @@ the {{site.data.links.mdlinks.julialang}} language.
 or [belyakova.y@northeastern.edu](mailto:belyakova.y@northeastern.edu)  
 Professional: [github]({{site.github.account}}),
 [researchgate]({{site.researchgate}}), [linkedin]({{site.linkedin}})  
-Social: [twitter]({{site.twitter}}), [facebook]({{site.facebook}})
+Social: [twitter]({{site.twitter}}), [facebook]({{site.facebook}})  
+**Current location** (as of 2022): Boston, MA, USA
 <!--[skype](skype:juliet_belyakova)-->  
 <!--Web-page in Russian:
 [staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).-->
+
+<div style="text-align: center;">
+<a href="{{site.data.links.places.sfedu.link}}" target="_blank">
+  <img src="img/sfedu-en.png" alt="Southern Federal University logo"
+    style="height: 70px; margin: 0.5em; vertical-align: middle; display: inline"/>
+</a>
+<a href="{{site.data.links.places.neu.link}}" target="_blank">
+  <img src="img/neu-logo.svg" alt="Northeastern University logo"
+    style="height: 70px; margin: 0.5em; vertical-align: middle; display: inline"/>
+</a>
+<a href="{{site.data.links.places.prlprg.link}}" target="_blank">
+  <img src="img/prl-prg.png" alt="PRL PRG logo"
+    style="height: 60px; margin: 0.5em; vertical-align: middle; display: inline"/>
+</a>
+<a href="{{site.data.links.places.prl.link}}" target="_blank">
+  <img src="img/prl.png" alt="PRL"
+    style="height: 60px; margin: 0.5em; vertical-align: middle; display: inline"/>
+</a>
+<a href="{{site.data.links.websites.pascalabc}}" target="_blank">
+  <img src="img/pabcnet-logo.png" alt="PascalABC.NET logo"
+    style="height: 56px; margin: 0.5em; vertical-align: middle; display: inline"/>
+</a>
+<a href="{{site.data.links.websites.julialang}}" target="_blank">
+  <img src="img/julia-logo.svg" alt="Julia Language logo"
+    style="height: 60px; margin: 0.5em; vertical-align: middle; display: inline"/>
+</a>
+</div>
 
 ### Short bio
 
@@ -53,11 +81,11 @@ Since 2018, I have been doing my PhD in Boston.
 **Education.** MS in "Computer Science and Information Technologies"
 from {{site.data.links.mdlinks.sfedu}}.
 
-*Note.* If you have questions about doing a PhD in the US,
-being an international student, woman in CS, etc.,
-feel free to send me an email.
+> *Note.* If you have questions about doing a PhD in the US,
+> being an international student, woman in CS, etc.,
+> feel free to send me an email.
 
-### Recent news (without [failures](failures))
+### Recent [news](news) (without [failures](failures))
 
 * September 2021: accepted paper at
   [OOPSLA 2021](https://2021.splashcon.org/track/splash-2021-oopsla)  
@@ -73,8 +101,6 @@ feel free to send me an email.
 * October 2020: accepted paper at
   [OOPSLA 2020](https://2020.splashcon.org/track/splash-2020-oopsla)  
   [World Age in Julia: Optimizing Method Dispatch in the Presence of Eval](/papers#oopsla2020)
-
-> <small>All news starting from 2020 are [here](news).</small>
 
 ## <span id="research">Research</span>
 

@@ -14,6 +14,9 @@ people:
   janvitek:
     name: Jan Vitek
     link: http://janvitek.org/
+  matthiasfelleisen:
+    name: Matthias Felleisen
+    link: https://felleisen.org/matthias/
   bengreenman:
     name: Ben Greenman
     link: http://ccs.neu.edu/home/types/
@@ -61,7 +64,7 @@ places:
   # universities
   prl:
     name: PRL
-    link: http://prl.ccs.neu.edu
+    link: https://prl.ccs.neu.edu
   khoury:
     name: Khoury College of Computer Sciences
     link: https://www.khoury.northeastern.edu/
@@ -74,6 +77,9 @@ places:
   sfedu:
     name: Southern Federal University
     link: https://sfedu.ru/index_eng.php
+  prlprg:
+    name: PRL PRG
+    link: https://prl-prg.github.io/
   fitcvut:
     name: Faculty of Information Technology
     link: https://www.fit.cvut.cz/en
