@@ -153,6 +153,8 @@ body {
   .home #sidebar {
     text-align: left;
     width: $sidebar-width;
+    height: 100%;
+    overflow-y: auto;
 
     > *:last-child {
       margin-bottom: 0;
