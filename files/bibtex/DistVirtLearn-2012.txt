@@ -1,4 +1,4 @@
-@article{Abramyan:2012:DistVirtLearning,
+@article{Abramyan:2012:web-pabcnet,
   author = {Абрямян, М.Э. and Белякова, Ю.В. and Михалкович, С.С.},
     title = {{Использование веб-среды PascalABC.NET для дистанционного обучения программированию}},
     journal = {{Журнал «Дистанционное и виртуальное обучение»}},

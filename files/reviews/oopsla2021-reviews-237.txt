@@ -1,0 +1,451 @@
+OOPSLA 2021 Paper #237 Reviews and Comments
+===========================================================================
+Paper #237 Type Stability in Julia: Avoiding Performance Pathologies in JIT
+Compilation
+
+
+Review #237A
+===========================================================================
+* Updated: 28 Jun 2021 5:26:12am AoE
+
+Overall merit
+-------------
+5. Strong accept
+
+Review confidence
+-----------------
+3. High
+
+Paper summary
+-------------
+Julia is a dynamic language that is mainly used for scientific computations. The language presents itself as a more performant alternative to R or Python (which are more widely used in the community). The main edge that Julia has is that ability of its just-in-time compiler to specialize methods (and consequently perform further optimizations such as function inlining) if it can prove its type stability. This submission presents a suite of contributions to further this feature:
+- a formal definition of type stability and its more strict version (i.e., type groundedness) and how they related to each other. That formalization is based on Jules (the formal abstract machine of the Julia compiler's IR)
+- empirical evaluation to assess both type stability and type groundedness in the most used Julia packages.
+
+Strengths and Weaknesses
+------------------------
+### Strengths
++ great paper to read! an absolute delight
++ addressing real-world problems that will help the scientific computation community
++ neat formalization for both type stability and groundedness
++ proper methodology for the empirical evaluation
+
+### Weaknesses
+- lack of discussion of other work about JIT compilers that is relevant to this work (e.g., Graal and Eclipse OpenJ9)
+
+Comments for author
+-------------------
+### Concrete suggestions for improvement
+- Most figure captions are terse (e.g., Figure 2 and Figure 7). I suggest making them more verbose to provide further details as to what they are referring to. For example, for Figure 2, I suggest the caption "A Julia microbenchmark illustrating performance implications of careless coding practices."
+- Section 4: I take it that Jules is not one of your contributions, right? If so, could you please update that section (somewhere in the first paragraph, Lines 279--287) with a citation to that formalization?
+- Discuss other related work such as Graal and Eclipse OpenJ9 and how their optimization algorithms relate to those in the Julia JIT compiler.
+
+### Comments (this is more of a discussion than specific suggestions or questions)
+- I really liked the empirical study that you conducted in Section 5, starting with how you choose real-world Julia packages, to selecting the most used ones for further manual analysis, to trying to understand how the Julia community deals with type stability and groundedness (even if they don't use the same terms).
+
+- I also liked that you went beyond reporting the statistics that are listed in tables and diagrams. In particular, I liked your discussion of the type stability and groundedness of the Knet package (Lines 908--013) and the Genie package (Lines 915--918).
+
+Questions for authors’ response
+-------------------------------
+### Major comments (will affect my final decision)
+My main major comment is that nowhere in the paper do you discuss efforts from other languages (primarily Java) that aim at improving the program run-time performance through various JIT compiling techniques. In particular, I was expecting to see some discussion about Graal (which supports compiling dynamic languages such as JS, Ruby, and R) and Eclipse OpenJ9 (which also tries to specialize certain functions based on profiling information to reduce dynamic dispatch overhead).
+
+### Minor comments (will not affect my final decision)
+- Does the JIT compiler for Julia profile previous runs and use that information to optimize future runs, similar to Java JIT compilers such as Graal and Eclipse OpenJ9? Is there any support for profiling in the language/compiler infrastructure?
+- Line 865: those 5 failures are out of how many items?
+- Line 998: typo, bu => by
+
+Reviewer's Comments after Authors' Response
+-------------------------------------------
+Thanks for addressing my question about other JITs and your promise to add further discussion in your next version. Also, I like your proposed idea of running Julia code through Laurie's harness to hopefully see more predictable behaviour. Looking forward to seeing the results of that experiment!
+
+
+
+Review #237B
+===========================================================================
+
+Overall merit
+-------------
+4. Accept
+
+Review confidence
+-----------------
+2. Medium
+
+Paper summary
+-------------
+The paper makes three main contributions: (1) it provides a very clear
+intuitive overview of how JIT compilation works in Julia, why
+devirtualization of methods is key to achieving good performance, and
+why this requires being able to infer precise types, (2) it formalises
+the notion of type stability, which has been informally and
+ambiguously defined in the community, and the related notion of type
+groundedness, and (3) it presents an empirical study showing the
+extent to which Julia methods are type-stable and grounded in the
+wild.
+
+Strengths and Weaknesses
+------------------------
+Strengths
+
++ Very clearly written and really interesting
+
++ A rigorous formal treatment of the notions of type stability and groundedness
+
++ A well explained empirical study
+
+Weaknesses
+
+- Little discussion of whether the are downsides to type stablity /
+  groundedness
+
+- Little discussion of whether alternative design decisions in the
+  language, or supporting tooling, could make these properties easier
+  to achieve
+
+Comments for author
+-------------------
+I found the paper very interesting and learned a lot by reading it -
+thank you. I am not an expert in formal type systems, so my expertise
+on section 4 is on the lower side, but I found the definitions to be
+precise. The paper makes a valuable contribution by introducing the
+notion of type groundedness, formalising the notions of stability and
+groundedness, and explaining rigorously how groundedness enables
+de-virtualisation. I recommend the paper be accepted.
+
+The two things I was left wondering are:
+
+- In all the examples in the paper, type instability seemed to be
+  associated with weird, bad looking code. Are there examples where
+  it's much more convenient to write type-unstable code, and where
+  type instability would be better from a software engineering point
+  of view? Or is it more the case that we have a win-win situation,
+  where improving type stability also improves code quality from a
+  readability and maintenance point of view? (I realise that this is
+  to some extent subjective.)
+
+- Is there scope for improving the language design, or tooling
+  associated with the language, in a manner that would make programs
+  more likely to be type-stable and/or grounded?
+
+Minor remarks:
+
+- Start of section 2: when you explain that a call is dispatched to
+  the most specific method, this reminded me of static resolution of
+  overloading in C++, where the most specific method is invoked. For a
+  reader not so familiar with dynamic languages it could be worth
+  making the explicit point that what's going on in Julia is very
+  different static overload resolution, despite this superficial
+  similarity.
+
+- "the compiler will type infer its body" - I found this hard to parse.
+
+- "introducing world age to limit the reach of eval" - this made no
+  sense to me.
+
+- The start of Section 3 says "Developers were then encouraged to ..."
+  - can you cite the source for this encouragement?
+
+- Lines 229 and 230: the order goes "type stability" then "type
+  groundedness". But in the next paragraph you use "the former" to
+  refer to groundedness and "the latter" for stability. Perhaps just
+  drop "the former" and "the latter" here.
+
+- Figure 3, second box: maybe use "return 1" instead of "return -1",
+  otherwise the reader needs to understand that "-1" is a literal, and
+  not the "-" function applied to the literal "1". (Presumably "- 1"
+  would be the latter?) As there's nothing special about the value -1,
+  using a non-negative value would make the same point. It would also
+  dispel the impression that there's some relationship between the
+  second and third boxes in relation to negation, when there isn't
+  really (negation is just an example of a function being applied in
+  the third box - it could be any function)
+
+- Line 266: "For example, g(x) = let ... in x end" - follow this by
+  "is not grounded, because of the imprecise variable y, but *is* type
+  stable, and thus h is grounded."
+
+Questions for authors’ response
+-------------------------------
+Are there examples where it is particularly convenient to write type unstable code, such that there would be a trade-off between the performance of compiled code and the readability of source code?
+
+
+
+Review #237C
+===========================================================================
+* Updated: 23 Jun 2021 3:58:33pm AoE
+
+Overall merit
+-------------
+3. Weak accept
+
+Review confidence
+-----------------
+2. Medium
+
+Paper summary
+-------------
+This paper presents the overview of Julia's type inference and how the
+type inference is used for devirtualization.  Then it presents the
+abstract machine, called Jules, for modeling type groundness and type
+stability in Julia.  They are key ideas for aggressive
+devirtualization.  The paper finally shows how Julia programs in the
+wild satisfy type groundness and type stability.
+
+Strengths and Weaknesses
+------------------------
+### Strength.
+
+Nicely written paper.  Section 2 and 3 are good introduction to Julia.
+The reviewer likes the empirical study in Section 5.
+
+### Weakness.
+
+The practical values of the theorems presented in this paper are not
+very clear.  It seems obvious that type groundness implies full
+devirtualization.
+
+It is a pity that the type inference is a black box.
+
+Definitions and theorems such as 4.11 and 4.12 should be revised to
+be expressed in more words.  It was not easy to read these descriptions.
+
+Section 6 should mention related work with respect to the formalization
+of static typing and devirtualization.
+
+The first three paragraphs in Section 7 are advertisement irrelevant to
+the issues discussed in this paper.  They should be removed.
+
+Comments for author
+-------------------
+L 185.  "Types that are imprecise," What are imprecise types?
+Is a Union type imprecise?
+
+L 263 "h(x::Int64)=g(x)+1"  It seems that + has to be type stable
+if h is type stable.
+
+L 357.  T ranges over concrete types.  Does ty also range over only
+concrete types?  Or over both concrete and abstract types?  Please
+clarify this.
+
+L 373. the method call forms are conditional.  Why?  For what purpose?
+
+L 435.  What are guard registers?
+
+L 501.  Is the monotonicity property preserved in Jules?  Is this assumption
+for all the theorems in this paper?
+
+L 545.  What is a stub method?  How does it avoid infinite recursion of
+compilation?  Is this represented in Figure 7?  If yes, please explain.
+
+L 796.  "Type inference algorithm I(M,ty,st) is context-insensitive"
+Isn't it context-insensitive only with the context of the given st?
+This definition should be expressed in more words.
+
+L 797.  "if inferring the result of a method call produces"
+Maybe "a method call in \bar{st}"?
+
+L 1011.  Eagerly performing type inference should be a common technique
+adopted by many JIT engines.  So the reviewer is not sure that Julia's
+approach is really new.  Maybe it is new for its explicit encouragement
+to Julia programmers to consider type inference.
+
+Questions for authors’ response
+-------------------------------
+The results of Theorem 4.10 and 4.12 seem somewhat obvious.  What are technical challenges to prove these theorems?  Was it difficult to prove these theorems within the confines of existing proving/formalization techniques for type theory?  What is the motivation for proving these theorems?
+
+Reviewer's Comments after Authors' Response
+-------------------------------------------
+The authors' response answered my questions well.   Please revise your paper for the second round to clarify various issues according to the response.
+
+
+
+R2 Response by Artem Pelenitsyn <a.pelenitsyn@gmail.com>
+---------------------------------------------------------------------------
+## Overview
+
+Thanks for your comments. 
+
+We first address the main concerns of your reviews, leaving more granular questions to the Detailed Comments section.
+
+ * **Related work:** Other JITs may do better but they are non-deterministic and often perceived as unpredictable. A good example is the Hot and Cold paper by Laurie Tratt et al [OOPSLA’17]. It shows the non-determinism of Graal (and other VMs). The point and novelty here is that Julia has a much more predictable performance profile. Your questions gave us an idea for future work: we could run some Julia code through Laurie’s harness and compare it to other VMs. Hopefully we should see more predictability.
+
+ * **Compelling examples of type-unstable code:** In general, abstract fields inside structures, e.g. a heterogenous list, lead to code that is unstable. In Julia, it is recommended to avoid abstract fields if performance is important, but there is nothing wrong with them from a software engineering point of view. They come in handy when interacting with external data sources. Another example is sum types (algebraic datatypes or open unions). Take function `parse(s :: String)` that returns values of different concrete types that are subtypes of abstract `Expr`, say `Lit` and `BinOp`. This is not type stable. A hierarchy like `Expr`’s, is convenient because we could write an interpreter using multiple dispatch, e.g.  `run(e :: Lit) = …` and `run(e :: BinOp) = …` If one really wants `parse` to be type-stable, however, they need to always return the same concrete type, e.g. an S-expression style struct. Then, `run` would have to be written without multiple dispatch, as a big if-expression.
+
+ * **Improving Julia design and/or tooling:** We think that there’s considerable opportunity in terms of providing tooling. In particular, we see a future work opportunity as being the development of a user-facing static type system that is sound in determining whether a method will be type stable or not. This could provide both the benefits of a normal (gradual) type system, as well as allow programmers to ensure type stability. As for the language design, as mentioned in Section 3, we think of type stability as a notion enabling dialogue between the programmer and the Julia compiler. Currently, it’s a rather implicit notion though: the code itself doesn’t immediately indicate if the programmer wrote the code with type stability in mind. We want to make this dialogue more explicit in the future. For example, we want to give the developer the power to say: `assert(is_type_stable())` in the implementation indicating that they don’t tolerate the method being compiled inefficiently.
+
+ * **Value of theorems:** Theorems give us confidence that the formalization does not contain mistakes and correctly captures the notions of stability and groundedness. We provide more details on the technical challenges in the detailed comments below.
+
+## Changes
+
+We propose the following changes in revision:
+
+* add more discussion of the related work (Section 6), especially in relation to the Java JITs reiterating the novelty of Julia’s approach with respect to determinism; (RA, RC)
+
+* add more realistic examples of type-unstable code explaining conceptual needs for it with examples from our corpus (Section 3); (RB)
+
+* given that the empirical study part had universally positive reactions, expand on our findings using this method; (RA, RB, RC) In particular, page limit as well as unfinished experiments precluded us from extending the discussion of correlations between type stability and other properties of code in Section 5: we found that putting an additional constraint on type-stable code, namely requiring “many” different return types across method runs, shows an interesting pattern: such methods are almost always parametrically polymorphic;
+
+* discuss tooling and language design; (RB)
+
+* extend the discussion of the theorems. (RC)
+
+## Detailed comments
+
+### Review A
+
+> great paper to read! an absolute delight
+
+Thank you for the kind words!
+
+> Most figure captions are terse[...]. I suggest making them more verbose to provide further details as to what they are referring to. […]
+
+You are right, thank you! We will extend the captions.
+
+> Section 4: I take it that Jules is not one of your contributions, right?  [...]
+
+Jules is one of our contributions. We will make it clearer in Section 4.
+
+> [...] nowhere in the paper do you discuss efforts from other languages (primarily Java) that aim at improving the program run-time performance through various JIT compiling techniques. In particular, I was expecting to see some discussion about Graal [...] and Eclipse OpenJ9 [...]
+
+Surely. Briefly, other compilers can do more than the Julia JIT, but this almost always comes at the expense of predictability. It is much more difficult to write code that is guaranteed to be optimized. We will add a discussion of this in the paper.
+
+> Does the JIT compiler for Julia profile previous runs and use that information to optimize future runs [...]
+
+No, it does not, and that’s what helps with the performance predictability. Compilation happens every time a method is called with a new set of argument types: if it’s called 100 times with Int and only once with String, Julia will still compile both methods. On the downside, it might compile code that is not worth the compilation cost; on the upside, the user knows exactly when compilation happens.
+
+> Is there any support for profiling in the language/compiler infrastructure?
+
+Yes, there is profiling for execution time and memory allocation.
+
+> Line 865: those 5 failures are out of how many items?
+
+Typically from several hundreds to several thousands depending on the package. We had failures in Table 2 but removed it for clarity: it consisted mostly of 0s and several very small numbers. We will make the prose clearer.
+
+### Review B
+
+> + Very clearly written and really interesting
+
+Thank you for your kind words!
+
+> - Little discussion of whether alternative design decisions in the  language, or supporting tooling, could make these properties easier  to achieve
+
+See above for our proposed changes.
+
+> In all the examples in the paper, type instability seemed to be associated with weird, bad looking code. Are there examples where it's much more convenient to write type-unstable code, and where type instability would be better from a software engineering point of view? Or is it more the case that we have a win-win situation, where improving type stability also improves code quality from a readability and maintenance point of view? (I realise that this is  to some extent subjective.)
+
+As we mention in the overview, any access to heterogeneous data structure will be unstable.
+
+> Is there scope for improving the language design, or tooling associated with the language, in a manner that would make programs more likely to be type-stable and/or grounded?
+
+Yes, we believe so. We have outlined some ideas above, in the overview.
+
+> Start of section 2: when you explain that a call is dispatched to the most specific method, this reminded me of static resolution of overloading in C++, where the most specific method is invoked. For a reader not so familiar with dynamic languages it could be worth making the explicit point that what's going on in Julia is very different static overload resolution, despite this superficial similarity.
+
+Agree, thank you for the idea! We'll add a clarification.
+
+> "the compiler will type infer its body" - I found this hard to parse.
+
+Yes, thanks. The compiler will run type inference on the body of the method when the method is called with a new set of argument types.
+
+> "introducing world age to limit the reach of eval" - this made no sense to me.
+
+Agreed, this either needs more context or should be removed. We lean towards removal. For context, world age is a mechanism that, roughly, assigns a time stamp to each new method definition, and then uses the stamps to limit the set of methods visible in certain parts of the program. In particular, when a function is called at the top level, all nested calls are dispatched in the set of methods that existed when the top-level call happened. If within the top-level call, there is a call to eval that defines a new method, the new method will not be available for dispatch by default. Thus, Julia’s JIT can optimize code of the top-level call based on the currently available method definitions and “ignore” the eval, not performing any sudden de-optimizations. 
+
+> "Developers were then encouraged to ..." - can you cite the source for this encouragement?
+
+Yes, this comes from the official Julia documentation, and the Julia forum. We’ll add links.
+
+> Lines 229 and 230: the order goes "type stability" then "type groundedness". But in the next paragraph you use "the former" to refer to groundedness and "the latter" for stability. Perhaps just drop "the former" and "the latter" here.
+
+Thanks, that’s confusing indeed.
+
+- Figure 3, second box: maybe use "return 1" instead of "return -1", otherwise the reader needs to understand that "-1" is a literal, and not the "-" function applied to the literal "1". (Presumably "- 1" would be the latter?) As there's nothing special about the value -1, using a non-negative value would make the same point. [...]
+
+Good point, thank you! And yes, “- 1” would be a function call.
+
+> Line 266: "For example, g(x) = let ... in x end" - follow this by "is not grounded, because of the imprecise variable y, but *is* type stable, and thus h is grounded."
+
+Ack, thanks.
+
+> Are there examples where it is particularly convenient to write type unstable code, such that there would be a trade-off between the performance of compiled code and the readability of source code?
+
+We added some thought in the overview, and will expand on that in the paper.
+
+### Review C
+
+> Nicely written paper.  Section 2 and 3 are good introduction to Julia. The reviewer likes the empirical study in Section 5.
+
+Thank you for saying that!
+
+> It is a pity that the type inference is a black box.
+
+Our current view is that the absence of a type inference algorithm is not a bug but a desirable feature showing that type stability can be studied (mostly) independently of the inferencer. The only requirement is that type inference needs to be sound and monotonic. As background, we went back-and-forth as to whether to include an example of type inference in the paper or not. Initially, we had an example implementation, but decided to take it out: type stability and groundedness (and thus the ability to devirtualize) depend on the power of the inference engine but are not concerned with its implementation. Thus, we deemed type inference (which has to go along with its soundness and monotonicity proofs) conceptually orthogonal and detracting from the main contribution. As for the actual Julia, it uses a relatively involved dataflow-based type inference algorithm: formalizing and verifying its properties would be a paper of its own.
+
+>Definitions and theorems such as 4.11 and 4.12 should be revised to be expressed in more words.  It was not easy to read these descriptions.
+
+Thanks for the feedback: we will revise them.
+
+> Section 6 should mention related work with respect to the formalization of static typing and devirtualization.
+
+Agreed, we will expand related work.
+
+> The first three paragraphs in Section 7 are advertisement irrelevant to the issues discussed in this paper.  They should be removed.
+
+Ack.
+
+> L 185.  "Types that are imprecise," What are imprecise types? Is a Union type imprecise?
+
+Yes, we will clarify this: imprecise here means all types that are not concrete (i.e. not primitives or structs), which includes unions, abstract types, and existential types.
+
+> L 263 "h(x::Int64)=g(x)+1"  It seems that + has to be type stable if h is type stable.
+
+This is correct and this is the case in Julia for + defined on integers.
+
+> L 357.  T ranges over concrete types.  Does ty also range over only concrete types?  Or over both concrete and abstract types?  Please clarify this.
+
+Thank you! Indeed, we lost the definition of `ty` during editing of Fig. 5. It should be:
+```    ty ::= T | A```
+So, `ty` can be either concrete or abstract.
+
+> L 373. the method call forms are conditional.  Why?  For what purpose?
+
+Only to save space. We could have built in unconditional calls, but as mentioned in the text, they are trivially expressible using conditional ones. And we wanted to have conditional calls to make the language Turing complete. 
+
+> L 435.  What are guard registers?
+
+It’s `%j` in a `%i←%j ? m(%k)`. We will introduce this vocabulary.
+
+> L 501.  Is the monotonicity property preserved in Jules?  Is this assumption for all the theorems in this paper?
+
+Monotonicity is a required property of the type inferencer, which Jules is parameterized over. Monotonicity ensures that during JIT compilation, type inference always succeeds for more specific argument types as long as the original method table was well-formed (L 537), and thus JIT compilation always succeeds. Then, theorems on maximal devirtualization talk only about successful compilations, so they do not require monotonicity themselves. We will clarify this in the revision.
+
+> L 545.  What is a stub method?  How does it avoid infinite recursion of compilation?  Is this represented in Figure 7?  If yes, please explain.
+
+A stub method is a method with an empty body (we’ll make the definition more explicit). The first time JIT tries to compile a specific `m!T`, it adds the stub to the table (M0 in the first rule of Fig 7) and only then starts compiling the body of the method. Since compilation of new instances is triggered only if `m!T` is not yet in the table (the first premise of the first rule of Fig 7), if we get to `m!T` again, having the stub in the table prevents it from being repeatedly compiled (the second rule of Fig. 7). Putting it more abstractly, this is essentially a depth-first search algorithm on a dynamically constructed call graph where vertices are compiled method instances. In order for the algorithm to not loop, we need to mark vertices as discovered during traversal. These “discovered” labels are exactly our stub methods.  
+
+> L 797.  "if inferring the result of a method call produces" Maybe "a method call in \bar{st}"?
+
+Perhaps it would be clearer if we omitted `M,ty,st` from `I(M,ty,st)` entirely. But the definition talks about method calls in st, you are right.
+
+> L 796.  "Type inference algorithm I(M,ty,st) is context-insensitive" Isn't it context-insensitive only with the context of the given st? This definition should be expressed in more words.
+
+We will expand the definition: insensitivity should hold for all method calls in all st. What we mean is that when inferring the type of a method call, type inference will only use information about the types of the arguments but not their values. So, for example, regardless of the context where `f(%j)` appears, its inferred return type will be no better than if we simply take the type of %j and run type inference on the body of `f`.
+
+> L 1011.  Eagerly performing type inference should be a common technique adopted by many JIT engines.  So the reviewer is not sure that Julia's approach is really new.  Maybe it is new for its explicit encouragement to Julia programmers to consider type inference.
+
+Fair enough.
+
+> The practical values of the theorems presented in this paper are not very clear.  It seems obvious that type groundness implies full devirtualization. The results of Theorem 4.10 and 4.12 seem somewhat obvious.  What are technical challenges to prove these theorems?  Was it difficult to prove these theorems within the confines of existing proving/formalization techniques for type theory?  What is the motivation for proving these theorems?
+
+The purpose of the entire formalism is to capture and precisely express programmers’ intuition that type-stable/grounded code brings performance benefits, so we are glad that the theorems seem obvious! Without them, however, we would not be confident if and under which conditions devirtualization happens.  The main technical challenge was to come up with definitions that capture stability and groundedness in intuitive manner yet are strong enough to show that JIT compilation does produce optimized code whenever possible.
+
+* For Theorem 4.10, the heavy lifting is done in Lemma 4.9. There, the key to the proof was to add condition (3) to the induction hypothesis; another technical trick is to connect the definitions of maximal devirtualization for method table and instruction via M (e.g. by requiring `m!T \in M` in D-Direct). These tricks do not constitute a novel proof technique, but as far as we know, for this domain, there is no established set-up similar to, e.g., progress and preservation proofs for type soundness.
+
+* For Theorem 4.12, the hard part was to define context-insensitive type inference, and then the theorem followed.
+
+
+
+Comment @A1 by Reviewer A
+---------------------------------------------------------------------------
+Thank you for the detailed response. We also agree with your planned changes, and we would like to see them implemented in the second-phase submission.

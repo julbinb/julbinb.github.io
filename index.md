@@ -122,8 +122,8 @@ programming by contracts, software testing,
 human aspects of programming languages and software engineering,
 and CS education.
 
-<a href="https://julialang.org/" target="_blank">
-  <img src="img/julia-logo.svg" alt="Julia Lang"
+<a href="{{site.data.links.websites.julialang}}" target="_blank">
+  <img src="img/julia-logo.svg" alt="Julia Lang logo"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
 </a>
 For the last several years I have been working on formalizing

@@ -1,8 +1,9 @@
-@misc{Belyakova:2020:ext,
+@misc{Belyakova:2020:world-age-ext,
   title={World Age in Julia: Optimizing Method Dispatch in the Presence of Eval (Extended Version)}, 
   author={Julia Belyakova and Benjamin Chung and Jack Gelinas and Jameson Nash and Ross Tate and Jan Vitek},
   year={2020},
+  doi = {10.48550/ARXIV.2010.07516},
+  url = {https://arxiv.org/abs/2010.07516},
   eprint={2010.07516},
-  archivePrefix={arXiv},
-  primaryClass={cs.PL}
+  publisher = {arXiv},
 }

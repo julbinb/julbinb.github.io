@@ -12,13 +12,20 @@
     name: 10.1145/3485527
     link: https://doi.org/10.1145/3485527
   venue: "Proc. ACM Program. Lang., Volume 5, OOPSLA, Article 150 (26 pages)"
+  reviews: /files/reviews/oopsla2021-reviews-237.txt
   links:
+    - name: BibTeX
+      link: /files/bibtex/OOPSLA-2021.txt
     - name: preprint PDF
       link: https://a-pelenitsyn.github.io/Papers/2021-julia-type-stability.pdf
     - name: extended version
       link: /papers#oopsla2021ext
-    - name: artifact (Zenodo)
+    - name: artifact Zenodo
       link: https://zenodo.org/record/5500548
+    - name: slides GDrive
+      link: https://docs.google.com/presentation/d/1MgZLjEIIjFkL49y2bOQ93PCQwKu_B6u00yO_Oz_3gn8/edit?usp=sharing
+    - name: video
+      link: https://youtu.be/XnUDdPonKlU
     - name: GitHub
       link: https://github.com/prl-julia/julia-type-stability
       colored: true
@@ -26,6 +33,9 @@
       link: https://a-pelenitsyn.github.io/Projects/stability/
       colored: true
   abstract: "As a scientific programming language, Julia strives for performance but also provides high-level productivity features. To avoid performance pathologies, Julia users are expected to adhere to a coding discipline that enables so-called type stability. Informally, a function is type stable if the type of the output depends only on the types of the inputs, not their values. This paper provides a formal definition of type stability as well as a stronger property of type groundedness, shows that groundedness enables compiler optimizations, and proves the compiler correct. We also perform a corpus analysis to uncover how these type-related properties manifest in practice."
+  video:
+    key: "OOPSLA-2021-video"
+    html: '<iframe width="560" height="320" src="https://www.youtube.com/embed/XnUDdPonKlU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
 
 - key: "OOPSLA 2021 Extended (arXiv)"
   link: https://arxiv.org/abs/2109.01950
@@ -39,6 +49,8 @@
     - key: janvitek
   venue: "arXiv on Programming Languages (33 pages)"
   links:
+    - name: BibTeX
+      link: /files/bibtex/OOPSLA-2021-ext.txt
     - name: arXiv
       link: https://arxiv.org/abs/2109.01950
       colored: true  
@@ -67,7 +79,7 @@
       link: /files/papers/oopsla2020_juliette-world-age.pdf
     - name: extended version
       link: /papers#oopsla2020ext
-    - name: slides GoogleDrive
+    - name: slides GDrive
       link: https://docs.google.com/presentation/d/13fKNtbcSsfgPLnbVwukAITDUfgJEbz8NzgpPY7ei0ZA/edit?usp=sharing
     - name: video
       link: https://youtu.be/d6lTCnhdbqE

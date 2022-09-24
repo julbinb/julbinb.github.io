@@ -1,4 +1,4 @@
-@article{ZappaNardelli:2018:JSR:3288538.3276483,
+@article{ZappaNardelli:2018:julia-sub,
  author = {Zappa Nardelli, Francesco and Belyakova, Julia and Pelenitsyn, Artem and Chung, Benjamin and Bezanson, Jeff and Vitek, Jan},
  title = {Julia Subtyping: A Rational Reconstruction},
  journal = {Proc. ACM Program. Lang.},

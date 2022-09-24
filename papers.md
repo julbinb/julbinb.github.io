@@ -40,13 +40,13 @@ title: Papers
 
 ## <span id="pubsrus">Публикации</span> (Publications in Russian)
 
-TBD or at the [old web page](http://staff.mmcs.sfedu.ru/~juliet/en/papers.en.html).
+TBD
 
 ###  Журналы списка ВАК
 
-1. {% include publication.html paper-key="Дистанционное обучение 2012" paper-data=site.data.papers %}
-
 1. {% include publication.html paper-key="Современные ИТ 2015" paper-data=site.data.papers %}
+
+1. {% include publication.html paper-key="Дистанционное обучение 2012" paper-data=site.data.papers %}
 
 ### Сборники конференций
 

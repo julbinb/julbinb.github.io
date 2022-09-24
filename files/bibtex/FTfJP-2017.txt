@@ -1,4 +1,4 @@
-@inproceedings{Belyakova:2017:GAC:3103111.3104045,
+@inproceedings{Belyakova:2017:generic-modules,
   author = {Belyakova, Julia},
   title = {Generic Approach to Certified Static Checking of Module-like Constructs},
   booktitle = {Proceedings of the 19th Workshop on Formal Techniques for Java-like Programs},

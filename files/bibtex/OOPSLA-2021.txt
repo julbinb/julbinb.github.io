@@ -1,0 +1,18 @@
+@article{Pelenitsyn:2021:type-stability,
+  author = {Pelenitsyn, Artem and Belyakova, Julia and Chung, Benjamin and Tate, Ross and Vitek, Jan},
+  title = {Type Stability in Julia: Avoiding Performance Pathologies in JIT Compilation},
+  year = {2021},
+  issue_date = {October 2021},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {5},
+  number = {OOPSLA},
+  url = {https://doi.org/10.1145/3485527},
+  doi = {10.1145/3485527},
+  abstract = {As a scientific programming language, Julia strives for performance but also provides high-level productivity features. To avoid performance pathologies, Julia users are expected to adhere to a coding discipline that enables so-called type stability. Informally, a function is type stable if the type of the output depends only on the types of the inputs, not their values. This paper provides a formal definition of type stability as well as a stronger property of type groundedness, shows that groundedness enables compiler optimizations, and proves the compiler correct. We also perform a corpus analysis to uncover how these type-related properties manifest in practice.},
+  journal = {Proc. ACM Program. Lang.},
+  month = {oct},
+  articleno = {150},
+  numpages = {26},
+  keywords = {type inference, method dispatch, dynamic languages, compilation}
+}
