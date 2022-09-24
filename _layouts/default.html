@@ -5,12 +5,17 @@
 
   <body class="{{ page.layout }}{% if page.url == '/' %} home{% endif %}">
 
-    {% include sidebar.html %}
+    <div class="maindiv">
 
-    <main class="container">
-      {{ content }}
-    </main>
+      {% include sidebar.html %}
 
-    {% include custom-foot.html %}
+      <main class="container">
+        {{ content }}
+      </main>
+
+      {% include custom-foot.html %}
+
+    </div>
+
   </body>
 </html>

@@ -32,6 +32,10 @@ body {
   min-height: 100vh;
 }
 
+.maindiv {
+  margin: auto;
+}
+
 #sidebar {
   flex: 0 0 auto;
   padding: $section-spacing;
@@ -179,7 +183,7 @@ body {
     }
 
     @else {
-      left: 0;
+      // left: 0;
     }
 
     .site-title {
