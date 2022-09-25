@@ -3,7 +3,6 @@ layout: page
 title: Home
 ---
 
-
 <a href="{{site.data.links.places.prl.link}}" target="_blank">
   <img src="img/prl.png" alt="PRL logo"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
@@ -24,6 +23,8 @@ I am currently working on formalizing aspects of
 the {{site.data.links.mdlinks.julialang}} language.  
 {% include jump-button.html link="#research" name="Research" %}
 {% include link-button.html name="CV [pdf]" link="/files/cv.pdf" small="true" %}
+
+&#127482;&#127462; **As a Russian national, I strongly condemn the war started by the Russian government in Ukraine on February 24th, 2022.**
 
 ### Contacts
 
