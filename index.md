@@ -26,18 +26,6 @@ the {{site.data.links.mdlinks.julialang}} language.
 
 &#127482;&#127462; **As a Russian national, I strongly condemn the war started by the Russian government in Ukraine on February 24th, 2022.**
 
-### Contacts
-
-**Email**: [julbinb@gmail.com](mailto:julbinb@gmail.com) (preferred)
-or [belyakova.y@northeastern.edu](mailto:belyakova.y@northeastern.edu)  
-Professional: [github]({{site.github.account}}),
-[researchgate]({{site.researchgate}}), [linkedin]({{site.linkedin}})  
-Social: [twitter]({{site.twitter}}), [facebook]({{site.facebook}})  
-**Current location** (as of 2022): Boston, MA, USA
-<!--[skype](skype:juliet_belyakova)-->  
-<!--Web-page in Russian:
-[staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).-->
-
 <div style="text-align: center;">
 <a href="{{site.data.links.places.sfedu.link}}" target="_blank">
   <img src="img/sfedu-en.png" alt="Southern Federal University logo"
@@ -65,6 +53,25 @@ Social: [twitter]({{site.twitter}}), [facebook]({{site.facebook}})
 </a>
 </div>
 
+### Contacts
+
+**Email**: [julbinb@gmail.com](mailto:julbinb@gmail.com) (preferred)
+or [belyakova.y@northeastern.edu](mailto:belyakova.y@northeastern.edu)  
+Professional: [github]({{site.github.account}}),
+[researchgate]({{site.researchgate}}), [linkedin]({{site.linkedin}})  
+Social: [twitter]({{site.twitter}}), [facebook]({{site.facebook}})  
+**Current location** (as of 2022): Boston, MA, USA
+<!--[skype](skype:juliet_belyakova)-->  
+<!--Web-page in Russian:
+[staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).-->
+
+<!-- #### Questions, comments, feedback -->
+
+> If you have any questions or comments about projects, papers,
+> or anything else mentioned on the website
+> (e.g. international student experience),
+> {{site.contactmetext}}
+
 ### Short bio
 
 I was born in 1991 in Russia, Rostov-on-Don, where I also grew up
@@ -82,9 +89,11 @@ Since 2018, I have been doing my PhD in Boston.
 **Education.** MS in "Computer Science and Information Technologies"
 from {{site.data.links.mdlinks.sfedu}}.
 
-> *Note.* If you have questions about doing a PhD in the US,
+<!--
+> If you have questions about doing a PhD in the US,
 > being an international student, woman in CS, etc.,
-> feel free to send me an email.
+> feel free to contact me.
+-->
 
 ### Recent [news](news) (without [failures](failures))
 
@@ -152,11 +161,6 @@ programming language:
 My previous research was related to language support for generic programming
 in object-oriented languages
 [[SBLP 2016](/papers#sblp2016), [SYRCoSE 2015](/papers#syrcose2015)].
-
-#### Questions, comments, feedback
-
-If you have any questions or comments about projects, papers, or website,
-{{site.contactmetext}}
 
 ### Selected papers and talks
 
