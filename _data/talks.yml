@@ -1,9 +1,36 @@
+- key: "POPV 2021"
+  title: "Julia: Language Design and Users Working Together"
+  venue: "<a target='_blank' href='https://www.bu.edu/cs/research/popv/seminar/'>Principles of Programming and Verification Seminar</a> (Boston University). Boston, MA, USA. Online"
+  date: "Oct 12, 2021"
+  links:
+    - name: slides GDrive
+      link: https://docs.google.com/presentation/d/1i6A8tE_ragz4ZWh_hrAS3HUT8zVo_Yxe_T6ya0NfQgM/edit?usp=sharing
+    - name: seminar page
+      link: https://www.bu.edu/cs/research/popv/seminar/#julia-language-design-and-users-working-together.
+  abstract: 'As a programming language for scientific computing, Julia strives for predictable performance as well as flexibility and ease of use. To tackle this challenge, Julia employs two strategies. First, it enables highly compositional programs by using multiple dispatch as the core paradigm, but at the same time, pragmatically restricts the language to facilitate optimizations. Second, Julia enables productive collaboration between the programmer and the JIT compiler by making the compiler’s behavior predictable and encouraging optimization-conducive coding discipline.<br/>In this talk, we look at several components of this two-fold approach. We start with an overview of multiple dispatch. Next, we talk about type stability, a property of the code that enables the key optimization in Julia’s optimization pipeline. Finally, we look at the world age, a mechanism that allows for a pragmatic trade-off between flexibility of “eval” and predictability of compiler optimizations.'
+
+
+- key: "BCC 2021"
+  title: "Types in Programming Languages Research vs Types in Julia"
+  venue: "<a target='_blank' href='https://bstn.cc/'>Boston Computation Club</a>. Boston, MA, USA. Online"
+  date: "Oct 9, 2021"
+  links:
+    - name: slides GDrive
+      link: https://docs.google.com/presentation/d/1BPvHF7CKR5K2LuSZ1Y6YWVXPpElzTPsRyqYgkPSo2tI/edit?usp=sharing
+    - name: video
+      link: https://www.youtube.com/watch?v=JNxrX2XvZIY
+      colored: true
+  video:
+    key: "BCC-2021-video"
+    html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/JNxrX2XvZIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+
+
 - key: "Podlodka Podcast #230"
-  title: "Язык Julia"
-  date: "24 августа 2021 (Aug 24)"
+  title: "Julia"
+  date: "Aug 24, 2021"
   venue: "<a target='_blank' href='https://podlodka.io/'>Podlodka Podcast</a>"
   links:
-    - name: podcast episode
+    - name: podcast episode (in Russian)
       link: https://podlodka.io/230
       colored: true
   
@@ -14,7 +41,7 @@
   date: "Nov 17, 2020"
   venue: "<a target='_blank' href='https://2020.splashcon.org/track/splash-2020-oopsla'>OOPSLA 2020</a>. Online"
   links:
-    - name: slides GoogleDrive
+    - name: slides GDrive
       link: https://docs.google.com/presentation/d/13fKNtbcSsfgPLnbVwukAITDUfgJEbz8NzgpPY7ei0ZA/edit?usp=sharing
     - name: preprint PDF
       link: /files/papers/oopsla2020_juliette-world-age.pdf
@@ -24,6 +51,9 @@
       link: https://youtu.be/d6lTCnhdbqE
       colored: true
   abstract: "Dynamic programming languages face semantic and performance challenges in the presence of features, such as eval, that can inject new code into a running program. The Julia programming language introduces the novel concept of world age to insulate optimized code from one of the most disruptive side-effects of eval: changes to the definition of an existing function. This paper provides the first formal semantics of world age in a core calculus named Juliette, and shows how world age enables compiler optimizations, such as inlining, in the presence of eval. While Julia also provides programmers with the means to bypass world age, we found that this mechanism is not used extensively: a static analysis of over 4,000 registered Julia packages shows that only 4-9% of packages bypass world age. This suggests that Julia's semantics aligns with programmer expectations."
+  video:
+    key: "OOPSLA-2020-video"
+    html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/d6lTCnhdbqE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
 
 
 - key: "VIS 2020 (short paper)"
@@ -40,7 +70,10 @@
       link: https://osf.io/u7mzd/
       colored: true
   abstract: "Data-driven approaches to programming language design are uncommon. Despite the availability of large code repositories, distilling semantically-rich information from programs remains difficult. Important dimensions, like run-time type data, are inscrutable without the appropriate tools. We contribute a task abstraction and interactive visualization, TYPEical, for programming language designers who are exploring and analyzing type information from execution traces. Our approach aids user understanding of function type signatures across many executions. Insights derived from our visualization are aimed at informing language design decisions — specifically of a new gradual type system being developed for the R programming language. A copy of this paper, along with all the supplemental material, is available at osf.io/mc6zt"
-
+  video:
+    key: "VIS-2020-video"
+    html: '<iframe src="https://mfr.osf.io/render?url=https://osf.io/u7mzd/?direct%26mode=render%26action=download" width="560" height="315" marginheight="0" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>'
+ 
 
 - key: "FTfJP 2019"
   title: Decidable Tag-Based Semantic Subtyping for Nominal Types, Tuples, and Unions
@@ -48,7 +81,7 @@
   date: "Jul 15, 2019"
   venue: "<a target='_blank' href='https://2019.ecoop.org/home/FTfJP-2019'>FTfJP 2019</a>. London, United Kingdom"
   links:
-    - name: slides GoogleDrive
+    - name: slides GDrive
       link: https://docs.google.com/presentation/d/1zDxC4b0Z1I6_DCVT-7VmUFEuBnInsql6diYvAdrEx4E/edit?usp=sharing
     - name: preprint PDF
       link: https://github.com/julbinb/ftfjp-2019/blob/master/paper/minijl-ftfjp2019.pdf
@@ -62,7 +95,7 @@
   venue: "Семинар «Языки программирования и компиляторы», Мехмат ЮФУ. Ростов-на-Дону, Россия (Seminar on Programming Languages and Compilers, Rostov-on-Don, Russia)"
   date: "15 мая 2019 (May 15)"
   links:
-    - name: слайды GoogleDrive (slides)
+    - name: слайды GDrive (slides)
       link: https://docs.google.com/presentation/d/1xjzgjg7287Rv1KJe6e__nmRAu0Uok34s-_oj1Onv6os/edit?usp=sharing
     - name: видео (video)
       link: https://youtu.be/_4ElOK57ilA

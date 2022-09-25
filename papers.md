@@ -1,6 +1,6 @@
 ---
 layout: category
-title: Papers
+title: Publications
 ---
 
 {% include link-button.html name="DBLP" link="https://dblp.uni-trier.de/pers/hd/b/Belyakova:Julia" %}

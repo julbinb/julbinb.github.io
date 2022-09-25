@@ -15,18 +15,20 @@ title: Talks
 
 ## Seminar talks
 
+1. {% include talk.html talk-key="POPV 2021" talk-data=site.data.talks %}
+1. {% include talk.html talk-key="BCC 2021" talk-data=site.data.talks %}
 1. {% include talk.html talk-key="NEPLS 2017" talk-data=site.data.talks %}
 1. {% include talk.html talk-key="NEUPRL 2017" talk-data=site.data.talks %}
 
----
-
-## Подкасты (Podcast interviews in Russian)
+## Miscellaneous
 
 1. {% include talk.html talk-key="Podlodka Podcast #230" talk-data=site.data.talks %}
 
+---
+
 ## Доклады (Talks in Russian)
 
-TBD or at the [old web page](http://staff.mmcs.sfedu.ru/~juliet/en/papers.en.html).
+TBD
 
 1. {% include talk.html talk-key="Семинар ЯПиК 2019" talk-data=site.data.talks %}
 1. {% include talk.html talk-key="PLC 2017" talk-data=site.data.talks %}

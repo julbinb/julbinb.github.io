@@ -17,5 +17,9 @@
 			{% include toggle.html toggle-text="Abstract" toggle-name=talk.key
 								   toggle-content=talk.abstract %}
 			{% endif %}
+			{% if talk.video %}
+			{% include toggle.html toggle-text="Video" toggle-name=talk.video.key
+								   toggle-content=talk.video.html %}
+			{% endif %}
 		</div>
 	</div>
