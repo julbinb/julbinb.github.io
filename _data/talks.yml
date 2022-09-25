@@ -1,4 +1,5 @@
 - key: "POPV 2021"
+  refid: popv2021
   title: "Julia: Language Design and Users Working Together"
   venue: "<a target='_blank' href='https://www.bu.edu/cs/research/popv/seminar/'>Principles of Programming and Verification Seminar</a> (Boston University). Boston, MA, USA. Online"
   date: "Oct 12, 2021"
@@ -11,6 +12,7 @@
 
 
 - key: "BCC 2021"
+  refid: bcc2021
   title: "Types in Programming Languages Research vs Types in Julia"
   venue: "<a target='_blank' href='https://bstn.cc/'>Boston Computation Club</a>. Boston, MA, USA. Online"
   date: "Oct 9, 2021"

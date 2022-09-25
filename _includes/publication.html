@@ -6,7 +6,7 @@
 		{% assign paper = papers[0] %}
 		{% assign addrefid = include.refid and paper.refid %}
 		<span id="{% if addrefid %}{{paper.refid}}{% endif %}">
-		{% if paper.link %}
+			{% if paper.link %}
 			<b><a class="paperDivKey" target="_blank" href="{{paper.link}}">{{paper.key}}</a></b> 
 			{% else %}
 			<b><span class="paperDivKey">{{paper.key}}</span></b> 

@@ -15,8 +15,8 @@ title: Talks
 
 ## Seminar talks
 
-1. {% include talk.html talk-key="POPV 2021" talk-data=site.data.talks %}
-1. {% include talk.html talk-key="BCC 2021" talk-data=site.data.talks %}
+1. {% include talk.html talk-key="POPV 2021" refid=true talk-data=site.data.talks %}
+1. {% include talk.html talk-key="BCC 2021" refid=true talk-data=site.data.talks %}
 1. {% include talk.html talk-key="NEPLS 2017" talk-data=site.data.talks %}
 1. {% include talk.html talk-key="NEUPRL 2017" talk-data=site.data.talks %}
 

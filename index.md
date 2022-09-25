@@ -87,20 +87,22 @@ from {{site.data.links.mdlinks.sfedu}}.
 
 ### Recent [news](news) (without [failures](failures))
 
-* September 2021: accepted paper at
+* Oct 2021: invited talk at [POPV Seminar](https://www.bu.edu/cs/research/popv/seminar/) (Principles of Programming and Verification)  
+  [Julia: Language Design and Users Working Together](/talks#popv2021)
+
+* Oct 2021: invited talk at [BCC](https://bstn.cc/) (Boston Computation Club)  
+  [Types in Programming Languages Research vs Types in Julia](/talks#bcc2021)
+
+* Sep 2021: accepted paper at
   [OOPSLA 2021](https://2021.splashcon.org/track/splash-2021-oopsla)  
   [Type Stability in Julia: Avoiding Performance Pathologies in JIT Compilation](/papers#oopsla2021)
 
-* August 2021: talked about the Julia language on
+* Aug 2021: talked about the Julia language on
   [Podlodka Podacst](https://podlodka.io/)  
   [Episode #230: Julia](https://podlodka.io/230) (in Russian)
 
-* April 2021: joined External Review Committee of
+* Apr 2021: joined External Review Committee of
   [OOPSLA 2021](https://2021.splashcon.org/track/splash-2021-oopsla)  
-
-* October 2020: accepted paper at
-  [OOPSLA 2020](https://2020.splashcon.org/track/splash-2020-oopsla)  
-  [World Age in Julia: Optimizing Method Dispatch in the Presence of Eval](/papers#oopsla2020)
 
 ## <span id="research">Research</span>
 
@@ -157,6 +159,7 @@ If you have any questions or comments about projects, papers, or website,
 
 ### Selected papers and talks
 
+1. {% include talk.html talk-key="POPV 2021" talk-data=site.data.talks show-talk-marker="true" %}
 1. {% include publication.html paper-key="OOPSLA 2021"
       paper-data=site.data.papers %}
 1. {% include publication.html paper-key="OOPSLA 2020"

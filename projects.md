@@ -7,6 +7,10 @@ title: Projects
 
 * Subtyping in the {{site.data.links.mdlinks.julialang}}
   programming language (2017–…)
+  <a href="https://julialang.org/" target="_blank">
+  <img src="img/julia-logo.svg" alt="Julia Lang logo"
+    style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
+  </a>
   
   - Decidable subtyping for {{site.data.links.mdlinks.julialang}} (2021–…)  
 
@@ -27,10 +31,6 @@ title: Projects
   A formalization of `eval` and
   [world age]({{site.data.links.websites.worldage}})
   in the {{site.data.links.mdlinks.julialang}} language
-  <a href="https://julialang.org/" target="_blank">
-  <img src="img/julia-logo.svg" alt="Julia Lang"
-    style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
-  </a>
 
 ## Past Projects
 
@@ -39,6 +39,10 @@ title: Projects
   via explicit, named sets of constraints.
 
 * [WDE ProgrammingABC.NET](/projects/wde) (only in Russian) (2009–2013)  
+  <a href="{{site.data.links.websites.pascalabc}}" target="_blank">
+    <img src="img/pabcnet-logo.png" alt="PascalABC.NET logo"
+      style="height: 50px; float: right; margin: 0.5em; margin-right: 0.75em; vertical-align: middle; display: inline-block"/>
+  </a>
   Web development environment for programming languages
   PascalABC.NET, Python, and C\#.
 

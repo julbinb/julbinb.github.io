@@ -1,8 +1,14 @@
 	{% assign talks = include.talk-data | where:'key',include.talk-key %}
 	{% assign talk = talks[0] %}
 	<div class="paperDiv">
-		{% if include.show-talk-marker %} <small style="font-variant: small-caps">[ Talk ]</small> {% endif %}
-		<b><span class="paperDivKey">{{talk.key}}</span></b> 
+		{% if include.show-talk-marker %} <small style="font-variant: small-caps">[ Talk ]</small> {% endif %} 
+		{% assign addrefid = include.refid and talk.refid %}
+		<span id="{% if addrefid %}{{talk.refid}}{% endif %}">
+			<b><span class="paperDivKey">{{talk.key}}</span></b>
+		</span>
+		{% if addrefid %}
+		<sup><small><a href="#{{talk.refid}}">&#128279;</a></small></sup>
+		{% endif %}
 		{% for talk_link in talk.links %}
 		<a target="_blank" href="{{talk_link.link}}">
 			<button class="paperLinkButton {% if talk_link.colored %} coloredButton {% endif %}">{{talk_link.name}}</button>
