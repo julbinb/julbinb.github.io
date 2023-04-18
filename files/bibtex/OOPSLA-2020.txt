@@ -1,4 +1,4 @@
-@article{Belyakova:2020:world-age,
+@article{belyakova:world-age:oopsla:2020,
   author = {Belyakova, Julia and Chung, Benjamin and Gelinas, Jack and Nash, Jameson and Tate, Ross and Vitek, Jan},
   title = {World Age in Julia: Optimizing Method Dispatch in the Presence of Eval},
   year = {2020},

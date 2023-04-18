@@ -1,4 +1,4 @@
-@misc{moy_belyakova_turcotte_di bartolomeo_dunne_2020:R-types-vis,
+@misc{moy:R-types-vis:2020,
  title={Just TYPEical: Visualizing Common Function Type Signatures in R},
  url={osf.io/pyqac},
  DOI={10.31219/osf.io/pyqac},

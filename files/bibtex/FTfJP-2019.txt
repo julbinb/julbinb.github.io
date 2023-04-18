@@ -1,4 +1,4 @@
-@inproceedings{Belyakova:2019:minijl-sub,
+@inproceedings{belyakova:minijl-sub:ftfjp:2019,
  author = {Belyakova, Julia},
  title = {Decidable Tag-based Semantic Subtyping for Nominal Types, Tuples, and Unions},
  booktitle = {Proceedings of the 21st Workshop on Formal Techniques for Java-like Programs},

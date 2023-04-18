@@ -1,4 +1,4 @@
-@misc{Pelenitsyn:2021:type-stability-ext,
+@misc{pelenitsyn:type-stability-ext:2021,
   author = {Pelenitsyn, Artem and Belyakova, Julia and Chung, Benjamin and Tate, Ross and Vitek, Jan},
   title = {Type Stability in Julia: Avoiding Performance Pathologies in JIT Compilation},
   year = {2021},

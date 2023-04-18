@@ -1,4 +1,4 @@
-@InProceedings{Beyakova:2016:oop-generics,
+@InProceedings{beyakova:oop-generics:sblp:2016,
   author="Belyakova, Julia",
   editor="Castor, Fernando and Liu, Yu David",
   title="Language Support for Generic Programming in Object-Oriented Languages: Peculiarities, Drawbacks, Ways of Improvement",
