@@ -3,8 +3,6 @@ layout: page
 title: Home
 ---
 
-**[[ I am currently looking for a postdoc position starting Fall 2023. ]]**
-
 <a href="{{site.data.links.places.prl.link}}" target="_blank">
   <img src="img/prl.png" alt="PRL logo"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
