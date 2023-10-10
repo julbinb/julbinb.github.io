@@ -36,6 +36,11 @@ title: Publications
 1. {% include publication.html paper-key="FTfJP 2017"
       refid=true paper-data=site.data.papers %}
 
+## PhD Thesis
+ 
+*  {% include publication.html paper-key="Decidable Subtyping of Existential Types for the Julia Language"
+      refid=true paper-data=site.data.papers %}
+
 ---
 
 ## <span id="pubsrus">Публикации</span> (Publications in Russian)

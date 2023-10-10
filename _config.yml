@@ -4,9 +4,9 @@ highlighter:      rouge
 
 # Setup
 title:            Julia Belyakova
-tagline:          'Northeastern University'
-description:      'PhD Candidate at 
-<a href="https://www.khoury.northeastern.edu/">Khoury</a>, <a href="https://www.northeastern.edu/">NEU</a> (Boston, MA)'
+tagline:          'Purdue University'
+description:      'Postdoc at 
+<a href="https://purduepl.github.io/">PurPL</a>, <a href="https://www.purdue.edu/">Purdue</a> (Lafayette, IN)'
 
 url:              https://julbinb.github.io
 #baseurl:          '/hydeout'

@@ -10,6 +10,10 @@ people:
   vitaly: 
     name: Vitaly Bragilevsky
     link: https://bravit.guru/
+  # PurPL
+  suresh:
+    name: Suresh Jagannathan
+    link: https://www.cs.purdue.edu/homes/suresh/
   # PRL
   janvitek:
     name: Jan Vitek
@@ -38,6 +42,15 @@ people:
   francesco:
     name: Francesco Zappa Nardelli
     link: https://www.di.ens.fr/~zappa
+  # thesis readers
+  amalahmed:
+    link: https://www.khoury.northeastern.edu/home/amal/
+  gcastagna:
+    link: https://www.irif.fr/~gc/
+  arjunguha:
+    link: https://www.khoury.northeastern.edu/~arjunguha/main/home/
+  bpierce:
+    link: https://www.cis.upenn.edu/~bcpierce/
   # Julia Language
   jamesonnash:
     name: Jameson Nash
@@ -62,6 +75,12 @@ people:
 
 places:
   # universities
+  purpl:
+    name: PurPL
+    link: https://purduepl.github.io
+  purdue:
+    name: Purdue University
+    link: https://www.purdue.edu/
   prl:
     name: PRL
     link: https://prl.ccs.neu.edu
@@ -100,9 +119,12 @@ websites:
 mdlinks:
   # people
   artem:            "[Artem Pelenitsyn](https://a-pelenitsyn.github.io/)"
+  suresh:           "[Suresh Jagannathan](https://www.cs.purdue.edu/homes/suresh/)"
   janvitek:         "[Jan Vitek](http://janvitek.org/)"
   ssm:              "[Stanislav Mikhalkovich](https://sfedu.ru/person/miks)"
   # places
+  purpl:            "[PurPL](https://purduepl.github.io)"
+  purdue:           "[Purdue University](https://www.purdue.edu/)"
   khoury:           "[Khoury College of Computer Sciences](https://www.khoury.northeastern.edu/)"
   neu:              "[Northeastern University](https://www.northeastern.edu/)"
   prl:              "[PRL](http://prl.ccs.neu.edu)"

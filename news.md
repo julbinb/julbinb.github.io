@@ -7,6 +7,20 @@ This page tracks good news (without [failures](failures)) starting from 2020.
 
 ### Recent
 
+* Sep 2023: started a postdoc at {{site.data.links.mdlinks.purpl}}
+
+* Aug 2023: defended my 
+  [PhD thesis on decidable subtyping for Julia](/papers#phdthesis)
+
+### 2022
+
+This was a tough year for me,
+mostly for personal reasons and the state of the world.
+
+&#127482;&#127462; As a Russian national, I strongly condemn the war in Ukraine started by the Russian government on February 24th, 2022.
+
+### 2021
+
 * Oct 2021: invited talk at [POPV Seminar](https://www.bu.edu/cs/research/popv/seminar/) (Principles of Programming and Verification)  
   [Julia: Language Design and Users Working Together](/talks#popv2021)
 

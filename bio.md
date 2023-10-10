@@ -5,10 +5,19 @@ title: Bio
 
 ## Education
 
-* **PhD in Computer Science (2018–present)**  
+* **PhD in Computer Science (2018–2023)**  
   *{{site.data.links.mdlinks.neu}}*, Boston, MA, USA  
 
-  Advisor: {{site.data.links.mdlinks.janvitek}}
+  Advisor: {{site.data.links.mdlinks.janvitek}}  
+  Readers: [Amal Ahmed]({{site.data.links.people.amalahmed.link}}),
+    [Giuseppe Castagna]({{site.data.links.people.gcastagna.link}}),
+    [Arjun Guha]({{site.data.links.people.arjunguha.link}}),
+    [Benjamin C. Pierce]({{site.data.links.people.bpierce.link}})
+  Thesis: Decidable Subtyping of Existential Types for the Julia Language.  
+  {% include link-button.html name="thesis info" link="papers#phdthesis" small="true" %}
+  {% include link-button.html name="thesis PDF"
+  link="files/thesis/belyakova-PhD-2023_thesis_julia-dec-sub.pdf" small="true"
+  %}
 
 * **MS in Computer Science and Information Technologies (2012–2014)**  
   *{{site.data.links.mdlinks.sfedu}}*, Rostov-on-Don, Russia  
@@ -30,6 +39,11 @@ title: Bio
 > <small>{{site.data.links.mdlinks.sfedu}} was formerly known as Rostov State University. My department, Faculty of Mathematics, Mechanics and Computer Science (MMCS), is now called [I. I. Vorovich Institute for Mathematics, Mechanics and Computer Science]({{site.data.links.places.mmcs.link}}).</small>
 
 ## Employment
+
+* **Post-Doctoral Research Associate (Sep 2023−present)**  
+  *Purdue University Programming Languages Group ([PurPL]({{site.data.links.places.purpl.link}}))*,
+  [Purdue University]({{site.data.links.places.purdue.link}})  
+  West Lafayette, IN, USA
 
 * **Research Scientist (Sep 2017−Jul 2018)**  
   *Programming Languages Laboratory ([PRL PRG]({{site.data.links.places.prlprg.link}}))*,
@@ -115,12 +129,16 @@ of the [Czech Technical University]({{site.data.links.places.cvut.link}}).
 </a>
 </div>
 In September 2018, I started a PhD in Computer Science
-at {{site.data.links.mdlinks.neu}}, and I have been living in
-[Boston](https://en.wikipedia.org/wiki/Boston) since then.  
-During my PhD, I was doing research with {{site.data.links.mdlinks.janvitek}}
+at {{site.data.links.mdlinks.neu}} and lived in
+[Boston](https://en.wikipedia.org/wiki/Boston) until my graduation in 2023.
+During my PhD, I did research with {{site.data.links.mdlinks.janvitek}}
 at the [Programming Research Laboratory]({{site.data.links.places.prl.link}})
 and worked as a teaching assistant with
 [Matthias Felleisen]({{site.data.links.people.matthiasfelleisen.link}}).
+
+In September 2023, I started a postdoc with {{site.data.links.mdlinks.suresh}}
+at {{site.data.links.mdlinks.purdue}} and have been living in
+[Lafayette](https://en.wikipedia.org/wiki/Lafayette,_Indiana) since then.
 
 ---
 

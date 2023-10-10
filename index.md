@@ -7,11 +7,10 @@ title: Home
   <img src="img/prl.png" alt="PRL logo"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
 </a>
-I am a **PhD Candidate** at the {{site.data.links.mdlinks.khoury}},
-{{site.data.links.mdlinks.neu}} (Boston, MA, USA).
-I started my PhD in September 2018
-and have been working with {{site.data.links.mdlinks.janvitek}}
-at {{site.data.links.mdlinks.prl}}, the Programming Research Laboratory.  
+I am a **postdoc** at {{site.data.links.mdlinks.purdue}} (West Lafayette, IN, USA).
+I work with {{site.data.links.mdlinks.suresh}}
+at {{site.data.links.mdlinks.purpl}}, the Purdue University Programming Language Group,
+starting September 2023.
 
 <a href="{{site.data.links.websites.julialang.link}}" target="_blank">
   <img src="img/julia-logo.svg" alt="Julia Lang logo"
@@ -56,11 +55,11 @@ the {{site.data.links.mdlinks.julialang}} language.
 ### Contacts
 
 **Email**: [julbinb@gmail.com](mailto:julbinb@gmail.com) (preferred)
-or [belyakova.y@northeastern.edu](mailto:belyakova.y@northeastern.edu)  
+or [ybelyako@purdue.edu](mailto:ybelyako@purdue.edu)  
 Professional: [github]({{site.github.account}}),
 [researchgate]({{site.researchgate}}), [linkedin]({{site.linkedin}})  
 Social: [twitter]({{site.twitter}}), [facebook]({{site.facebook}})  
-**Current location** (as of 2022): Boston, MA, USA
+**Current location** (as of 2023): Lafayette, IN, USA
 <!--[skype](skype:juliet_belyakova)-->  
 <!--Web-page in Russian:
 [staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).-->
@@ -84,10 +83,14 @@ where my PhD journey started over.
 In 2017–2018, I spent a year at the {{site.data.links.mdlinks.fitcvut}}
 ({{site.data.links.mdlinks.cvut}}) doing research
 with {{site.data.links.mdlinks.janvitek}}.  
-Since 2018, I have been doing my PhD in Boston.
+In 2018–2023, I continued working with {{site.data.links.mdlinks.janvitek}}
+during my PhD at {{site.data.links.mdlinks.khoury}}
+({{site.data.links.mdlinks.neu}}) in Boston.  
+In 2023, I started a postdoc with {{site.data.links.mdlinks.suresh}}
+at {{site.data.links.mdlinks.purpl}} ({{site.data.links.mdlinks.purdue}}).
 
-**Education.** MS in "Computer Science and Information Technologies"
-from {{site.data.links.mdlinks.sfedu}}.
+**Education.** PhD in Computer Science
+from {{site.data.links.mdlinks.neu}}.
 
 <!--
 > If you have questions about doing a PhD in the US,
@@ -95,7 +98,10 @@ from {{site.data.links.mdlinks.sfedu}}.
 > feel free to contact me.
 -->
 
-### Recent [news](news) (without [failures](failures))
+### Recent professional [news](news) (without [failures](failures))
+
+* Aug 2023: defended my PhD thesis at {{site.data.links.mdlinks.neu}}  
+  [Decidable Subtyping of Existential Types for the Julia Language](/papers#phdthesis)
 
 * Oct 2021: invited talk at [POPV Seminar](https://www.bu.edu/cs/research/popv/seminar/) (Principles of Programming and Verification)  
   [Julia: Language Design and Users Working Together](/talks#popv2021)
@@ -105,14 +111,9 @@ from {{site.data.links.mdlinks.sfedu}}.
 
 * Sep 2021: accepted paper at
   [OOPSLA 2021](https://2021.splashcon.org/track/splash-2021-oopsla)  
-  [Type Stability in Julia: Avoiding Performance Pathologies in JIT Compilation](/papers#oopsla2021)
-
-* Aug 2021: talked about the Julia language on
-  [Podlodka Podacst](https://podlodka.io/)  
-  [Episode #230: Julia](https://podlodka.io/230) (in Russian)
-
-* Apr 2021: joined External Review Committee of
-  [OOPSLA 2021](https://2021.splashcon.org/track/splash-2021-oopsla)  
+  [Type Stability in Julia: Avoiding Performance Pathologies in JIT
+  Compilation](/papers#oopsla2021)
+   
 
 ## <span id="research">Research</span>
 
