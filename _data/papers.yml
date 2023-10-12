@@ -6,6 +6,8 @@
     - key: julia
   venue: "Northeastern University ProQuest Dissertations Publishing, 2023"
   links:
+    - name: BibTeX
+      link: /files/bibtex/phd-thesis-2023.txt
     - name: PDF
       link: /files/thesis/belyakova-PhD-2023_thesis_julia-dec-sub.pdf
     - name: NEU lib
