@@ -59,7 +59,8 @@ or [ybelyako@purdue.edu](mailto:ybelyako@purdue.edu)
 Professional: [github]({{site.github.account}}),
 [researchgate]({{site.researchgate}}), [linkedin]({{site.linkedin}})  
 Social: [twitter]({{site.twitter}}), [facebook]({{site.facebook}})  
-**Current location** (as of 2023): Lafayette, IN, USA
+**Current location** (as of 2023): Lafayette, IN, USA  
+**Book a meeting**: [calendly](https://calendly.com/julbinb/meeting)
 <!--[skype](skype:juliet_belyakova)-->  
 <!--Web-page in Russian:
 [staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).-->
