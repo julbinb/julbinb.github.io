@@ -16,8 +16,8 @@ title: Bio
   Thesis: Decidable Subtyping of Existential Types for the Julia Language.  
   {% include link-button.html name="thesis info" link="papers#phdthesis" small="true" %}
   {% include link-button.html name="thesis PDF"
-  link="files/thesis/belyakova-PhD-2023_thesis_julia-dec-sub.pdf" small="true"
-  %}
+  link="files/thesis/belyakova-PhD-2023_thesis_julia-dec-sub.pdf" small="true" %}
+  {% include link-button.html name="slides GDrive" link="https://docs.google.com/presentation/d/1QXWtJh40dYrDPRzlMfOX5FS_DWpf-5Q83yAbJuElLNU/edit?usp=sharing" small="true" %}
 
 * **MS in Computer Science and Information Technologies (2012–2014)**  
   *{{site.data.links.mdlinks.sfedu}}*, Rostov-on-Don, Russia  

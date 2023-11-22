@@ -12,7 +12,10 @@ title: Projects
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
   </a>
   
-  - Decidable subtyping for {{site.data.links.mdlinks.julialang}} (2021–…)  
+  - Decidable subtyping for {{site.data.links.mdlinks.julialang}} (2021–…)
+    {% include link-button.html name="PhD thesis"
+      link="papers#phdthesis" small="true" %}  
+    For updates, see [GitHub](https://github.com/prl-julia/jb-thesis).
 
   - [MiniJl](/projects/minijl) (2018–2019)  
     Tag-based semantic subtyping for nominal types, covariant tuples, and unions
