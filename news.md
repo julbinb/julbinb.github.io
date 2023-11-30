@@ -7,6 +7,9 @@ This page tracks good news (without [failures](failures)) starting from 2020.
 
 ### Recent
 
+* Nov 2023: talk at [PurPL Seminar](https://purduepl.github.io/seminars.html)  
+  [Julia: Practical Restrictions for a Scientific-Computing Language](/talks#purpl2023)
+
 * Sep 2023: started a postdoc at {{site.data.links.mdlinks.purpl}}
 
 * Aug 2023: defended my 

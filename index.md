@@ -101,6 +101,9 @@ from {{site.data.links.mdlinks.neu}}.
 
 ### Recent professional [news](news) (without [failures](failures))
 
+* Nov 2023: talk at [PurPL Seminar](https://purduepl.github.io/seminars.html)  
+  [Julia: Practical Restrictions for a Scientific-Computing Language](/talks#purpl2023)
+
 * Aug 2023: defended my PhD thesis at {{site.data.links.mdlinks.neu}}  
   [Decidable Subtyping of Existential Types for the Julia Language](/papers#phdthesis)
 
