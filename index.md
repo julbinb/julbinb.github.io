@@ -3,8 +3,8 @@ layout: page
 title: Home
 ---
 
-<a href="{{site.data.links.places.prl.link}}" target="_blank">
-  <img src="img/prl.png" alt="PRL logo"
+<a href="{{site.data.links.places.purpl.link}}" target="_blank">
+  <img src="img/purpl.webp" alt="PurPL logo"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
 </a>
 I am a **postdoc** at {{site.data.links.mdlinks.purdue}} (West Lafayette, IN, USA).
@@ -39,7 +39,11 @@ the {{site.data.links.mdlinks.julialang}} language.
     style="height: 60px; margin: 0.5em; vertical-align: middle; display: inline"/>
 </a>
 <a href="{{site.data.links.places.prl.link}}" target="_blank">
-  <img src="img/prl.png" alt="PRL"
+  <img src="img/prl.png" alt="PRL logo"
+    style="height: 60px; margin: 0.5em; vertical-align: middle; display: inline"/>
+</a>
+<a href="{{site.data.links.places.purpl.link}}" target="_blank">
+  <img src="img/purpl.webp" alt="PurPL logo"
     style="height: 60px; margin: 0.5em; vertical-align: middle; display: inline"/>
 </a>
 <a href="{{site.data.links.websites.pascalabc}}" target="_blank">
@@ -169,6 +173,7 @@ in object-oriented languages
 
 ### Selected papers and talks
 
+1. {% include talk.html talk-key="PurPL 2023" talk-data=site.data.talks show-talk-marker="true" %}
 1. {% include talk.html talk-key="POPV 2021" talk-data=site.data.talks show-talk-marker="true" %}
 1. {% include publication.html paper-key="OOPSLA 2021"
       paper-data=site.data.papers %}
