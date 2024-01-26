@@ -33,6 +33,7 @@ Professional: [github]({{site.github.account}}),
 [researchgate]({{site.researchgate}}), [linkedin]({{site.linkedin}})  
 Social: [twitter]({{site.twitter}}), [facebook]({{site.facebook}})  
 **Current location** (as of 2024): Lafayette, IN, USA  
+**Office**: 3154C, [Lawson Computer Science Building](https://maps.app.goo.gl/1vUMvpQ6jUNj8AYJ8)  
 **Book a meeting**: [calendly](https://calendly.com/julbinb/meeting)
 <!--[skype](skype:juliet_belyakova)-->  
 <!--Web-page in Russian:
