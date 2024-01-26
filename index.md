@@ -18,12 +18,56 @@ starting September 2023.
 </a>
 My research focuses on **programming languages**, in particular,
 their design, semantics, and correctness.
-I am currently working on formalizing aspects of
+My most recent work was about formalizing aspects of
 the {{site.data.links.mdlinks.julialang}} language.  
 {% include jump-button.html link="#research" name="Research" %}
 {% include link-button.html name="CV [pdf]" link="/files/cv.pdf" small="true" %}
 
 &#127482;&#127462; **As a Russian national, I strongly condemn the war started by the Russian government in Ukraine on February 24th, 2022.**
+
+### Contacts
+
+**Email**: [julbinb@gmail.com](mailto:julbinb@gmail.com) (preferred)
+or [ybelyako@purdue.edu](mailto:ybelyako@purdue.edu)  
+Professional: [github]({{site.github.account}}),
+[researchgate]({{site.researchgate}}), [linkedin]({{site.linkedin}})  
+Social: [twitter]({{site.twitter}}), [facebook]({{site.facebook}})  
+**Current location** (as of 2024): Lafayette, IN, USA  
+**Book a meeting**: [calendly](https://calendly.com/julbinb/meeting)
+<!--[skype](skype:juliet_belyakova)-->  
+<!--Web-page in Russian:
+[staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).-->
+
+<!-- #### Questions, comments, feedback -->
+
+> If you have any questions or comments—about projects, papers,
+> or anything else mentioned on the website
+> (e.g. international student experience, being a woman
+> in CS)—{{site.contactmetext}}
+
+### Short bio ([full bio](bio), [personal](personal))
+
+I was born in 1991 in Russia, Rostov-on-Don, where I also grew up
+and received education.
+In 2012–2016, I was teaching undergraduate CS courses at my alma mater,
+{{site.data.links.mdlinks.mmcs}} ({{site.data.links.mdlinks.sfedu}}).  
+While teaching half-time, I had entered a PhD program as well
+but later moved to [Northeastern]({{site.data.links.places.neu.link}})
+where my PhD journey started over.  
+In 2017–2018, I spent a year at the {{site.data.links.mdlinks.fitcvut}}
+({{site.data.links.mdlinks.cvut}}) doing research
+with {{site.data.links.mdlinks.janvitek}}.  
+In 2018–2023, I continued working with {{site.data.links.mdlinks.janvitek}}
+during my PhD at {{site.data.links.mdlinks.khoury}}
+({{site.data.links.mdlinks.neu}}) in Boston.  
+In 2023, I started a postdoc with {{site.data.links.mdlinks.suresh}}
+at {{site.data.links.mdlinks.purpl}} ({{site.data.links.mdlinks.purdue}}).
+
+<!--
+> If you have questions about doing a PhD in the US,
+> being an international student, woman in CS, etc.,
+> feel free to contact me.
+-->
 
 <div style="text-align: center;">
 <a href="{{site.data.links.places.sfedu.link}}" target="_blank">
@@ -56,54 +100,10 @@ the {{site.data.links.mdlinks.julialang}} language.
 </a>
 </div>
 
-### Contacts
-
-**Email**: [julbinb@gmail.com](mailto:julbinb@gmail.com) (preferred)
-or [ybelyako@purdue.edu](mailto:ybelyako@purdue.edu)  
-Professional: [github]({{site.github.account}}),
-[researchgate]({{site.researchgate}}), [linkedin]({{site.linkedin}})  
-Social: [twitter]({{site.twitter}}), [facebook]({{site.facebook}})  
-**Current location** (as of 2023): Lafayette, IN, USA  
-**Book a meeting**: [calendly](https://calendly.com/julbinb/meeting)
-<!--[skype](skype:juliet_belyakova)-->  
-<!--Web-page in Russian:
-[staff.mmcs.sfedu.ru](http://staff.mmcs.sfedu.ru/~juliet/index.html).-->
-
-<!-- #### Questions, comments, feedback -->
-
-> If you have any questions or comments about projects, papers,
-> or anything else mentioned on the website
-> (e.g. international student experience),
-> {{site.contactmetext}}
-
-### Short bio
-
-I was born in 1991 in Russia, Rostov-on-Don, where I also grew up
-and received education.
-In 2012–2016, I was teaching undergraduate CS courses at my alma mater,
-{{site.data.links.mdlinks.mmcs}} ({{site.data.links.mdlinks.sfedu}}).  
-While teaching half-time, I had entered a PhD program as well
-but later moved to [Northeastern]({{site.data.links.places.neu.link}})
-where my PhD journey started over.  
-In 2017–2018, I spent a year at the {{site.data.links.mdlinks.fitcvut}}
-({{site.data.links.mdlinks.cvut}}) doing research
-with {{site.data.links.mdlinks.janvitek}}.  
-In 2018–2023, I continued working with {{site.data.links.mdlinks.janvitek}}
-during my PhD at {{site.data.links.mdlinks.khoury}}
-({{site.data.links.mdlinks.neu}}) in Boston.  
-In 2023, I started a postdoc with {{site.data.links.mdlinks.suresh}}
-at {{site.data.links.mdlinks.purpl}} ({{site.data.links.mdlinks.purdue}}).
-
-**Education.** PhD in Computer Science
-from {{site.data.links.mdlinks.neu}}.
-
-<!--
-> If you have questions about doing a PhD in the US,
-> being an international student, woman in CS, etc.,
-> feel free to contact me.
--->
-
 ### Recent professional [news](news) (without [failures](failures))
+
+* Jan 2024: joined Program Committee of
+  [ARRAY 2024](https://pldi24.sigplan.org/home/ARRAY-2024)
 
 * Nov 2023: talk at [PurPL Seminar](https://purduepl.github.io/seminars.html)  
   [Julia: Practical Restrictions for a Scientific-Computing Language](/talks#purpl2023)
@@ -163,7 +163,10 @@ programming language:
   - A reconstruction of subtyping in
     [LambdaJulia](/projects/lambda-julia) [[OOPSLA 2018](/papers#oopsla2018)].
   - A semantic subtyping model suitable for a dynamic programming language
-    (work-in-progress) [[FTfJP 2019](/papers#ftfjp2019)].
+    [[FTfJP 2019](/papers#ftfjp2019), 
+    [Appendix A.2 of PhD thesis](https://julbinb.github.io/papers#phdthesis)].
+  - Decidable subtyping
+    [[PhD thesis](https://julbinb.github.io/papers#phdthesis)]
 
 > <small>_Disclaimer._ Good or bad, the language has nothing to do with me, and our shared name is a coincidence!</small>
 

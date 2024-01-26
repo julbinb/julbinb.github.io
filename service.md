@@ -29,6 +29,11 @@ title: Service
 
 ## Program committees
 
+* [ARRAY 2024](https://pldi24.sigplan.org/home/ARRAY-2024)  
+  Workshop on Array-oriented programming,
+  collocated with [PLDI 2024](https://pldi24.sigplan.org/)
+  (Copenhagen, Denmark)
+
 * [OOPSLA 2021](https://2021.splashcon.org/track/splash-2021-oopsla) External Review Committee  
   <!--Program Committee Member.  -->
   Conference on Object-Oriented Programming Systems, Languages, and Applications 2021

@@ -7,6 +7,9 @@ This page tracks good news (without [failures](failures)) starting from 2020.
 
 ### Recent
 
+* Jan 2024: joined Program Committee of
+  [ARRAY 2024](https://pldi24.sigplan.org/home/ARRAY-2024)
+
 * Nov 2023: talk at [PurPL Seminar](https://purduepl.github.io/seminars.html)  
   [Julia: Practical Restrictions for a Scientific-Computing Language](/talks#purpl2023)
 
