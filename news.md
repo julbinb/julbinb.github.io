@@ -7,7 +7,13 @@ This page tracks good news (without [failures](failures)) starting from 2020.
 
 ### Recent
 
-* Jan 2024: joined Program Committee of
+* Apr 2024: joined the Program Committee of
+  [Scheme 2024](https://icfp24.sigplan.org/home/scheme-2024)
+
+* Feb 2024: joined the Program Committee of
+  [TyDE 2024](https://icfp24.sigplan.org/home/tyde-2024)
+
+* Jan 2024: joined the Program Committee of
   [ARRAY 2024](https://pldi24.sigplan.org/home/ARRAY-2024)
 
 * Nov 2023: talk at [PurPL Seminar](https://purduepl.github.io/seminars.html)  
