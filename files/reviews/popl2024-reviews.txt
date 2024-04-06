@@ -1,0 +1,229 @@
+POPL 2024 Paper #668 Reviews and Comments
+===========================================================================
+Paper #668 Decidable Subtyping of Existential Types for Julia
+
+
+Review #668A
+===========================================================================
+* Updated: Sep 21, 2023, 11:13:18 AM UTC
+
+Overall merit
+-------------
+A. Strong accept: I will argue for acceptance.
+
+Reviewer expertise
+------------------
+X. Expert: I am an expert on the topic of the paper (or at least key
+   aspects of it).
+
+Summary of the paper
+--------------------
+The current subtyping relation for Julia is undecidable. This is not unheard of (e.g. so is that of Java), but presents more of a problem for Julia than other languages since Julia does subtyping checks at runtime to implement multiple dispatch.
+
+Here, the authors prove undecidability of the current subtyping relation, present a restriction to the form of types and a subtyping algorithm that relies on this restriction. They show empirically that their restriction does not break much Julia code, finding only two type annotations in ~20 Mloc that cannot be represented in the restricted form.
+
+Assessment of the paper
+-----------------------
+This is a nice piece of work that attacks a problem of practical relevance: in many situations, nontermination of subtyping checks is merely annoying, but in Julia where subtyping checks are done at runtime it is a more serious concern.
+
+The undecidability proof of Julia's current subtyping by reduction from F<=P (sec 3) is elegant, and the evaluation in sec 5 is thorough and gives good evidence that the restriction proposed is not a burden in practice. The type system in sec 4 is complex at first glance, but upon realizing (as explained at the start of the section) that the design is entirely driven by avoiding constraints between unification variables it begins to seem more natural. Indeed, it is impressive how much expressivity can be maintained while guaranteeing there will never be a constraint involving two unification variables.
+
+I actually began writing this review as an 'A', but downgraded it to 'B' after noticing some weaknesses of the type system in section 4. I would be happy to return to 'A' if these were addressed - not necessarily fixed, but at least pointed out and discussed explicitly.
+
+1. Completeness
+
+From the text, it appears that the intent is to restrict the form of *types* but keep the same subtyping relation: that is, if two Julia types satisfy the syntactic restrictions proposed here, then they are subtypes by the relation of sec. 4 iff they are subtypes in Julia. Is this true? If not, what is the relation between this paper's subtyping relation and Julia's? (At present I think it is false due to a mistake in SC-UVar-UnionRight explained below, but maybe it's true if that's repaired?)
+
+2. Nondeterminism
+
+I do not understand how the subtyping rules of Figs. 8-11 become an algorithm. The constrained subtyping relation of Fig. 9 can succeed in multiple ways generating incomparable constraint sets, for instance:
+
+       ⋅|α,β ⊢ α×β *< (Int×⊤) ∪ (⊤×Int)
+
+can yield K₁ = { α ≤ Int } or K₂ = { β ≤ Int } depending on which way SC-UnionRight goes. The text says 'If constrained subtyping succeeds and generates a constraint set K, the constraints are resolved by Solve(Γ; Δ; K)', but whether this works depends on *which* K constrained subtyping chooses to produce. This affects signature subtyping, for instance:
+
+    P: Ref[((Int×⊤) ∪ (⊤×Int)) << ⊤] ≤ ∃String ≤ α ≤ ⊤. ∃ β. Ref[α × β << ⊤]
+    Q: Ref[((Int×⊤) ∪ (⊤×Int)) << ⊤] ≤ ∃α. ∃ String ≤ β ≤ ⊤. Ref[α × β << ⊤]
+
+Both of these yield the same constrained subtyping problem above, but the first will succeed only if 
+K₂ is produced and the second only if K₁ is produced.
+
+So how does the algorithm work? Does it arbitrarily choose a constraint set and fail to prove one of the above subtypings, or does it backtrack through all of them until it finds one that works? How does instantiating variables in the body of a method work when there are multiple possible solutions?
+
+3. Generality
+
+The technique for avoiding constraints between unification variables relies on the invariant that in signature subtyping, unification variables appear only on the right, which in turn requires that existentials are only used in covariant contexts.
+
+This invariant would not hold if the type system were extended with foralls (which introduce flexible variables on the other side), or function types with non-simple parameter types (you can set up function types so that their left argument is contravariant or invariant, but it's certainly not covariant).
+
+This does not contradict any claim made by the authors, who are clear that this is a subtyping relation specifically for Julia. However, it would be worth pointing out that the approach taken here is *relying* on the absence of these widespread features, which limits its applicability to non-Julia languages.
+
+Detailed comments for authors
+-----------------------------
+l. 133: Typo: "parametric are"
+
+l. 455: universal and unification variables
+These are standard names, but somewhat confusing here since this system uses neither universal types nor unification. Would you consider changing these names to the equally standard "rigid" and "flexible" variables?
+
+l. 542: Rule ST-VarLeft
+I understand why distributive contexts are useful on the left for things that distribute (unions, including the empty union ⊥ and infinite unions ∃). I don't understand why one is needed for variables. This is referenced in the text on l.579, but the actual example seems to be missing.
+
+l. 611: Rule SC-UVar-UnionRight
+I think the definition of K' is wrong here in the m = 0 / n = 0 cases. If Γ|H,α₁ ⊢ δ[α₁] *< τ₁' ⟶ K₁ and K₁ contains no constraints at all on α₁, then we can conclude that Γ|H ⊢ δ[α] *< τ₁' ∪ τ₂' regardless of what constraints arise from considering τ₂'. It would be better to delete the part of the text after 'or' and always use the left-hand side, defining ⊓ of an empty set to be ⊤. (This is a completeness issue, introducing an unnecessary constraint, and not a soundness one)
+
+l. 646: there's a ⊔Γ that should probably be ∪.
+
+l. 702: "Note the absence of rules for subtyping tuples and invariant constructors"
+SS-Types is indeed sufficient for subtyping on invariant constructors, but since tuples appearing in type signatures can contain unrestricted existentials, I think you do in fact need a dedicated SS-Tuple rule.
+
+l. 846: I believe the soundness result, but I was also expecting to see a completeness theorem here, that constrained subtyping does not introduce unnecessary constraints. (Formally, something like if Γ|H ⊢ τ<*τ' ⟶ K and Γ ⊢ ρ(τ) ≤ ρ(τ'), then ρ ⊧Γ K). Do you expect that this holds?
+
+Questions to be addressed by author response
+--------------------------------------------
+Is the relation complete wrt. Julia's for the same fragment?
+
+Does the subtyping algorithm backtrack through all solutions? What does it do when there is not a unique smallest solution? How does it instantiate variables in the program when solutions are non unique?
+
+
+
+Review #668B
+===========================================================================
+
+Overall merit
+-------------
+B. Weak accept: I lean towards acceptance.
+
+Reviewer expertise
+------------------
+X. Expert: I am an expert on the topic of the paper (or at least key
+   aspects of it).
+
+Summary of the paper
+--------------------
+The paper presents an alternative subtyping algorithm for the Julia language.
+As Julia relies on subtyping at runtime for dynamic dispatch, it is especially important for the subtyping procedure to be well-behaved.
+However, as the authors show, this is not the case of the currently implemented subtype system, which they prove to be undecidable.
+The source of its undecidability is identified to be the unrestricted use of existential types under invariant constructors, which requires solving a general form of (unification) constraints.
+The authors hence restrict their system to not allow this pathological pattern, which allows them to prove decidability of subtyping.
+To show that the introduced restriction is not too restrictive, the authors extract 2 million type annotations from publicly available Julia sources, and found only a handful not having an equivalent type satisfying their restriction.
+
+Supplementary material includes a large technical appendix.
+
+Assessment of the paper
+-----------------------
+Overall, I think this is a good paper, and that it should be accepted after a minor revision.
+Identifying issues in practical languages, and fixing them in a principled ways is definitely relevant to the POPL community.
+The paper is interesting, and mostly clear and well-written despite the presented system being fairly large (which is not really surprising as it does not just target a toy language).
+As far as I can tell, the paper should be reasonably accessible to non-experts, once presentation issues are fixed (see below).
+
+I only have two issues with the paper.
+
+The first one is that the paper makes heavy use of the appendix, citing figures and definitions as if they were part of the main body of the paper.
+As a consequence, I worry that the final version will not be self-contained enough, or that it won't fit in the extended page limit.
+For instance, I think that at least Figures 18 and 21, as well as some version of Definition 1 (perhaps just as a footnote) need to be in the main body of the paper.
+Moreover, I believe that additional, more detailed discussions are required around some rules (for example, SC-Inv and the rules for proving its premises, and also SC-UVar-UnionRight) to make them easier to grasp for the reader.
+And in general, I think that a bit more hand-holding would be appreciated by most readers when processing figures.
+Fixing these presentation issues will require quite a bit of work, but I believe that should be reasonable doable for the final version.
+
+The second issue is that I find the evaluation to be quite weak.
+In particular, I am not convinced that source-level type annotations adhering to a restriction imply that all subtyping problems encountered during type-checking and at run-time will also fall in the restricted fragment.
+Maybe that is the case for some reason in Julia, but I am not familiar enough with the language to decide (there could be inference, for example, I don't know).
+A much more convincing approach would have been to instrument the compiler to emit a representation of the subtyping problems to a file before attempting to solve them.
+Or better yet, to implement the new subtyping check withing Julia directly.
+
+Detailed comments for authors
+-----------------------------
+Here are a few comments attached to specific lines.
+
+89: "dispatch and" -> "dispatch, and"
+
+133: "Parametric are" -> "Parametric types are"
+
+140: "tuples distributive" -> "tuples are distributive"
+
+205: For the final version, make sure Figure 18 ends up in the paper.
+
+242: "forall" -> "for all"
+
+233-244: It is not quite clear what the barriers do: just block the search?
+
+264-281: Not being familiar with Julia, I don't understand some elements of syntax like "::" (as in "f(::Ref{Theta})").
+
+360-361: "By [Pierce 1992],": use the name citation format
+
+376: "t'S" should be "τ'S"
+
+449: "X" should be "X₁"
+
+516: "Int" -> "Str" (left branch under SC-Top)
+
+562-563: "Definition 1" is in the appendix.
+
+579: Should there be a top type right of the last "<:"?
+
+619-621: This bit is part of the figure, so it should perhaps be moved above the caption (or be part of it).
+
+648: Figure 10 is never referenced from the text, when is the reader supposed to look at it?
+
+667-669: It took me a while to understand in what rules the "inversion" happens, since you refer to SC-Inv but the "inversion" happens in the rules that can be used to prove its premises. 
+
+726-729: I do not understand why "Ref{T} where Any<:T<:Int" denotes an empty set, so this paragraph does not make sense to me.
+
+758-764: This list is kind of a waste of space, since the theorems are just below (this is the case in other places as well).
+
+958: "exiplicitly" -> "explicitly"
+
+Questions to be addressed by author response
+--------------------------------------------
+I was not completely convinced by the evaluation because I don't quite understand the relation between source-level type annotations and the subtyping checks actually generated.
+Can you explain why you think annotations are enough? Is there no type inference in Julia that could conceivably lead to subtyping problems involving types not given as explicit annotations?
+
+
+
+Review #668C
+===========================================================================
+
+Overall merit
+-------------
+A. Strong accept: I will argue for acceptance.
+
+Reviewer expertise
+------------------
+X. Expert: I am an expert on the topic of the paper (or at least key
+   aspects of it).
+
+Summary of the paper
+--------------------
+Julia is a paradigmatic language that aims to bridge the gap between producitivity languages (e.g. Python) and performance ones (C++). A central feature of Julia is its dynamic dispatch mechanism, which allows for multiple dispatch for generic functions: the specific method to be used can be determined at run time based on the most specific implementation available. This requires subtyping queries to be resolved at run time. As a result, in Julia, if a subtyping query fails, then the program may fail as well and, hence, an undecidable subtyping relation can be very problematic. This paper examined the subtyping relation of Julia and, indeed, shows that it is undecidable. The main bulk of the paper is  proposing a restriction of the type system that is shown decidable. Finally, the authors have benchmarked their types on a large corpus of programs from official Julia registry and established that the type restrictions are not severe, with only a couple violations out of 2M type annotations checked.
+
+Assessment of the paper
+-----------------------
+The motivation behind the paper is solid, and the results are important and non-trivial. On motivation, Julia is a relatively popular language amongst academics that aims to help users write efficient code efficiently. As such, resolving a source of unexpected runtime errors is important. At the same time, the paper is not just about this language, as its results and methods could be translated on other dynamic languages as well.
+
+Concretely, the undecidability argument is not entirely unexpected, especially given previous undecidability arguments in the presence of polymorphism and subtyping (e.g. for system F_< and Java). That said, the proof here is particularly neat. In the other direction, of finding a decidable restriction, the ideas behind the restriction are clearly presented and justified. The subtyping algorithm per se is not that clear, and I would not expect many programmers looking into it, but that is expected given the expressiveness of the system and the fact that this is a real language.
+
+The only (minor) criticism on my side is on a couple of choices in presentation, in particular the reliance on the appendix for notions that are central in understanding the paper, and the counterexample given for undecidability (more details below).
+
+Detailed comments for authors
+-----------------------------
+The example given in Figure 3 does not really manifest undecidability, only that the subtyping algorithm used by Julia cannot resolve this. The problem could have been decidable and yet the same behavior be present. I also found the syntax used in Figure 3 unexpected, e.g. functions do not have arguments. If this is an abbreviation of actual code, it would be useful to provide the full code, or explain what the abbreviations mean.
+
+The sketch of the undecidability proof included in the main text is too brief to give an idea of how the correspondence between the rules of F_< and Julia works. It would benefit the paper if you could give more intuition here, and perhaps remove the Proof that is currently in the main text (as it is not helpful).
+
+other comments below:
+
+- Lines 141-142: other way round for "first component" and "second component"
+- Figure 5: in the translation of contexts you need to specify the l and u of \alpha. Also, on Line 296, maybe include \sigma,\phi as well as \tau
+- Line 449: one X should be X_1
+- Line 516: Int instead of Str
+- Figure 9: you mention that SC-Inv involves both versions of dotted < in its premise. Could you make this explicit. I can't see how this would be realized from the current notation. Also, wouldn't the constraints from each version be grouped together?
+- Figure 10, line 646: there is a square cup instead of cup
+- Subsection 4.2.1: Figure 21 is important for the rest of the argument to make sense. I suggest you either include it or move the whole argument to the appendix.
+- L_Right rule, Appendix: the types on either side of <: in the premise are in reverse order.
+
+Questions to be addressed by author response
+--------------------------------------------
+Can you comment on the usability of the restricted type system from a programmer's perspective. E.g. it wouldn't be harder to write programs that type check, or figure out why they don't?
+
+In the end of subsection 6.1 you mention that certain systems lack transitivity due to using separate contexts. Does the same hold here, for the relation \Gamma | \Delta |- \psi <: \psi'?
+

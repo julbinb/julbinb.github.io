@@ -1,0 +1,247 @@
+PLDI 2024 Paper #283 Reviews and Comments
+===========================================================================
+Paper #283 Decidable Subtyping of Existential Types for Julia
+
+
+Review #283A
+===========================================================================
+
+Overall merit
+-------------
+2. Weak reject
+
+Reviewer expertise
+------------------
+4. Expert
+
+Paper summary
+-------------
+This paper establishes the undecidability of subtyping in an idealized version of Julia and proposes a new, more-constrained subtyping relation that is decidable.  The more-constrained relation is based on syntactic type restrictions.  The proposed type restrictions are considered for approximately 2 million type annotations in packages listed in the Julia registry, and only 4 of these 2 million type annotations were found not to satisfy the new restrictions.
+
+Comments for authors
+--------------------
+The paper's Introduction does a good job of explaining the background, motivation, and contributions of the work.  The contributions, viewed at a high level, are theoretically interesting, in that they prove undecidability of a subtyping system similar to the one used in Julia.
+
+One uncertainty I have is: Can an example be provided, to demonstrate that the actual implementation of subtyping in Julia is undecidable?  The Julia code in Fig. 7, and the text below Fig. 7, seem to indicate that this example cannot be type checked in a finite amount of time.  However, the previous sentence ("While the gadget itself does not prove undecidability, the mechanism we used to translate it from F_\le to Julia does") leaves me uncertain.  I consider this an important point.  Given that the paper is motivated by practical concerns about using Julia, the paper should be clear---including in the Introduction---about whether the undecidability of subtyping in the paper's idealized version of Julia actually propagates to interesting, real Julia code that cannot be type checked.  I want to be certain that, for example, explicitly including the rule for transitivity in the idealized version of Julia subtyping does not itself introduce undecidability.  More specifically, does transitivity in <:^C_JD introduce undecidability that does not exist in <:_18?  Based on the paper's title and claims, an example program should be provided and discussed clearly, to demonstrate nontermination of Julia's actual C-code subtyping implementation.
+
+More generally, the paper's empirical analysis is incomplete in some ways.  Again, the paper is motivated by practical concerns about using an undecidable (sub)typing system.  It would therefore be interesting to know whether any of the 9,335 Julia packages analyzed can cause the type checker to diverge (as might be inferred by a StackOverflowError raised during type checking).
+
+Moreover, in order for the new, decidable type checker to be useful in practice, one would like to know more about its performance and worst-case running time.  For example, has the decidable subtyping algorithm been implemented and plugged into the existing Julia type checker?  If so, how does the decidable algorithm's performance compare to the existing type checker's performance?  Going from an undecidable subtyping system that runs quickly on all the known packages in the Julia registry to a decidable subtyping system that runs more slowly on the same packages would not seem useful.
+
+For these reasons, the paper could be more convincing by including (1) asymptotic analysis, e.g., with big-O notation, of the decidable subtyping algorithm's worst-case running time, and (2) an empirical performance analysis of the decidable algorithm's typical running time compared to the undecidable algorithm's typical running time.  
+
+In other words, what are the tradeoffs of the existing undecidable algorithm, compared to the new decidable algorithm?  The paper focuses on the advantages of decidability in certain cases, but how often do these cases arise, and what are the costs of using the decidable alternative?  
+
+Besides potential performance costs to using the decidable subtyping algorithm, there may be complexity costs.  Is the more-complex and harder-to-understand syntax of stratified types worth the benefit of decidability?  How many lines of code are used to implement the proposed algorithm, compared to the existing implementation?  The paper could be strengthened by discussing this issue.
+
+Summary: The paper is theoretically interesting and proves undecidability of an idealized version of subtyping for Julia.  It proves that a restricted type syntax achieves subtyping decidability while ruling out almost no existing Julia programs.  My concerns relate to the significance and usefulness of the results, whether undecidability affects actual Julia programs and whether the advantages of decidability are worth the potential disadvantages of increased complexity and performance overhead.
+
+
+Minor: The third-to-last rule in Fig. 5 appears to define every type to be a subtype of every union type.  This rule may be missing premise(s).
+
+
+
+Review #283B
+===========================================================================
+
+Overall merit
+-------------
+5. Strong accept
+
+Reviewer expertise
+------------------
+4. Expert
+
+Paper summary
+-------------
+This paper studies subtyping in the context of the Julia
+language. Unusually, Julia has unions and existential types, but does
+not support universal types. This paper makes four main contributions:
+
+1. The paper shows that the current Julia subtyping relation is
+   undecidable, by showing that an undecidable subset of F≤ can be
+   embedded into the Julia subtyping relation.
+
+2. The paper proposes a restriction of the subtyping relation –
+   stratified subtyping – in which existentials can be instantiated
+   only by (essentially) monotypes. 
+
+3. The paper shows that this restriction is reasonable, by looking at 
+   downloading ~9300 publically-available packages, comprising 16.5 MLOC,
+   and over 2 million type declarations. Of the 2 million type declarations,
+   all but 7 satisfy the proposed restriction, up to distributivity of 
+   existentials over type constructors. 
+
+4. The paper gives an algorithmic type system for deciding
+   subtyping. The algorithm is presented in two phases, by first
+   introducing the semi-algorithmic invertible system, in which rules
+   are applied in the same order as the algorithm, but existential
+   witnesses are still guessed. This is proved equivalent to the 
+   declarative system, and then an algorithmic system which works by
+   constraint generation is presented, and is shown to be equivalent 
+   to the invertible system.
+
+Comments for authors
+--------------------
+In my view, this paper represents a model of excellence for work on
+practical type checking algorithms. It identifies a problem, proposes
+a solution, shows that the solution could work in practice, and then
+shows that it works in theory, too.
+
+Really, the only question that I have are the performance implications
+of union types. Their presence necessarily induces backtracking during
+subtyping and typechecking, and so whenever I see them I worry that the
+compiler will either (a) have unpredictable performance drops, or 
+(b) have fuel limits which make it hard to predict when typechecking will
+fail (and which make A ∪ B potentially ver different from B ∪ A). 
+
+However, in this case, Julia already has this feature, so it's very
+difficult to argue against it. Mainly I am curious if it is possible
+to extract subtyping problems from the corpus to establish a test set
+for checking performance. 
+
+The only caveat I have is that while I have looked at the typing
+rules, I have not studied the proofs in detail. Proofs for subtyping
+and type inference are always a bit more subtle than we expect, and I
+wish there was a paper supplement which contained the detailed proofs.
+I would especially like to look at the proof of Lemma 6.5, which
+describes why constraint solving works (the rule in Figure 16 is a bit
+of a mouthful, and I would feel better about it if I could use the
+proof to understand how all the pieces fit together).
+
+
+
+Review #283C
+===========================================================================
+
+Overall merit
+-------------
+4. Accept
+
+Reviewer expertise
+------------------
+3. Knowledgeable
+
+Paper summary
+-------------
+The paper proves that the subtyping relation of the Julia language is
+undecidable and proposed a restriction to the language to make it
+decidable, in particular, to stratify types syntactically.  The paper
+reports on an empirical analysis of the libraries in the Julia General
+Registery, which includes over 9k entries. There were only 4 type
+annotations that were not stratified (or easily changed to be
+stratified). The paper presents and algorithm for subtyping the
+stratified types and proves that the algorithm is sound and complete.
+
+Comments for authors
+--------------------
+I recommend accepting the paper because
+
+1. It contributes two important scientific results, that
+  Julia's subtyping is undecidable, and by stratifying types,
+  it can be made decidable without too much reduction in
+  expressiveness of the language.
+
+2. The writing is clear and the technical results appear to be solid.
+  In particular, the flow of the lemmas and theorems, and the amount
+  of detail (enough but not too much) in the proofs made for enjoyable
+  reading.
+
+
+Comments on details
+
+p. 2
+
+"value typeswith use-site variance"
+
+Add space between "types" and "with".
+
+p. 4
+
+"That definition is mostly accurate..."
+
+This is a bit repetative.
+
+
+
+Review #283D
+===========================================================================
+
+Overall merit
+-------------
+4. Accept
+
+Reviewer expertise
+------------------
+4. Expert
+
+Paper summary
+-------------
+This paper studies the details of the subtyping relation used at runtime in Julia to determine multimethod dispatch. The paper shows that a critical subset of Julia's type system (in the form distilled by Zappa Nardelli et al.) has undecidable subtyping by reduction from a sublanguage of Fsub used by Pierce to prove undecidability of Fsub to a subset of (the formal model of) Julia's types and subtyping relation. The paper goes on to propose a common-sense semantic restriction (conservativity, that lower bounds should be subtypes of upper bounds) that is not currently enforced, along with a syntactic restriction (a form of stratified quantification), with the intent that this restriction should yield an expressive subset of Julia's types for which subtyping is decidable. Not only does it do so, but an extensive empirical evaluation on the bulk of public Julia code reveals that all but 4 types written in actual Julia code (out of millions) already satisfy this criteria. And two of those have semantic equivalents that do satisfy the syntactic criterion.
+
+Strengths:
++ Tackles a challenging and worthwhile problem
++ Proposes a sensible solution that appears to be highly effective
++ Despite the breadth of results that must be incrementally developed and tied together, the paper mostly does a good job explaining how everything is connected and how the pieces work together
+
+Weaknesses:
+- Parts of the paper could be explained a bit better (but this can easily be fixed in a revision)
+- The discussion of constraint generation probably doesn't make sense to readers who aren't already experts in type inference
+- Paper shows decidability by showing the search space is finite, which is not necessarily an implementable result.
+
+Comments for authors
+--------------------
+I really like this paper. It tackles an important practical problem with an interesting theoretical core, and resolves it with an expansive theoretical development that draws on a wide range of generally well-explained techniques, validated against empirical data to show that the recommendation not only works in theory, but would barely disrupt practice. The theory is mostly well explained, with the only substantial exception being the very reader-background-assumption-heavy discussion of constraint generation and solving in Section 6. The empirical evaluation is impressive, and reminiscent of Wright's proposal of the ML value restriction (though he didn't have nearly as much data back in the 90s, and even then his ratios weren't nearly as good as 4 in >2 million).
+
+While I have some comments below about places to improve writing, the paper brings such a wealth of techniques to bear, and keeps so many distinct (well-chosen, well-organized) pieces fitting together, that I'm honestly impressed the exposition is as smooth as it is for the PLDI page limit. I have suggestions for improvement, but no real concerns.
+
+The paper's only real weakness (other than density) is that the paper shows decidability not by giving an efficient algorithm, but instead by showing the set of possible constraint sets is finite and enumerable (computability in Lemmas 6.5 and 6.5), and that if any of those constraint sets is solvable there is a substitution of flexible variables satisfying the constraints (soundness, which the paper doesn't say but indirectly suggests is constructively proven).  The paper notes this as future work, and given the amount of work that's packed into this paper, I think that's okay. I'd recommend that the authors take a look at some of the earlier work on type inference in the presence of subtyping, which might shed some light on the construction of a more directly useful algorithm; most of it directly addresses iterative constraint propagation algorithms for solving the kinds of constraints generated here. Some is cited below in the comments, but some more recent work on type inference for JavaScript variants might also be useful (https://dl.acm.org/doi/abs/10.1145/2983990.2984017 and https://dl.acm.org/doi/10.1145/3133872). There's also some work that specifically tackles type inference with existentials (https://dl.acm.org/doi/10.1145/1806596.1806644, and I know I've seen more).
+
+Other comments:
+
+- line 191: Vector{Intt32} has an extra t
+- lines 380-391: This paragraph could use some elaboration on the kinds of problems being highlighted, such as using a concrete example to highlight the many possible inversions of the right rule for existentials
+- Figure 10: The text doesn't really explain clearly why the translation of positive negation just uses Neg, while the translation of negative negation uses a lower bound. Is this simply because of the Neg bound in Figure 7, or something more subtle? Likewise, the negative translation of quantification could also use a bit more English prose explaining what's happening and why.
+- line 488: missing space before "Thus"
+- Section 5.1: The first two paragraphs here would benefit from more examples, showing for example how stratification rules out the two cases that were detailed in the proof of Lemma 4.1.
+- line 715: I feel like it would make sense to move the size metric here to this proof of 5.1, rather than giving a forward reference to the next section for something that's 2 lines of text.
+- Section 6.2: This section is quite dense, and explains very little of what it's talking about in a way that would make sense for someone who hasn't spent a lot of time reading the type inference literature. The paper is definitely pressed for space, and if I had to pick a piece of the paper to have an "extra condensed" explanation to fit the page limit, I would choose this section. However, I do hope that if the camera-ready gets extra pages (which I hope is the case, but don't know) that this section could be expanded a bit more. I don't think the discussion here is enough to really teach anyone who didn't already know the difference between rigid and flexible variables.
+- Also 6.2: I was a little surprised that the only references for type inference were Hindley, and Damas-Milner, which only do unification-based inference. I would have expected to see at least some citations to work that did type inference in the presence of subtyping, like Pottier's dissertation work (https://dl.acm.org/doi/10.1145/289423.289448) or other 90s work on type inference for objects (e.g., https://dl.acm.org/doi/abs/10.1145/217838.217858). The paper did a good job with what it did, but this stood out as the one place where the paper cited things that didn't fully make sense as references for the topic at hand.
+- Figure 16: Something went very weird with the spacing of this rule's antecedents: the quantifiers are so far away from the properties they're quantifying over that at first I thought the second line was supposed to be two antecedents, not one.
+
+
+
+Review #283E
+===========================================================================
+
+Overall merit
+-------------
+2. Weak reject
+
+Reviewer expertise
+------------------
+3. Knowledgeable
+
+Paper summary
+-------------
+The paper presents an algorithm that makes Julia's subtyping check decidable. It formalizes (an interesting) subset of the current subtyping relation and shows (using the Ghelli's gadget) that it is undecidable. Then, it proposes the stratified subtyping <:SI and show that 1) empirically and up to equivalence, most Julia programs conform to stratification; 2) stratified subtyping is equivalent to Julia's; 3) stratified subtyping is decidable, sound, and complete.
+
+Comments for authors
+--------------------
+Pros: 
++ The paper addresses an interesting and practical problem
++ The methodology followed is promising
++ The writing is clean with various examples 
+
+Cons: 
+- The complete proofs of theorems are not provided
+- The algorithm is not implemented (and thus the feasibility of adoption cannot be checked) 
+- The generality of the stratification technique is not discussed. 
+
+
+The paper proposes a decidable algorithm for Julia's subtyping relation. I found the problem interesting and the methodology of the solution (i.e., stratification and equivalence to the original subtyping relation) promising. Yet, I believe that, at the current state the work lacks two key ingredients to get accepted into PLDI. 
+First, the complete proofs of the theorems are not provided (e.g., as supplementary material). My understanding is that the inductive proofs are not meticulously performed, thus the theorems are prone to errors. 
+Second, even though the authors evaluated the type stratification requirement, they do not seem to have implemented the stratified subtyping relation. A practical adoption would of course require the algorithm to get expended to all Julia's features, as the authors note, but also some evidence that the stratification algorithm does not come with noticeable runtime slowdowns. Currently, this evidence is not provided, since there is neither implementation, nor discussion of the complexity of the algorithm. 
+
+As a question for the authors, I did appreciate Fig 7's example that illustrates Julia's undecidability problem. Yet, this seems like a known gadget. Can't you statically detect such looping gadgets (maybe using stratification)? How often is undecidability of subtyping a problem in real programs?
+

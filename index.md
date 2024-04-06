@@ -103,6 +103,10 @@ at {{site.data.links.mdlinks.purpl}} ({{site.data.links.mdlinks.purdue}}).
 
 ### Recent professional [news](news) (without [failures](failures))
 
+* Apr 2024: accepted paper at
+  [PLDI 2024](https://pldi24.sigplan.org/)  
+  [Decidable Subtyping of Existential Types for Julia](/papers#pldi2024)
+
 * Apr 2024: joined the Program Committee of
   [Scheme 2024](https://icfp24.sigplan.org/home/scheme-2024)
 
@@ -117,18 +121,6 @@ at {{site.data.links.mdlinks.purpl}} ({{site.data.links.mdlinks.purdue}}).
 
 * Aug 2023: defended my PhD thesis at {{site.data.links.mdlinks.neu}}  
   [Decidable Subtyping of Existential Types for the Julia Language](/papers#phdthesis)
-
-* Oct 2021: invited talk at [POPV Seminar](https://www.bu.edu/cs/research/popv/seminar/) (Principles of Programming and Verification)  
-  [Julia: Language Design and Users Working Together](/talks#popv2021)
-
-* Oct 2021: invited talk at [BCC](https://bstn.cc/) (Boston Computation Club)  
-  [Types in Programming Languages Research vs Types in Julia](/talks#bcc2021)
-
-* Sep 2021: accepted paper at
-  [OOPSLA 2021](https://2021.splashcon.org/track/splash-2021-oopsla)  
-  [Type Stability in Julia: Avoiding Performance Pathologies in JIT
-  Compilation](/papers#oopsla2021)
-   
 
 ## <span id="research">Research</span>
 
@@ -174,6 +166,7 @@ programming language:
     [Appendix A.2 of PhD thesis](https://julbinb.github.io/papers#phdthesis)].
   - Decidable subtyping
     [[PhD thesis](https://julbinb.github.io/papers#phdthesis)]
+    [[PLDI 2024](/papers#pldi2024)]
 
 > <small>_Disclaimer._ Good or bad, the language has nothing to do with me, and our shared name is a coincidence!</small>
 
@@ -183,14 +176,12 @@ in object-oriented languages
 
 ### Selected papers and talks
 
+1. {% include publication.html paper-key="PLDI 2024"
+      paper-data=site.data.papers %}
 1. {% include talk.html talk-key="PurPL 2023" talk-data=site.data.talks show-talk-marker="true" %}
 1. {% include talk.html talk-key="POPV 2021" talk-data=site.data.talks show-talk-marker="true" %}
-1. {% include publication.html paper-key="OOPSLA 2021"
-      paper-data=site.data.papers %}
 1. {% include publication.html paper-key="OOPSLA 2020"
       paper-data=site.data.papers %}
 1. {% include publication.html paper-key="VIS 2020 (short paper)" paper-data=site.data.papers %}
-1. {% include publication.html paper-key="FTfJP 2019" paper-data=site.data.papers %}
-1. {% include talk.html talk-key="Семинар ЯПиК 2019" talk-data=site.data.talks show-talk-marker="true" %}
 1. {% include publication.html paper-key="OOPSLA 2018" paper-data=site.data.papers %}
 1. {% include publication.html paper-key="SBLP 2016" paper-data=site.data.papers %}

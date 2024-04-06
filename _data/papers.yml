@@ -1,3 +1,32 @@
+- key: "PLDI 2024"
+  link: https://pldi24.sigplan.org/
+  title: "Decidable Subtyping of Existential Types for Julia"
+  refid: pldi2024
+  authors:
+    - key: julia
+    - key: benchung
+    - key: rosstate
+    - key: janvitek
+  doi: 
+    name: 10.1145/3656421
+    link: https://doi.org/10.1145/3656421
+  venue: "Proc. ACM Program. Lang., Volume 8, PLDI, Article 191 (24 pages)"
+  reviews: /files/reviews/pldi2024-reviews.txt
+  links:
+    - name: BibTeX
+      link: TODO
+    - name: preprint PDF
+      link: /files/papers/pldi2024_dec-julia-sub.pdf
+    - name: extended PDF
+      link: /files/papers/pldi2024_dec-julia-sub_extended.pdf
+    - name: GitHub
+      link: https://github.com/prl-julia/julia-sub
+      colored: true
+    - name: web
+      link: /projects/julia-sub
+      colored: true
+  abstract: "Julia is a modern scientific-computing language that relies on multiple dispatch to implement generic libraries. While the language does not have a static type system, method declarations are decorated with expressive type annotations to determine when they are applicable. To find applicable methods, the implementation uses subtyping at run-time. We show that Julia’s subtyping is undecidable, and we propose a restriction on types to recover decidability by stratifying types into method signatures over value types—where the former can freely use bounded existential types but the latter are restricted to use-site variance. A corpus analysis suggests that nearly all Julia programs written in practice already conform to this restriction."
+
 - key: "Decidable Subtyping of Existential Types for the Julia Language"
   link: https://onesearch.library.northeastern.edu/permalink/01NEU_INST/87npqb/cdi_proquest_journals_2853689755
   thesistitle: "Decidable Subtyping of Existential Types for the Julia Language"

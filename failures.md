@@ -28,19 +28,22 @@ transitively inspired by
 
 ### Paper rejections
 
+* {% include rejected-paper.html venue="POPL 2024" info="version 1"
+    paper-key="PLDI 2024" paper-data=site.data.papers %}
+
 * {% include rejected-paper.html venue="PLDI 2018" info="version 2"
     paper-key="OOPSLA 2018" paper-data=site.data.papers %}
 
 * {% include rejected-paper.html venue="POPL 2018" info="version 1"
     paper-key="OOPSLA 2018" paper-data=site.data.papers %}
 
-* {% include rejected-paper.html venue="SNAPL 2015"
+* {% include rejected-paper.html venue="SNAPL 2015" info="version 1"
     paper-key="SBLP 2016" paper-data=site.data.papers %}
 
-* {% include rejected-paper.html venue="PLDI 2015"
+* {% include rejected-paper.html venue="PLDI 2015" info="version 2"
     paper-key="SYRCoSE 2015" paper-data=site.data.papers %}
 
-* {% include rejected-paper.html venue="WGP 2014"
+* {% include rejected-paper.html venue="WGP 2014" info="version 1"
     paper-key="SYRCoSE 2015" paper-data=site.data.papers %}
 
 ### Internships I did not get

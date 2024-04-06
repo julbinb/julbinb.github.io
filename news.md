@@ -7,6 +7,10 @@ This page tracks good news (without [failures](failures)) starting from 2020.
 
 ### Recent
 
+* Apr 2024: accepted paper at
+  [PLDI 2024](https://pldi24.sigplan.org/)  
+  [Decidable Subtyping of Existential Types for Julia](/papers#pldi2024)
+
 * Apr 2024: joined the Program Committee of
   [Scheme 2024](https://icfp24.sigplan.org/home/scheme-2024)
 
@@ -15,6 +19,8 @@ This page tracks good news (without [failures](failures)) starting from 2020.
 
 * Jan 2024: joined the Program Committee of
   [ARRAY 2024](https://pldi24.sigplan.org/home/ARRAY-2024)
+
+### 2023
 
 * Nov 2023: talk at [PurPL Seminar](https://purduepl.github.io/seminars.html)  
   [Julia: Practical Restrictions for a Scientific-Computing Language](/talks#purpl2023)

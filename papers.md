@@ -10,6 +10,8 @@ title: Publications
 
 ## Conferences & Journals
 
+1. {% include publication.html paper-key="PLDI 2024"
+      refid=true paper-data=site.data.papers %}
 1. {% include publication.html paper-key="OOPSLA 2021"
       refid=true paper-data=site.data.papers %}
 1. {% include publication.html paper-key="OOPSLA 2021 Extended (arXiv)"
