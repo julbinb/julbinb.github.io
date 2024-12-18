@@ -1,3 +1,42 @@
+- key: "POPL 2025"
+  link: https://popl25.sigplan.org/
+  title: "Derivative-Guided Symbolic Execution"
+  refid: popl2025
+  authors:
+    - key: yongwei
+    - key: zhe
+    - key: julia
+    - key: suresh
+  doi: 
+    name: 10.1145/3704886
+    link: https://doi.org/10.1145/3704886
+  venue: "POPL 2025 todo"
+  reviews: /files/reviews/popl2025-reviews.txt
+  links:
+    - name: BibTeX
+      link: TODO
+    - name: extended PDF
+      link: https://arxiv.org/pdf/2411.02716
+    - name: extended version
+      link: https://arxiv.org/abs/2411.02716
+    - name: GitHub
+      link: https://github.com/yongweiy/HATch
+      colored: true
+  abstract: "We consider the formulation of a symbolic execution (SE) procedure for functional programs that interact with effectful, opaque libraries. Our procedure allows specifications of libraries and abstract data type (ADT) methods that are expressed in <i>Linear Temporal Logic over Finite Traces</i> (LTL<sub>f</sub>), interpreting them as <i>symbolic finite automata</i> (SFAs) to enable intelligent specification-guided path exploration in this setting. We apply our technique to facilitate the falsification of complex data structure safety properties in terms of effectful operations made by ADT methods on underlying opaque representation type(s). Specifications naturally characterize admissible traces of temporally-ordered events that ADT methods (and the library methods they depend upon) are allowed to perform. We show how to use these specifications to construct feasible symbolic input states for the corresponding methods, as well as how to encode safety properties in terms of this formalism. More importantly, we incorporate the notion of <i>symbolic derivatives</i>, a mechanism that allows the SE procedure to intelligently underapproximate the set of precondition states it needs to explore, based on the automata structures implicit in the provided specifications and the safety property that is to be falsified. Intuitively, derivatives enable symbolic execution to exploit temporal constraints defined by trace-based specifications to quickly prune unproductive paths and discover feasible error states. Experimental results on a wide-range of challenging ADT implementations demonstrate the effectiveness of our approach."
+
+- key: "TPSA 2025"
+  link: https://popl25.sigplan.org/home/tpsa-2025
+  title: "From Traces to Program Incorrectness: A Type-Theoretic Approach"
+  refid: tpsa2025
+  authors:
+    - key: yongwei
+    - key: zhe
+    - key: julia
+    - key: suresh
+    - key: bendel
+  venue: "Theory and Practice of Static Analysis 2025"
+  abstract: "We present a type-theoretic framework for reasoning about incorrectness in functional programs that interact with effectful, opaque library APIs. Our approach centers on traces – temporally-ordered sequences of library API invocations – which naturally characterize both the preconditions of individual APIs and their composite behavior. We represent these traces using symbolic regular expressions (SREs), enabling formal specification of incorrect abstract data type (ADT) behaviors across function boundaries. The core contribution is a novel type inference algorithm that operates modulo specified incorrectness properties and leverages the symbolic finite automata (SFAs) representations of regexes for compositional reasoning of traces. When the algorithm succeeds, the inferred types witness that an ADT implementation can exhibit some subset of the specified incorrect behaviors. This represents the first systematic approach to underapproximate reasoning against trace-based incorrectness specifications, enabling a new form of trace-guided compositional analysis."
+
 - key: "PLDI 2024"
   link: https://pldi24.sigplan.org/
   title: "Decidable Subtyping of Existential Types for Julia"

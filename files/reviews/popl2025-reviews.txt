@@ -1,0 +1,228 @@
+POPL 2025 Paper #184 Reviews and Comments
+===========================================================================
+Paper #184 Derivative-Guided Symbolic Execution
+
+
+Review #184A
+===========================================================================
+* Updated: Sep 27, 2024
+
+Overall merit
+-------------
+3. Weak accept
+
+Reviewer expertise
+------------------
+4. Expert
+
+Paper summary
+-------------
+The paper uses symbolic regular expressions (SREs) with uninterpreted constants (also
+called symbolic variables) to represent an analyze behaviors (in terms of
+sequences of event patterns) applied to an ADT where regexes are used to model
+patterns in the core specification language (in Figure 3).
+
+Then derivatives of such regexes are defined as usual but the symbolic
+variables are then treated as uninterpreted constants later on in traces
+or words accepted by the regex that are through derivatives
+unfolded into symbolic finite automata (SFAs).
+In this setting a fragment of the constructs supported
+in SRE are allowed as under-approximations of prefixes of traces through
+what the authors call *symbolic derivatives*
+(there is a terminology clash here with prior works, see below).
+In particular, all interpretations of the uninterpreted constants
+must agree in such a symbolic derivative (Definition 5.5), so the
+definition is tied with the semantics at the trace level.
+An SMT solver is used to validate such semantic constraints.
+
+I find the idea and the application of SRE and the research very promising, but also
+quite preliminary. I do not have full confidence in the correctness
+of the stated Theorem 5.16 (partly because I did not have time to read the appendix and
+the supporting lemmas are stated without proof in the paper) that states the
+soundness of the analysis. The used notations are also quite
+heavyweight and nonstandard. One of the core issues that needs more convincing,
+for me at least, is that symbolic variables in general, when
+treated as uninterpreted constants get a "global" meaning across state
+boundaries while they have a more "local" symbolic meaning inside states (as regexes), e.g.
+a regex R inside R*, when unfolded by derivatives, each iteration of R
+should give rise to a different instance of symbolic variables in R, but this is not happening.
+As I understand, Definition 5.5 is to semantically guard against
+unintended interpretations, but I do not see the full picture here, and I
+am also unsure about the meaning of statements such as this one on line 908:
+"this refined semantics guarantees completeness with respect to falsification"
+and the paragraph following it. I have similar concerns about Theorem 5.19 (completness).
+One suggestion for the authors would be to try to formalize the theorems in
+a proof assistant such as Lean (to eliminate such doubt). This is doable
+for derivatives of regexes in general, see for example:
+
+https://dl.acm.org/doi/10.1145/3636501.3636959
+
+Regarding the comment on line 461, there is
+a better recent technique that uses so-called *transition-regexes* that you might find
+very useful in the context of your work as well, see
+
+https://dl.acm.org/doi/10.1145/3453483.3454066
+
+where the finitization to equivalence classes is not needed
+but so-called *symbolic derivatives* of regexes are directly represented by
+nested ITE-terms as transition-regexes
+whose conditions are the alphabet predicates that occur in the regex.
+(This definition is not what the authors use in this paper,
+so there is a terminology clash here.)
+Not only does the transition-regex representation avoid potential exponential
+blowup in the number of those equivalence classes (aka mintermization),
+but it also supports a very powerful incremental method for complementation
+and other SFA algorithms.
+(This is also how Z3 implements regexes in its sequence theory solver.)
+
+Observe also that the statement on line 464 in some sense
+defeats the purpose of an SFA by turning it into an NFA using the minterms as the alphabet,
+in general, mintermization should (and can) be avoided as it may have an upfront exponential cost.
+
+Overall, I like the line of this work. In the long run the research in the paper
+may also find applications in SMT solvers such as Z3 where regexes can potentially
+already include uninterpreted constants through the toRE construct for example
+that converts a (nonground) string-term into a regex.
+
+Comments for authors
+--------------------
+The reference [14] on line 205 seems odd to me (typo?).
+Also ref [36] in lines 71 and 205 seems outdated.
+I think that citing the CACM article
+
+https://dl.acm.org/doi/10.1145/3419404
+
+would be more up-to-date and useful for readers.
+
+I think it would make sense to specify the (Effective) Boolean Algebra, say E, that
+is essentially introduced in line 569 up front before SRE is defined.
+So SRE would be short for SRE_E (Symbolic Regular Expressions modulo E), because
+the denotation of E is already implicitly used in line 438 in the
+definition of the $d_\alpha$. (i.e. define concepts before using them).
+
+The core predicates of E are then essentially the atomic symbolic events
+whose semantics is defined on line 566 as far as I understand it.
+This definition can appear later, as it is a particular instance of $E$
+that I see as part of the core contribution of the paper combined with
+the formalism in Figures 3 and 4.
+
+I think that the construct ??$_{\tau}$ or ?? is highly unusual and also confusing:
+**each time I see ?? it looks like there is a missing LaTeX reference**.
+
+line 583: why introduce the $\hat{x}$ notation at all if it is later not used, just
+having symbolic variables (uninterpreted constants)
+(when not bound) and bound variables seems ok to me.
+The less notation overhead the better.
+
+line 742: need to accepting ==> need to be accepting
+
+--------------------------------------------------------------------
+
+## Comments after rebuttal
+
+After reading the rebuttal, I am more positive towards the paper and am in favor of accepting it,
+provided that the following is clarified.  In the rebuttal you say:
+
+>Both approaches can be viewed as a lazy form of mintermization.
+
+This is not accurate. Transition Regexes *do not do any mintermization at all*, not even locally, as shown in the PLDI21 paper that I pointed to. A symbolic derivative, say $der(R)$, of a regex $R$ in the PLDI21 work uses (nested) ITE-terms whose conditions originate from $R$, in particular 
+
+$der(L∨R) = der(L) ∨der(R)$
+
+and for a predicate α, $der(α)= ite(α,ϵ,⊥)$. For example
+if $L$ is nullable then $der(LR) = der(L)R ∨ der(R)$ and if say $L=U∨V$ then $der(L)R = der(U)S ∨der(V)R$.
+Among other properties, $ite(α,f,g)R = ite(α,fR,gR)$, there is a whole algebra of TR rewrite rules.
+
+For *standard* regexes $R$ computing the fixpoint of derivatives amounts to producing a *symbolic NFA* whose guards are predicates. The construction of the symbolic NFA from $R$ is *linear*, there is no mintermization whatsoever (i.e., there is no hidden *Next* operation here). For *incremental determinization* (essentially Brzozowski-style derivatives), satisfiability checking kicks in during *cleaning* of transition regexes, but observe that this is also incremental, sort of like removing unreachable branches of a nested ITE (but is also algorithmically different from local mintermization, although in the worst case having same complexity locally).
+
+For a regex $R = (R_1 ∨ ... ∨ R_n)$ in your work, $Next(R)$ (line 1037) will result, by repeated application of the join operation (line 1039), in a set of size $O(2^n)$ (essentially this is local mintermization). This does not happen in TR. TR was a key breakthrough in the regex engine of Z3, that is essentially *incremental symbolic derivative guided exploration of ERE inside the sequence theory component of Z3*. Use of TR is fundamentally (complexity wise) different from the notion of symbolic derivatives in your work and could have a *nontrivial* effect of how to implement your framework (i.e., it is not just an alternative representation of derivatives). A remarkably powerful rule of $der(R)$ is that $der(\neg R)= \neg der(R)$ and that 
+$\neg ite(α,f,g) = ite(α,\neg f,\neg g)$. I.e., regex complement can be lazily propagated.
+Overall, all Boolean distributivity laws, as well as de Morgans laws apply to TR. For example, Antimirov derivatives are the result of maintaining transition regexes essentially in a DNF.
+
+
+
+Review #184B
+===========================================================================
+
+Overall merit
+-------------
+4. Strong accept
+
+Reviewer expertise
+------------------
+4. Expert
+
+Paper summary
+-------------
+The authors present a new symbolic execution technique for finding bugs in functions that use abstract data types (ADTs). ADT operations are given temporal logic specifications, as is the function being analyzed. The analysis models the state of the ADT by maintaining a trace of ADT operations. For symbolic variables of the ADT type, all possible traces can be materialized during symbolic execution by using the temporal logic specs. Moreover, the analysis can use potentially erroneous states (e.g., violations of the postcondition) as a guide to choose with possible traces to explore. The authors evaluate their approach on a range of example ADTs, showing it can find errors quickly and noticeably faster than when guidance is turned off.
+
+Comments for authors
+--------------------
+This is an impressive paper, and I think it makes an important contribution. The idea of materializing traces to model ADTs, rather than using ghost state, is a great one. The use of symbolic derivatives to reason about what happens when stepping through possible traces is very slick. I also greatly appreciated the examples throughout the text showing each step of the algorithm. And the experimental result is solid. Altogether, this is a strong paper.
+
+I have some low-level comments for improving the writing below. At a high level, I feel the abstract and introduction could be improved in a couple of ways. First and foremost, I think a key goal of this paper is to support symbolic execution "in the middle." If we run symbolic execution from the start of program execution, then we typically wouldn't have symbolic variables that correspond to ADTs (e.g., because you can't pass such a thing to main()). But the motivation of starting symbolic execution as the start of an intermediate function was missing---please add it. Second, the text of the introduction sometimes seems to assume the reader already knows the contents of the paper. This is particularly the case when symbolic derivatives are introduced starting on line 77. The intro never really says what symbolic derivatives are. Rather, it talks about what the consequences of them are---which left me pretty confused and uncertain at this point in the paper.
+
+* line 186, "ensures" here doesn't match "ensure" on line 105.
+
+* lines 252-260, I found this paragraph to be murky, in part because I didn't really understand the use of "synergistically."
+
+* line 332 and elsewhere, "underapproximate" - this word is used in a bunch of places, and while it's accurate, I found it a little confusing. The symbolic executor could just underapproximate by not exploring any paths; of course that would not be useful. The point here, I think, is that it explores paths assuming things like preconditions hold. And yes, that's an underapproximation, but it's not what I tend to think of as an underapproximation---so to see that word used over and over again kind of threw me. Please check the places this is used and see if it's really necessary everywhere.
+
+* lines 369-374, I wonder if this may be a good place for a figure to illustrate this point, possibly some kind of graph where the nodes are symbolic paths and edges indicate execution steps---it may be possible to show which paths are worth exploring using such a figure.
+
+* line 383, remove ( before e.g.
+
+* line 434, FB should be something else
+
+* line 729, Lemma 5.3, was there a definition of v(\ell) earlier?
+
+* lines 844-850, this is another place I found the text to be somewhat murky. I think it could be rewritten to be clearer.
+
+* Table 1, when I was looking over this table, I started wondering how the guidance provided in HATch relates to other heuristics used in symbolic execution, e.g., techniques that try to find higher code coverage. Are there any obvious or interesting ways to combine such heuristics with HATch?
+
+
+
+Review #184C
+===========================================================================
+* Updated: Oct 3, 2024
+
+Overall merit
+-------------
+3. Weak accept
+
+Reviewer expertise
+------------------
+2. Some familiarity
+
+Paper summary
+-------------
+This paper proposes a way to incorporate “symbolic derivative” into symbolic execution, and develops a new approach that can utilize trace-based specifications, which, as also shown by the evaluation results, leads to faster falsification of safety properties about ADTs.
+
+Comments for authors
+--------------------
+The idea of incorporating temporal information into the specifications seems well motivated (especially for the task of checking ADT implementations that may involve calling effectful functions). Representing such behavioral specifications in LTL$_f$ and using symbolic finite automata is also elegant. 
+
+
+
+At a high-level, the richer information encapsulated in such specifications has the potential to better gear the SE engine towards more promising paths. However, reading the first two sections, the key insight doesn’t come across to me (as someone who is not an expert in this area). Section 2.1 is quite helpful, but the detail in 2.2 is a bit harder to grasp. E.g., line 255: it’s not very easy for me to imagine how this synergy really looks like. The refinement described in line 256 at the high-level is sensible, but it’s again not easy for me to map it to something more concrete. The para beginning at line 271 seems to aim to illustrate these things, which I unfortunately didn’t find too useful. 2.3 has a lot of information packed in it. 
+
+
+
+The evaluation section seems fairly strong. Are there standard benchmarks from the literature that can be used? I wonder if there are better ways than “introduce artificial bugs” (line 1126) to create benchmarks. Could you share more details around what these bugs are? How was Q1 addressed? I thought it meant to evaluate if the specification language is expressive enough to capture safety properties that are useful in practice; but it looks like the paper addressed it by reporting the falsification time. On the other hand, Q2 and Q3 both seem to be adequately addressed. 
+
+
+Minor: 
+- Line 52: “In our running example” - this example is not introduced at this point yet. 
+- Line 61: This para has one, very long, sentence. Very hard to parse. 
+- Line 74: I was a little confused by (2). 
+- Line 181: “figure” - Figure 1? 
+- Line 208: “automata” -> “automaton”? 
+- Line 214: “leading to a transition that exists the accepting state”? 
+- Line 318: “Line 9” - it’d be great to also add the figure number here, as I cannot click the line number on a printed paper. :-) 
+- Line 420: use the same order? Also, it’d be great to explain a bit these operators.
+
+
+
+*** 
+
+Thank you for your response. I remain positive about this work. The presentation can be made more accessible to non-experts. The technical merit looks strong to me.

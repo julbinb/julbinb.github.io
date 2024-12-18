@@ -1,3 +1,31 @@
+- key: "PurPL 2024"
+  refid: purpl2024
+  title: "Decidable Subtyping of Existential Types for Julia (PLDI'24)"
+  venue: "<a target='_blank' href='https://purduepl.github.io/seminars.html'>PurPL Seminar</a> (Purdue University). West Lafayette, IN, USA"
+  date: "Aug 30, 2024"
+  links:
+    - name: slides GDrive
+      link: https://docs.google.com/presentation/d/1_zMKdFVR6nAabF1yEblAnffUcc_VVn7hNWnCOIaJsvM/edit?usp=sharing
+    - name: seminar page
+      link: https://purduepl.github.io/seminars/2024/2024-8-30-seminar
+  abstract: "This talk is a slightly extended version of the PLDI 2024 presentation. Before diving into the main part, we will start with a brief discussion of several concepts relevant to the technical content of the talk: inference rules, transitivity, and decidability. We will also take a quick look at the Julia language.<br/>Julia is a modern scientific-computing language that relies on multiple dispatch to implement generic libraries. While the language does not have a static type system, method declarations are decorated with expressive type annotations to determine when they are applicable. To find applicable methods, the implementation uses subtyping at run-time. We show that Julia’s subtyping is undecidable, and we propose a restriction on types to recover decidability by stratifying types into method signatures over value types—where the former can freely use bounded existential types but the latter are restricted to use-site variance. A corpus analysis suggests that nearly all Julia programs written in practice already conform to this restriction."
+
+- key: "LambdaConf 2024"
+  refid: lc2024
+  title: "Julia: Practical Restrictions For A Scientific-Computing Language"
+  venue: "<a target='_blank' href='https://www.lambdaconf.us/'>Lambda Conf</a>. Estes Park, CO, USA"
+  date: "May 6, 2024"
+  links:
+    - name: slides GDrive
+      link: https://docs.google.com/presentation/d/10_2tyWHAtKgT5xKL8Ic29vtkZI-1zaLCDfCfgs5FGnw/edit?usp=sharing
+    - name: conference page
+      link: https://www.lambdaconf.us/
+    - name: video
+      link: https://youtu.be/YmRxCq-XgDc
+      colored: true
+  abstract: "Julia is a high-level, dynamic programming language for scientific computing. Designed for a high level of code reuse and extensibility, Julia is built around multiple dynamic dispatch. To achieve performance, the language relies on an optimizing just-in-time compiler. The language is intentionally designed with a few unusual restrictions to make compilation predictable and to simplify the compiler implementation.<br/>For one, Julia supports nominal subtyping but not inheritance: every user-defined type that is concrete is also final. This enables the compiler to perform various optimizations for concrete values, most importantly, dispatch elimination.<br/>Furthermore, Julia employs an unusual semantics of eval—a function for executing code dynamically—called “world age”. Unlike other dynamic languages, Julia delays when eval’ed code becomes available to the rest of the program, thus allowing the compiler to retain pre-eval optimizations. Corpus analysis of Julia code shows that such delaying semantics is practical in most cases.<br/>By combining powerful multiple dispatch with these intentional restrictions, Julia achieves both flexibility and impressive performance."
+
+
 - key: "PurPL 2023"
   refid: purpl2023
   title: "Julia: Practical Restrictions for a Scientific-Computing Language"
@@ -10,6 +38,7 @@
       link: https://purduepl.github.io/seminars/2023/2023-11-30-seminar
   abstract: "Julia is a high-level, dynamic programming language for scientific computing. To achieve performance, Julia relies on an optimizing just-in-time compiler. To make compilation predictable and allow for a simpler compiler implementation, the language is intentionally designed around a few unusual restrictions.<br/> In the first part of the talk, we discuss “world age”—the semantics of eval function for dynamically executing code. Unlike other dynamic languages, Julia delays when eval’ed code becomes available to the rest of the program, thus allowing the compiler to retain pre-eval optimizations. A corpus analysis of Julia code shows that such delaying semantics is practical in most cases.<br/> In the second part of the talk, we discuss a restriction on Julia’s type language that would allow for decidable subtyping. Julia’s dynamic dispatch is currently resolved with undecidable subtyping, meaning that in practice, a program can crash with a stack-overflow error due to an unfortunate subtype query. The decidability of subtyping can be recovered by restricting existential types inside invariant type constructors to use-site variance. A corpus analysis of Julia code shows that the vast majority of existing programs already adhere to this restriction."
 
+
 - key: "POPV 2021"
   refid: popv2021
   title: "Julia: Language Design and Users Working Together"
@@ -21,7 +50,6 @@
     - name: seminar page
       link: https://www.bu.edu/cs/research/popv/seminar/#julia-language-design-and-users-working-together.
   abstract: 'As a programming language for scientific computing, Julia strives for predictable performance as well as flexibility and ease of use. To tackle this challenge, Julia employs two strategies. First, it enables highly compositional programs by using multiple dispatch as the core paradigm, but at the same time, pragmatically restricts the language to facilitate optimizations. Second, Julia enables productive collaboration between the programmer and the JIT compiler by making the compiler’s behavior predictable and encouraging optimization-conducive coding discipline.<br/>In this talk, we look at several components of this two-fold approach. We start with an overview of multiple dispatch. Next, we talk about type stability, a property of the code that enables the key optimization in Julia’s optimization pipeline. Finally, we look at the world age, a mechanism that allows for a pragmatic trade-off between flexibility of “eval” and predictability of compiler optimizations.'
-
 
 - key: "BCC 2021"
   refid: bcc2021

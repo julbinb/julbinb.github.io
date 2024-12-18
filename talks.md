@@ -5,6 +5,7 @@ title: Talks
 
 ## Conference/workshop presentations
 
+1. {% include talk.html talk-key="LambdaConf 2024" talk-data=site.data.talks %}
 1. {% include talk.html talk-key="OOPSLA 2020" talk-data=site.data.talks %}
 1. {% include talk.html talk-key="VIS 2020 (short paper)" talk-data=site.data.talks %}
 1. {% include talk.html talk-key="FTfJP 2019" talk-data=site.data.talks %}
@@ -15,6 +16,7 @@ title: Talks
 
 ## Seminar talks
 
+1. {% include talk.html talk-key="PurPL 2024" refid=true talk-data=site.data.talks %}
 1. {% include talk.html talk-key="PurPL 2023" refid=true talk-data=site.data.talks %}
 1. {% include talk.html talk-key="POPV 2021" refid=true talk-data=site.data.talks %}
 1. {% include talk.html talk-key="BCC 2021" refid=true talk-data=site.data.talks %}

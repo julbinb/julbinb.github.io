@@ -7,6 +7,13 @@ This page tracks good news (without [failures](failures)) starting from 2020.
 
 ### Recent
 
+* Nov 2024: accepted paper at
+  [POPL 2025](https://popl25.sigplan.org/)  
+  [Derivative-Guided Symbolic Execution](/papers#popl2025)
+
+* Aug 2024: joined the Review Committee of
+  [OOPSLA 2025](https://2025.splashcon.org/track/OOPSLA)
+
 * Apr 2024: accepted paper at
   [PLDI 2024](https://pldi24.sigplan.org/)  
   [Decidable Subtyping of Existential Types for Julia](/papers#pldi2024)

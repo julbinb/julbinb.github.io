@@ -29,6 +29,19 @@ title: Service
 
 ## Program committees
 
+* [OOPSLA 2025](https://2025.splashcon.org/track/OOPSLA)  
+  (Singapore)
+
+* [Scheme 2024](https://icfp24.sigplan.org/home/scheme-2024)  
+  The Scheme and Functional Programming Workshop,
+  collocated with [ICFP 2024](https://icfp24.sigplan.org)
+  (Milan, Italy)
+
+* [TyDe 2024](https://icfp24.sigplan.org/home/tyde-2024)  
+  Workshop on Type-Driven Development,
+  collocated with [ICFP 2024](https://icfp24.sigplan.org)
+  (Milan, Italy)
+
 * [ARRAY 2024](https://pldi24.sigplan.org/home/ARRAY-2024)  
   Workshop on Array-oriented programming,
   collocated with [PLDI 2024](https://pldi24.sigplan.org/)

@@ -10,6 +10,8 @@ title: Publications
 
 ## Conferences & Journals
 
+1. {% include publication.html paper-key="POPL 2025"
+      refid=true paper-data=site.data.papers %}
 1. {% include publication.html paper-key="PLDI 2024"
       refid=true paper-data=site.data.papers %}
 1. {% include publication.html paper-key="OOPSLA 2021"
@@ -33,6 +35,8 @@ title: Publications
 
 ## Workshops
 
+1. {% include publication.html paper-key="TPSA 2025"
+      refid=true paper-data=site.data.papers %}
 1. {% include publication.html paper-key="FTfJP 2019"
       refid=true paper-data=site.data.papers %}
 1. {% include publication.html paper-key="FTfJP 2017"
