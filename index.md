@@ -18,7 +18,9 @@ starting September 2023.
 </a>
 My research focuses on **programming languages**, in particular,
 their design, semantics, and correctness.
-My most recent work was about formalizing aspects of
+Recently, I have been working on program analysis techniques for combining
+over- and under-approximate reasoning in the context of symbolic execution.
+My thesis work was about formalizing aspects of
 the {{site.data.links.mdlinks.julialang}} language.  
 {% include jump-button.html link="#research" name="Research" %}
 {% include link-button.html name="CV [pdf]" link="/files/cv.pdf" small="true" %}
@@ -142,18 +144,24 @@ In particular, I am interested in making it easier for language users
 to understand the semantics of their programming language
 and write robust and correct software.
 My research interests also include type systems, compilers,
-software correctness, theorem proving (most of my experience has been with
+software correctness, program analysis,
+theorem proving (most of my experience has been with
 {{site.data.links.mdlinks.coq}}),
 generic programming (like Java generics or ML polymorphism),
 programming by contracts, software testing,
 human aspects of programming languages and software engineering,
 and CS education.
 
+Most recently, I have been working on program analysis,
+in particular, on extending symbolic execution with symbolic finite automata
+([POPL 2025](/papers#popl2025)) and enabling symbolic execution to reason
+about over-approximate information (work in progress).
+
 <a href="{{site.data.links.websites.julialang}}" target="_blank">
   <img src="img/julia-logo.svg" alt="Julia Lang logo"
     style="height: 60px; float: right; margin: 0.5em; vertical-align: middle; display: inline-block"/>
 </a>
-For the last several years I have been working on formalizing
+During my PhD, I worked on formalizing
 various aspects of the {{site.data.links.mdlinks.julialang}}
 programming language:
 

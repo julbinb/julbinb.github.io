@@ -10,11 +10,9 @@
   doi: 
     name: 10.1145/3704886
     link: https://doi.org/10.1145/3704886
-  venue: "POPL 2025 todo"
+  venue: "POPL 2025"
   reviews: /files/reviews/popl2025-reviews.txt
   links:
-    - name: BibTeX
-      link: TODO
     - name: extended PDF
       link: https://arxiv.org/pdf/2411.02716
     - name: extended version
@@ -52,8 +50,6 @@
   venue: "Proc. ACM Program. Lang., Volume 8, PLDI, Article 191 (24 pages)"
   reviews: /files/reviews/pldi2024-reviews.txt
   links:
-    - name: BibTeX
-      link: TODO
     - name: preprint PDF
       link: /files/papers/pldi2024_dec-julia-sub.pdf
     - name: extended PDF
