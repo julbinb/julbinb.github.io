@@ -29,6 +29,9 @@ title: Service
 
 ## Program committees
 
+* [ICFP 2026](https://icfp26.sigplan.org/track/icfp-2026-icfp-papers)  
+  (Indianapolis, Indiana, USA)
+
 * [OOPSLA 2025](https://2025.splashcon.org/track/OOPSLA)  
   (Singapore)
 

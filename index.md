@@ -105,6 +105,9 @@ at {{site.data.links.mdlinks.purpl}} ({{site.data.links.mdlinks.purdue}}).
 
 ### Recent professional [news](news) (without [failures](failures))
 
+* Sep 2025: joined the Review Committee of
+  [ICFP 2026](https://icfp26.sigplan.org/track/icfp-2026-icfp-papers)  
+
 * Nov 2024: accepted paper at
   [POPL 2025](https://popl25.sigplan.org/)  
   [Derivative-Guided Symbolic Execution](/papers#popl2025)
